@@ -1,0 +1,6 @@
+venv/
+
+*.jpeg
+*.pages
+*.pyc
+*.sqlite3
