@@ -21,6 +21,7 @@ Parts list:
 			- [ ] Musician secondary instrument
 			- [ ] Musician level [TODO]
 			- [ ] Musician description [TODO]
+			- [ ] Musician approved (Boolean)
 			- [ ] Created at (datetime)
 			- [ ] Updated at (datetime)
 
@@ -146,7 +147,7 @@ Parts list:
 			- [ ] Link to Calendar page (active)
 			- [ ] Link to Logout
 
-- Instruments (app)
+- Instruments (app) 
 	- [ ] Functionalities necessary:
 		- [ ] Search for Musicians by instrument
 
@@ -157,7 +158,7 @@ Parts list:
 		- [ ] Updated at
 
 	- [ ] Views necessary:
-		- [ ] Instruments page (localhost/instruments/)
+		- [ ] Instruments page (localhost/instruments/) (static)
 			- [ ] List of all instruments in db (alpha)
 				- [ ] Each instrument name is a link to individual instrument page
 			- [ ] Link to Home page
@@ -166,7 +167,7 @@ Parts list:
 			- [ ] Link to Calendar page
 			- [ ] Link to Logout
 
-		- [ ] Individual instrument page (localhost/performances/instruments/[id]/)
+		- [ ] Individual instrument page (localhost/performances/instruments/[id]/) (static)
 			- [ ] Text that says "Page for [instrument]"
 			- [ ] List of all musicians in db who play instrument (only first, last names)
 			- [ ] Each musician name is a link to that musician's individual page
