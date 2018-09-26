@@ -26,6 +26,7 @@ Parts list:
 			- [ ] Updated at (datetime)
 
 	- Views necessary:
+		- [ ] Welcome page (localhost/musicians/welcome/)
 		- [ ] Register page (localhost/musicians/register/)
 			- [ ] Form
 				- [ ] Field for first name
