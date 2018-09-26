@@ -14,3 +14,7 @@ def register(req):
 # localhost/musicians/login/
 def login(req):
 	return render(req, 'html/login.html')
+
+# localhost/musicians/logout/
+def logout(req):
+	pass
