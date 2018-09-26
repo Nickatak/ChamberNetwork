@@ -10,3 +10,7 @@ def add(req):
 # localhost/performances/performance/[id]/
 def performance(req):
 	return render(req, 'html/performance.html')
+
+# localhost/performances/calendar/
+def calendar(req):
+	return render(req, 'html/calendar.html')
