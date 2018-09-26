@@ -10,3 +10,7 @@ def welcome(req):
 # localhost/musicians/register/
 def register(req):
 	return render(req, 'html/register.html')
+
+# localhost/musicians/login/
+def login(req):
+	return render(req, 'html/login.html')
