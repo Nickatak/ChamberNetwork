@@ -28,6 +28,8 @@ Parts list:
 	- Views necessary:
 		- [x] Welcome page (localhost/musicians/welcome/)
 
+		- [ ] FAQ (localhost/musicians/faq/)
+
 		- [x] Register page (localhost/musicians/register/)
 			- [ ] Form
 				- [ ] Field for first name
