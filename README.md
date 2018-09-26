@@ -26,8 +26,9 @@ Parts list:
 			- [ ] Updated at (datetime)
 
 	- Views necessary:
-		- [ ] Welcome page (localhost/musicians/welcome/)
-		- [ ] Register page (localhost/musicians/register/)
+		- [x] Welcome page (localhost/musicians/welcome/)
+
+		- [x] Register page (localhost/musicians/register/)
 			- [ ] Form
 				- [ ] Field for first name
 				- [ ] Field for last name
@@ -41,7 +42,7 @@ Parts list:
 			- [ ] Link to Register (active)
 			- [ ] Link to Login 
 
-		- [ ] Login page (localhost/musicians/login/)
+		- [x] Login page (localhost/musicians/login/)
 			- [ ] Login form 
 				- [ ] Email field
 				- [ ] Password field
@@ -50,10 +51,10 @@ Parts list:
 			- [ ] Link to Register
 			- [ ] Link to Login (active)
 
-		- [ ] Logout Musician (not a page, just a view) (localhost/musicians/logout/)
+		- [x] Logout Musician (not a page, just a view) (localhost/musicians/logout/)
 			- [ ] Logout Musician and redirect to login page
 
-		- [ ] Individual Musician page (localhost/musicians/musician/[id]/)
+		- [x] Individual Musician page (localhost/musicians/musician/[id]/)
 			- [ ] Display musician information (card)
 				- [ ] First name
 				- [ ] Last name
@@ -69,7 +70,7 @@ Parts list:
 			- [ ] Link to Calendar page
 			- [ ] Link to Logout 
 
-		- [ ] Musician Dashboard page (localhost/musicians/dashboard/)
+		- [x] Musician Dashboard page (localhost/musicians/dashboard/)
 			- [ ] Text that says "Welcome [Musician first name]!"
 			- [ ] Display Musician information (card):
 				- [ ] Last name
