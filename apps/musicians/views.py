@@ -20,9 +20,9 @@ def logout(req):
 	pass
 
 # localhost/musicians/musician/
-def login(req):
+def musician(req):
 	return render(req, 'html/musician.html')
 
 # localhost/musicians/dashboard/
-def login(req):
+def dashboard(req):
 	return render(req, 'html/dashboard.html')
