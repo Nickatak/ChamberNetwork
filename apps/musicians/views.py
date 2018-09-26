@@ -19,6 +19,10 @@ def login(req):
 def logout(req):
 	pass
 
+# localhost/musicians/musician/
+def login(req):
+	return render(req, 'html/musician.html')
+
 # localhost/musicians/dashboard/
 def login(req):
 	return render(req, 'html/dashboard.html')
