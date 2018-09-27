@@ -1,3 +1,66 @@
-h4 {
-	color: blue;
+.card-header, .card-footer {
+	/*background-color: #F5F5F5;*/
+	/*background-color: #f6f4ec;*/
+	/*background-color: #e3f2fd;*/
+	/*border-bottom: none;*/
+	/*background-color: #e3f2fd;*/
+	background-color: #fffef7;
 }
+
+.card-body, .card-footer {
+	/*background-color: #F5F5F5;*/
+	/*background-color: #f6f4ec;*/
+	background-color: #fffef7;
+}
+
+.brand {
+	margin-bottom: 0px;
+}
+
+h5.brand {
+	color: #e3f2fd;
+	/*color: white;*/
+	/*green:
+	color: #67c385;*/
+	/*font-weight: bold;*/
+	font-family: "Arial";
+	/*font-family: "Georgia";*/
+}
+
+/*.navbar-brand {
+	border-right: 3px solid;
+}*/
+
+.container-fluid {
+	background-color: #fffef7;
+}
+
+.navbar {
+	background-color: #2c3b4b;
+}
+
+a.nav-link {
+	color: white;
+}
+
+a.active {
+	color: #808080;
+}
+
+.navbar .navbar-nav li a:hover {
+	color: #808080;
+}
+
+
+
+/*off-white*/
+/*#fffef7*/
+
+/*gray:
+#2c3b4b*/
+
+/*Darker off white:*/
+/*#f6f4ec*/
+
+/*light blue:
+#e3f2fd*/
