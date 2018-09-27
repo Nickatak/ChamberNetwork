@@ -27,8 +27,12 @@ def musician(req):
 def dashboard(req):
 	return render(req, 'html/dashboard.html')
 
-# localhost/musicians/faq/
+# localhost/musicians/about/
 def about(req):
 	return render(req, 'html/about.html')
+
+# localhost/musicians/contact/
+def contact(req):
+	return render(req, 'html/contact.html')
 
 
