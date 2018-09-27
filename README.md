@@ -162,15 +162,6 @@ Parts list:
 		- [ ] Updated at
 
 	- [ ] Views necessary:
-		- [ ] Instruments page (localhost/instruments/) (static)
-			- [ ] List of all instruments in db (alpha)
-				- [ ] Each instrument name is a link to individual instrument page
-			- [ ] Link to Home page
-			- [ ] Link to Add Performance page
-			- [ ] Link to Instruments page (active)
-			- [ ] Link to Calendar page
-			- [ ] Link to Logout
-
 		- [ ] Individual instrument page (localhost/performances/instruments/[id]/) (static)
 			- [ ] Text that says "Page for [instrument]"
 			- [ ] List of all musicians in db who play instrument (only first, last names)
