@@ -162,7 +162,7 @@ Parts list:
 		- [ ] Updated at
 
 	- [ ] Views necessary:
-		- [ ] Individual instrument page (localhost/performances/instruments/[id]/) (static)
+		- [x] Individual instrument page (localhost/performances/instruments/[id]/) (static)
 			- [ ] Text that says "Page for [instrument]"
 			- [ ] List of all musicians in db who play instrument (only first, last names)
 			- [ ] Each musician name is a link to that musician's individual page
