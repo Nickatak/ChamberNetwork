@@ -28,7 +28,7 @@ def dashboard(req):
 	return render(req, 'html/dashboard.html')
 
 # localhost/musicians/faq/
-def dashboard(req):
+def faq(req):
 	return render(req, 'html/faq.html')
 
 
