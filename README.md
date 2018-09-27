@@ -28,7 +28,9 @@ Parts list:
 	- Views necessary:
 		- [x] Welcome page (localhost/musicians/welcome/)
 
-		- [ ] About (localhost/musicians/about/)
+		- [ ] About Us (localhost/musicians/about/)
+
+		- [ ] Contact Us (localhost/musicians/contact/)
 
 		- [x] Register page (localhost/musicians/register/)
 			- [ ] Form
