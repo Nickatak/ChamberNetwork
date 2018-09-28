@@ -11,6 +11,10 @@ def welcome(req):
 def register_member(req):
 	return render(req, 'html/register_member.html')
 
+# localhost/musicians/register_coach/
+def register_coach(req):
+	return render(req, 'html/register_coach.html')
+
 # localhost/musicians/login/
 def login(req):
 	return render(req, 'html/login.html')
