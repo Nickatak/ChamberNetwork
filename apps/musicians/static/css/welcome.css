@@ -1,35 +1,11 @@
-.card-header, .card-footer {
-	/*background-color: #F5F5F5;*/
-	/*background-color: #f6f4ec;*/
-	/*background-color: #e3f2fd;*/
-	/*border-bottom: none;*/
-	/*background-color: #e3f2fd;*/
-	background-color: #fffef7;
-}
-
-.card-body, .card-footer {
-	/*background-color: #F5F5F5;*/
-	/*background-color: #f6f4ec;*/
-	background-color: #fffef7;
-}
-
 .brand {
 	margin-bottom: 0px;
 }
 
 h5.brand {
 	color: #e3f2fd;
-	/*color: white;*/
-	/*green:
-	color: #67c385;*/
-	/*font-weight: bold;*/
 	font-family: "Arial";
-	/*font-family: "Georgia";*/
 }
-
-/*.navbar-brand {
-	border-right: 3px solid;
-}*/
 
 .container-fluid {
 	background-color: #fffef7;
@@ -51,6 +27,46 @@ a.active {
 	color: #808080;
 }
 
+.paral {
+min-height: 800px;
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+}
+ 
+/* Paragragh for Parallax Section */ 
+.paral p {
+font-size: 24px;
+color:#f5f5f5;
+text-align: center;
+line-height: 60px;
+}
+ 
+/* Heading for Parallax Section */ 
+.paral h1 {
+color: rgba(255, 255, 255, 0.8);
+font-size: 60px;
+text-align: center;
+padding-top: 300px;
+line-height: 100px;
+}
+ 
+/* Image for Parallax Section */ 
+.paralsec {
+background-image: url("1.jpg");
+}
+ 
+.paralsec1 {
+background-image: url("2.jpg");}
+ 
+.paralsec2 {
+background-image: url("3.jpg");
+}
+ 
+/* Add more images for more sections */
+ 
+/* Remove Bottom Margin from Jumbotron */
+.jumbotron{margin-bottom: 0;}
 
 
 /*off-white*/
