@@ -32,7 +32,7 @@ Parts list:
 
 		- [x] Contact Us (localhost/musicians/contact/)
 
-		- [x] Register page (localhost/musicians/register/)
+		- [x] Register member page (localhost/musicians/register_member/)
 			- [ ] Form
 				- [ ] Field for first name
 				- [ ] Field for last name
@@ -45,6 +45,20 @@ Parts list:
 			- [ ] Render Login upon successful registration
 			- [ ] Link to Register (active)
 			- [ ] Link to Login 
+
+		- [x] Register coach page (localhost/musicians/register_coach/)
+			- [ ] Form
+				- [ ] Field for first name
+				- [ ] Field for last name
+				- [ ] Field for email
+				- [ ] Field for password
+				- [ ] Drop-down menu for primary instrument
+				- [ ] Drop-down menu for secondary instrument
+				- [ ] Submit button
+			- [ ] Validations for all fields
+			- [ ] Render Login upon successful registration
+			- [ ] Link to Register (active)
+			- [ ] Link to Login
 
 		- [x] Login page (localhost/musicians/login/)
 			- [ ] Login form 
