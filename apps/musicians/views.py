@@ -7,9 +7,9 @@ from django.shortcuts import render
 def welcome(req):
 	return render(req, 'html/welcome.html')
 
-# localhost/musicians/register/
-def register(req):
-	return render(req, 'html/register.html')
+# localhost/musicians/register_member/
+def register_member(req):
+	return render(req, 'html/register_member.html')
 
 # localhost/musicians/login/
 def login(req):
