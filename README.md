@@ -27,6 +27,7 @@ Parts list:
 
 	- Views necessary:
 		- [x] Welcome page (localhost/musicians/welcome/)
+			- [x] Background images parallax
 			- [x] Navbar top
 				- [x] Link to welcome (active)
 				- [x] Link to register_member 
@@ -38,6 +39,17 @@ Parts list:
 				- [x] Link to contact
 
 		- [x] About Us (localhost/musicians/about/)
+			- [ ] Display pertinent text
+			- [ ] Background image
+			- [ ] Navbar top
+				- [ ] Link to welcome (active)
+				- [ ] Link to register_member 
+				- [ ] Link to register_coach
+				- [ ] Link to calendar
+				- [ ] Link to login
+			- [ ] Navbar bottom
+				- [ ] Link to about
+				- [ ] Link to contact
 
 		- [x] Contact Us (localhost/musicians/contact/)
 
