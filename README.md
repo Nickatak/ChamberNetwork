@@ -2,14 +2,86 @@ Houston Chamber Network - initial project
 
 Parts list:
 
-- Musicians (app)
+- Public (app)
 	- Functionalities necessary:
 		- [ ] Register Musician
+		- [ ] Register Coach
+
+	- Views necessary:
+		- [x] Welcome page (localhost/public/welcome/)
+			- [x] Background images parallax
+			- [x] Navbar top
+				- [x] Link to welcome (active)
+				- [x] Link to register_member 
+				- [x] Link to register_coach
+				- [x] Link to calendar
+				- [x] Link to login
+			- [x] Navbar bottom
+				- [x] Link to about
+				- [x] Link to contact
+
+		- [x] About (localhost/public/about/)
+			- [ ] Display pertinent text
+				- [ ] Links w/in text
+			- [x] Background image
+			- [x] Navbar top
+				- [x] Link to welcome (active)
+				- [x] Link to register_member 
+				- [x] Link to register_coach
+				- [x] Link to calendar
+				- [x] Link to login
+			- [x] Navbar bottom
+				- [x] Link to about
+				- [x] Link to contact
+
+		- [x] Contact Us (localhost/public/contact/)
+			- [ ] Display pertinent text
+			- [x] Background image
+			- [x] Navbar top
+				- [x] Link to welcome (active)
+				- [x] Link to register_member 
+				- [x] Link to register_coach
+				- [x] Link to calendar
+				- [x] Link to login
+			- [x] Navbar bottom
+				- [x] Link to about
+				- [x] Link to contact
+
+		- [x] Register member page (localhost/public/register_member/)
+			- [ ] Form
+				- [ ] Field for first name
+				- [ ] Field for last name
+				- [ ] Field for email
+				- [ ] Field for password
+				- [ ] Drop-down menu for primary instrument
+				- [ ] Drop-down menu for secondary instrument
+				- [ ] Submit button
+			- [ ] Validations for all fields
+			- [ ] Render Login upon successful registration
+			- [ ] Link to Register (active)
+			- [ ] Link to Login
+
+		- [x] Register coach page (localhost/public/register_coach/)
+			- [ ] Form
+				- [ ] Field for first name
+				- [ ] Field for last name
+				- [ ] Field for email
+				- [ ] Field for password
+				- [ ] Drop-down menu for primary instrument
+				- [ ] Drop-down menu for secondary instrument
+				- [ ] Submit button
+			- [ ] Validations for all fields
+			- [ ] Render Login upon successful registration
+			- [ ] Link to Register (active)
+			- [ ] Link to Login
+
+- Musicians (app)
+	- Functionalities necessary:
 		- [ ] Login Musician
 		- [ ] Logout Musician (must be possible on multiple pages)
-		- [ ] Edit Musician information [TODO]
-		- [ ] View individual musician details
-		- [ ] Dashboard page for navigation around entire site (think about this)
+		- [ ] Individual musician details
+		- [ ] Dashboard 
+			 [ ] Edit Musician information [TODO]
 
 	- Information necessary:
 		- Musician model
@@ -26,61 +98,6 @@ Parts list:
 			- [ ] Updated at (datetime)
 
 	- Views necessary:
-		- [x] Welcome page (localhost/musicians/welcome/)
-			- [x] Background images parallax
-			- [x] Navbar top
-				- [x] Link to welcome (active)
-				- [x] Link to register_member 
-				- [x] Link to register_coach
-				- [x] Link to calendar
-				- [x] Link to login
-			- [x] Navbar bottom
-				- [x] Link to about
-				- [x] Link to contact
-
-		- [x] About Us (localhost/musicians/about/)
-			- [ ] Display pertinent text
-			- [ ] Background image
-			- [ ] Navbar top
-				- [ ] Link to welcome (active)
-				- [ ] Link to register_member 
-				- [ ] Link to register_coach
-				- [ ] Link to calendar
-				- [ ] Link to login
-			- [ ] Navbar bottom
-				- [ ] Link to about
-				- [ ] Link to contact
-
-		- [x] Contact Us (localhost/musicians/contact/)
-
-		- [x] Register member page (localhost/musicians/register_member/)
-			- [ ] Form
-				- [ ] Field for first name
-				- [ ] Field for last name
-				- [ ] Field for email
-				- [ ] Field for password
-				- [ ] Drop-down menu for primary instrument
-				- [ ] Drop-down menu for secondary instrument
-				- [ ] Submit button
-			- [ ] Validations for all fields
-			- [ ] Render Login upon successful registration
-			- [ ] Link to Register (active)
-			- [ ] Link to Login 
-
-		- [x] Register coach page (localhost/musicians/register_coach/)
-			- [ ] Form
-				- [ ] Field for first name
-				- [ ] Field for last name
-				- [ ] Field for email
-				- [ ] Field for password
-				- [ ] Drop-down menu for primary instrument
-				- [ ] Drop-down menu for secondary instrument
-				- [ ] Submit button
-			- [ ] Validations for all fields
-			- [ ] Render Login upon successful registration
-			- [ ] Link to Register (active)
-			- [ ] Link to Login
-
 		- [x] Login page (localhost/musicians/login/)
 			- [ ] Login form 
 				- [ ] Email field
