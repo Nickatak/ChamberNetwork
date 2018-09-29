@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.public',
     'apps.musicians',
     'apps.performances',
     'apps.instruments',
