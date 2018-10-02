@@ -41,3 +41,35 @@ p {
 	top: 60px;
 	text-align: left;
 }
+
+/*Footer:*/
+footer {
+	background-color: #2c3b4b;
+	padding-top: 30px;
+	padding-bottom: 4px;
+	padding-left: 30px;
+}
+
+.container2 {
+	text-align: center;
+}
+
+.container2 p {
+	color: white;
+}
+
+.container1 h5 {
+	color: white;
+}
+
+.container1 h4 {
+	color: white;
+}
+
+.container1 p {
+	color: white;
+}
+
+.container1 .nav-link a:hover {
+	color: #808080;
+}
