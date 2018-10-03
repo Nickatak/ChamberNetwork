@@ -16,9 +16,9 @@ Parts list:
 				- [x] Link to register_coach
 				- [x] Link to calendar
 				- [x] Link to login
-			- [x] Navbar bottom
+			- [x] Footer
 				- [x] Link to about
-				- [x] Link to contact
+				- [x] Contact info
 
 		- [x] About (localhost/public/about/)
 			- [ ] Display pertinent text
@@ -30,9 +30,9 @@ Parts list:
 				- [x] Link to register_coach
 				- [x] Link to calendar
 				- [x] Link to login
-			- [x] Navbar bottom
+			- [x] Footer
 				- [x] Link to about
-				- [x] Link to contact
+				- [x] Contact info
 
 		- [x] Register member page (localhost/public/register_member/)
 			- [ ] Form
