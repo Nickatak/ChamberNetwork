@@ -34,19 +34,6 @@ Parts list:
 				- [x] Link to about
 				- [x] Link to contact
 
-		- [x] Contact Us (localhost/public/contact/)
-			- [ ] Display pertinent text
-			- [x] Background image
-			- [x] Navbar top
-				- [x] Link to welcome (active)
-				- [x] Link to register_member 
-				- [x] Link to register_coach
-				- [x] Link to calendar
-				- [x] Link to login
-			- [x] Navbar bottom
-				- [x] Link to about
-				- [x] Link to contact
-
 		- [x] Register member page (localhost/public/register_member/)
 			- [ ] Form
 				- [ ] Field for first name
