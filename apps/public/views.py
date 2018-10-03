@@ -17,7 +17,3 @@ def register_coach(req):
 # localhost/public/about/
 def about(req):
 	return render(req, 'html/about.html')
-
-# localhost/public/contact/
-def contact(req):
-	return render(req, 'html/contact.html')
