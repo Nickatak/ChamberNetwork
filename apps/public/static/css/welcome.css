@@ -108,9 +108,12 @@ footer {
 	color: white;
 }
 
-.container1 a.footer-links:hover {
-	color: #808080;
-	text-decoration: none;
+.footer-links li a:hover {
+    text-decoration: none;
+}
+
+.footer-links li a h5:hover {
+    color: #808080;
 }
 
 /*Problem: can't get hover to work on footer links*/
