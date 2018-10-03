@@ -108,9 +108,10 @@ footer {
 	color: white;
 }
 
-.container1 .nav-link a:hover {
+.container1 a.footer-links:hover {
 	color: #808080;
+	text-decoration: none;
 }
 
-/*Problem: can't get hover to work on CONTACT US*/
+/*Problem: can't get hover to work on footer links*/
 
