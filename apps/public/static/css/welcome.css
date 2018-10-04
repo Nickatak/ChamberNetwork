@@ -25,14 +25,14 @@ a.active {
 }
 
 /*Main container:*/
-.container-fluid {
+/*.container-fluid {
 	background-color: #fffef7;
-}
+}*/
 
-h2 {
+/*h2 {
 	padding-bottom: 40px;
 	font-style: oblique;
-}
+}*/
 
 /*Parallax:*/
 .paral {
@@ -61,18 +61,18 @@ line-height: 100px;
  
 /* Image for Parallax Section */ 
 .paralsec1 {
-background-image: url("2.jpg");
+background-image: url("/static/images/2.jpg");
 }
  
 .paralsec2 {
-background-image: url("8.jpg");}
+background-image: url("/static/images/8.jpg");}
  
 .paralsec3 {
-background-image: url("3.jpg");
+background-image: url("/static/images/3.jpg");
 }
 
 .paralsec4 {
-background-image: url("10.jpg");
+background-image: url("/static/images/10.jpg");
 }
 
 /*Need to load images from static folder*/
