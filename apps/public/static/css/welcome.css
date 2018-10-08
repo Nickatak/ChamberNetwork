@@ -35,6 +35,10 @@ a.active {
 }*/
 
 /*Parallax:*/
+.parallax {
+	padding: 0;
+}
+
 .paral {
 min-height: 800px;
 background-attachment: fixed;
