@@ -69,6 +69,12 @@ footer {
 	color: white;
 }
 
-.container1 .nav-link a:hover {
-	color: #808080;
+.footer-links li a:hover {
+    text-decoration: none;
+    /*border-bottom: 6px solid white;*/
+}
+
+.footer-links li a h5:hover {
+    color: #808080;
+    /*border-bottom: 3px solid white;*/
 }

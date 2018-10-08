@@ -1,3 +1,138 @@
-h4 {
-	color: blue;
+
+/*navbar:*/
+.brand {
+	margin-bottom: 0px;
+}
+
+h5.brand {
+	color: #e3f2fd;
+	font-family: "Arial";
+}
+
+.navbar {
+	background-color: #2c3b4b;
+}
+
+a.nav-link {
+	color: white;
+}
+
+a.active {
+	color: #808080;
+}
+
+.navbar .navbar-nav li a:hover {
+	color: #808080;
+}
+
+
+/*main container:*/
+body, html{
+    background-color: #fffef7; 
+}
+
+.main{
+ 	margin:100px 15px;
+}
+
+.form-group{
+	margin-bottom: 20px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+#button {
+    border: 1px solid #ccc;
+    margin-top: 28px;
+    padding: 6px 12px;
+    color: #666;
+    text-shadow: 0 1px #fff;
+    cursor: pointer;
+    -moz-border-radius: 3px 3px;
+    -webkit-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    -moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    background: #f5f5f5;
+    background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+    background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
+}
+.main-center{
+	border-radius: 15px;
+ 	margin: 0 auto;
+ 	width: 600px;
+    padding: 40px 80px;
+	/*background-color: linear-gradient (#2c3b4b, #808080);*/
+	background: linear-gradient(to bottom right, #2c3b4b, #808080);
+	    color: white;
+    text-shadow: none;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+}
+
+.main-center h5 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+span.input-group-addon i {
+    color: #009edf;
+    font-size: 17px;
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+
+/*Footer:*/
+footer {
+	background-color: #2c3b4b;
+	padding-top: 30px;
+	padding-bottom: 4px;
+	padding-left: 30px;
+}
+
+.container2 {
+	text-align: center;
+}
+
+.container2 p {
+	color: white;
+}
+
+.container1 h5 {
+	color: white;
+}
+
+.container1 h4 {
+	color: white;
+}
+
+.container1 p {
+	color: white;
+}
+
+.footer-links li a:hover {
+    text-decoration: none;
+    /*border-bottom: 6px solid white;*/
+}
+
+.footer-links li a h5:hover {
+    color: #808080;
+    /*border-bottom: 3px solid white;*/
 }
