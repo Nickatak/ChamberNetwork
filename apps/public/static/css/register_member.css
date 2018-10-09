@@ -25,56 +25,36 @@ a.active {
 	color: #808080;
 }
 
+/*Form:*/
 
-/*main container:*/
-body, html{
-    background-color: #fffef7; 
+.flex-container {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	background-color: #fffef7;
+	justify-content: center;
 }
 
-.main{
- 	margin:100px 15px;
-}
-
-.form-group{
-	margin-bottom: 20px;
-}
-
-label{
-	margin-bottom: 15px;
-}
-
-.main-center{
-	border-radius: 15px;
- 	margin: 0 auto;
- 	width: 600px;
-    padding: 40px 80px;
-	/*background-color: linear-gradient (#2c3b4b, #808080);*/
-	background: linear-gradient(to bottom right, #2c3b4b, #808080);
-	    color: white;
-    text-shadow: none;
-	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
-	-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
-	box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
-}
-
-.main-center h5 {
+.flex-container h3 {
 	text-align: center;
-	padding-bottom: 20px;
+	/*padding-bottom: 30px;*/
+	color: #2c3b4b;
 }
 
-span.input-group-addon i {
-    color: #009edf;
-    font-size: 17px;
+.flex-container h5 {
+	color: #2c3b4b;
+	padding-top: 20px;
+	padding-bottom: 10px;
 }
 
-.login-button{
-	margin-top: 5px;
+.col-md-8 {
+	justify-content: center;
 }
 
-.login-register{
-	font-size: 11px;
-	text-align: center;
-}
+/*.panel-heading {
+	border-bottom: 4px solid #2c3b4b;
+}*/
+
+
 
 
 /*Footer:*/

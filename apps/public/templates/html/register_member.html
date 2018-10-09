@@ -52,70 +52,136 @@
             </ul>
         </nav>
 
-        <div class="container-fluid">
-            <div class="row main">
-                <div class="main-login main-center">
-                <h5>MEMBER REGISTRATION FORM</h5>
-                    <form class="" method="post" action="#">
+        <div class="flex-container">
+            <div class="row centered-form">
+                <!-- I made this div in order to center form. Probably a better way: -->
+                <div class="col-md-4"></div>
+
+                <!-- This div contains the actual form: -->
+                <div class="col-md-4">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">MEMBER REGISTRATION FORM</h3>
+                        </div>
+                    </div>
+
+
+                    <!-- I really want a curlicue divider. Like this, but centered and with transparent background: -->
+                    <div class="panel panel-default">
+                       <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
+                    </div>
+
+                    <div class="panel-body">
+                        <h5>Basic information:</h5>
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h5>Address and phone:</h5>
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Street address">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Unit number">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="City">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="State">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Zip code">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Phone number">
+                            </div>
+
+                            
+
+                            <h5>Musical information:</h5>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Primary instrument">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Secondary instrument">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Self rating">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Brief musical bio">
+                            </div>
+
+                             
+
+
+                            
+                            <input type="submit" value="SUBMIT AND PAY REGISTRATION FEE" class="btn btn-info btn-block">
                         
-                        <div class="form-group">
-                            <label for="name" class="cols-sm-2 control-label">Your first name:</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="name" id="name"  placeholder="First name..."/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="name" class="cols-sm-2 control-label">Your last name:</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="name" id="name"  placeholder="Last name..."/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email" class="cols-sm-2 control-label">Your email:</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                                    <input type="text" class="form-control" name="email" id="email"  placeholder="Email..."/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password" class="cols-sm-2 control-label">Password:</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control" name="password" id="password"  placeholder="Password must be at least 8 characters..."/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="confirm" class="cols-sm-2 control-label">Confirm password:</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                    <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm password..."/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group ">
-                            <button class="btn btn-info" type="submit">SUBMIT REGISTRATION FORM</button>
-                        </div>
-                        
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+
+
 
         <footer>
             <div class="container1">
