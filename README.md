@@ -12,11 +12,11 @@ Parts list:
 			- [x] Background images parallax
 			- [x] Navbar top
 				- [x] Link to welcome (active)
-				- [x] Link to register_member 
-				- [x] Link to register_coach
 				- [x] Link to calendar
 				- [x] Link to login
 			- [x] Footer
+				- [x] Link to register_member 
+				- [x] Link to register_coach
 				- [x] Link to about
 				- [x] Contact info
 
@@ -25,17 +25,17 @@ Parts list:
 				- [ ] Links w/in text
 			- [x] Background image
 			- [x] Navbar top
-				- [x] Link to welcome (active)
-				- [x] Link to register_member 
-				- [x] Link to register_coach
+				- [x] Link to welcome
 				- [x] Link to calendar
 				- [x] Link to login
 			- [x] Footer
-				- [x] Link to about
+				- [ ] Link to about (active)
+				- [x] Link to register_member 
+				- [x] Link to register_coach
 				- [x] Contact info
 
 		- [x] Register member page (localhost/public/register_member/)
-			- [ ] Form
+			- [x] Form
 				- [ ] Field for first name
 				- [ ] Field for last name
 				- [ ] Field for email
@@ -43,8 +43,9 @@ Parts list:
 				- [ ] Drop-down menu for primary instrument
 				- [ ] Drop-down menu for secondary instrument
 				- [ ] Submit button
+			- [ ] Send to external site to pay registration fee
 			- [ ] Validations for all fields
-			- [ ] Render Login upon successful registration
+			- [ ] Send email upon successful submission
 			- [ ] Link to Register (active)
 			- [ ] Link to Login
 
