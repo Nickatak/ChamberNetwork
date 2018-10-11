@@ -32,8 +32,8 @@ footer {
 	padding-left: 30px;
 }
 
-.row {
-	width: 100%;
+.footer-row {
+	margin: 0;
 }
 
 #footer-container {
