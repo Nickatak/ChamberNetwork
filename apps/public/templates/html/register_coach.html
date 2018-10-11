@@ -22,7 +22,7 @@
         <link rel="stylesheet" type="text/css" href='{% static "css/register_coach.css" %}'>
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid" name="header">
             <nav class="navbar navbar-expand-sm fixed-top">
 
                 <!-- Logo -->
@@ -53,7 +53,7 @@
                 </ul>
             </nav>
             
-        </div>
+        </div class="container-fluid" name="main-content">
 
 
 
@@ -62,7 +62,35 @@
         </div>
 
 
-        <div>
+        <div class="container-fluid" name="footer">
+            <footer>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="footer-links list-unstyled">
+                            <li>
+                                <a href="/public/about/"><h5>ABOUT US</h5></a>
+                            </li>
+                            <li>
+                                <a href="/public/register_member/"><h5>REGISTER AS MEMBER</h5></a>
+                            </li>
+                            <li>
+                                <a href="/public/register_coach/"><h5>REGISTER AS COACH</h5></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-3">
+                        <h5><strong>CONTACT INFO:</strong></h5>
+                        <p><strong>Email:</strong> michael@hcmn.net</p>
+                        <p><strong>Phone:</strong> (713)555-5555</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <p>© 2019 Ad Astra Web Services</p>
+            </div>
+        </footer>
             
 
         </div>
