@@ -21,9 +21,37 @@
         {% load static %}
         <link rel="stylesheet" type="text/css" href='{% static "css/register_coach.css" %}'>
     </head>
-        <h4>REGISTER COACH</h4>
     <body>
         <div>
+            <nav class="navbar navbar-expand-sm fixed-top">
+
+                <!-- Logo -->
+                <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+
+                <!-- Navbar links -->
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/welcome/">WELCOME</a>
+                    </li>
+                
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/performances/calendar/">PERFORMANCE CALENDAR</a>
+                    </li>
+                </ul>
+
+                <!-- Navbar right -->
+                <ul class="navbar-nav ml-auto">
+                    <form class="form-inline" action="">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Email">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Password">
+                        <button class="btn btn-info" type="submit">LOGIN</button>
+                    </form>
+                    <!-- Link to external login: -->
+                    <!-- <li class="navbar-item">
+                        <a class="nav-link" href="/musicians/login/">LOGIN</a>
+                    </li> -->
+                </ul>
+            </nav>
             
         </div>
 
@@ -36,7 +64,7 @@
 
         <div>
             
-        
+
         </div>
 
     </body>
