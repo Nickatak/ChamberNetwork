@@ -32,6 +32,10 @@ footer {
 	padding-left: 30px;
 }
 
+#footer {
+	padding: 0px;
+}
+
 .container2 {
 	text-align: center;
 }
