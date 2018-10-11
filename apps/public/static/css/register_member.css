@@ -54,9 +54,17 @@ html, body {
 	justify-content: center;
 }
 
-/*.btn {
+.self-rating-text {
+	margin-right: 145px;
+}
+
+.textarea {
+	margin-top: 20px;
+}
+
+.btn-reg {
 	margin-top: 40px;
-}*/
+}
 
 /*.panel-heading {
 	border-bottom: 4px solid #2c3b4b;
