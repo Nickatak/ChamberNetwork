@@ -24,6 +24,10 @@ a.active {
 	color: #808080;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 /*Main container:*/
 /*.container-fluid {
 	background-color: #fffef7;
