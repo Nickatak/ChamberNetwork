@@ -22,46 +22,49 @@
         <link rel="stylesheet" type="text/css" href='{% static "css/register_member.css" %}'>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container-fluid" id="navbar-container">
+            <nav class="navbar navbar-expand-sm fixed-top">
 
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+                <!-- Logo -->
+                <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
 
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link" href="/public/welcome/">WELCOME</a>
-                </li>
-                
-                <li class="navbar-item">
-                    <a class="nav-link" href="/performances/calendar/">PERFORMANCE CALENDAR</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link active" href="/public/register_member/">REGISTER AS MEMBER</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
-                </li>
-            </ul>
+                <!-- Navbar links -->
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/welcome/">WELCOME</a>
+                    </li>
+                    
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/performances/calendar/">PERFORMANCE CALENDAR</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link active" href="/public/register_member/">REGISTER AS MEMBER</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
+                    </li>
+                </ul>
 
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
+                <!-- Navbar right -->
+                <ul class="navbar-nav ml-auto">
 
-                <!-- Inline login form: -->
-                <!-- <form class="form-inline" action="">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Email">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Password">
-                    <button class="btn btn-info" type="submit">LOGIN</button>
-                </form> -->
+                    <!-- Inline login form: -->
+                    <!-- <form class="form-inline" action="">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Email">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Password">
+                        <button class="btn btn-info" type="submit">LOGIN</button>
+                    </form> -->
 
-                <!-- Link to external login: -->
-                <li class="navbar-item">
-                    <a class="nav-link" href="/musicians/login/">LOGIN</a>
-                </li>
-            </ul>
-        </nav>
+                    <!-- Link to external login: -->
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/musicians/login/">LOGIN</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
-        <div class="flex-container">
+        <div class="container-fluid" id="form-container">
+            <div class="flex-container">
             <div class="row centered-form">
                 <!-- I made this div in order to center form. Probably a better way: -->
                 <div class="col-md-4"></div>
@@ -231,20 +234,18 @@
                 </div>
             </div>
         </div>
-    </div>
 
-
-
-        <footer>
-            <div class="container1">
-                <div class="row">
-                    <div class="col-md-3">
-                        <ul class="footer-links list-unstyled">
-                            <li>
-                                <a href="/public/about/"><h5>ABOUT US</h5></a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="container-fluid" id="footer-container">
+            <footer>
+                <div class="container1">
+                    <div class="row footer-row">
+                        <div class="col-md-3">
+                            <ul class="footer-links list-unstyled">
+                                <li>
+                                    <a href="/public/about/"><h5>ABOUT US</h5></a>
+                                </li>
+                            </ul>
+                        </div>
                     <div class="col-md-6"></div>
                     <div class="col-md-3">
                         <h5><strong>CONTACT INFO:</strong></h5>
@@ -252,12 +253,11 @@
                         <p><strong>Phone:</strong> (713)555-5555</p>
                     </div>
                 </div>
-            </div>
-            <div class="container2">
-                <p>© 2019 Ad Astra Web Services</p>
-            </div>
-        </footer>
-
-
+                <div class="container2">
+                    <p>© 2019 Ad Astra Web Services</p>
+                </div>
+            </footer>
+        </div>
+            
     </body>
 </html>
