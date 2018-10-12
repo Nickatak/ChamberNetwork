@@ -47,7 +47,7 @@ Parts list:
 			- [ ] Validations for all fields
 			- [ ] Send email upon successful submission
 			- [ ] Link to Register (active)
-			- [ ] Link to Login
+			- [ ] Link to Login  
 
 		- [x] Register coach page (localhost/public/register_coach/)
 			- [ ] Form
@@ -62,6 +62,15 @@ Parts list:
 			- [ ] Render Login upon successful registration
 			- [ ] Link to Register (active)
 			- [ ] Link to Login
+
+		- [ ] Login page (localhost/public/login/)
+			- [ ] Login form
+				- [ ] Field for email
+				- [ ] Field for password
+				- [ ] Validations
+			- [ ] Render dashboard page upon successful login
+			- [ ] Navbar top
+			- [ ] Footer bottom
 
 - Musicians (app)
 	- Functionalities necessary:

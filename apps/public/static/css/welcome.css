@@ -1,4 +1,4 @@
-/*Styles for navbar:*/
+/*Navbar:*/
 .navbar {
 	background-color: #2c3b4b;
 }
@@ -24,22 +24,8 @@ a.active {
 	color: #808080;
 }
 
-html, body {
-    overflow-x: hidden;
-}
-
-/*Main container:*/
-/*.container-fluid {
-	background-color: #fffef7;
-}*/
-
-/*h2 {
-	padding-bottom: 40px;
-	font-style: oblique;
-}*/
-
-/*Parallax:*/
-.parallax {
+/*Parallax-container:*/
+#parallax-container {
 	padding: 0;
 }
 
@@ -84,12 +70,18 @@ background-image: url("/static/images/3.jpg");
 background-image: url("/static/images/10.jpg");
 }
 
-/*Need to load images from static folder*/
-
 /* Remove Bottom Margin from Jumbotron */
 .jumbotron{margin-bottom: 0;}
 
 /*Footer:*/
+#footer-container {
+	padding: 0px;
+}
+
+.footer-row {
+	margin: 0;
+}
+
 footer {
 	background-color: #2c3b4b;
 	padding-top: 30px;
