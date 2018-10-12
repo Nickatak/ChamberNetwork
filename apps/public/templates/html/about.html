@@ -22,40 +22,49 @@
         <link rel="stylesheet" type="text/css" href='{% static "css/about.css" %}'>
     </head>
     <body>
-        <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container-fluid" id="navbar-container">
+            <nav class="navbar navbar-expand-sm fixed-top">
 
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+                <!-- Logo -->
+                <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
 
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link" href="/public/welcome/">WELCOME</a>
-                </li>
-                
-                <li class="navbar-item">
-                    <a class="nav-link" href="/performances/calendar/">PERFORMANCE CALENDAR</a>
-                </li>
-            </ul>
+                <!-- Navbar links -->
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/welcome/">WELCOME</a>
+                    </li>
+                    
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/performances/calendar/">PERFORMANCE CALENDAR</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/register_member/">REGISTER AS MEMBER</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
+                    </li>
+                </ul>
 
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
-                <form class="form-inline" action="">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Email">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Password">
-                    <button class="btn btn-info" type="submit">LOGIN</button>
-                </form>
-                <!-- Link to external login: -->
-                <!-- <li class="navbar-item">
-                    <a class="nav-link" href="/musicians/login/">LOGIN</a>
-                </li> -->
-            </ul>
-        </nav>
+                <!-- Navbar right -->
+                <ul class="navbar-nav ml-auto">
 
-        <div class="container-fluid">
-            <div class="container-fluid" style="">
+                    <!-- Inline login form: -->
+                    <!-- <form class="form-inline" action="">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Email">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Password">
+                        <button class="btn btn-info" type="submit">LOGIN</button>
+                    </form> -->
 
-                <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Link to external login: -->
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/musicians/login/">LOGIN</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container-fluid" id="main-container">
+            <div id="mycarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="item active">
                             <img class="img-fluid" src='{% static "images/4.jpg" %}' alt="" class="img-responsive">
@@ -67,25 +76,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
+
         </div>
 
-        <footer>
-            <div class="container1">
-                <div class="row">
-                    <div class="col-md-3">
-                        <ul class="footer-links list-unstyled">
-                            <li>
-                                <a href="/public/about/"><h5>ABOUT US</h5></a>
-                            </li>
-                            <li>
-                                <a href="/public/register_member/"><h5>REGISTER AS MEMBER</h5></a>
-                            </li>
-                            <li>
-                                <a href="/public/register_coach/"><h5>REGISTER AS COACH</h5></a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="container-fluid" id="footer-container">
+            <footer>
+                <div class="container1">
+                    <div class="row footer-row">
+                        <div class="col-md-3">
+                            <ul class="footer-links list-unstyled">
+                                <li>
+                                    <a href="/public/about/"><h5>ABOUT US</h5></a>
+                                </li>
+                            </ul>
+                        </div>
                     <div class="col-md-6"></div>
                     <div class="col-md-3">
                         <h5><strong>CONTACT INFO:</strong></h5>
@@ -93,11 +98,12 @@
                         <p><strong>Phone:</strong> (713)555-5555</p>
                     </div>
                 </div>
-            </div>
-            <div class="container2">
-                <p>© 2019 Ad Astra Web Services</p>
-            </div>
-        </footer>
+                <div class="container2">
+                    <p>© 2019 Ad Astra Web Services</p>
+                </div>
+            </footer>
+            
 
+        </div>
     </body>
 </html>
