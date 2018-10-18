@@ -9,7 +9,7 @@ Parts list:
 		- [ ] Register Supporter
 
 	- Views necessary:
-		- [x] Welcome page (localhost/public/welcome/)
+		- [x] Welcome page (houstonchambermusic.org/public/welcome/)
 			- [x] Background images parallax w/ text and links
 			- [x] Navbar top
 				- [x] Link to Welcome (active)
@@ -21,21 +21,21 @@ Parts list:
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [x] About (localhost/public/about/)
+		- [x] About (houstonchambermusic.org/public/about/)
 			- [ ] Display pertinent text
 				- [ ] Links w/in text
 			- [x] Background image
 			- [x] Navbar top
 				- [x] Link to Welcome 
 				- [x] Link to Register as Member
-				- [x] Link to Register as Coach
+				- [x] Link to Register as CoachI have 
 				- [ ] Link to Receive e-Newsletter
 				- [x] Link to login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [ ] Register Supporter Page (localhost/public/register_supporter)
+		- [ ] Register Supporter Page (houstonchambermusic.org/public/register_supporter)
 			- [ ] Form
 				- [ ] First name
 				- [ ] Last name
@@ -60,7 +60,7 @@ Parts list:
 				- [ ] Link to About Us
 				- [ ] Contact info
 
-		- [x] Register member page (localhost/public/register_member/)
+		- [x] Register member page (houstonchambermusic.org/public/register_member/)
 			- [ ] "How membership works" explanation
 			- [x] Form
 				- [ ] First name
@@ -90,7 +90,7 @@ Parts list:
 				- [ ] Link to About Us
 				- [ ] Contact info  
 
-		- [x] Register coach page (localhost/public/register_coach/)
+		- [x] Register coach page (houstonchambermusic.org/public/register_coach/)
 			- [ ] Form
 				- [ ] First name
 				- [ ] Last name
@@ -119,7 +119,7 @@ Parts list:
 				- [ ] Link to About Us
 				- [ ] Contact info
 
-		- [ ] Success page (localhost/public/success)
+		- [ ] Success page (houstonchambermusic.org/public/success)
 			- [ ] Success message(s) 
 				- [ ] For member
 				- [ ] For coach
@@ -134,7 +134,7 @@ Parts list:
 				- [ ] Link to About Us
 				- [ ] Contact info
 
-		- [ ] Login page (localhost/public/login/)
+		- [ ] Login page (houstonchambermusic.org/public/login/)
 			- [ ] Login form
 				- [ ] Field for email
 				- [ ] Field for password
@@ -172,7 +172,7 @@ Parts list:
 			- [ ] Updated at (datetime)
 
 	- Views necessary:
-		- [x] Musician Dashboard page (localhost/musicians/dashboard/)
+		- [x] Musician Dashboard page (houstonchambermusic.org/musicians/dashboard/)
 			- [ ] Text that says "Welcome [Musician first name]!"
 			- [ ] Display Musician information (card):
 				- [ ] Full name
@@ -194,7 +194,7 @@ Parts list:
 				- [ ] Link to About Us
 				- [ ] Contact info
 
-		- [x] Individual Musician page (localhost/musicians/musician/[id]/)
+		- [x] Individual Musician page (houstonchambermusic.org/musicians/musician/[id]/)
 			- [ ] Display musician information (card)
 				- [ ] First name
 				- [ ] Last name
@@ -215,7 +215,7 @@ Parts list:
 				- [ ] Link to About Us
 				- [ ] Contact info
 
-		- [x] Logout (not a page, just a view) (localhost/musicians/logout/)
+		- [ ] Logout (not a page, just a view) (houstonchambermusic.org/musicians/logout/)
 			- [ ] Logout Musician and redirect to login page 
 
 - Performances (app)
@@ -242,7 +242,7 @@ Parts list:
 			- [ ] Updated at
 
 	- Views necessary:
-		- [ ] Add performance page (localhost/performances/add)
+		- [ ] Add performance page (houstonchambermusic.org/performances/add)
 			- [ ] Form to add performance:
 				- [ ] Title
 				- [ ] Description
@@ -267,7 +267,7 @@ Parts list:
 				- [ ] Link to About Us
 				- [ ] Contact info
 
-		- [ ] Individual performance page (localhost/performances/performance/[id]/)
+		- [ ] Individual performance page (houstonchambermusic.org/performances/performance/[id]/)
 			- [ ] Performance info (card)
 				- [ ] Title 
 				- [ ] Description
@@ -292,7 +292,7 @@ Parts list:
 				- [ ] Link to About Us
 				- [ ] Contact info
 
-		- [ ] Upcoming performances page (localhost/performances/upcoming/)
+		- [ ] Upcoming performances page (houstonchambermusic.org/performances/upcoming/)
 			- [ ] List of performances, by date
 				- [ ] Title
 				- [ ] Description
@@ -313,7 +313,7 @@ Parts list:
 		- [ ] Updated at
 
 	- [ ] Views necessary:
-		- [x] Individual instrument page (localhost/performances/instruments/[name]/) 
+		- [x] Individual instrument page (houstonchambermusic.org/performances/instruments/[name]/) 
 			- [ ] Text that says "Page for [instrument]"
 			- [ ] List of all musicians in db who play instrument (first name, last name, rating)
 			- [ ] Each musician name is a link to that musician's individual page
