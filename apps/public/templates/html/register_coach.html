@@ -33,15 +33,14 @@
                     <li class="navbar-item">
                         <a class="nav-link" href="/public/welcome/">WELCOME</a>
                     </li>
-                    
-                    <li class="navbar-item">
-                        <a class="nav-link" href="/performances/calendar/">PERFORMANCE CALENDAR</a>
-                    </li>
                     <li class="navbar-item">
                         <a class="nav-link" href="/public/register_member/">REGISTER AS MEMBER</a>
                     </li>
                     <li class="navbar-item">
                         <a class="nav-link active" href="/public/register_coach/">REGISTER AS COACH</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/register_supporter/">SIGN UP FOR E-NEWSLETTER</a>
                     </li>
                 </ul>
 
@@ -66,14 +65,23 @@
 
         <div class="container-fluid" id="form-container">
             <div class="row" id="form-itself">
+
+                <!-- empty div for spacing: -->
                 <div class="col-md-4"></div>
+
                 <!-- Div containing actual form: -->
                 <div class="col-md-4" id="inner-form-container">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">COACH REGISTRATION FORM</h3>
+                            <h3 class="panel-title">COACH REGISTRATION FORM<sup>*</sup></h3>
                         </div>
                     </div>
+
+                    <!-- Panel for curlicue divider: -->
+                    <div class="panel panel-default">
+                        <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
+                    </div>
+
                     <div class="panel-body">
                         <form role="form" action="/public/coach/register/" method="POST">
                             <h5>Basic information:</h5>
@@ -91,9 +99,6 @@
                                 </div>
                             </div>
                         
-
-
-
                     </div>
                     
 

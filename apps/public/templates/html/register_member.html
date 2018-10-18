@@ -33,15 +33,14 @@
                     <li class="navbar-item">
                         <a class="nav-link" href="/public/welcome/">WELCOME</a>
                     </li>
-                    
-                    <li class="navbar-item">
-                        <a class="nav-link" href="/performances/calendar/">PERFORMANCE CALENDAR</a>
-                    </li>
                     <li class="navbar-item">
                         <a class="nav-link active" href="/public/register_member/">REGISTER AS MEMBER</a>
                     </li>
                     <li class="navbar-item">
                         <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/register_supporter/">SIGN UP FOR E-NEWSLETTER</a>
                     </li>
                 </ul>
 
@@ -61,32 +60,33 @@
                     </li>
                 </ul>
             </nav>
+            
         </div>
 
         <div class="container-fluid" id="form-container">
-            <div class="flex-container">
-            <div class="row centered-form">
-                <!-- I made this div in order to center form. Probably a better way: -->
+            <div class="row" id="form-itself">
+
+                <!-- empty div for spacing: -->
                 <div class="col-md-4"></div>
 
                 <!-- This div contains the actual form: -->
-                <div class="col-md-4">
-
+                <div class="col-md-4" id="inner-form-container">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">MEMBER REGISTRATION FORM</h3>
+                            <h3 class="panel-title">MEMBER REGISTRATION FORM<sup>*</sup></h3>
                         </div>
                     </div>
 
-
-                    <!-- I really want a curlicue divider. Like this, but centered and with transparent background: -->
+                    <!-- Panel for curlicue divider: -->
                     <div class="panel panel-default">
-                       <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
+                        <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
                     </div>
 
                     <div class="panel-body">
-                        <h5>Basic information:</h5>
-                        <form role="form">
+                        <form role="form" action="/public/member/register/" method="POST">
+
+                            <!-- Basic information section: -->
+                            <h5>Basic information:</h5>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -109,56 +109,60 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                        <!-- TODO: pop up message with pw requirements -->
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                        <input type="password" name="confirm_password" id="confirm_password" class="form-control input-sm" placeholder="Confirm Password">
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- Address and phone section: -->
                             <h5>Address and phone:</h5>
                             <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Street address">
+                                <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address">
                             </div>
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Unit number">
+                                        <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit number">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="City">
+                                        <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="State">
+                                        <input type="text" name="state" id="state" class="form-control input-sm" placeholder="State">
                                     </div>
                                 </div>
+                                <!-- TODO: BS probably has special forms for city, state. Maybe even auto-fill based on address. Probably requires an API. -->
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Zip code">
+                                        <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip code">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Phone number">
+                                <input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="Phone number">
                             </div>
+                            <!-- TODO: ditto here. There is probably a script for phone. -->
 
-                            
-
+                            <!-- Section for musical information: -->
+                            <!-- TOFIX: No padding above this section. Why? -->
                             <h5>Musical information:</h5>
-
                             <div class="row">
+                                <!-- TODO: better way to preload instrument names -->
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <select class="form-control" id="primary_instrument" placeholder="Primary instrument">
@@ -176,7 +180,6 @@
                                         </select>
                                     </div>
                                 </div>
-
 
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -198,7 +201,8 @@
                                 </div>
                             </div>
 
-                            <div class="form-check-inline">
+                            <!-- Self-rating: -->
+                            <!-- <div class="form-check-inline">
                                 <label class="form-check-label self-rating-text">Self rating:</label>
                                 <input type="checkbox" class="form-check-input" value="">1</label>
                             </div>
@@ -214,24 +218,33 @@
                                 <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input" value="">4</label>
                             </div>
+
                             <div class="form-check-inline disabled">
                                 <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input" value="">5</label>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" placeholder="Brief musical bio"></textarea>
                             </div>
+                            <!-- TODO: set # of words allowed -->
 
-                             
-
-
-                            
-                            <input type="submit" value="SUBMIT FORM AND PAY REGISTRATION FEE" class="btn btn-reg btn-info btn-block">
-                        
+                            <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="explanation-container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h4><sup>*</sup>What happens after you submit this form?</h4><br>
+                    <p>Pellentesque pharetra augue vel malesuada tincidunt. Suspendisse sapien nunc, semper in nisl id, bibendum volutpat ante. Praesent sed risus mauris. Suspendisse dignissim enim velit, nec congue ligula porta in. Nunc ultrices magna nulla, nec bibendum ex mattis vel. Vestibulum dignissim mauris gravida, dignissim nisi non, feugiat sapien. Nam ac tincidunt sem, ut congue odio. Phasellus viverra aliquet sem non convallis. Fusce vitae tincidunt nulla, eu tempus nibh. Nunc a ante feugiat eros laoreet pharetra at sed nisl. Aliquam a lectus vel mi elementum laoreet eu et mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla consectetur ac est non posuere. Nam luctus ut augue vel semper. Sed varius leo id massa varius gravida ac a odio. </p>
+
+                </div>
+
             </div>
         </div>
 
@@ -254,7 +267,7 @@
                     </div>
                 </div>
                 <div class="container2">
-                    <p>© 2019 Ad Astra Web Services</p>
+                    <p>Web design © 2019 Ad Astra Web Services</p>
                 </div>
             </footer>
         </div>

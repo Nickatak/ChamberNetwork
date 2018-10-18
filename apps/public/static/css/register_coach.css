@@ -32,6 +32,8 @@ a.active {
 #form-container {
 	/*border: 3px solid red;*/
 	margin-top: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 	background-color: #fffef7;
 }
 
