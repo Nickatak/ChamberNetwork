@@ -35,7 +35,7 @@ Parts list:
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [ ] Register Supporter Page (houstonchambermusic.org/public/register_supporter)
+		- [x] Register Supporter Page (houstonchambermusic.org/public/register_supporter)
 			- [ ] Form
 				- [ ] First name
 				- [ ] Last name
