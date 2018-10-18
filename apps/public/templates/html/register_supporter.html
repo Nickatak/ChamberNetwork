@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Houston Chamber Network : Register Coach</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <!-- css file: -->
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href='{% static "css/register_supporter.css" %}'>
+    </head>
+    <body>
+        <div class="container-fluid" id="navbar-container">
+            <nav class="navbar navbar-expand-sm fixed-top">
+
+                <!-- Logo -->
+                <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+
+                <!-- Navbar links -->
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/welcome/">WELCOME</a>
+                    </li>
+                    
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/performances/calendar/">PERFORMANCE CALENDAR</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/public/register_member/">REGISTER AS MEMBER</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link active" href="/public/register_coach/">REGISTER AS COACH</a>
+                    </li>
+                </ul>
+
+                <!-- Navbar right -->
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Inline login form: -->
+                    <!-- <form class="form-inline" action="">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Email">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Password">
+                        <button class="btn btn-info" type="submit">LOGIN</button>
+                    </form> -->
+
+                    <!-- Link to external login: -->
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/musicians/login/">LOGIN</a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </div>
+
+        <div class="container-fluid" id="form-container">
+            <div class="row" id="form-itself">
+                <div class="col-md-4"></div>
+                <!-- Div containing actual form: -->
+                <div class="col-md-4" id="inner-form-container">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">COACH REGISTRATION FORM</h3>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" action="/public/coach/register/" method="POST">
+                            <h5>Basic information:</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+                        
+
+
+
+                    </div>
+                    
+
+                </div>
+                <div class="col-md-4"></div>
+                
+
+
+
+
+            </div>
+        </div>
+
+    
+        <div class="container-fluid" id="footer-container">
+            <footer>
+                <div class="container1">
+                    <div class="row footer-row">
+                        <div class="col-md-3">
+                            <ul class="footer-links list-unstyled">
+                                <li>
+                                    <a href="/public/about/"><h5>ABOUT US</h5></a>
+                                </li>
+                            </ul>
+                        </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-3">
+                        <h5><strong>CONTACT INFO:</strong></h5>
+                        <p><strong>Email:</strong> michael@hcmn.net</p>
+                        <p><strong>Phone:</strong> (713)555-5555</p>
+                    </div>
+                </div>
+                <div class="container2">
+                    <p>© 2019 Ad Astra Web Services</p>
+                </div>
+            </footer>
+            
+
+        </div>
+
+    </body>
+</html>
