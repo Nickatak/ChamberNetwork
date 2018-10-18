@@ -15,7 +15,7 @@ Parts list:
 				- [x] Link to Welcome (active)
 				- [x] Link to Register as Member
 				- [x] Link to Register as Coach
-				- [ ] Link to Receive e-Newsletter
+				- [x] Link to Receive e-Newsletter
 				- [x] Link to Login
 			- [x] Footer
 				- [x] Link to About Us
