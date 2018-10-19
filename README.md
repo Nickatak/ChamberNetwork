@@ -79,18 +79,18 @@ Parts list:
 			- [ ] Validations for all fields
 			- [ ] Send email to Michael upon successful submission
 			- [ ] Render success page upon successful submission
-			- [ ] Navbar top
-				- [ ] Link to Welcome 
-				- [ ] Link to Register as Member (active)
-				- [ ] Link to Register as Coach
-				- [ ] Link to Receive e-Newsletter
-				- [ ] Link to Login
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info  
+			- [x] Navbar top
+				- [x] Link to Welcome 
+				- [x] Link to Register as Member (active)
+				- [x] Link to Register as Coach
+				- [x] Link to Receive e-Newsletter
+				- [x] Link to Login
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info  
 
 		- [x] Register coach page (houstonchambermusic.org/public/register_coach/)
-			- [ ] Form
+			- [x] Form
 				- [ ] First name
 				- [ ] Last name
 				- [ ] Email
@@ -108,30 +108,30 @@ Parts list:
 			- [ ] Validations for all fields
 			- [ ] Send email to Michael upon successful submission
 			- [ ] Render success page upon successul submission
-			- [ ] Navbar top
-				- [ ] Link to Welcome 
-				- [ ] Link to Register as Member 
-				- [ ] Link to Register as Coach (active)
-				- [ ] Link to Receive e-Newsletter
-				- [ ] Link to Login
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Navbar top
+				- [x] Link to Welcome 
+				- [x] Link to Register as Member 
+				- [x] Link to Register as Coach (active)
+				- [x] Link to Receive e-Newsletter
+				- [x] Link to Login
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
-		- [ ] Success page (houstonchambermusic.org/public/success)
+		- [x] Success page (houstonchambermusic.org/public/success)
 			- [ ] Success message(s) 
 				- [ ] For member
 				- [ ] For coach
 				- [ ] For supporter
-			- [ ] Navbar top
-				- [ ] Link to Welcome 
-				- [ ] Link to Register as Member 
-				- [ ] Link to Register as Coach (active)
-				- [ ] Link to Receive e-Newsletter
-				- [ ] Link to Login
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Navbar top
+				- [x] Link to Welcome 
+				- [x] Link to Register as Member 
+				- [x] Link to Register as Coach (active)
+				- [x] Link to Receive e-Newsletter
+				- [x] Link to Login
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 		- [ ] Login page (houstonchambermusic.org/public/login/)
 			- [ ] Login form
