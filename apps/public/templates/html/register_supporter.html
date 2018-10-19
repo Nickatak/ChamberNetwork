@@ -73,10 +73,17 @@
                             <h3 class="panel-title">SIGN UP FOR E-NEWSLETTER</h3>
                         </div>
                     </div>
+
+                    <!-- Panel for curlicue divider: -->
+                    <div class="panel panel-default">
+                        <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="responsive">
+                    </div>
+
+
                     <div class="panel-body">
                         <form role="form" action="/public/coach/register/" method="POST">
-                            <h5>Basic information:</h5>
                             <div class="row">
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
@@ -88,13 +95,49 @@
                                         <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                                </div>
+
+                                <div class="form-group">
+                                <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address">
                             </div>
-                        
 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit number">
+                                    </div>
+                                </div>
 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
+                                    </div>
+                                </div>
 
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="state" id="state" class="form-control input-sm" placeholder="State">
+                                    </div>
+                                </div>
+                                <!-- TODO: BS probably has special forms for city, state. Maybe even auto-fill based on address. Probably requires an API. -->
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip code">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="Phone number">
+                            </div>
+                            <!-- TODO: ditto here. There is probably a script for phone. -->
+
+                            <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
                     </div>
-                    
 
                 </div>
                 <div class="col-md-4"></div>

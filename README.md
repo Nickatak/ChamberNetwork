@@ -36,29 +36,29 @@ Parts list:
 				- [x] Contact info
 
 		- [x] Register Supporter Page (houstonchambermusic.org/public/register_supporter)
-			- [ ] Form
-				- [ ] First name
-				- [ ] Last name
-				- [ ] Email
-				- [ ] Address
-					- [ ] Street number
-					- [ ] Unit
-					- [ ] City
-					- [ ] State
-					- [ ] Zip
-				- [ ] Phone
-				- [ ] Submit button
+			- [x] Form
+				- [x] First name
+				- [x] Last name
+				- [x] Email
+				- [x] Address
+					- [x] Street number
+					- [x] Unit
+					- [x] City
+					- [x] State
+					- [x] Zip
+				- [x] Phone
+				- [x] Submit button
 			- [ ] Validations for all fields
 			- [ ] Render success page upon successful submission
-			- [ ] Navbar top
-				- [ ] Link to Welcome 
-				- [ ] Link to Register as Member
-				- [ ] Link to Register as Coach
-				- [ ] Link to Receive e-Newsletter (active)
-				- [ ] Link to login
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Navbar top
+				- [x] Link to Welcome 
+				- [x] Link to Register as Member
+				- [x] Link to Register as Coach
+				- [x] Link to Receive e-Newsletter (active)
+				- [x] Link to login
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 		- [x] Register member page (houstonchambermusic.org/public/register_member/)
 			- [ ] "What happens after you submit form" explanation
