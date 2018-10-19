@@ -26,8 +26,22 @@ a.active {
 
 /*Main container*/
 
-#main-container h2 {
-	padding-top: 100px;
+.container-fluid {
+	background-color: #fffef7;
+	padding: 0;
+}
+
+h3 {
+	color: white;
+}
+
+p {
+	color: white;
+}
+
+.carousel-caption {
+	top: 60px;
+	text-align: left;
 }
 
 

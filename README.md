@@ -91,20 +91,20 @@ Parts list:
 
 		- [x] Register coach page (houstonchambermusic.org/public/register_coach/)
 			- [x] Form
-				- [ ] First name
-				- [ ] Last name
-				- [ ] Email
-				- [ ] Address
-					- [ ] Street number
-					- [ ] Unit
-					- [ ] City
-					- [ ] State
-					- [ ] Zip
-				- [ ] Load CV
-				- [ ] Brief musical bio
-				- [ ] Drop-down menu for primary instrument
-				- [ ] Drop-down menu for secondary instrument
-				- [ ] Submit button
+				- [x] First name
+				- [x] Last name
+				- [x] Email
+				- [x] Address
+					- [x] Street number
+					- [x] Unit
+					- [x] City
+					- [x] State
+					- [x] Zip
+				- [ ] Attach CV
+				- [x] Brief musical bio
+				- [x] Drop-down menu for primary instrument
+				- [x] Drop-down menu for secondary instrument
+				- [x] Submit button
 			- [ ] Validations for all fields
 			- [ ] Send email to Michael upon successful submission
 			- [ ] Render success page upon successul submission
@@ -119,10 +119,7 @@ Parts list:
 				- [x] Contact info
 
 		- [x] Success page (houstonchambermusic.org/public/success)
-			- [ ] Success message(s) 
-				- [ ] For member
-				- [ ] For coach
-				- [ ] For supporter
+			- [x] Success message
 			- [x] Navbar top
 				- [x] Link to Welcome 
 				- [x] Link to Register as Member 
