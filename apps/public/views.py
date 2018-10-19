@@ -22,4 +22,7 @@ def register_supporter(req):
 def about(req):
 	return render(req, 'html/about.html')
 
+def success(req):
+	return render(req, 'html/success.html')
+
 
