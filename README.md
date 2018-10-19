@@ -61,22 +61,21 @@ Parts list:
 				- [ ] Contact info
 
 		- [x] Register member page (houstonchambermusic.org/public/register_member/)
-			- [ ] "How membership works" explanation
+			- [ ] "What happens after you submit form" explanation
 			- [x] Form
-				- [ ] First name
-				- [ ] Last name
-				- [ ] Email
-				- [ ] Address
-					- [ ] Street number
-					- [ ] Unit
-					- [ ] City
-					- [ ] State
-					- [ ] Zip
-				- [ ] Self-rating (1-5)
-				- [ ] Brief musical bio
-				- [ ] Drop-down menu for primary instrument
-				- [ ] Drop-down menu for secondary instrument
-				- [ ] Submit button
+				- [x] First name
+				- [x] Last name
+				- [x] Email
+				- [x] Address
+					- [x] Street number
+					- [x] Unit
+					- [x] City
+					- [x] State
+					- [x] Zip
+				- [x] Brief musical bio
+				- [x] Drop-down menu for primary instrument
+				- [x] Drop-down menu for secondary instrument
+				- [x] Submit button
 			- [ ] Validations for all fields
 			- [ ] Send email to Michael upon successful submission
 			- [ ] Render success page upon successful submission
