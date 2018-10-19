@@ -150,6 +150,19 @@ Parts list:
 				- [ ] Link to About Us
 				- [ ] Contact info
 
+		- Information necessary
+			- [ ] Supporter model
+				- [ ] First name (text)
+				- [ ] Last name (text)
+				- [ ] Email
+				- [ ] Phone
+				- [ ] Street address
+				- [ ] Unit number
+				- [ ] City
+				- [ ] State 
+				- [ ] Zip
+
+
 - Musicians (app)
 	- Functionalities necessary:
 		- [ ] Login member/coach
@@ -162,6 +175,11 @@ Parts list:
 			- [ ] Last name (text)
 			- [ ] Email (text)
 			- [ ] Password (text)
+			- [ ] Street address
+			- [ ] Unit number
+			- [ ] City
+			- [ ] State
+			- [ ] Zip
 			- [ ] Primary instrument
 			- [ ] Secondary instrument
 			- [ ] Rating (1-5 or coach)

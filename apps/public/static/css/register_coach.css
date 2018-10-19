@@ -30,7 +30,6 @@ a.active {
 }
 
 #form-container {
-	/*border: 3px solid red;*/
 	margin-top: 50px;
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -39,6 +38,32 @@ a.active {
 
 .panel-heading {
 	text-align: center;
+}
+
+#form-container h5 {
+	margin-top: 20px;
+	/*margin-bottom: 5px;*/
+}
+
+.btn-reg {
+	margin-top: 40px;
+}
+
+/*Explanation container:*/
+#explanation-container {
+	background-color: #fffef7;
+}
+
+#explanation-container .col-md-8 {
+	border-top: 1px solid black;
+}
+
+#explanation-container h4 {
+	margin-top: 40px;
+}
+
+#explanation-container p {
+	margin-bottom: 40px;
 }
 
 /*Footer:*/
