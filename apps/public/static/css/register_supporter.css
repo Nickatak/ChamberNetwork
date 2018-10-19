@@ -29,23 +29,6 @@ a.active {
 	color: black;
 }
 
-/*Various attempts to get curlicue to be centered*/
-/*#form-container .col-md-8 {
-	align-content: center;
-}*/
-
-/*.center {
-	display: block;
-	margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}*/
-
-/*.responsive {
-    width: 100%;
-    height: auto;
-}*/
-
 #form-container {
 	margin-top: 50px;
 	padding-top: 50px;
@@ -55,6 +38,10 @@ a.active {
 
 .panel-heading {
 	text-align: center;
+}
+
+.panel-body {
+	padding-top: 40px;
 }
 
 #form-container h5 {
