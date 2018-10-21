@@ -1,3 +1,25 @@
-h4 {
-	color: blue;
+/*Navbar:*/
+.navbar {
+	background-color: #2c3b4b;
+}
+
+.brand {
+	margin-bottom: 0px;
+}
+
+h5.brand {
+	color: #e3f2fd;
+	font-family: "Arial";
+}
+
+a.nav-link {
+	color: white;
+}
+
+a.active {
+	color: #808080;
+}
+
+.navbar .navbar-nav li a:hover {
+	color: #808080;
 }

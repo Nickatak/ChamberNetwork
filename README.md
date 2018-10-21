@@ -130,7 +130,7 @@ Parts list:
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [ ] Login page (houstonchambermusic.org/public/login/)
+		- [x] Login page (houstonchambermusic.org/public/login/)
 			- [ ] Login form
 				- [ ] Field for email
 				- [ ] Field for password
@@ -198,10 +198,10 @@ Parts list:
 				- [ ] Edit function
 			- [ ] Upcoming performances (card):
 				- [ ] Title of performance w/date : Each is a link to individual performance page
-			- [ ] Navbar top
-				- [ ] Link to Dashboard (active)
-				- [ ] Link to Upcoming Performances
-				- [ ] Link to Add Performance
+			- [x] Navbar top
+				- [x] Link to Dashboard (active)
+				- [x] Link to Upcoming Performances
+				- [x] Link to Add Performance
 				- [ ] Drop-down menu for Instruments
 				- [ ] Logout
 			- [ ] Footer
@@ -327,7 +327,7 @@ Parts list:
 		- [ ] Updated at
 
 	- [ ] Views necessary:
-		- [x] Individual instrument page (houstonchambermusic.org/performances/instruments/[name]/) 
+		- [x] Individual instrument page (houstonchambermusic.org/instruments/[name]/) 
 			- [ ] Text that says "Page for [instrument]"
 			- [ ] List of all musicians in db who play instrument (first name, last name, rating)
 			- [ ] Each musician name is a link to that musician's individual page

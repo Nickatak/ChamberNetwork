@@ -22,7 +22,12 @@ def register_supporter(req):
 def about(req):
 	return render(req, 'html/about.html')
 
+# houstonchambermusic.org/public/success/
 def success(req):
 	return render(req, 'html/success.html')
+
+# houstonchambermusic.org/public/login/
+def login(req):
+	return render(req, 'html/login.html')
 
 

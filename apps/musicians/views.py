@@ -3,19 +3,15 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
-# localhost/musicians/login/
-def login(req):
-	return render(req, 'html/login.html')
-
-# localhost/musicians/logout/
+# houstonchambernet.org/musicians/logout/
 def logout(req):
 	pass
 
-# localhost/musicians/musician/
+# houstonchambernet.org/musicians/musician/
 def musician(req):
 	return render(req, 'html/musician.html')
 
-# localhost/musicians/dashboard/
+# houstonchambernet.org/musicians/dashboard/
 def dashboard(req):
 	return render(req, 'html/dashboard.html')
 
