@@ -23,3 +23,13 @@ a.active {
 .navbar .navbar-nav li a:hover {
 	color: #808080;
 }
+
+/*Navbar dropdown:*/
+
+a.dropdown-toggle {
+	color: white;
+}
+
+a.dropdown-menu {
+	color: white;
+}
