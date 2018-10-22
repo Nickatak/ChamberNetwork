@@ -202,11 +202,11 @@ Parts list:
 				- [x] Link to Dashboard (active)
 				- [x] Link to Upcoming Performances
 				- [x] Link to Add Performance
-				- [ ] Drop-down menu for Instruments
+				- [x] Drop-down menu for Instruments
 				- [ ] Logout
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 		- [x] Individual Musician page (houstonchambermusic.org/musicians/musician/[id]/)
 			- [ ] Display musician information (card)
@@ -219,15 +219,15 @@ Parts list:
 				- [ ] Bio
 			- [ ] Upcoming performances (card):
 				- [ ] Title of performance w/date : Each is a link to individual performance page
-			- [ ] Navbar top
-				- [ ] Link to Dashboard 
-				- [ ] Link to Upcoming Performances
-				- [ ] Link to Add Performance
-				- [ ] Drop-down menu for Instruments
+			- [x] Navbar top
+				- [x] Link to Dashboard 
+				- [x] Link to Upcoming Performances
+				- [x] Link to Add Performance
+				- [x] Drop-down menu for Instruments
 				- [ ] Logout
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 		- [ ] Logout (not a page, just a view) (houstonchambermusic.org/musicians/logout/)
 			- [ ] Logout Musician and redirect to login page 
