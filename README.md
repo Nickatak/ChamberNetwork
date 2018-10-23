@@ -256,7 +256,7 @@ Parts list:
 			- [ ] Updated at
 
 	- Views necessary:
-		- [ ] Add performance page (houstonchambermusic.org/performances/add)
+		- [x] Add performance page (houstonchambermusic.org/performances/add)
 			- [ ] Form to add performance:
 				- [ ] Title
 				- [ ] Description
@@ -271,15 +271,15 @@ Parts list:
 				- [ ] Validations: must complete
 				- [ ] Validation: inform user if performance has already been added to db
 				- [ ] Submit button
-			- [ ] Navbar top
-				- [ ] Link to Dashboard 
-				- [ ] Link to Upcoming Performances
-				- [ ] Link to Add Performance (active)
-				- [ ] Drop-down menu for Instruments
-				- [ ] Logout
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Navbar top
+				- [x] Link to Dashboard 
+				- [x] Link to Upcoming Performances
+				- [x] Link to Add Performance (active)
+				- [x] Drop-down menu for Instruments
+				- [x] Logout
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 		- [ ] Individual performance page (houstonchambermusic.org/performances/performance/[id]/)
 			- [ ] Performance info (card)
