@@ -281,7 +281,7 @@ Parts list:
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [ ] Individual performance page (houstonchambermusic.org/performances/performance/[id]/)
+		- [x] Individual performance page (houstonchambermusic.org/performances/performance/[id]/)
 			- [ ] Performance info (card)
 				- [ ] Title 
 				- [ ] Description
@@ -296,15 +296,15 @@ Parts list:
 				- [ ] Last name
 				- [ ] Instrument
 				- [ ] Submit button
-			- [ ] Navbar top
-				- [ ] Link to Dashboard 
-				- [ ] Link to Upcoming Performances
-				- [ ] Link to Add Performance 
-				- [ ] Drop-down menu for Instruments
-				- [ ] Logout
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Navbar top
+				- [x] Link to Dashboard 
+				- [x] Link to Upcoming Performances
+				- [x] Link to Add Performance 
+				- [x] Drop-down menu for Instruments
+				- [x] Logout
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 		- [ ] Upcoming performances page (houstonchambermusic.org/performances/upcoming/)
 			- [ ] List of performances, by date

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Houston Chamber Network : Performance</title>
+        <title>Houston Chamber Network : Individual Performance</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,8 +21,76 @@
         {% load static %}
         <link rel="stylesheet" type="text/css" href='{% static "css/performance.css" %}'>
     </head>
-        <h4>PERFORMANCE</h4>
+
     <body>
+        <div class="container-fluid" id="navbar-container">
+            <nav class="navbar navbar-expand-sm fixed-top">
+
+                <!-- Logo -->
+                <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+
+                <!-- Navbar links -->
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/musicians/dashboard/">DASHBOARD</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/performances/upcoming/">UPCOMING PERFORMANCES</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/performances/add/">ADD PERFORMANCE</a>
+                    </li>
+
+                    <!-- Instruments dropdown: -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">INSTRUMENTS</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="#" class="dropdown-item">Instrument 1</a>
+                            <a href="#" class="dropdown-item">Instrument 2</a>
+                            <a href="#" class="dropdown-item">Instrument 3</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Navbar right -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="navbar-item">
+                        <a class="nav-link" href="/musicians/logout/">LOGOUT</a>
+                    </li>
+                </ul>
+                
+            </nav>
+        </div>
+
+        <!-- Div for main container: -->
+        <div class="container-fluid" id="main-container">
+            <h2>Individual performance</h2>  
+        </div>
+
+        <!-- Footer: -->
+        <div class="container-fluid" id="footer-container">
+            <footer>
+                <div class="container1">
+                    <div class="row footer-row">
+                        <div class="col-md-3">
+                            <ul class="footer-links list-unstyled">
+                                <li>
+                                    <a href="/public/about/"><h5>ABOUT US</h5></a>
+                                </li>
+                            </ul>
+                        </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-3">
+                        <h5><strong>CONTACT INFO:</strong></h5>
+                        <p><strong>Email:</strong> michael@hcmn.net</p>
+                        <p><strong>Phone:</strong> (713)555-5555</p>
+                    </div>
+                </div>
+                <div class="container2">
+                    <p>Web Design © 2019 Ad Astra Web Services</p>
+                </div>
+            </footer>
+        </div>
 
     </body>
 </html>
