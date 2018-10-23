@@ -3,14 +3,14 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
-# localhost/performances/add/
+# houstonchambermusic.org/performances/add/
 def add(req):
 	return render(req, 'html/add.html')
 
-# localhost/performances/performance/[id]/
+# houstonchambermusic.org/performances/performance/[id]/
 def performance(req):
 	return render(req, 'html/performance.html')
 
-# localhost/performances/calendar/
-def calendar(req):
-	return render(req, 'html/calendar.html')
+# houstonchambermusic.org/performances/calendar/
+def upcoming(req):
+	return render(req, 'html/upcoming.html')

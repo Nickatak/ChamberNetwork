@@ -276,7 +276,7 @@ Parts list:
 				- [x] Link to Upcoming Performances
 				- [x] Link to Add Performance (active)
 				- [x] Drop-down menu for Instruments
-				- [x] Logout
+				- [ ] Logout
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
@@ -301,12 +301,12 @@ Parts list:
 				- [x] Link to Upcoming Performances
 				- [x] Link to Add Performance 
 				- [x] Drop-down menu for Instruments
-				- [x] Logout
+				- [ ] Logout
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [ ] Upcoming performances page (houstonchambermusic.org/performances/upcoming/)
+		- [x] Upcoming performances page (houstonchambermusic.org/performances/upcoming/)
 			- [ ] List of performances, by date
 				- [ ] Title
 				- [ ] Description
@@ -315,6 +315,15 @@ Parts list:
 				- [ ] Location
 			- [ ] Site must automatically add and subtract performances (by date)
 			- [ ] Each performance provides link to Individual Performance page
+			- [x] Navbar top
+				- [x] Link to Dashboard 
+				- [x] Link to Upcoming Performances (active)
+				- [x] Link to Add Performance 
+				- [x] Drop-down menu for Instruments
+				- [ ] Logout
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 - Instruments (app) 
 	- [ ] Functionalities necessary:
