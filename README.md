@@ -137,15 +137,15 @@ Parts list:
 				- [ ] Validations
 				- [ ] Submit button
 			- [ ] Render member/coach dashboard page upon successful login
-			- [ ] Navbar top
-				- [ ] Link to Welcome 
-				- [ ] Link to Register as Member 
-				- [ ] Link to Register as Coach
-				- [ ] Link to Receive e-Newsletter
-				- [ ] Link to Login (active)
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Navbar top
+				- [x] Link to Welcome 
+				- [x] Link to Register as Member 
+				- [x] Link to Register as Coach
+				- [x] Link to Receive e-Newsletter
+				- [x] Link to Login (active)
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 		- Information necessary
 			- [ ] Supporter model
