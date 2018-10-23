@@ -340,15 +340,15 @@ Parts list:
 			- [ ] Text that says "Page for [instrument]"
 			- [ ] List of all musicians in db who play instrument (first name, last name, rating)
 			- [ ] Each musician name is a link to that musician's individual page
-			- [ ] Navbar top
-				- [ ] Link to Dashboard 
-				- [ ] Link to Upcoming Performances
-				- [ ] Link to Add Performance 
-				- [ ] Drop-down menu for Instruments
+			- [x] Navbar top
+				- [x] Link to Dashboard 
+				- [x] Link to Upcoming Performances
+				- [x] Link to Add Performance 
+				- [x] Drop-down menu for Instruments
 				- [ ] Logout
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 		
 

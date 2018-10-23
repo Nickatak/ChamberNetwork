@@ -1,3 +1,83 @@
-h4 {
-	color: blue;
+/*Navbar:*/
+.navbar {
+	background-color: #2c3b4b;
+}
+
+.brand {
+	margin-bottom: 0px;
+}
+
+h5.brand {
+	color: #e3f2fd;
+	font-family: "Arial";
+}
+
+a.nav-link {
+	color: white;
+}
+
+a.active {
+	color: #808080;
+}
+
+.navbar .navbar-nav li a:hover {
+	color: #808080;
+}
+
+/*Main:*/
+#main-container h2 {
+	padding-top: 100px;
+}
+
+#main-container {
+	margin-top: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #fffef7;
+}
+
+/*Footer:*/
+#footer-container {
+	padding: 0px;
+}
+
+.footer-row {
+	margin: 0;
+}
+
+footer {
+	background-color: #2c3b4b;
+	padding-top: 30px;
+	padding-bottom: 4px;
+	padding-left: 30px;
+}
+
+.container2 {
+	text-align: center;
+}
+
+.container2 p {
+	color: white;
+}
+
+.container1 h5 {
+	color: white;
+}
+
+.container1 h4 {
+	color: white;
+}
+
+.container1 p {
+	color: white;
+}
+
+.footer-links li a:hover {
+    text-decoration: none;
+    /*border-bottom: 6px solid white;*/
+}
+
+.footer-links li a h5:hover {
+    color: #808080;
+    /*border-bottom: 3px solid white;*/
 }
