@@ -74,7 +74,6 @@ Parts list:
 					- [x] State
 					- [x] Zip
 				- [ ] Phone number
-				- [ ] Referred by
 				- [x] Brief musical bio
 				- [x] Drop-down menu for primary instrument
 				- [x] Drop-down menu for secondary instrument
