@@ -6,7 +6,7 @@ Parts list:
 	- Functionalities necessary:
 		- [ ] Register Musician
 		- [ ] Register Coach
-		- [ ] Register Supporter
+		- [ ] Register Patron
 
 	- Views necessary:
 		- [x] Welcome page (houstonchambermusic.org/public/welcome/)
@@ -28,14 +28,14 @@ Parts list:
 			- [x] Navbar top
 				- [x] Link to Welcome 
 				- [x] Link to Register as Member
-				- [x] Link to Register as CoachI have 
+				- [x] Link to Register as Coach
 				- [ ] Link to Receive e-Newsletter
 				- [x] Link to login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [x] Register Supporter Page (houstonchambermusic.org/public/register_supporter)
+		- [x] Register Patron Page (houstonchambermusic.org/public/register_patron)
 			- [x] Form
 				- [x] First name
 				- [x] Last name
@@ -47,6 +47,7 @@ Parts list:
 					- [x] State
 					- [x] Zip
 				- [x] Phone
+				- [ ] Referred by
 				- [x] Submit button
 			- [ ] Validations for all fields
 			- [ ] Render success page upon successful submission
@@ -72,9 +73,12 @@ Parts list:
 					- [x] City
 					- [x] State
 					- [x] Zip
+				- [ ] Phone number
+				- [ ] Referred by
 				- [x] Brief musical bio
 				- [x] Drop-down menu for primary instrument
 				- [x] Drop-down menu for secondary instrument
+				- [ ] Self rating (1-5)
 				- [x] Submit button
 			- [ ] Validations for all fields
 			- [ ] Send email to Michael upon successful submission
@@ -100,6 +104,7 @@ Parts list:
 					- [x] City
 					- [x] State
 					- [x] Zip
+				- [ ] Phone number
 				- [ ] Attach CV
 				- [x] Brief musical bio
 				- [x] Drop-down menu for primary instrument
@@ -133,7 +138,7 @@ Parts list:
 		- [x] Login page (houstonchambermusic.org/public/login/)
 			- [ ] Login form
 				- [ ] Field for email
-				- [ ] Field for password
+				- [ ] Field for password (encrypted)
 				- [ ] Validations
 				- [ ] Submit button
 			- [ ] Render member/coach dashboard page upon successful login
@@ -148,17 +153,17 @@ Parts list:
 				- [x] Contact info
 
 		- Information necessary
-			- [ ] Supporter model
+			- [ ] Patron model
 				- [ ] First name (text)
 				- [ ] Last name (text)
 				- [ ] Email
+				- [ ] Referred by (FK)
 				- [ ] Phone
 				- [ ] Street address
 				- [ ] Unit number
 				- [ ] City
 				- [ ] State 
 				- [ ] Zip
-
 
 - Musicians (app)
 	- Functionalities necessary:
@@ -177,11 +182,13 @@ Parts list:
 			- [ ] City
 			- [ ] State
 			- [ ] Zip
+			- [ ] Phone number
 			- [ ] Primary instrument
 			- [ ] Secondary instrument
-			- [ ] Rating (1-5 or coach)
+			- [ ] Rating (1-5 or coach) (editable only by admin)
 			- [ ] Brief bio 
 			- [ ] Approval (Boolean)
+			- [ ] Password (encrypted)
 			- [ ] Created at (datetime)
 			- [ ] Updated at (datetime)
 
@@ -191,6 +198,7 @@ Parts list:
 			- [ ] Display Musician information (card):
 				- [ ] Full name
 				- [ ] Email
+				- [ ] Phone number
 				- [ ] Primary instrument
 				- [ ] Secondary instrument
 				- [ ] Rating
@@ -213,12 +221,14 @@ Parts list:
 				- [ ] First name
 				- [ ] Last name
 				- [ ] Email
+				- [ ] Phone number
 				- [ ] Primary instrument
 				- [ ] Secondary instrument
 				- [ ] Rating
 				- [ ] Bio
 			- [ ] Upcoming performances (card):
 				- [ ] Title of performance w/date : Each is a link to individual performance page
+			- [ ] Message musician (send email)
 			- [x] Navbar top
 				- [x] Link to Dashboard 
 				- [x] Link to Upcoming Performances
@@ -296,6 +306,7 @@ Parts list:
 				- [ ] Last name
 				- [ ] Instrument
 				- [ ] Submit button
+			- [ ] Button to send rsvp for performance
 			- [x] Navbar top
 				- [x] Link to Dashboard 
 				- [x] Link to Upcoming Performances
