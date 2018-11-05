@@ -30,7 +30,7 @@ class Patron(models.Model):
 	zip_code = models.CharField(max_length=5)
 
 	# referred_by : does this belong here or in musician table?
-	referred_by = models.ForeignKey("Referred by", on_delete=models.CASCADE, related_name="musician")
+	# referred_by = models.ForeignKey("Referred by", on_delete=models.CASCADE, related_name="musician")
 
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
@@ -52,16 +52,16 @@ class Musician(models.Model):
 	phone_number = models.CharField(max_length=10)
 
 	# Primary and secondary instruments: FK set up correctly?
-	primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
-	secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
+	# primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
+	# secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
 
 	# rating: only editable by admin. Values available are 1-5 or coach.
-	rating = models.CharField()
+	rating = models.CharField(max_length=5)
 
 	bio = models.TextField()
 
 	# Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
-	approval = False
+	# approval = False
 
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
