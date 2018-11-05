@@ -152,17 +152,38 @@ Parts list:
 				- [x] Contact info
 
 		- Information necessary
-			- [ ] Patron model
-				- [ ] First name (text)
-				- [ ] Last name (text)
-				- [ ] Email
-				- [ ] Referred by (FK)
-				- [ ] Phone
-				- [ ] Street address
-				- [ ] Unit number
-				- [ ] City
-				- [ ] State 
-				- [ ] Zip
+			- [x] Patron model
+				- [x] First name 
+				- [x] Last name 
+				- [x] Email
+				- [x] Street address
+				- [x] Unit number
+				- [x] City
+				- [x] State 
+				- [x] Zip
+				- [x] Phone number
+				- [x] Referred by (FK)
+				- [x] Created at (datetime)
+				- [x] Updated at (datetime)
+
+			- [x] Musician model
+				- [x] First name 
+				- [x] Last name 
+				- [x] Email 
+				- [x] Password (encrypted)
+				- [x] Street address
+				- [x] Unit number
+				- [x] City
+				- [x] State
+				- [x] Zip
+				- [x] Phone number
+				- [x] Primary instrument
+				- [x] Secondary instrument
+				- [x] Rating (1-5 or coach) (editable only by admin)
+				- [x] Bio 
+				- [x] Approval (Boolean)
+				- [x] Created at (datetime)
+				- [x] Updated at (datetime)
 
 - Musicians (app)
 	- Functionalities necessary:
@@ -171,25 +192,7 @@ Parts list:
 		- [ ] Edit member/coach information
 
 	- Information necessary:
-		- [ ] Musician model
-			- [ ] First name (text)
-			- [ ] Last name (text)
-			- [ ] Email (text)
-			- [ ] Password (text)
-			- [ ] Street address
-			- [ ] Unit number
-			- [ ] City
-			- [ ] State
-			- [ ] Zip
-			- [ ] Phone number
-			- [ ] Primary instrument
-			- [ ] Secondary instrument
-			- [ ] Rating (1-5 or coach) (editable only by admin)
-			- [ ] Brief bio 
-			- [ ] Approval (Boolean)
-			- [ ] Password (encrypted)
-			- [ ] Created at (datetime)
-			- [ ] Updated at (datetime)
+		
 
 	- Views necessary:
 		- [x] Musician Dashboard page (houstonchambermusic.org/musicians/dashboard/)
