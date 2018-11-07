@@ -57,6 +57,13 @@
 
         <div class="container-fluid" id="form-container">
             <h5>Login form</h5>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                
+
+            </form>
+                
             
         </div>
 

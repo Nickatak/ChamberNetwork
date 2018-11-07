@@ -8,6 +8,7 @@ urlpatterns = [
 	path('register_coach/', views.register_coach, name="register_coach"),
 	path('register_supporter/', views.register_supporter, name="register_supporter"),
 	path('success/', views.success, name="success"),
-	path('login/', LoginView.as_view(template_name='musicians/dashboard.html'), name="login"),
+	# path('login/', LoginView.as_view(template_name='public/login.html'), name="login"),
+	path('login/', views.login, name="login"),
 	path('about/', views.about, name="about"),
 ]
