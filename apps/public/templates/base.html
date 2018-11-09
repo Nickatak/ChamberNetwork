@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Houston Chamber Network : {{ page_name }}</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Houston Chamber Network : {{ page_name }}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<!-- Load CSNs (same for all templates): -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-        {% block load_css %}
-        {% endblock %}
-    </head>
+	<!-- Load CSS files (from each template): -->
+	{% block load_css %}
+	{% endblock %}
+</head>
+
 <body>
-	{% block hi_nick %}
+	<!-- Header (from each template): -->
+	{% block header %}
 	{% endblock %}
 
+	<!-- Main body (from each template): -->
+	{% block main_body %}
+	{% endblock %}
+
+	<!-- Footer (same for all templates): -->
 	<div class="container-fluid" id="footer-container">
 		<footer>
 			<div class="container1">
@@ -47,6 +56,6 @@
                 </div>
             </footer>
         </div>
-
 </body>
+
 </html>

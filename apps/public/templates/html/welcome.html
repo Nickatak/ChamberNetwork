@@ -1,122 +1,80 @@
+{% extends 'base.html' %}
 
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Houston Chamber Network : Welcome</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-        <!-- css file: -->
+<head>
+    {% load static %}
+    
+    <!-- Load CSS (different for each template): -->
+    {% block load_css %}
         <link rel="stylesheet" type="text/css" href='{% static "css/welcome.css" %}'>
-    </head>
-    <body>
-        <div class="container-fluid" id="navbar-container">
-            <nav class="navbar navbar-expand-sm fixed-top">
+    {% endblock %}
+</head>
 
-                <!-- Logo -->
-                <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+<body>
+    {% block header %}
+    <div class="container-fluid" id="navbar-container">
+        <nav class="navbar navbar-expand-sm fixed-top">
 
-                <!-- Navbar links -->
-                <ul class="navbar-nav">
-                    <li class="navbar-item">
-                        <a class="nav-link active" href="/public/welcome/">WELCOME</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="nav-link" href="/public/register_member/">REGISTER AS MEMBER</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="nav-link" href="/public/register_supporter/">SIGN UP FOR E-NEWSLETTER</a>
-                    </li>
-                </ul>
+            <!-- Logo -->
+            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
 
-                <!-- Navbar right -->
-                <ul class="navbar-nav ml-auto">
+            <!-- Navbar links -->
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a class="nav-link active" href="/public/welcome/">WELCOME</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="/public/register_member/">REGISTER AS MEMBER</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="/public/register_supporter/">SIGN UP FOR E-NEWSLETTER</a>
+                </li>
+            </ul>
 
-                    <!-- Inline login form: -->
-                    <!-- <form class="form-inline" action="">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Email">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Password">
-                        <button class="btn btn-info" type="submit">LOGIN</button>
-                    </form> -->
+            <!-- Navbar right -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Link to external login: -->
+                <li class="navbar-item">
+                    <a class="nav-link" href="/public/login/">LOGIN</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    {% endblock %}
 
-                    <!-- Link to external login: -->
-                    <li class="navbar-item">
-                        <a class="nav-link" href="/public/login/">LOGIN</a>
-                    </li>
-                </ul>
-            </nav>
+    {% block main_body %}
+    <div class="container-fluid" id="parallax-container">
+
+        <!-- First Parallax Section -->
+        <div class="jumbotron paral paralsec1">
+            <h1 class="display-3">Connect</h1>
+            <p class="lead">with musicians in your area.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/register_member/" role="button">REGISTER AS MEMBER</a></p>
         </div>
 
-        <div class="container-fluid" id="parallax-container">
-
-            <!-- First Parallax Section -->
-            <div class="jumbotron paral paralsec1">
-                <h1 class="display-3">Connect</h1>
-                <p class="lead">with musicians in your area.</p>
-                <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/register_member/" role="button">REGISTER AS MEMBER</a></p>
-            </div>
-
-            <!-- Second Parallax Section -->
-            <div class="jumbotron paral paralsec2">
-                <h1 class="display-3">Perform</h1>
-                <p class="lead">with new friends.</p>
-                <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/about/" role="button">ABOUT US</a></p>
-            </div>
+        <!-- Second Parallax Section -->
+        <div class="jumbotron paral paralsec2">
+            <h1 class="display-3">Perform</h1>
+            <p class="lead">with new friends.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/about/" role="button">ABOUT US</a></p>
+        </div>
  
-            <!-- Third Parallax Section -->
-            <div class="jumbotron paral paralsec3">
-                <h1 class="display-3">Learn</h1>
-                <p class="lead">from some of Houston's top professionals.</p>
-                <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/register_coach/" role="button">REGISTER AS COACH</a></p>
-            </div> 
+        <!-- Third Parallax Section -->
+        <div class="jumbotron paral paralsec3">
+            <h1 class="display-3">Learn</h1>
+            <p class="lead">from some of Houston's top professionals.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/register_coach/" role="button">REGISTER AS COACH</a></p>
+        </div> 
         
-        <!-- Fpurth Parallax Section -->
-            <div class="jumbotron paral paralsec4">
-                <h1 class="display-3">Support</h1>
-                <p class="lead">local live music.</p>
-                <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/register_supporter/" role="button">SIGN UP FOR E-NEWSLETTER</a></p>
-            </div>
-            
+        <!-- Fourth Parallax Section -->
+        <div class="jumbotron paral paralsec4">
+            <h1 class="display-3">Support</h1>
+            <p class="lead">local live music.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/register_supporter/" role="button">SIGN UP FOR E-NEWSLETTER</a></p>
         </div>
-
-        <div class="container-fluid" id="footer-container">
-            <footer>
-                <div class="container1">
-                    <div class="row footer-row">
-                        <div class="col-md-3">
-                            <ul class="footer-links list-unstyled">
-                                <li>
-                                    <a href="/public/about/"><h5>ABOUT US</h5></a>
-                                </li>
-                            </ul>
-                        </div>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-3">
-                        <h5><strong>CONTACT INFO:</strong></h5>
-                        <p><strong>Email:</strong> michael@hcmn.net</p>
-                        <p><strong>Phone:</strong> (713)555-5555</p>
-                    </div>
-                </div>
-                <div class="container2">
-                    <p>Web Design © 2019 Ad Astra Web Services</p>
-                </div>
-            </footer>
-        </div>
-    </body>
+    </div>
+    {% endblock %}
+</body>
 </html>
