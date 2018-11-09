@@ -1,0 +1,131 @@
+{% extends 'public_base.html' %}
+
+<head>
+    {% load static %}
+
+    <!-- Load CSS (different for each template): -->
+    {% block load_css %}
+        <link rel="stylesheet" type="text/css" href='{% static "css/register_patron.css" %}'>
+    {% endblock %}
+</head>
+
+<body>
+    {% block header %}
+    <div class="container-fluid" id="navbar-container">
+        <nav class="navbar navbar-expand-sm fixed-top">
+
+            <!-- Logo -->
+            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+
+            <!-- Navbar links -->
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a class="nav-link" href="/public/welcome/">WELCOME</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="/public/register_member/">REGISTER AS MEMBER</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link active" href="/public/register_supporter/">SIGN UP FOR E-NEWSLETTER</a>
+                </li>
+            </ul>
+
+            <!-- Navbar right -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Link to external login: -->
+                <li class="navbar-item">
+                    <a class="nav-link" href="/public/login/">LOGIN</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    {% endblock %}
+
+    {% block main_body %}
+    <div class="container-fluid" id="form-container">
+        <div class="row" id="form-itself">
+
+            <!-- Empty div for spacing: -->
+            <div class="col-md-4"></div>
+
+            <!-- Div containing actual form: -->
+            <div class="col-md-4" id="inner-form-container">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">SIGN UP FOR E-NEWSLETTER</h3>
+                </div>
+            </div>
+
+            <!-- Panel for curlicue divider: -->
+            <div class="panel panel-default">
+                <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
+            </div>
+
+            <div class="panel-body">
+                <form role="form" action="/public/supporter/register/" method="POST">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit number">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="state" id="state" class="form-control input-sm" placeholder="State">
+                        </div>
+                    </div>
+                          
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip code">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="Phone number">
+                </div>
+                           
+                <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
+            </div>
+        </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
