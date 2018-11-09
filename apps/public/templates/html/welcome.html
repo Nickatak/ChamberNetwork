@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+    {% block head %}
     <head>
         <title>Houston Chamber Network : Welcome</title>
         <meta charset="utf-8">
@@ -23,6 +24,7 @@
         {% load static %}
         <link rel="stylesheet" type="text/css" href='{% static "css/welcome.css" %}'>
     </head>
+    {% endblock %}
     <body>
         <div class="container-fluid" id="navbar-container">
             <nav class="navbar navbar-expand-sm fixed-top">
