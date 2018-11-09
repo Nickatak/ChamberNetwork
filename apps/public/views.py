@@ -4,7 +4,8 @@ from django.shortcuts import render
 
 # houstonchambermusic.org/public/welcome/
 def welcome(req):
-	return render(req, 'template.name', page_name='html/welcome.html')
+	return render(req, 'html/welcome.html')
+	render(req, 'template.name', page_name='Welcome')
 
 # houstonchambermusic.org/public/register_member/
 def register_member(req):
