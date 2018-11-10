@@ -9,11 +9,21 @@ def logout(req):
 
 # houstonchambernet.org/musicians/musician/
 def musician(req):
-	return render(req, 'html/musician.html')
+
+	context = {
+		'page_name' : '[Musician name]',
+	}
+
+	return render(req, 'html/musician.html', context)
 
 # houstonchambernet.org/musicians/dashboard/
 def dashboard(req):
-	return render(req, 'html/dashboard.html')
+
+	context = {
+		'page_name' : 'Dashboard',
+	}
+
+	return render(req, 'html/dashboard.html', context)
 
 
 

@@ -5,4 +5,9 @@ from django.shortcuts import render
 
 # localhost/instruments/instrument/[id]/
 def instrument(req):
-	return render(req, 'html/instrument.html')
+
+	context = {
+		'instrument_name' : '[Instrument name]',
+	}
+
+	return render(req, 'html/instrument.html', context)
