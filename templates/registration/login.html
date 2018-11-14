@@ -46,12 +46,18 @@
 
     {% block main_body %}
     <div class="container-fluid" id="form-container">
-        <h5>Login form</h5>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-dark">Login</button>
-        </form>
+        <div class="row">
+
+            <!-- empty div for spacing: -->
+            <div class="col-md-4"></div>
+
+            <form method="POST">
+                <h5>Login form</h5>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-dark">Login</button>
+            </form>
+        </div>
     </div>
     {% endblock %}
 </body>
