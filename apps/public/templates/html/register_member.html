@@ -1,45 +1,45 @@
 {% extends 'public_base.html' %}
 
 
-    {% load static %}
+{% load static %}
 
-    <!-- Load CSS (different for each template): -->
-    {% block load_css %}
-        <link rel="stylesheet" type="text/css" href='{% static "css/register_member.css" %}'>
-    {% endblock %}
+<!-- Load CSS (different for each template): -->
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/register_member.css" %}'>
+{% endblock %}
 
 
 
-    {% block header %}
-    <div class="container-fluid" id="navbar-container">
-        <nav class="navbar navbar-expand-sm fixed-top">
+{% block header %}
+<div class="container-fluid" id="navbar-container">
+    <nav class="navbar navbar-expand-sm fixed-top">
 
-        <!-- Logo -->
-        <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+    <!-- Logo -->
+    <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
 
-        <!-- Navbar links -->
-        <ul class="navbar-nav">
-            <li class="navbar-item">
-                <a class="nav-link" href="/public/welcome/">WELCOME</a>
-            </li>
-            <li class="navbar-item">
-                <a class="nav-link active" href="/public/register_member/">REGISTER AS MEMBER</a>
-            </li>
-            <li class="navbar-item">
-                <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
-            </li>
-            <li class="navbar-item">
-                <a class="nav-link" href="/public/register_supporter/">SIGN UP FOR E-NEWSLETTER</a>
-            </li>
-        </ul>
+    <!-- Navbar links -->
+    <ul class="navbar-nav">
+        <li class="navbar-item">
+            <a class="nav-link" href="/public/welcome/">WELCOME</a>
+        </li>
+        <li class="navbar-item">
+            <a class="nav-link active" href="/public/register_member/">REGISTER AS MEMBER</a>
+        </li>
+        <li class="navbar-item">
+            <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
+        </li>
+        <li class="navbar-item">
+            <a class="nav-link" href="/public/register_supporter/">SIGN UP FOR E-NEWSLETTER</a>
+        </li>
+    </ul>
 
-        <!-- Navbar right -->
-        <ul class="navbar-nav ml-auto">
-            <!-- Link to external login: -->
-            <li class="navbar-item">
-                <a class="nav-link" href="/accounts/login/">LOGIN</a>
-            </li>
-        </ul>
+    <!-- Navbar right -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Link to external login: -->
+        <li class="navbar-item">
+            <a class="nav-link" href="/accounts/login/">LOGIN</a>
+        </li>
+    </ul>
     </nav>
 </div>
 {% endblock %}
@@ -85,20 +85,7 @@
                                 <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
-                                        <!-- TODO: pop up message with pw requirements -->
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="password" name="confirm_password" id="confirm_password" class="form-control input-sm" placeholder="Confirm Password">
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
                         </form>
                         
