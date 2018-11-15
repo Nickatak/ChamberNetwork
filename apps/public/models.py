@@ -36,11 +36,7 @@ class MusicianManager(models.Manager):
 # Musician Model
 class Musician(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	first_name = models.CharField(max_length=25)
-	last_name = models.CharField(max_length=25)
-	email = models.CharField(max_length=25)
 	# Password must be encrypted. Password is initially assigned at random. User can change once they are approved.
-	password = models.CharField(max_length=25)
 	# street_address = models.CharField(max_length=25)
 	# unit_number = models.CharField(max_length=25)
 	# city = models.CharField(max_length=25)
