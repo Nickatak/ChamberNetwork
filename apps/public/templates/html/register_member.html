@@ -1,15 +1,15 @@
 {% extends 'public_base.html' %}
 
-<head>
+
     {% load static %}
 
     <!-- Load CSS (different for each template): -->
     {% block load_css %}
         <link rel="stylesheet" type="text/css" href='{% static "css/register_member.css" %}'>
     {% endblock %}
-</head>
 
-<body>
+
+
     {% block header %}
     <div class="container-fluid" id="navbar-container">
         <nav class="navbar navbar-expand-sm fixed-top">
@@ -107,5 +107,4 @@
             </div>
         </div>
 {% endblock %}
-</body>
-</html>
+
