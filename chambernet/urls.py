@@ -22,5 +22,4 @@ urlpatterns = [
     path('musicians/', include('apps.musicians.urls')),
     path('performances/', include('apps.performances.urls')),
     path('instruments/', include('apps.instruments.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
 ]

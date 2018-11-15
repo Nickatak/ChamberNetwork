@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 # from django.contrib.auth.views import LoginView
 
+app_name = 'public'
+
 urlpatterns = [
 	path('welcome/', views.welcome, name="welcome"),
 	path('register_member/', views.register_member, name="register_member"),
