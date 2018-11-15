@@ -46,52 +46,52 @@
 
 {% block main_body %}
 <div class="container-fluid" id="form-container">
-            <div class="row" id="form-itself">
+    <div class="row" id="form-itself">
 
-                <!-- empty div for spacing: -->
-                <div class="col-md-4"></div>
+        <!-- empty div for spacing: -->
+        <div class="col-md-4"></div>
 
-                <!-- This div contains the actual form: -->
-                <div class="col-md-4" id="inner-form-container">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">MEMBER REGISTRATION FORM<sup>*</sup></h3>
+        <!-- This div contains the actual form: -->
+        <div class="col-md-4" id="inner-form-container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">MEMBER REGISTRATION FORM<sup>*</sup></h3>
+                </div>
+            </div>
+
+            <!-- Panel for curlicue divider: -->
+            <div class="panel panel-default">
+                <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
+            </div>
+
+            <div class="panel-body">
+                <form role="form" action="/public/member/register" method="POST">
+                    <h5>Basic information:</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Panel for curlicue divider: -->
-                    <div class="panel panel-default">
-                        <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
                     </div>
-
-                    <div class="panel-body">
-                        <form role="form" action="/public/member/register" method="POST">
-                            <h5>Basic information:</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
-                            </div>
 
                             
-                            <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
-                        </form>
+                    <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
+                </form>
                         
-                    </div>
-                </div>
             </div>
         </div>
+    </div>
+</div>
 {% endblock %}
 
