@@ -10,3 +10,6 @@ def clean(self):
 	if len(data_dict['username']) < 1:
 			errors['username'] = 'You must enter a username.'
 
+	if len(data_dict['password']) < 1:
+		erros['password'] = "You must enter a password."
+
