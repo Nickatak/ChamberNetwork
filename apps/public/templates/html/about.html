@@ -31,16 +31,16 @@
                 <!-- Navbar links -->
                 <ul class="navbar-nav">
                     <li class="navbar-item">
-                        <a class="nav-link" href="/public/welcome/">WELCOME</a>
+                        <a class="nav-link" href="{% url 'public:welcome' %}">WELCOME</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="nav-link" href="/public/register_member/">REGISTER AS MEMBER</a>
+                        <a class="nav-link" href="{% url 'public:register_member' %}">REGISTER AS MEMBER</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="nav-link" href="/public/register_coach/">REGISTER AS COACH</a>
+                        <a class="nav-link" href="{% url 'public:register_coach' %}">REGISTER AS COACH</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="nav-link" href="/public/register_supporter/">SIGN UP FOR E-NEWSLETTER</a>
+                        <a class="nav-link" href="% url 'public:register_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
                     </li>
                 </ul>
 
@@ -56,7 +56,7 @@
 
                     <!-- Link to external login: -->
                     <li class="navbar-item">
-                        <a class="nav-link" href="/accounts/login/">LOGIN</a>
+                        <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
                     </li>
                 </ul>
             </nav>
