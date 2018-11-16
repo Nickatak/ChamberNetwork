@@ -14,3 +14,9 @@ def clean(self):
 	if len(data_dict['password']) < 1:
 		erros['password'] = "You must enter a password."
 
+def login_musician(self):
+	if username belongs to X and if password belongs to X:
+		log in user
+	else:
+		do something else
+
