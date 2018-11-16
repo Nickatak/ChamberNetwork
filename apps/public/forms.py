@@ -1,4 +1,5 @@
 from django import forms
+from .models import Musician
 
 class MusicianLoginForm(forms.Form):
 	username = forms.CharField(max_length=100)
