@@ -7,8 +7,6 @@ class MusicianLoginForm(forms.Form):
 def clean(self):
 	data_dict = super().clean()
 
-def login_validation(self, data_dict):
-
 	if len(postData['username']) < 1:
 			errors['username'] = 'You must enter a username.'
 
