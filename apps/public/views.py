@@ -65,4 +65,7 @@ def login(req):
 
 	return render(req, 'html/login.html', context)
 
+def logout(req):
+	pass
+
 
