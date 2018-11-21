@@ -1,108 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Houston Chamber Network : About Us</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'public_base.html' %}
+{% load static %}
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/about.css" %}'>
+{% endblock %}
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+{% block header %}
+    <div class="container-fluid" id="navbar-container">
+        <nav class="navbar navbar-expand-sm fixed-top">
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+            <!-- Logo -->
+            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
 
-        <!-- css file: -->
-        {% load static %}
-        <link rel="stylesheet" type="text/css" href='{% static "css/about.css" %}'>
-    </head>
-    <body>
-        <div class="container-fluid" id="navbar-container">
-            <nav class="navbar navbar-expand-sm fixed-top">
+            <!-- Navbar links -->
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'public:welcome' %}">WELCOME</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'public:register_member' %}">REGISTER AS MEMBER</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'public:register_coach' %}">REGISTER AS COACH</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="% url 'public:register_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+                </li>
+            </ul>
 
-                <!-- Logo -->
-                <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+            <!-- Navbar right -->
+            <ul class="navbar-nav ml-auto">
 
-                <!-- Navbar links -->
-                <ul class="navbar-nav">
-                    <li class="navbar-item">
-                        <a class="nav-link" href="{% url 'public:welcome' %}">WELCOME</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="nav-link" href="{% url 'public:register_member' %}">REGISTER AS MEMBER</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="nav-link" href="{% url 'public:register_coach' %}">REGISTER AS COACH</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a class="nav-link" href="% url 'public:register_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
-                    </li>
-                </ul>
+                <!-- Inline login form: -->
+                <!-- <form class="form-inline" action="">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Email">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Password">
+                    <button class="btn btn-info" type="submit">LOGIN</button>
+                </form> -->
 
-                <!-- Navbar right -->
-                <ul class="navbar-nav ml-auto">
+                <!-- Link to external login: -->
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}
 
-                    <!-- Inline login form: -->
-                    <!-- <form class="form-inline" action="">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Email">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Password">
-                        <button class="btn btn-info" type="submit">LOGIN</button>
-                    </form> -->
 
-                    <!-- Link to external login: -->
-                    <li class="navbar-item">
-                        <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="container-fluid" id="main-container">
-            <div id="mycarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img class="img-fluid" src='{% static "images/4.jpg" %}' alt="" class="img-responsive">
-                                <div class="carousel-caption">
-                                    <h3>About Houston Chamber Music Network</h3><br>
-                                    <p>Quisque vestibulum, dui sit amet consectetur consectetur, felis lorem rutrum risus, nec tincidunt mauris est venenatis nulla. Quisque quis nisi at libero tristique ornare. Praesent vel lacus diam. Nullam vehicula ligula justo, venenatis bibendum quam facilisis nec. Sed semper ullamcorper neque, eget vehicula diam mollis in. Mauris luctus lectus nulla, at semper risus porta eu. Morbi ultrices posuere nunc, ac imperdiet neque congue scelerisque. Sed imperdiet lectus sit amet condimentum mollis. In hac habitasse platea dictumst.</p> <br>
-                                    <p>Proin elementum varius lacus, eu congue enim pharetra nec. Pellentesque rhoncus cursus metus in consectetur. Integer non dui mi. Aenean lacus purus, posuere ac accumsan a, semper in sapien. Sed in imperdiet enim, ac hendrerit purus. Morbi sed leo mattis tortor auctor accumsan. Praesent vitae egestas leo, sed tempus augue. Nam non mi non mauris luctus ullamcorper. Nam lobortis varius massa, scelerisque suscipit diam scelerisque in. Ut eu nisi vel felis tempus dignissim. Morbi sodales arcu velit, eget tempus augue blandit a. Etiam eleifend arcu id efficitur sodales.</p>
-                                </div>
-                        </div>
+{% block main_content %}
+    <div class="container-fluid" id="main-container">
+        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img class="img-fluid" src='{% static "images/4.jpg" %}' alt="" class="img-responsive">
+                            <div class="carousel-caption">
+                                <h3>About Houston Chamber Music Network</h3><br>
+                                <p>Quisque vestibulum, dui sit amet consectetur consectetur, felis lorem rutrum risus, nec tincidunt mauris est venenatis nulla. Quisque quis nisi at libero tristique ornare. Praesent vel lacus diam. Nullam vehicula ligula justo, venenatis bibendum quam facilisis nec. Sed semper ullamcorper neque, eget vehicula diam mollis in. Mauris luctus lectus nulla, at semper risus porta eu. Morbi ultrices posuere nunc, ac imperdiet neque congue scelerisque. Sed imperdiet lectus sit amet condimentum mollis. In hac habitasse platea dictumst.</p> <br>
+                                <p>Proin elementum varius lacus, eu congue enim pharetra nec. Pellentesque rhoncus cursus metus in consectetur. Integer non dui mi. Aenean lacus purus, posuere ac accumsan a, semper in sapien. Sed in imperdiet enim, ac hendrerit purus. Morbi sed leo mattis tortor auctor accumsan. Praesent vitae egestas leo, sed tempus augue. Nam non mi non mauris luctus ullamcorper. Nam lobortis varius massa, scelerisque suscipit diam scelerisque in. Ut eu nisi vel felis tempus dignissim. Morbi sodales arcu velit, eget tempus augue blandit a. Etiam eleifend arcu id efficitur sodales.</p>
+                            </div>
                     </div>
                 </div>
-            
+            </div>
+        
 
-        </div>
+    </div>
 
-        <div class="container-fluid" id="footer-container">
-            <footer>
-                <div class="container1">
-                    <div class="row footer-row">
-                        <div class="col-md-3">
-                            <ul class="footer-links list-unstyled">
-                                <li>
-                                    <a href="/public/about/"><h5>ABOUT US</h5></a>
-                                </li>
-                            </ul>
-                        </div>
-                    <div class="col-md-6"></div>
+    <div class="container-fluid" id="footer-container">
+        <footer>
+            <div class="container1">
+                <div class="row footer-row">
                     <div class="col-md-3">
-                        <h5><strong>CONTACT INFO:</strong></h5>
-                        <p><strong>Email:</strong> michael@hcmn.net</p>
-                        <p><strong>Phone:</strong> (713)555-5555</p>
+                        <ul class="footer-links list-unstyled">
+                            <li>
+                                <a href="/public/about/"><h5>ABOUT US</h5></a>
+                            </li>
+                        </ul>
                     </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <h5><strong>CONTACT INFO:</strong></h5>
+                    <p><strong>Email:</strong> michael@hcmn.net</p>
+                    <p><strong>Phone:</strong> (713)555-5555</p>
                 </div>
-                <div class="container2">
-                    <p>© 2019 Ad Astra Web Services</p>
-                </div>
-            </footer>
-            
+            </div>
+            <div class="container2">
+                <p>© 2019 Ad Astra Web Services</p>
+            </div>
+        </footer>
+        
 
-        </div>
-    </body>
+    </div>
+{% endblock %}
+
 </html>
