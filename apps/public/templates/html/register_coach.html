@@ -1,16 +1,15 @@
 {% extends 'public_base.html' %}
+{% load static %}
 
-<head>
-    {% load static %}
 
-    <!-- Load CSS (different for each template): -->
-    {% block load_css %}
-        <link rel="stylesheet" type="text/css" href='{% static "css/register_coach.css" %}'>
-    {% endblock %}
-</head>
 
-<body>
-    {% block header %}
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/register_coach.css" %}'>
+{% endblock %}
+
+
+
+{% block header %}
     <div class="container-fluid" id="navbar-container">
         <nav class="navbar navbar-expand-sm fixed-top">
 
@@ -42,9 +41,9 @@
             </ul>
         </nav>
     </div>
-    {% endblock %}
+{% endblock %}
 
-    {% block main_body %}
+{% block main_content %}
     <div class="container-fluid" id="form-container">
             <div class="row" id="form-itself">
 
@@ -187,12 +186,13 @@
                             <input type="submit" value="ATTACH CV" class="btn btn-reg btn-info btn-block">
 
                             <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
+                        </form>
                     </div>
                 </div>
-                <div class="col-md-4"></div>
+                <div class="col-md-4"></div> 
             </div>  
         </div>
-    </form>
+    
 
         <div class="container-fluid" id="explanation-container">
             <div class="row">
@@ -203,6 +203,4 @@
                 </div>
             </div>
         </div>
-    {% endblock %}
-</body>
-</html>
+{% endblock %}
