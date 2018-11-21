@@ -1,80 +1,77 @@
 {% extends 'public_base.html' %}
 
-<head>
-    {% load static %}
+{% load static %}
+
+<!-- Load CSS (different for each template): -->
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/welcome.css" %}'>
+{% endblock %}
+
+
+
+{% block header %}
+<div class="container-fluid" id="navbar-container">
+    <nav class="navbar navbar-expand-sm fixed-top">
+
+        <!-- Logo -->
+        <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+
+        <!-- Navbar links -->
+        <ul class="navbar-nav">
+            <li class="navbar-item">
+                <a class="nav-link active" href="{% url 'public:welcome' %}">WELCOME</a>
+            </li>
+            <li class="navbar-item">
+                <a class="nav-link" href="{% url 'public:register_member' %}">REGISTER AS MEMBER</a>
+            </li>
+            <li class="navbar-item">
+                <a class="nav-link" href="{% url 'public:register_coach' %}">REGISTER AS COACH</a>
+            </li>
+            <li class="navbar-item">
+                <a class="nav-link" href="{% url 'public:register_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+            </li>
+        </ul>
+
+        <!-- Navbar right -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Link to external login: -->
+            <li class="navbar-item">
+                <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}
+
+{% block main_body %}
+<div class="container-fluid" id="parallax-container">
+
+    <!-- First Parallax Section -->
+    <div class="jumbotron paral paralsec1">
+        <h1 class="display-3">Connect</h1>
+        <p class="lead">with musicians in your area.</p>
+        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:register_member' %}" role="button">REGISTER AS MEMBER</a></p>
+    </div>
+
+    <!-- Second Parallax Section -->
+    <div class="jumbotron paral paralsec2">
+        <h1 class="display-3">Perform</h1>
+        <p class="lead">with new friends.</p>
+        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p>
+    </div>
+
+    <!-- Third Parallax Section -->
+    <div class="jumbotron paral paralsec3">
+        <h1 class="display-3">Learn</h1>
+        <p class="lead">from some of Houston's top professionals.</p>
+        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:register_coach' %}" role="button">REGISTER AS COACH</a></p>
+    </div> 
     
-    <!-- Load CSS (different for each template): -->
-    {% block load_css %}
-        <link rel="stylesheet" type="text/css" href='{% static "css/welcome.css" %}'>
-    {% endblock %}
-</head>
-
-<body>
-    {% block header %}
-    <div class="container-fluid" id="navbar-container">
-        <nav class="navbar navbar-expand-sm fixed-top">
-
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
-
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link active" href="{% url 'public:welcome' %}">WELCOME</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:register_member' %}">REGISTER AS MEMBER</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:register_coach' %}">REGISTER AS COACH</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:register_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
-                </li>
-            </ul>
-
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Link to external login: -->
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
-                </li>
-            </ul>
-        </nav>
+    <!-- Fourth Parallax Section -->
+    <div class="jumbotron paral paralsec4">
+        <h1 class="display-3">Support</h1>
+        <p class="lead">local live music.</p>
+        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:register_supporter' %}" role="button">SIGN UP FOR E-NEWSLETTER</a></p>
     </div>
-    {% endblock %}
-
-    {% block main_body %}
-    <div class="container-fluid" id="parallax-container">
-
-        <!-- First Parallax Section -->
-        <div class="jumbotron paral paralsec1">
-            <h1 class="display-3">Connect</h1>
-            <p class="lead">with musicians in your area.</p>
-            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/register_member/" role="button">REGISTER AS MEMBER</a></p>
-        </div>
-
-        <!-- Second Parallax Section -->
-        <div class="jumbotron paral paralsec2">
-            <h1 class="display-3">Perform</h1>
-            <p class="lead">with new friends.</p>
-            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/about/" role="button">ABOUT US</a></p>
-        </div>
- 
-        <!-- Third Parallax Section -->
-        <div class="jumbotron paral paralsec3">
-            <h1 class="display-3">Learn</h1>
-            <p class="lead">from some of Houston's top professionals.</p>
-            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/register_coach/" role="button">REGISTER AS COACH</a></p>
-        </div> 
-        
-        <!-- Fourth Parallax Section -->
-        <div class="jumbotron paral paralsec4">
-            <h1 class="display-3">Support</h1>
-            <p class="lead">local live music.</p>
-            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="/public/register_supporter/" role="button">SIGN UP FOR E-NEWSLETTER</a></p>
-        </div>
-    </div>
-    {% endblock %}
-</body>
-</html>
+</div>
+{% endblock %}
