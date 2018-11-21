@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.public',
-    'apps.musicians',
+    'apps.users',
     'apps.performances',
     'apps.instruments',
     'django.contrib.admin',
