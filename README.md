@@ -3,10 +3,7 @@ Houston Chamber Network - initial project
 Parts list:
 
 - Public (app)
-	- Functionalities necessary:
-		- [ ] Register Musician
-		- [ ] Register Coach
-		- [ ] Register Patron
+    # Public itself won't have functionality, as its point is to simply house public route-URL's.
 
 	- Views necessary:
 		- [x] Welcome page (houstonchambermusic.org/public/welcome/)
@@ -151,48 +148,51 @@ Parts list:
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- Information necessary
-			- [x] Patron model
-				- [x] First name 
-				- [x] Last name 
-				- [x] Email
-				- [x] Street address
-				- [x] Unit number
-				- [x] City
-				- [x] State 
-				- [x] Zip
-				- [x] Phone number
-				- [x] Referred by (FK)
-				- [x] Created at (datetime)
-				- [x] Updated at (datetime)
 
-			- [x] Musician model
-				- [x] First name 
-				- [x] Last name 
-				- [x] Email 
-				- [x] Password (encrypted)
-				- [x] Street address
-				- [x] Unit number
-				- [x] City
-				- [x] State
-				- [x] Zip
-				- [x] Phone number
-				- [x] Primary instrument
-				- [x] Secondary instrument
-				- [x] Rating (1-5 or coach) (editable only by admin)
-				- [x] Bio 
-				- [x] Approval (Boolean)
-				- [x] Created at (datetime)
-				- [x] Updated at (datetime)
+- Users (app) #Former name: Musicians, whether they're members, coaches, or patrons, they're still all users.
 
-- Musicians (app)
+    # This is where the functionalities for public will tie to.
 	- Functionalities necessary:
+        - [ ] Register Musician
+		- [ ] Register Coach
+		- [ ] Register Patron
 		- [ ] Login member/coach
 		- [ ] Logout member/coach (must be possible on multiple pages)
 		- [ ] Edit member/coach information
 
 	- Information necessary:
-		
+        - [x] Patron model
+            - [x] First name 
+            - [x] Last name 
+            - [x] Email
+            - [x] Street address
+            - [x] Unit number
+            - [x] City
+            - [x] State 
+            - [x] Zip
+            - [x] Phone number
+            - [x] Referred by (FK)
+            - [x] Created at (datetime)
+            - [x] Updated at (datetime)
+
+        - [x] Musician model
+            - [x] First name 
+            - [x] Last name 
+            - [x] Email 
+            - [x] Password (encrypted)
+            - [x] Street address
+            - [x] Unit number
+            - [x] City
+            - [x] State
+            - [x] Zip
+            - [x] Phone number
+            - [x] Primary instrument
+            - [x] Secondary instrument
+            - [x] Rating (1-5 or coach) (editable only by admin)
+            - [x] Bio 
+            - [x] Approval (Boolean)
+            - [x] Created at (datetime)
+            - [x] Updated at (datetime)		
 
 	- Views necessary:
 		- [x] Musician Dashboard page (houstonchambermusic.org/musicians/dashboard/)
