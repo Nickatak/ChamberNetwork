@@ -5,7 +5,8 @@ from . import views
 app_name = 'public'
 
 urlpatterns = [
-	path('welcome/', views.welcome, name="welcome"),
+    #Index page has no post-fix.
+	path('', views.welcome, name="welcome"),
 	path('register_member/', views.register_member, name="register_member"),
 	path('register_coach/', views.register_coach, name="register_coach"),
 	path('register_patron/', views.register_patron, name="register_patron"),
