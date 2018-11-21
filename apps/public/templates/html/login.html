@@ -1,16 +1,13 @@
 {% extends 'public_base.html' %}
+{% load static %}
 
-<head>
-    {% load static %}
 
-    <!-- Load CSS (different for each template): -->
-    {% block load_css %}
-        <link rel="stylesheet" type="text/css" href='{% static "css/login.css" %}'>
-    {% endblock %}
-</head>
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/login.css" %}'>
+{% endblock %}
 
-<body>
-    {% block header %}
+
+{% block header %}
     <div class="container-fluid" id="navbar-container">
         <nav class="navbar navbar-expand-sm fixed-top">
 
@@ -42,28 +39,25 @@
             </ul>
         </nav>
     </div>
-    {% endblock %}
+{% endblock %}
 
-    {% block main_body %}
+
+{% block main_content %}
     <div class="container-fluid" id="form-container">
         <div class="row">
-
             <!-- empty div for spacing: -->
             <div class="col-md-4"></div>
 
             <div class="col-md-4">
-
-                <form method="POST">
+                <!-- This needs to POST to our users application. -->
+                <form method="POST" action="">
                     <h1>Login form</h1>
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    <input type="text" name="username" placeholder="Username"></input>
+                    <input type="password" name="password" placeholder="Password"></input>
                     <button type="submit" class="btn btn-dark">Login</button>
                 </form>
             </div>
         </div>
     </div>
-    {% endblock %}
-</body>
-
-</html>
-
+{% endblock %}
