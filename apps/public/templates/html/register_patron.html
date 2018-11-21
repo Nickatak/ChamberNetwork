@@ -20,13 +20,13 @@
                     <a class="nav-link" href="{% url 'public:welcome' %}">WELCOME</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:register_member' %}">REGISTER AS MEMBER</a>
+                    <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:register_coach' %}">REGISTER AS COACH</a>
+                    <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link active" href="{% url 'public:register_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+                    <a class="nav-link active" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
                 </li>
             </ul>
 
@@ -63,7 +63,8 @@
                 </div>
 
                 <div class="panel-body">
-                    <form role="form" action="/public/supporter/register/" method="POST">
+                    <!-- This needs to POST to our users app. -->
+                    <form role="form" action="" method="POST">
 
                         <div class="row">
                             <div class="col-md-6">
@@ -120,7 +121,6 @@
                         <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
                     </form>
                 </div>
-
             </div>
             <div class="col-md-4"></div>
         </div>
