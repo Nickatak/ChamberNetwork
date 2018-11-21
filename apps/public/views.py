@@ -11,8 +11,8 @@ def welcome(req):
 
 	return render(req, 'html/welcome.html', context)
 
-# houstonchambermusic.org/public/register_member/
-def register_member(req):
+# houstonchambermusic.org/public/new_member/
+def new_member_display(req):
 
 	context = {
 		'page_name' : 'Register Member',
@@ -20,8 +20,8 @@ def register_member(req):
 
 	return render(req, 'html/register_member.html', context)
 
-# houstonchambermusic.org/public/register_coach/
-def register_coach(req):
+# houstonchambermusic.org/public/new_coach/
+def new_coach_display(req):
 
 	context = {
 		'page_name' : 'Register Coach',
@@ -29,8 +29,8 @@ def register_coach(req):
 
 	return render(req, 'html/register_coach.html', context)
 
-# houstonchambermusic.org/public/register_patron/
-def register_patron(req):
+# houstonchambermusic.org/public/new_patron/
+def new_patron_display(req):
 
 	context = {
 		'page_name' : 'Register Patron',
@@ -57,15 +57,10 @@ def success(req):
 	return render(req, 'html/success.html', context)
 
 # houstonchambermusic.org/public/login/
-def login(req):
+def login_display(req):
 
 	context = {
 		'page_name' : 'Login',
 	}
 
 	return render(req, 'html/login.html', context)
-
-def logout(req):
-	pass
-
-
