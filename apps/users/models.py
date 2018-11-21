@@ -10,58 +10,58 @@ from django.contrib.auth.models import User
 
 # Musician Manager Model
 class MusicianManager(models.Manager):
-	pass
+    pass
 
 # Patron Model. This is just for an emailing list right?  All we need to do is store them then, not a big deal.
 class Patron(models.Model):
- 	first_name = models.CharField(max_length=25)
- 	last_name = models.CharField(max_length=25)
- 	email = models.CharField(max_length=25)
- 	phone_number = models.CharField(max_length=10)
- 	street_address = models.CharField(max_length=25)
- 	unit_number = models.CharField(max_length=25)
- 	city = models.CharField(max_length=25)
- 	state = models.CharField(max_length=2)
- 	zip_code = models.CharField(max_length=5)
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
+    email = models.CharField(max_length=25)
+    phone_number = models.CharField(max_length=10)
+    street_address = models.CharField(max_length=25)
+    unit_number = models.CharField(max_length=25)
+    city = models.CharField(max_length=25)
+    state = models.CharField(max_length=2)
+    zip_code = models.CharField(max_length=5)
 
-	# referred_by : does this belong here or in musician table?
-	# referred_by = models.ForeignKey("Referred by", on_delete=models.CASCADE, related_name="musician")
+    # referred_by : does this belong here or in musician table?
+    # referred_by = models.ForeignKey("Referred by", on_delete=models.CASCADE, related_name="musician")
 
-	# created_at = models.DateTimeField(auto_now_add=True)
-	# updated_at = models.DateTimeField(auto_now=True)
+    # created_at = models.DateTimeField(auto_now_add=True)
+    # updated_at = models.DateTimeField(auto_now=True)
 
-	# objects = PatronManager()
+    # objects = PatronManager()
 
 # Musician Manager Model
 class MusicianManager(models.Manager):
-	pass
+    pass
 
 # Musician Model
 class Musician(models.Model):
     #Will the email be used as auth?
- 	email = models.CharField(max_length=25)
- 	first_name = models.CharField(max_length=25)
- 	last_name = models.CharField(max_length=25)
- 	phone_number = models.CharField(max_length=10)
- 	street_address = models.CharField(max_length=25)
- 	unit_number = models.CharField(max_length=25)
- 	city = models.CharField(max_length=25)
- 	state = models.CharField(max_length=2)
- 	zip_code = models.CharField(max_length=5)
+    email = models.CharField(max_length=25)
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
+    phone_number = models.CharField(max_length=10)
+    street_address = models.CharField(max_length=25)
+    unit_number = models.CharField(max_length=25)
+    city = models.CharField(max_length=25)
+    state = models.CharField(max_length=2)
+    zip_code = models.CharField(max_length=5)
 
-	bio = models.TextField()
+    bio = models.TextField()
 
-	# Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
-	is_approved = models.BooleanField(default=False)
-    
-	# Primary and secondary instruments: FK set up correctly?
-	# primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
-	# secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
+    # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
+    is_approved = models.BooleanField(default=False)
 
-	created_at = models.DateTimeField(auto_now_add=True)
-	updated_at = models.DateTimeField(auto_now=True)
+    # Primary and secondary instruments: FK set up correctly?
+    # primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
+    # secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
 
-	objects = MusicianManager()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    objects = MusicianManager()
 
 
-	objects = MusicianManager()
+    objects = MusicianManager()
