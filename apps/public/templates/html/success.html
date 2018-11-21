@@ -1,16 +1,13 @@
 {% extends 'public_base.html' %}
+{% load static %}
 
-<head>
-    {% load static %}
 
-    <!-- Load CSS (different for each template): -->
-    {% block load_css %}
-        <link rel="stylesheet" type="text/css" href='{% static "css/success.css" %}'>
-    {% endblock %}
-</head>
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/success.css" %}'>
+{% endblock %}
 
-<body>
-    {% block header %}
+
+{% block header %}
     <div class="container-fluid" id="navbar-container">
         <nav class="navbar navbar-expand-sm fixed-top">
 
@@ -42,9 +39,10 @@
             </ul>
         </nav>
     </div>
-    {% endblock %}
+{% endblock %}
 
-    {% block main_body %}
+
+{% block main_content %}
     <div class="container-fluid" id="main-container">
         <div id="mycarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -59,6 +57,4 @@
             </div>
         </div>
     </div>
-    {% endblock %}
-</body>
-</html>
+{% endblock %}
