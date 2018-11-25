@@ -4,13 +4,7 @@ from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth.models import User
 
-# Patron Manager Model
-# class PatronManager(models.Manager):
-# 	pass
 
-# Musician Manager Model
-class MusicianManager(models.Manager):
-    pass
 
 # Patron Model. This is just for an emailing list right?  All we need to do is store them then, not a big deal.
 class Patron(models.Model):
@@ -30,11 +24,11 @@ class Patron(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # objects = PatronManager()
 
 # Musician Manager Model
 class MusicianManager(models.Manager):
-    pass
+    def validate_login(self, data):
+        
 
 # Musician Model
 class Musician(models.Model):
