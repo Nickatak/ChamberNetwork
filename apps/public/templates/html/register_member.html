@@ -44,6 +44,7 @@
 
 {% block main_content %}
     <div class="container-fluid" id="form-container">
+    {% csrf_token %}
         <div class="row" id="form-itself">
 
             <!-- empty div for spacing: -->
@@ -56,6 +57,7 @@
                         <h3 class="panel-title">MEMBER REGISTRATION FORM<sup>*</sup></h3>
                     </div>
                 </div>
+
 
                 <!-- Panel for curlicue divider: -->
                 <div class="panel panel-default">
