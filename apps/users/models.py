@@ -42,7 +42,7 @@ class MemberManager(models.Manager):
             if check_password(attempted_password, user.password):
     '''
 
-    def member_validation(self, postData):
+    def new_validation(self, postData):
 
         errors = {}
 

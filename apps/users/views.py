@@ -10,7 +10,7 @@ def login_handler(req):
 # houstonchambermusic.org/new_member/
 def register_member(req):
 	if request.method == "POST":
-		errors = Member.objects.member_validation(request.POST)
+		errors = Member.objects.new_validation(request.POST)
 
 		if not errors:
 			Member.objects.add_member(request.POST)
