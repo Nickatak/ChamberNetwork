@@ -25,8 +25,8 @@ class Patron(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-# User Manager Model
-class UserManager(models.Manager):
+# Member Manager Model
+class MemberManager(models.Manager):
     '''
     def validate_login(self, data):
         email = data['email']
@@ -37,10 +37,16 @@ class UserManager(models.Manager):
             
             if check_password(attempted_password, user.password):
     '''
+
+    def member_validation(self, postData):
+
+        errors = {}
+
+
         
 
-# User Model
-class User(models.Model):
+# Member Model
+class Member(models.Model):
     #Will the email be used as auth?
     email = models.CharField(max_length=25)
     first_name = models.CharField(max_length=25)
@@ -65,4 +71,4 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    objects = UserManager()
+    objects = MemberManager()
