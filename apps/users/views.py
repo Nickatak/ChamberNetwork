@@ -23,4 +23,4 @@ def register_member(req):
 			return render(req, 'html/register_member.html', context=context)
 
 	elif request.method == "GET":
-		return redirect(req, '/users/register_member')
+		return redirect('/users/register_member')
