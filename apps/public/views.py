@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
-from users.models import Member
+from ..users.models import Member
 
 def welcome(req):
 
