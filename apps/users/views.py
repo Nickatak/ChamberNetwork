@@ -15,7 +15,7 @@ def register_member(req):
 		if not errors:
 			Member.objects.add_member(request.POST)
 			# not sure if this is the correct route:
-			return redirect('/users/login')
+			return redirect('public:login')
 		else:
 			context = {
 				'errors' : errors
@@ -23,4 +23,4 @@ def register_member(req):
 			return render(req, 'html/register_member.html', context=context)
 
 	elif request.method == "GET":
-		return redirect('/users/register_member')
+		return redirect('public:register_member')
