@@ -64,3 +64,5 @@ def login_display(req):
 	}
 
 	return render(req, 'html/login.html', context)
+
+

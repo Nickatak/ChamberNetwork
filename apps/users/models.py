@@ -25,8 +25,8 @@ class Patron(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-# Musician Manager Model
-class MusicianManager(models.Manager):
+# User Manager Model
+class UserManager(models.Manager):
     '''
     def validate_login(self, data):
         email = data['email']
@@ -39,24 +39,24 @@ class MusicianManager(models.Manager):
     '''
         
 
-# Musician Model
-class Musician(models.Model):
+# User Model
+class User(models.Model):
     #Will the email be used as auth?
     email = models.CharField(max_length=25)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    phone_number = models.CharField(max_length=10)
-    street_address = models.CharField(max_length=25)
-    unit_number = models.CharField(max_length=25)
-    city = models.CharField(max_length=25)
-    state = models.CharField(max_length=2)
-    zip_code = models.CharField(max_length=5)
+    # phone_number = models.CharField(max_length=10)
+    # street_address = models.CharField(max_length=25)
+    # unit_number = models.CharField(max_length=25)
+    # city = models.CharField(max_length=25)
+    # state = models.CharField(max_length=2)
+    # zip_code = models.CharField(max_length=5)
 
-    bio = models.TextField()
+    # bio = models.TextField()
 
     # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
-    is_approved = models.BooleanField(default=False)
-    is_reviewed = models.BooleanField(default=False)
+    # is_approved = models.BooleanField(default=False)
+    # is_reviewed = models.BooleanField(default=False)
 
     # Primary and secondary instruments: FK set up correctly?
     # primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
@@ -65,4 +65,4 @@ class Musician(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    objects = MusicianManager()
+    objects = UserManager()
