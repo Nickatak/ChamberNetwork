@@ -44,7 +44,7 @@
 
 {% block main_content %}
     <div class="container-fluid" id="form-container">
-    {% csrf_token %}
+
         <div class="row" id="form-itself">
 
             <!-- empty div for spacing: -->
@@ -67,6 +67,7 @@
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
                     <form role="form" action="" method="POST">
+                        {% csrf_token %}
                         <h5>Basic information:</h5>
                         <div class="row">
                             <div class="col-md-6">
