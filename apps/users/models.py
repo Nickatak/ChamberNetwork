@@ -27,7 +27,16 @@ class Patron(models.Model):
 
 # Musician Manager Model
 class MusicianManager(models.Manager):
+    '''
     def validate_login(self, data):
+        email = data['email']
+        attempted_password = data['password']
+        
+        if self.filter(email=email).exists():
+            user = self.get(email=email)
+            
+            if check_password(attempted_password, user.password):
+    '''
         
 
 # Musician Model
