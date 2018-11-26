@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import Member
 
@@ -9,11 +9,11 @@ def login_handler(req):
 
 # houstonchambermusic.org/new_member/
 def register_member(req):
-	if request.method == "POST":
-		errors = Member.objects.new_validation(request.POST)
+	if req.method == "POST":
+		errors = Member.objects.new_validation(req.POST)
 
 		if not errors:
-			Member.objects.add_member(request.POST)
+			Member.objects.add_member(req.POST)
 			return redirect('public:success')
 		else:
 			context = {
@@ -21,5 +21,5 @@ def register_member(req):
 			}
 			return render(req, 'html/register_member.html', context=context)
 
-	elif request.method == "GET":
+	elif req.method == "GET":
 		return redirect('public:register_member')
