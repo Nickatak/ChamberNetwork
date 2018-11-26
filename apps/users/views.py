@@ -14,8 +14,7 @@ def register_member(req):
 
 		if not errors:
 			Member.objects.add_member(request.POST)
-			# not sure if this is the correct route:
-			return redirect('public:login')
+			return redirect('public:success')
 		else:
 			context = {
 				'errors' : errors

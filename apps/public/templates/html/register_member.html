@@ -66,13 +66,16 @@
 
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
-                    <form role="form" action="" method="POST">
+                    <form role="form" action="/users/register_member/" method="POST">
                         {% csrf_token %}
                         <h5>Basic information:</h5>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                    {% if 'first_name' in errors %}
+                                        {{ errors.first_name }}
+                                    {% endif %}
                                 </div>
                             </div>
 
