@@ -4,6 +4,7 @@ from .  import views
 # All functional views go here.
 urlpatterns = [
     path('login_handler/', views.login_handler, name="login_handler"),
+    path('register_member/', views.register_member),
 
 ]
 
