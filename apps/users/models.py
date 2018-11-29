@@ -72,14 +72,19 @@ class MemberManager(models.Manager):
         elif self.email_exists(postData['email']) == True:
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
+        # Ensure that a phone number is added.
+        if len(postData['phone_number']) < 10:
+            errors['phone_number'] = 'Please enter a valid phone number.'
+
         return errors
 
     def add_member(self, data):
         first_name = data['first_name']
         last_name = data['last_name']
         email = data['email']
+        phone_number = data['phone_number']
 
-        return self.create(first_name=first_name, last_name=last_name, email=email)
+        return self.create(first_name=first_name, last_name=last_name, email=email, phone_number=phone_number)
 
     def email_exists(self, email):
         return self.filter(email=email).exists()
