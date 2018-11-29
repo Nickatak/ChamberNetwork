@@ -16,11 +16,11 @@ class Patron(models.Model):
     last_name = models.CharField(max_length=25)
     email = models.CharField(max_length=25)
     phone_number = models.CharField(max_length=10)
-    street_address = models.CharField(max_length=25)
-    unit_number = models.CharField(max_length=25)
-    city = models.CharField(max_length=25)
-    state = models.CharField(max_length=2)
-    zip_code = models.CharField(max_length=5)
+    # street_address = models.CharField(max_length=25)
+    # unit_number = models.CharField(max_length=25)
+    # city = models.CharField(max_length=25)
+    # state = models.CharField(max_length=2)
+    # zip_code = models.CharField(max_length=5)
 
     # referred_by : does this belong here or in musician table?
     # referred_by = models.ForeignKey("Referred by", on_delete=models.CASCADE, related_name="musician")
