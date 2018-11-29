@@ -91,12 +91,12 @@ class Member(models.Model):
     email = models.CharField(max_length=25)
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
-    # phone_number = models.CharField(max_length=10)
     # street_address = models.CharField(max_length=25)
     # unit_number = models.CharField(max_length=25)
     # city = models.CharField(max_length=25)
     # state = models.CharField(max_length=2)
     # zip_code = models.CharField(max_length=5)
+    phone_number = models.CharField(max_length=10)
 
     # bio = models.TextField()
 
