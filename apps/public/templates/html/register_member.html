@@ -130,7 +130,10 @@
                             </div> -->
 
                             <div class="form-group">
-                                <input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="Phone">
+                                <input type="text" name="phone_number" id="phone_number" class="form-control input-sm" placeholder="Phone">
+                                {% if 'phone_number' in errors %}
+                                    {{ errors.phone_number }}
+                                {% endif %}
                             </div>
 
                         <!-- </div> -->
