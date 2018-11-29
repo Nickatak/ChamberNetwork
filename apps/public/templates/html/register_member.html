@@ -41,7 +41,6 @@
     </div>
 {% endblock %}
 
-
 {% block main_content %}
     <div class="container-fluid" id="form-container">
 
@@ -58,16 +57,17 @@
                     </div>
                 </div>
 
-
                 <!-- Panel for curlicue divider: -->
                 <div class="panel panel-default">
                     <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
                 </div>
-
+                
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
                     <form role="form" action="/users/register_member/" method="POST">
                         {% csrf_token %}
+
+                        <!-- Basic information section: -->
                         <h5>Basic information:</h5>
                         <div class="row">
                             <div class="col-md-6">
@@ -95,11 +95,51 @@
                                 {{ errors.email }}
                             {% endif %}
                         </div>
+                
+
+                        <!-- Address and phone section: -->
+                        <h5>Address and phone:</h5>
+                        <!-- <div class="form-group">
+                            <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address">
+                        </div> -->
+
+                        <!-- <div class="row"> -->
+                            <!-- <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit number">
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
+                                </div>
+                            </div> -->
+
+                            <!-- <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="state" id="state" class="form-control input-sm" placeholder="State">
+                                </div>
+                            </div> -->
+                            <!-- TODO: BS probably has special forms for city, state. Maybe even auto-fill based on address. Probably requires an API. -->
+
+                            <!-- <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip code">
+                                </div>
+                            </div> -->
+
+                            <div class="form-group">
+                                <input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="Phone">
+                            </div>
+
+                        <!-- </div> -->
+
+
 
                                 
                         <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
-                    </form>
-                            
+                    </form>          
                 </div>
             </div>
         </div>
