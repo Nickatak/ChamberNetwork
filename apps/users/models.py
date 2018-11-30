@@ -131,9 +131,8 @@ class Member(models.Model):
     zip_code = models.CharField(max_length=5)
     phone_number = models.CharField(max_length=10)
 
-    primary_instrument = models.Charfield(max_length=25)
+    primary_instrument = models.CharField(max_length=25)
     second_instrument = models.CharField(max_length=25)
-
     bio = models.TextField()
 
     # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
