@@ -9,38 +9,6 @@ import re
 NAME_REGEX = re.compile(r"^[-a-zA-Z']+$")
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
-
-# Member Model
-class Member(models.Model):
-    #Will the email be used as auth?
-    email = models.CharField(max_length=25)
-    first_name = models.CharField(max_length=25)
-    last_name = models.CharField(max_length=25)
-    street_address = models.CharField(max_length=25)
-    unit_number = models.CharField(max_length=25)
-    city = models.CharField(max_length=25)
-    state = models.CharField(max_length=25)
-    zip_code = models.CharField(max_length=5)
-    phone_number = models.CharField(max_length=10)
-
-    primary_instrument = models.CharField(max_length=25)
-    second_instrument = models.CharField(max_length=25)
-    bio = models.TextField()
-
-    # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
-    # is_approved = models.BooleanField(default=False)
-    # is_reviewed = models.BooleanField(default=False)
-
-    # Primary and secondary instruments: FK set up correctly?
-    # primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
-    # secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    objects = MemberManager()
-
-
 # Patron Model. This is just for an emailing list right?  All we need to do is store them then, not a big deal.
 class Patron(models.Model):
     first_name = models.CharField(max_length=25)
@@ -142,11 +110,45 @@ class MemberManager(models.Manager):
         primary_instrument = data['primary_instrument']
         second_instrument = data['second_instrument']
         bio = data['bio']
-
-        return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number, primary_instrument=primary_instrument, second_instrument=second_instrument, bio=bio)
+        # For rating, we need to "pop" just the first character of each rating, ie the number, not the description
+        rating = data['rating']
+        
+        return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number, primary_instrument=primary_instrument, second_instrument=second_instrument, bio=bio, rating=rating)
 
     def email_exists(self, email):
         return self.filter(email=email).exists()
+
+# Member Model
+class Member(models.Model):
+    #Will the email be used as auth?
+    email = models.CharField(max_length=25)
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
+    street_address = models.CharField(max_length=25)
+    unit_number = models.CharField(max_length=25)
+    city = models.CharField(max_length=25)
+    state = models.CharField(max_length=25)
+    zip_code = models.CharField(max_length=5)
+    phone_number = models.CharField(max_length=10)
+
+    # Instruments are not set up correctly, because they need to interact (as FK) with instrument table
+    primary_instrument = models.CharField(max_length=25)
+    second_instrument = models.CharField(max_length=25)
+    bio = models.TextField()
+    rating = models.CharField(max_length=250)
+
+    # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
+    # is_approved = models.BooleanField(default=False)
+    # is_reviewed = models.BooleanField(default=False)
+
+    # Primary and secondary instruments: FK set up correctly?
+    # primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
+    # secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    objects = MemberManager()
 
 
 

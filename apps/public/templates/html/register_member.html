@@ -203,7 +203,6 @@
                         </div>
 
                         <!-- Section for musical information: -->
-                        <!-- TOFIX: Spacing not right here. Why? -->
                         <h5>Musical information:</h5>
                         <div class="row">
                             <!-- TODO: better way to preload instrument names -->
@@ -253,6 +252,17 @@
                             {% if 'bio' in errors %}
                                 {{ errors.bio }}
                             {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" name="rating" id="rating" placeholder="Self rating">
+                                <option selected disabled>Self rating</option>
+                                <option>1. Blah blah blah blah.</option>
+                                <option>2. Blah blah blah blah.</option>
+                                <option>3. Blah blah blah blah.</option>
+                                <option>4. Blah blah blah blah.</option>
+                                <option>5. Blah blah blah blah.</option>
+                            </select>
                         </div>
                    
                     <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
