@@ -104,6 +104,9 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address">
+                                    {% if 'street_address' in errors %}
+                                        {{ errors.street_address }}
+                                    {% endif %}
                                 </div>
                             </div>
 
@@ -116,12 +119,18 @@
 
                         <div class="form-group">
                             <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
+                            {% if 'city' in errors %}
+                                {{ errors.city }}
+                            {% endif %}
                         </div>
 
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="state" id="state" class="form-control input-sm" placeholder="State">
+                                    {% if 'state' in errors %}
+                                        {{ errors.state }}
+                                    {% endif %}
                                 </div>
                             </div>
 
@@ -130,6 +139,9 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip code">
+                                    {% if 'zip_code' in errors %}
+                                        {{ errors.zip_code }}
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
