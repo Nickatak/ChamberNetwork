@@ -72,6 +72,22 @@ class MemberManager(models.Manager):
         elif self.email_exists(postData['email']) == True:
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
+        # Ensure that a street address is added:
+        if len(postData['street_address']) < 2:
+            errors['street_address'] = 'Please enter your street address.'
+
+        # Ensure that a city is added:
+        if len(postData['city']) < 2:
+            errors['city'] = 'Please enter a city.'
+
+        # Ensure that a state is added:
+        if len(postData['state']) < 2:
+            errors['state'] = 'Please enter a state.'
+
+        # Ensure that a zip code is added:
+        if len(postData['zip_code']) < 2:
+            errors['zip_code'] = 'Please enter your zip code.'
+
         # Ensure that a phone number is added.
         if len(postData['phone_number']) < 10:
             errors['phone_number'] = 'Please enter a valid phone number.'
