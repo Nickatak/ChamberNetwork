@@ -94,6 +94,11 @@ class MemberManager(models.Manager):
         first_name = data['first_name']
         last_name = data['last_name']
         email = data['email']
+        street_address = data['street_address']
+        unit_number = data['unit_number']
+        city = data['city']
+        state = data['state']
+        zip_code = data['zip_code']
         phone_number = data['phone_number']
 
         return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number)
