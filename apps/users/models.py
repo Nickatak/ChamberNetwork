@@ -80,10 +80,6 @@ class MemberManager(models.Manager):
         if len(postData['city']) < 2:
             errors['city'] = 'Please enter a city.'
 
-        # Ensure that a state is added:
-        if len(postData['state']) < 2:
-            errors['state'] = 'Please enter a state.'
-
         # Ensure that a zip code is added:
         if len(postData['zip_code']) < 2:
             errors['zip_code'] = 'Please enter your zip code.'
