@@ -10,6 +10,37 @@ NAME_REGEX = re.compile(r"^[-a-zA-Z']+$")
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
 
+# Member Model
+class Member(models.Model):
+    #Will the email be used as auth?
+    email = models.CharField(max_length=25)
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
+    street_address = models.CharField(max_length=25)
+    unit_number = models.CharField(max_length=25)
+    city = models.CharField(max_length=25)
+    state = models.CharField(max_length=25)
+    zip_code = models.CharField(max_length=5)
+    phone_number = models.CharField(max_length=10)
+
+    primary_instrument = models.CharField(max_length=25)
+    second_instrument = models.CharField(max_length=25)
+    bio = models.TextField()
+
+    # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
+    # is_approved = models.BooleanField(default=False)
+    # is_reviewed = models.BooleanField(default=False)
+
+    # Primary and secondary instruments: FK set up correctly?
+    # primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
+    # secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    objects = MemberManager()
+
+
 # Patron Model. This is just for an emailing list right?  All we need to do is store them then, not a big deal.
 class Patron(models.Model):
     first_name = models.CharField(max_length=25)
@@ -73,15 +104,15 @@ class MemberManager(models.Manager):
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
         # Ensure that a street address is added:
-        if len(postData['street_address']) < 2:
+        if len(postData['street_address']) < 1:
             errors['street_address'] = 'Please enter your street address.'
 
         # Ensure that a city is added:
-        if len(postData['city']) < 2:
+        if len(postData['city']) < 1:
             errors['city'] = 'Please enter a city.'
 
         # Ensure that a zip code is added:
-        if len(postData['zip_code']) < 2:
+        if len(postData['zip_code']) < 1:
             errors['zip_code'] = 'Please enter your zip code.'
 
         # Ensure that a phone number is added:
@@ -89,11 +120,11 @@ class MemberManager(models.Manager):
             errors['phone_number'] = 'Please enter a valid phone number.'
 
         # Ensure that a primary instrument is chosen:
-        if len(postData['primary_instrument']) < 2:
+        if len(postData['primary_instrument']) < 1:
             errors['primary_instrument'] = 'Please select a primary instrument.'
 
         # Ensure that a primary instrument is chosen:
-        if len(postData['bio']) < 2:
+        if len(postData['bio']) < 1:
             errors['bio'] = 'Please provide a brief musical bio.'
 
         return errors
@@ -118,32 +149,4 @@ class MemberManager(models.Manager):
         return self.filter(email=email).exists()
 
 
-# Member Model
-class Member(models.Model):
-    #Will the email be used as auth?
-    email = models.CharField(max_length=25)
-    first_name = models.CharField(max_length=25)
-    last_name = models.CharField(max_length=25)
-    street_address = models.CharField(max_length=25)
-    unit_number = models.CharField(max_length=25)
-    city = models.CharField(max_length=25)
-    state = models.CharField(max_length=25)
-    zip_code = models.CharField(max_length=5)
-    phone_number = models.CharField(max_length=10)
 
-    primary_instrument = models.CharField(max_length=25)
-    second_instrument = models.CharField(max_length=25)
-    bio = models.TextField()
-
-    # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
-    # is_approved = models.BooleanField(default=False)
-    # is_reviewed = models.BooleanField(default=False)
-
-    # Primary and secondary instruments: FK set up correctly?
-    # primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
-    # secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    objects = MemberManager()
