@@ -98,6 +98,7 @@
                 
 
                         <!-- Address and phone section: -->
+                        <!-- TODO: BS/Django probably has special forms for city, state. Maybe even auto-fill based on address. Probably requires an API. -->
                         <h5>Address and phone:</h5>
 
                         <div class="row">
@@ -128,7 +129,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <!-- I would like a better looking arrow: -->
-                                    <select class="form-control" id="state">
+                                    <select class="form-control" name="state" id="state">
                                         <option>Texas</option>
                                         <option>Alabama</option>
                                         <option>Alaska</option>
@@ -184,8 +185,6 @@
                                 </div>
                             </div>
 
-                            <!-- TODO: BS/Django probably has special forms for city, state. Maybe even auto-fill based on address. Probably requires an API. -->
-
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip code">
@@ -202,10 +201,65 @@
                                 {{ errors.phone_number }}
                             {% endif %}
                         </div>
+
+                        <!-- Section for musical information: -->
+                        <!-- TOFIX: Spacing not right here. Why? -->
+                        <h5>Musical information:</h5>
+                        <div class="row">
+                            <!-- TODO: better way to preload instrument names -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
+                                        <option selected disabled>Primary instrument</option>
+                                        <option>Instrument1</option>
+                                        <option>Instrument2</option>
+                                        <option>Instrument3</option>
+                                        <option>Instrument4</option>
+                                        <option>Instrument5</option>
+                                        <option>Instrument6</option>
+                                        <option>Instrument7</option>
+                                        <option>Instrument8</option>
+                                        <option>Instrument9</option>
+                                        <option>Instrument10</option>
+                                    </select>
+                                    {% if 'primary_instrument' in errors %}
+                                        {{ errors.primary_instrument }}
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control" name="second_instrument" id="second_instrument" placeholder="Second instrument">
+                                        <option selected disabled>Second instrument</option>
+                                        <option>None</option>
+                                        <option>Instrument1</option>
+                                        <option>Instrument2</option>
+                                        <option>Instrument3</option>
+                                        <option>Instrument4</option>
+                                        <option>Instrument5</option>
+                                        <option>Instrument6</option>
+                                        <option>Instrument7</option>
+                                        <option>Instrument8</option>
+                                        <option>Instrument9</option>
+                                        <option>Instrument10</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" placeholder="Brief musical bio"></textarea>
+                            {% if 'bio' in errors %}
+                                {{ errors.bio }}
+                            {% endif %}
+                        </div>
                    
-                        <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
-                    </form>          
-                </div>
+                    <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
+
+                    </form>  
+                <!-- End div for panel-body: -->        
+                </div> 
             </div>
         </div>
     </div>

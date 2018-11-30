@@ -84,9 +84,17 @@ class MemberManager(models.Manager):
         if len(postData['zip_code']) < 2:
             errors['zip_code'] = 'Please enter your zip code.'
 
-        # Ensure that a phone number is added.
+        # Ensure that a phone number is added:
         if len(postData['phone_number']) < 10:
             errors['phone_number'] = 'Please enter a valid phone number.'
+
+        # Ensure that a primary instrument is chosen:
+        if len(postData['primary_instrument']) < 2:
+            errors['primary_instrument'] = 'Please select a primary instrument.'
+
+        # Ensure that a primary instrument is chosen:
+        if len(postData['bio']) < 2:
+            errors['bio'] = 'Please provide a brief musical bio.'
 
         return errors
 
@@ -100,8 +108,11 @@ class MemberManager(models.Manager):
         state = data['state']
         zip_code = data['zip_code']
         phone_number = data['phone_number']
+        primary_instrument = data['primary_instrument']
+        second_instrument = data['second_instrument']
+        bio = data['bio']
 
-        return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number)
+        return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number, primary_instrument=primary_instrument, second_instrument=second_instrument, bio=bio)
 
     def email_exists(self, email):
         return self.filter(email=email).exists()
@@ -120,7 +131,10 @@ class Member(models.Model):
     zip_code = models.CharField(max_length=5)
     phone_number = models.CharField(max_length=10)
 
-    # bio = models.TextField()
+    primary_instrument = models.Charfield(max_length=25)
+    second_instrument = models.CharField(max_length=25)
+
+    bio = models.TextField()
 
     # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
     # is_approved = models.BooleanField(default=False)
