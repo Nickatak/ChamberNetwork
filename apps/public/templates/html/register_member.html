@@ -257,17 +257,42 @@
                         <div class="form-group">
                             <select class="form-control" name="rating" id="rating" placeholder="Self rating">
                                 <option selected disabled>Self rating</option>
-                                <option>1. Blah blah blah blah.</option>
-                                <option>2. Blah blah blah blah.</option>
-                                <option>3. Blah blah blah blah.</option>
-                                <option>4. Blah blah blah blah.</option>
-                                <option>5. Blah blah blah blah.</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
                             </select>
+                            <p>NOTE: See rating rubric below before choosing your self rating.</p>
                         </div>
                    
                     <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
 
                     </form>  
+
+                    <!-- Div for overlay effect: -->
+                    <div id="overlay" onclick="off()">
+                        <div id="text">
+                            <p>I am conservatory trained. I play with a finely nuanced tone. I can play most difficult passages with finesse at performance tempo. I use high-level technique. I can sight-read all passages cleanly at concert tempo, with phrasing. I could likely play all others’ parts if asked.</p>
+
+                            
+                        </div>
+                    </div>
+
+                    <div style="padding:20px">
+                        <button onclick="on()" class="btn btn-reg btn-info btn-block">Click here to read self rating rubric.</button>
+                    </div>
+
+                    <script type="text/javascript">
+
+                        function on() {
+                            document.getElementById("overlay").style.display = "block";
+                        }
+
+                        function off() {
+                            document.getElementById("overlay").style.display = "none";
+                        }
+
+                    </script>
                 <!-- End div for panel-body: -->        
                 </div> 
             </div>
