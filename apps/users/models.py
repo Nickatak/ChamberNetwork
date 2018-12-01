@@ -25,7 +25,7 @@ class MemberManager(models.Manager):
             if check_password(attempted_password, user.password):
     '''
 
-    def new_validation(self, postData):
+    def new__member_validation(self, postData):
 
         errors = {}
 
@@ -99,12 +99,12 @@ class MemberManager(models.Manager):
         
         return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number, primary_instrument=primary_instrument, second_instrument=second_instrument, bio=bio, rating=rating)
 
-    def email_exists(self, email):
+    def member_email_exists(self, email):
         return self.filter(email=email).exists()
 
 # Patron manager model:
 class PatronManager(models.Manager):
-    def new_validation(self, postData):
+    def new_patron_validation(self, postData):
 
         errors = {}
 
@@ -165,7 +165,7 @@ class PatronManager(models.Manager):
         
         return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number)
 
-    def email_exists(self, email):
+    def patron_email_exists(self, email):
         return self.filter(email=email).exists()
 
 # Member Model
