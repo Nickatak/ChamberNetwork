@@ -46,7 +46,7 @@
     <div class="container-fluid" id="form-container">
         <div class="row" id="form-itself">
 
-            <!-- Empty div for spacing: -->
+            <!-- Empty div for spacing on left of screen: -->
             <div class="col-md-4"></div>
 
             <!-- Div containing actual form: -->
@@ -64,65 +64,156 @@
 
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
-                    <form role="form" action="" method="POST">
+                    <form role="form" action="/users/register_patron/" method="POST">
+                        {% csrf_token %}
 
+                        <!-- Basic information section: -->
+                        <h5>Basic information:</h5>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
+                                    {% if 'first_name' in errors %}
+                                        {{ errors.first_name }}
+                                    {% endif %}
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                    {% if 'last_name' in errors %}
+                                        {{ errors.last_name }}
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                            {% if 'email' in errors %}
+                                {{ errors.email }}
+                            {% endif %}
+                        </div>
+                
+
+                        <!-- Address and phone section: -->
+                        <!-- TODO: BS/Django probably has special forms for city, state. Maybe even auto-fill based on address. Probably requires an API. -->
+                        <h5>Address and phone:</h5>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address">
+                                    {% if 'street_address' in errors %}
+                                        {{ errors.street_address }}
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit number">
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address">
+                            <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
+                            {% if 'city' in errors %}
+                                {{ errors.city }}
+                            {% endif %}
                         </div>
 
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit number">
+                                    <!-- I would like a better looking arrow: -->
+                                    <select class="form-control" name="state" id="state">
+                                        <option>Texas</option>
+                                        <option>Alabama</option>
+                                        <option>Alaska</option>
+                                        <option>Arizona</option>
+                                        <option>Arkansas</option>
+                                        <option>California</option>
+                                        <option>Colorado</option>
+                                        <option>Connecticut</option>
+                                        <option>Delaware</option>
+                                        <option>District of Columbia</option>
+                                        <option>Florida</option>
+                                        <option>Georgia</option>
+                                        <option>Hawaii</option>
+                                        <option>Idaho</option>
+                                        <option>Illinois</option>
+                                        <option>Indiana</option>
+                                        <option>Iowa</option>
+                                        <option>Kansas</option>
+                                        <option>Kentucky</option>
+                                        <option>Louisiana</option>
+                                        <option>Maine</option>
+                                        <option>Maryland</option>
+                                        <option>Massachusetts</option>
+                                        <option>Michigan</option>
+                                        <option>Minnesota</option>
+                                        <option>Mississippi</option>
+                                        <option>Missouri</option>
+                                        <option>Montana</option>
+                                        <option>Nebraska</option>
+                                        <option>Nevada</option>
+                                        <option>New Hampshire</option>
+                                        <option>New Jersey</option>
+                                        <option>New Mexico</option>
+                                        <option>New York</option>
+                                        <option>North Carolina</option>
+                                        <option>North Dakota</option>
+                                        <option>Ohio</option>
+                                        <option>Oklahoma</option>
+                                        <option>Oregon</option>
+                                        <option>Pennsylvania</option>
+                                        <option>Rhode Island</option>
+                                        <option>South Carolina</option>
+                                        <option>South Dakota</option>
+                                        <option>Tennessee</option>
+                                        <option>Utah</option>
+                                        <option>Vermont</option>
+                                        <option>Virginia</option>
+                                        <option>Washington</option>
+                                        <option>West Virginia</option>
+                                        <option>Wisconsin</option>
+                                        <option>Wyoming</option>
+                                    </select>
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="state" id="state" class="form-control input-sm" placeholder="State">
-                                </div>
-                            </div>
-                                  
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip code">
+                                    {% if 'zip_code' in errors %}
+                                        {{ errors.zip_code }}
+                                    {% endif %}
                                 </div>
                             </div>
+                        <!-- End div for state/zip row: -->
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="phone" id="phone" class="form-control input-sm" placeholder="Phone number">
+                            <input type="text" name="phone_number" id="phone_number" class="form-control input-sm" placeholder="Phone">
+                            {% if 'phone_number' in errors %}
+                                {{ errors.phone_number }}
+                            {% endif %}
                         </div>
-                                   
+
                         <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
                     </form>
+                <!-- End div for class="panel body": -->
                 </div>
+            <!-- End div for id="inner-form-container": -->
             </div>
+
+            <!-- Div for spacing (right side of page): -->
             <div class="col-md-4"></div>
+        <!-- End div for id="form-itself": -->
         </div>
+    <!-- End div for id="form-container": -->
     </div>
 {% endblock %}
