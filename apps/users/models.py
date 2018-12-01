@@ -102,6 +102,72 @@ class MemberManager(models.Manager):
     def email_exists(self, email):
         return self.filter(email=email).exists()
 
+# Patron manager model:
+class PatronManager(models.Manager):
+    def new_validation(self, postData):
+
+        errors = {}
+
+
+        # Ensure that first name 1) has content 2) is at least 2 characters long and 3) contains no invalid characters:
+        if len(postData['first_name']) < 1:
+            errors['first_name'] = 'You must enter a first name.'
+        elif len(postData['first_name']) < 2:
+            errors['first_name'] = 'First name must contain at least two characters.'
+        elif not NAME_REGEX.match(postData['first_name']):
+            errors['first_name'] = 'First name contains an invalid character.'
+
+        # Ensure that last name 1) has content 2) is at least 2 characters long and 3) contains no invalid characters:
+        if len(postData['last_name']) < 1:
+            errors['last_name'] = 'You must enter a last name.' 
+        elif len(postData['last_name']) < 2:
+            errors['last_name'] = 'Last name must contain at least two characters.'
+        elif not NAME_REGEX.match(postData['last_name']):
+            errors['last_name'] = 'Last name contains an invalid character.'
+
+        # Ensure that email field is completed and that email adheres to standard conventions:
+        if len(postData['email']) < 1:
+            errors['email'] = 'You must enter an email address.'
+        elif not EMAIL_REGEX.match(postData['email']):
+            errors['email'] = 'Please enter a valid email address.'
+        # Call email_exists to ensure they haven't already signed up
+        elif self.email_exists(postData['email']) == True:
+            errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
+
+        # Ensure that a street address is added:
+        if len(postData['street_address']) < 1:
+            errors['street_address'] = 'Please enter your street address.'
+
+        # Ensure that a city is added:
+        if len(postData['city']) < 1:
+            errors['city'] = 'Please enter a city.'
+
+        # Ensure that a zip code is added:
+        if len(postData['zip_code']) < 1:
+            errors['zip_code'] = 'Please enter your zip code.'
+
+        # Ensure that a phone number is added:
+        if len(postData['phone_number']) < 10:
+            errors['phone_number'] = 'Please enter a valid phone number.'
+
+        return errors
+
+    def add_patron(self, data):
+        first_name = data['first_name']
+        last_name = data['last_name']
+        email = data['email']
+        street_address = data['street_address']
+        unit_number = data['unit_number']
+        city = data['city']
+        state = data['state']
+        zip_code = data['zip_code']
+        phone_number = data['phone_number']
+        
+        return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number)
+
+    def email_exists(self, email):
+        return self.filter(email=email).exists()
+
 # Member Model
 class Member(models.Model):
     #Will the email be used as auth?
@@ -140,17 +206,19 @@ class Patron(models.Model):
     last_name = models.CharField(max_length=25)
     email = models.CharField(max_length=25)
     phone_number = models.CharField(max_length=10)
-    # street_address = models.CharField(max_length=25)
-    # unit_number = models.CharField(max_length=25)
-    # city = models.CharField(max_length=25)
-    # state = models.CharField(max_length=2)
-    # zip_code = models.CharField(max_length=5)
+    street_address = models.CharField(max_length=25)
+    unit_number = models.CharField(max_length=25)
+    city = models.CharField(max_length=25)
+    state = models.CharField(max_length=2)
+    zip_code = models.CharField(max_length=5)
 
     # referred_by : does this belong here or in musician table?
     # referred_by = models.ForeignKey("Referred by", on_delete=models.CASCADE, related_name="musician")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    objects = PatronManager()
 
 
 
