@@ -5,6 +5,7 @@ from .  import views
 urlpatterns = [
     path('login_handler/', views.login_handler, name="login_handler"),
     path('register_member/', views.register_member),
+    path('register_patron/', views.register_patron),
 
 ]
 
