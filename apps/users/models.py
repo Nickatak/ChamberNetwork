@@ -9,23 +9,7 @@ import re
 NAME_REGEX = re.compile(r"^[-a-zA-Z']+$")
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
-# Patron Model. This is just for an emailing list right?  All we need to do is store them then, not a big deal.
-class Patron(models.Model):
-    first_name = models.CharField(max_length=25)
-    last_name = models.CharField(max_length=25)
-    email = models.CharField(max_length=25)
-    phone_number = models.CharField(max_length=10)
-    # street_address = models.CharField(max_length=25)
-    # unit_number = models.CharField(max_length=25)
-    # city = models.CharField(max_length=25)
-    # state = models.CharField(max_length=2)
-    # zip_code = models.CharField(max_length=5)
 
-    # referred_by : does this belong here or in musician table?
-    # referred_by = models.ForeignKey("Referred by", on_delete=models.CASCADE, related_name="musician")
-
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
 
 # Member Manager Model
@@ -149,6 +133,24 @@ class Member(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     objects = MemberManager()
+
+# Patron Model. Merely an email list. For now, OK to just store information. But eventually we need to program the site to do something with the emails - either email Patrons automatically or at least send the emails to Michael.
+class Patron(models.Model):
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
+    email = models.CharField(max_length=25)
+    phone_number = models.CharField(max_length=10)
+    # street_address = models.CharField(max_length=25)
+    # unit_number = models.CharField(max_length=25)
+    # city = models.CharField(max_length=25)
+    # state = models.CharField(max_length=2)
+    # zip_code = models.CharField(max_length=5)
+
+    # referred_by : does this belong here or in musician table?
+    # referred_by = models.ForeignKey("Referred by", on_delete=models.CASCADE, related_name="musician")
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
 
