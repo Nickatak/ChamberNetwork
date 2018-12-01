@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .models import Member
+from .models import Member, Patron
 
 # Create your views here.
 
