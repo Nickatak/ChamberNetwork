@@ -52,7 +52,7 @@ class MemberManager(models.Manager):
         elif not EMAIL_REGEX.match(postData['email']):
             errors['email'] = 'Please enter a valid email address.'
         # Call email_exists to ensure they haven't already signed up
-        elif self.email_exists(postData['email']) == True:
+        elif self.member_email_exists(postData['email']) == True:
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
         # Ensure that a street address is added:
@@ -131,7 +131,7 @@ class PatronManager(models.Manager):
         elif not EMAIL_REGEX.match(postData['email']):
             errors['email'] = 'Please enter a valid email address.'
         # Call email_exists to ensure they haven't already signed up
-        elif self.email_exists(postData['email']) == True:
+        elif self.patron_email_exists(postData['email']) == True:
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
         # Ensure that a street address is added:
