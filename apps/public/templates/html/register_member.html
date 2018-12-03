@@ -53,8 +53,84 @@
             <div class="col-md-4" id="inner-form-container">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">MEMBER REGISTRATION FORM<sup>*</sup></h3>
+                        <h2 class="panel-title">MEMBER REGISTRATION FORM</h2>
                     </div>
+                </div>
+
+                <!-- Panel for curlicue divider: -->
+                <div class="panel panel-default">
+                    <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
+                </div>
+
+                <!-- Div for overlays: -->
+                <div class="panel panel-default">
+                    <h5>Before filling out form, please read the following:</h5>
+
+                    <!-- Self-rating overlay: -->
+                    <div id="overlay1" onclick="off('overlay1')">
+                        <div id="rating-rubric">
+                            <div><h5><b>Below, you will be asked to rate your musicianship. Please choose the "grade" that best describes you.</b></h5><br><br></div>
+                            <dl class="row">
+                                <dt class="col-sm-3">A: Professional</dt>
+                                <dd class="col-sm-9">
+                                    <p>I play with a beautiful tone. I can play quickly and cleanly in difficult keys and with key/tempo changes. I am a strong leader. I can sight-read all passages cleanly at concert tempo (except pianists). I have keen awareness of other parts and know exactly how they fit.</p>
+                                    <!-- <p><b>My challenges:</b> I want to develop a cohesive group sound and wider range in tone color. I need to fine-tune my intonation.</p>
+                                    <p><b>My goals:</b> To convey a convincing interpretation, expand my arsenal of tone colors, and refine attention to detail</p> -->
+                                </dd>
+
+                                <dt class="col-sm-3">B: Advanced</dt>
+                                <dd class="col-sm-9">
+                                    <p>I play with a pleasant tone. I can get back in when lost. I can sight-read near concert tempo, except in difficult technical passages. I am aware of other parts and try to match them.</p>
+                                    <!-- <p><b>My challenges:</b> The hardest passages sound messy if I take them too fast. My phrasing is sometimes choppy.</p>
+                                    <p><b>My goals:</b> To play with more nuance, match my articulation with the group’s, and improve my tone and phrasing</p> -->
+                                </dd>
+
+                                <dt class="col-sm-3">C: Intermediate</dt>
+                                <dd class="col-sm-9">
+                                    <p>I play with a decent tone. I am comfortable at moderate tempi. I am peripherally aware of other parts. I can sight-read at a moderate tempo but slow down the hard sections.</p>
+                                    <!-- <p><b>My challenges:</b> I need to slow down in hard sections. I tend to get absorbed in my own part.</p>
+                                    <p><b>My goals:</b> To listen more to others, improve leading ability, and develop the technique for complex passages.</p> -->
+                                </dd>
+
+                                <dt class="col-sm-3">D: Novice</dt>
+                                <dd class="col-sm-9">
+                                    <p>I can read music and have basic technical skills. I am starting to explore chamber music repertoire. I can sight-read simple pieces slowly.</p>
+                                    <!-- <p><b>My challenges:</b> Often I must slow down in faster or more technical passages. Sometimes I get “tangled” in my own part.</p>
+                                    <p><b>My goals:</b> To play with fewer stops, listen more to the group, and learn to lead.</p> -->
+                                </dd>
+                            </dl>
+                        </div>
+
+                    </div>
+
+                    <div style="">
+                        <button onclick="on('overlay1')" class="btn btn-reg btn-info btn-block">What's my rating?</button>
+                    </div>
+
+                    <!-- What happens overlay: -->
+                    <div id="overlay2" onclick="off('overlay2')">
+                        <div id="rating-rubric">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                        </div>
+                    </div>
+
+                    <div style="">
+                        <button onclick="on('overlay2')" class="btn btn-reg btn-info btn-block">What happens after I submit this form?</button>
+                    </div>
+
+                    <script type="text/javascript">
+
+                        function on(id) {
+                            document.getElementById(id).style.display = "block";
+                        }
+
+                        function off(id) {
+                            document.getElementById(id).style.display = "none";
+                        }
+
+                    </script>
+                 
+                <!-- End div for overlays: -->   
                 </div>
 
                 <!-- Panel for curlicue divider: -->
@@ -262,37 +338,12 @@
                                 <option>C</option>
                                 <option>D</option>
                             </select>
-                            <p>NOTE: See rating rubric below before choosing your self rating.</p>
                         </div>
                    
                     <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
 
                     </form>  
 
-                    <!-- Div for overlay effect: -->
-                    <div id="overlay" onclick="off()">
-                        <div id="text">
-                            <p>I am conservatory trained. I play with a finely nuanced tone. I can play most difficult passages with finesse at performance tempo. I use high-level technique. I can sight-read all passages cleanly at concert tempo, with phrasing. I could likely play all others’ parts if asked.</p>
-
-                            
-                        </div>
-                    </div>
-
-                    <div style="padding:20px">
-                        <button onclick="on()" class="btn btn-reg btn-info btn-block">Click here to read self rating rubric.</button>
-                    </div>
-
-                    <script type="text/javascript">
-
-                        function on() {
-                            document.getElementById("overlay").style.display = "block";
-                        }
-
-                        function off() {
-                            document.getElementById("overlay").style.display = "none";
-                        }
-
-                    </script>
                 <!-- End div for panel-body: -->        
                 </div> 
             </div>

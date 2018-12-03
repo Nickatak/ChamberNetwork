@@ -25,6 +25,56 @@ a.active {
 	color: #808080;
 }
 
+.panel-default {
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Overlay:*/
+#overlay1 {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlay2 {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#rating-rubric{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 18px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
 /*Form:*/
 #form-container h2 {
 	color: black;
@@ -47,6 +97,10 @@ a.active {
     height: auto;
 }*/
 
+.panel-body {
+	/*padding-top: 14px;*/
+}
+
 #form-container {
 	margin-top: 50px;
 	padding-top: 50px;
@@ -65,23 +119,6 @@ a.active {
 
 .btn-reg {
 	margin-top: 40px;
-}
-
-/*Explanation container:*/
-#explanation-container {
-	background-color: #fffef7;
-}
-
-#explanation-container .col-md-8 {
-	border-top: 1px solid black;
-}
-
-#explanation-container h4 {
-	margin-top: 40px;
-}
-
-#explanation-container p {
-	margin-bottom: 40px;
 }
 
 /*Footer:*/
@@ -118,31 +155,6 @@ footer {
 
 .container1 p {
 	color: white;
-}
-
-/*Overlay:*/
-#overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-}
-
-#text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 20px;
-    color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
 }
 
 .footer-links li a:hover {
