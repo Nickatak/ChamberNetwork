@@ -8,7 +8,7 @@ Parts list:
     - Breakdown of responsibilities:
     	- GB:
     		- Responsible for appearance of all pages (html and css)
-    		- Responsible to rendering all pages (setting up urls and views to render pages)
+    		- Responsible to rendering all pages (setting up urls and views to render pages) (will wait until NT has 		sketched in URL)
     		- Responsible for navigating within site (intra-site links)
     	- NT:
     		- Responsible for all back-end functions and comm with database
@@ -171,7 +171,7 @@ Parts list:
 	- Breakdown of responsibilities:
     	- GB:
     		- Responsible for appearance of all pages (html and css)
-    		- Responsible to rendering all pages (setting up urls and views to render pages)
+    		- Responsible to rendering all pages (setting up urls and views to render pages) (will wait until NT has 		sketched in URL)
     		- Responsible for navigating within site (intra-site links)
     	- NT:
     		- Responsible for setting up database models
@@ -275,6 +275,16 @@ Parts list:
 			- [ ] Logout Musician and redirect to login page 
 
 - Performances (app)
+
+	- Breakdown of responsibilities:
+    	- GB:
+    		- Responsible for appearance of all pages (html and css)
+    		- Responsible to rendering all pages (setting up urls and views to render pages) (will wait until NT has 		sketched in URL)
+    		- Responsible for navigating within site (intra-site links)
+    	- NT:
+    		- Responsible for setting up database models
+    		- Responsible for all back-end functions and comm with database
+
 	- Functionalities necessary:
 		- [ ] Add performances to db
 		- [ ] Edit performance in db
@@ -298,7 +308,7 @@ Parts list:
 			- [ ] Updated at
 
 	- Views necessary:
-		- [x] Add performance page (houstonchambermusic.org/performances/add)
+		- [ ] Add performance page (houstonchambermusic.org/performances/add/)
 			- [ ] Form to add performance:
 				- [ ] Title
 				- [ ] Description
@@ -313,17 +323,17 @@ Parts list:
 				- [ ] Validations: must complete
 				- [ ] Validation: inform user if performance has already been added to db
 				- [ ] Submit button
-			- [x] Navbar top
-				- [x] Link to Dashboard 
-				- [x] Link to Upcoming Performances
-				- [x] Link to Add Performance (active)
-				- [x] Drop-down menu for Instruments
+			- [ ] Navbar top
+				- [ ] Link to Dashboard 
+				- [ ] Link to Upcoming Performances
+				- [ ] Link to Add Performance (active)
+				- [ ] Drop-down menu for Instruments
 				- [ ] Logout
-			- [x] Footer
-				- [x] Link to About Us
-				- [x] Contact info
+			- [ ] Footer
+				- [ ] Link to About Us
+				- [ ] Contact info
 
-		- [x] Individual performance page (houstonchambermusic.org/performances/performance/[id]/)
+		- [x] Individual performance page #I am not sure of this url: (houstonchambermusic.org/performances/[id]/)
 			- [ ] Performance info (card)
 				- [ ] Title 
 				- [ ] Description
@@ -339,15 +349,15 @@ Parts list:
 				- [ ] Instrument
 				- [ ] Submit button
 			- [ ] Button to send rsvp for performance
-			- [x] Navbar top
-				- [x] Link to Dashboard 
-				- [x] Link to Upcoming Performances
-				- [x] Link to Add Performance 
-				- [x] Drop-down menu for Instruments
+			- [ ] Navbar top
+				- [ ] Link to Dashboard 
+				- [ ] Link to Upcoming Performances
+				- [ ] Link to Add Performance 
+				- [ ] Drop-down menu for Instruments
 				- [ ] Logout
-			- [x] Footer
-				- [x] Link to About Us
-				- [x] Contact info
+			- [ ] Footer
+				- [ ] Link to About Us
+				- [ ] Contact info
 
 		- [x] Upcoming performances page (houstonchambermusic.org/performances/upcoming/)
 			- [ ] List of performances, by date
@@ -358,17 +368,27 @@ Parts list:
 				- [ ] Location
 			- [ ] Site must automatically add and subtract performances (by date)
 			- [ ] Each performance provides link to Individual Performance page
-			- [x] Navbar top
-				- [x] Link to Dashboard 
-				- [x] Link to Upcoming Performances (active)
-				- [x] Link to Add Performance 
-				- [x] Drop-down menu for Instruments
+			- [ ] Navbar top
+				- [ ] Link to Dashboard 
+				- [ ] Link to Upcoming Performances (active)
+				- [ ] Link to Add Performance 
+				- [ ] Drop-down menu for Instruments
 				- [ ] Logout
-			- [x] Footer
-				- [x] Link to About Us
-				- [x] Contact info
+			- [ ] Footer
+				- [ ] Link to About Us
+				- [ ] Contact info
 
 - Instruments (app) 
+
+	- Breakdown of responsibilities:
+    	- GB:
+    		- Responsible for appearance of all pages (html and css)
+    		- Responsible to rendering all pages (setting up urls and views to render pages) (will wait until NT has 		sketched in URL)
+    		- Responsible for navigating within site (intra-site links)
+    	- NT:
+    		- Responsible for setting up database models
+    		- Responsible for all back-end functions and comm with database
+    		
 	- [ ] Functionalities necessary:
 		- [ ] Search for Musicians by instrument
 
