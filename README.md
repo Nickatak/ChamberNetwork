@@ -5,20 +5,28 @@ Parts list:
 - Public (app)
     # Public itself won't have functionality, as its point is to simply house public route-URL's.
 
+    - Breakdown of responsibilities:
+    	- GB:
+    		- Responsible for appearance of all pages (html and css)
+    		- Responsible to rendering all pages
+    		- Responsible for navigating within site (intra-site links)
+    	- NT:
+    		- Responsible for all back-end functions and comm with database
+
 	- Views necessary:
-		- [x] Welcome page (houstonchambermusic.org/public/welcome/)
+		- [x] Welcome page (houstonchambermusic.org)
 			- [x] Background images parallax w/ text and links
 			- [x] Navbar top
 				- [x] Link to Welcome (active)
 				- [x] Link to Register as Member
 				- [x] Link to Register as Coach
 				- [x] Link to Receive e-Newsletter
-				- [x] Link to Login
+				- [ ] Link to Login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [x] About (houstonchambermusic.org/public/about/)
+		- [x] About (houstonchambermusic.org/about/)
 			- [ ] Display pertinent text
 				- [ ] Links w/in text
 			- [x] Background image
@@ -27,12 +35,12 @@ Parts list:
 				- [x] Link to Register as Member
 				- [x] Link to Register as Coach
 				- [ ] Link to Receive e-Newsletter
-				- [x] Link to login
+				- [ ] Link to login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [x] Register Patron Page (houstonchambermusic.org/public/register_patron)
+		- [x] Register Patron Page (houstonchambermusic.org/register_patron)
 			- [x] Form
 				- [x] First name
 				- [x] Last name
@@ -53,13 +61,14 @@ Parts list:
 				- [x] Link to Register as Member
 				- [x] Link to Register as Coach
 				- [x] Link to Receive e-Newsletter (active)
-				- [x] Link to login
+				- [ ] Link to login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [x] Register member page (houstonchambermusic.org/public/register_member/)
-			- [ ] "What happens after you submit form" explanation
+		- [x] Register member page (houstonchambermusic.org/register_member/)
+			- [ ] Overlay: text for "What happens after I submit form"
+			- [ ] Overlay: text for "ratings rubric"
 			- [x] Form
 				- [x] First name
 				- [x] Last name
@@ -74,7 +83,7 @@ Parts list:
 				- [x] Brief musical bio
 				- [x] Drop-down menu for primary instrument
 				- [x] Drop-down menu for secondary instrument
-				- [ ] Self rating (1-5)
+				- [ ] Self rating
 				- [x] Submit button
 			- [ ] Validations for all fields
 			- [ ] Send email to Michael upon successful submission
@@ -84,12 +93,13 @@ Parts list:
 				- [x] Link to Register as Member (active)
 				- [x] Link to Register as Coach
 				- [x] Link to Receive e-Newsletter
-				- [x] Link to Login
+				- [ ] Link to Login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info  
 
-		- [x] Register coach page (houstonchambermusic.org/public/register_coach/)
+		- [x] Register coach page (houstonchambermusic.org/register_coach/)
+			- [ ] Overlay: test for "What happens after I submit this form?
 			- [x] Form
 				- [x] First name
 				- [x] Last name
@@ -100,7 +110,7 @@ Parts list:
 					- [x] City
 					- [x] State
 					- [x] Zip
-				- [ ] Phone number
+				- [x] Phone number
 				- [ ] Attach CV
 				- [x] Brief musical bio
 				- [x] Drop-down menu for primary instrument
@@ -114,12 +124,13 @@ Parts list:
 				- [x] Link to Register as Member 
 				- [x] Link to Register as Coach (active)
 				- [x] Link to Receive e-Newsletter
-				- [x] Link to Login
+				- [ ] Link to Login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [x] Success page (houstonchambermusic.org/public/success)
+		- [x] Success page (houstonchambermusic.org/success/)
+			- [ ] Page currently will not load
 			- [x] Success message
 			- [x] Navbar top
 				- [x] Link to Welcome 
@@ -131,7 +142,8 @@ Parts list:
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [x] Login page (houstonchambermusic.org/public/login/)
+		- [x] Login page (houstonchambermusic.org/login/)
+			- [ ] Page currently will not load
 			- [ ] Login form
 				- [ ] Field for email
 				- [ ] Field for password (encrypted)
@@ -149,7 +161,7 @@ Parts list:
 				- [x] Contact info
 
 
-- Users (app) #Former name: Musicians, whether they're members, coaches, or patrons, they're still all users.
+- Users (app) #Former name: Musicians; both "members" and "coaches" are now simply "users." "Patrons" are not actually users of the site (have to login capabilities)
 
     # This is where the functionalities for public will tie to.
 	- Functionalities necessary:
