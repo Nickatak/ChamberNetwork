@@ -8,13 +8,14 @@ Parts list:
     - Breakdown of responsibilities:
     	- GB:
     		- Responsible for appearance of all pages (html and css)
-    		- Responsible to rendering all pages
+    		- Responsible to rendering all pages (setting up urls and views to render pages)
     		- Responsible for navigating within site (intra-site links)
     	- NT:
     		- Responsible for all back-end functions and comm with database
 
 	- Views necessary:
 		- [x] Welcome page (houstonchambermusic.org)
+			- [x] URL path and view to render
 			- [x] Background images parallax w/ text and links
 			- [x] Navbar top
 				- [x] Link to Welcome (active)
@@ -27,6 +28,7 @@ Parts list:
 				- [x] Contact info
 
 		- [x] About (houstonchambermusic.org/about/)
+			- [x] URL path and view to render
 			- [ ] Display pertinent text
 				- [ ] Links w/in text
 			- [x] Background image
@@ -41,6 +43,7 @@ Parts list:
 				- [x] Contact info
 
 		- [x] Register Patron Page (houstonchambermusic.org/register_patron)
+			- [x] URL path and view to render
 			- [x] Form
 				- [x] First name
 				- [x] Last name
@@ -67,6 +70,7 @@ Parts list:
 				- [x] Contact info
 
 		- [x] Register member page (houstonchambermusic.org/register_member/)
+			- [x] URL path and view to render
 			- [ ] Overlay: text for "What happens after I submit form"
 			- [ ] Overlay: text for "ratings rubric"
 			- [x] Form
@@ -99,6 +103,7 @@ Parts list:
 				- [x] Contact info  
 
 		- [x] Register coach page (houstonchambermusic.org/register_coach/)
+			- [x] URL path and view to render
 			- [ ] Overlay: test for "What happens after I submit this form?
 			- [x] Form
 				- [x] First name
@@ -130,7 +135,7 @@ Parts list:
 				- [x] Contact info
 
 		- [x] Success page (houstonchambermusic.org/success/)
-			- [ ] Page currently will not load
+			- [ ] URL path and view to render
 			- [x] Success message
 			- [x] Navbar top
 				- [x] Link to Welcome 
@@ -143,7 +148,7 @@ Parts list:
 				- [x] Contact info
 
 		- [x] Login page (houstonchambermusic.org/login/)
-			- [ ] Page currently will not load
+			- [ ] URL path and view to render
 			- [ ] Login form
 				- [ ] Field for email
 				- [ ] Field for password (encrypted)
@@ -163,14 +168,23 @@ Parts list:
 
 - Users (app) #Former name: Musicians; both "members" and "coaches" are now simply "users." "Patrons" are not actually users of the site (have to login capabilities)
 
+	- Breakdown of responsibilities:
+    	- GB:
+    		- Responsible for appearance of all pages (html and css)
+    		- Responsible to rendering all pages (setting up urls and views to render pages)
+    		- Responsible for navigating within site (intra-site links)
+    	- NT:
+    		- Responsible for setting up database models
+    		- Responsible for all back-end functions and comm with database
+
     # This is where the functionalities for public will tie to.
 	- Functionalities necessary:
         - [ ] Register Musician
 		- [ ] Register Coach
 		- [ ] Register Patron
-		- [ ] Login member/coach
-		- [ ] Logout member/coach (must be possible on multiple pages)
-		- [ ] Edit member/coach information
+		- [ ] Login member/coach (aka user)
+		- [ ] Logout member/coach (aka user) (must be possible on multiple pages)
+		- [ ] Edit member/coach (aka user) information
 
 	- Information necessary:
         - [x] Patron model
@@ -207,7 +221,8 @@ Parts list:
             - [x] Updated at (datetime)		
 
 	- Views necessary:
-		- [x] Musician Dashboard page (houstonchambermusic.org/musicians/dashboard/)
+		- [x] User Dashboard page (houstonchambermusic.org/users/dashboard/)
+			- [ ] URL path and view to render
 			- [ ] Text that says "Welcome [Musician first name]!"
 			- [ ] Display Musician information (card):
 				- [ ] Full name
@@ -220,17 +235,17 @@ Parts list:
 				- [ ] Edit function
 			- [ ] Upcoming performances (card):
 				- [ ] Title of performance w/date : Each is a link to individual performance page
-			- [x] Navbar top
-				- [x] Link to Dashboard (active)
-				- [x] Link to Upcoming Performances
-				- [x] Link to Add Performance
-				- [x] Drop-down menu for Instruments
+			- [ ] Navbar top
+				- [ ] Link to Dashboard (active)
+				- [ ] Link to Upcoming Performances
+				- [ ] Link to Add Performance
+				- [ ] Drop-down menu for Instruments
 				- [ ] Logout
-			- [x] Footer
-				- [x] Link to About Us
-				- [x] Contact info
+			- [ ] Footer
+				- [ ] Link to About Us
+				- [ ] Contact info
 
-		- [x] Individual Musician page (houstonchambermusic.org/musicians/musician/[id]/)
+		- [ ] Individual member page #I am not sure about this URL: (houstonchambermusic.org/users/[id]/)
 			- [ ] Display musician information (card)
 				- [ ] First name
 				- [ ] Last name
@@ -243,17 +258,20 @@ Parts list:
 			- [ ] Upcoming performances (card):
 				- [ ] Title of performance w/date : Each is a link to individual performance page
 			- [ ] Message musician (send email)
-			- [x] Navbar top
-				- [x] Link to Dashboard 
-				- [x] Link to Upcoming Performances
-				- [x] Link to Add Performance
-				- [x] Drop-down menu for Instruments
+			- [ ] Navbar top
+				- [ ] Link to Dashboard 
+				- [ ] Link to Upcoming Performances
+				- [ ] Link to Add Performance
+				- [ ] Drop-down menu for Instruments
 				- [ ] Logout
-			- [x] Footer
-				- [x] Link to About Us
-				- [x] Contact info
+			- [ ] Footer
+				- [ ] Link to About Us
+				- [ ] Contact info
 
-		- [ ] Logout (not a page, just a view) (houstonchambermusic.org/musicians/logout/)
+		- [ ] Edit member page #I am not sure about this URL: (houstonchambermusic.org/users/edit/[id]/)
+			# I need to flesh this out!
+
+		- [ ] Logout (not a page, just a view) (houstonchambermusic.org/users/logout/)
 			- [ ] Logout Musician and redirect to login page 
 
 - Performances (app)
