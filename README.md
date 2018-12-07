@@ -246,6 +246,7 @@ Parts list:
 				- [ ] Contact info
 
 		- [ ] Individual member page #I am not sure about this URL: (houstonchambermusic.org/users/[id]/)
+			- [ ] URL path and view to render
 			- [ ] Display musician information (card)
 				- [ ] First name
 				- [ ] Last name
@@ -309,6 +310,7 @@ Parts list:
 
 	- Views necessary:
 		- [ ] Add performance page (houstonchambermusic.org/performances/add/)
+			- [ ] URL path and view to render
 			- [ ] Form to add performance:
 				- [ ] Title
 				- [ ] Description
@@ -334,6 +336,7 @@ Parts list:
 				- [ ] Contact info
 
 		- [x] Individual performance page #I am not sure of this url: (houstonchambermusic.org/performances/[id]/)
+			- [ ] URL path and view to render
 			- [ ] Performance info (card)
 				- [ ] Title 
 				- [ ] Description
@@ -360,6 +363,7 @@ Parts list:
 				- [ ] Contact info
 
 		- [x] Upcoming performances page (houstonchambermusic.org/performances/upcoming/)
+			- [ ] URL path and view to render
 			- [ ] List of performances, by date
 				- [ ] Title
 				- [ ] Description
@@ -401,6 +405,7 @@ Parts list:
 
 	- [ ] Views necessary:
 		- [ ] Individual instrument page (houstonchambermusic.org/instruments/[name]/) 
+			- [ ] URL path and view to render
 			- [ ] Text that says "Page for [instrument]"
 			- [ ] List of all musicians in db who play instrument (first name, last name, rating)
 			- [ ] Each musician name is a link to that musician's individual page
