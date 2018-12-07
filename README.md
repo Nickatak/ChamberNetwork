@@ -385,10 +385,11 @@ Parts list:
     		- Responsible for appearance of all pages (html and css)
     		- Responsible to rendering all pages (setting up urls and views to render pages) (will wait until NT has 		sketched in URL)
     		- Responsible for navigating within site (intra-site links)
+    		- Provide list of instruments to be included in db (and therefore pull-down menus)
     	- NT:
     		- Responsible for setting up database models
     		- Responsible for all back-end functions and comm with database
-    		
+
 	- [ ] Functionalities necessary:
 		- [ ] Search for Musicians by instrument
 
@@ -399,19 +400,19 @@ Parts list:
 		- [ ] Updated at
 
 	- [ ] Views necessary:
-		- [x] Individual instrument page (houstonchambermusic.org/instruments/[name]/) 
+		- [ ] Individual instrument page (houstonchambermusic.org/instruments/[name]/) 
 			- [ ] Text that says "Page for [instrument]"
 			- [ ] List of all musicians in db who play instrument (first name, last name, rating)
 			- [ ] Each musician name is a link to that musician's individual page
-			- [x] Navbar top
-				- [x] Link to Dashboard 
-				- [x] Link to Upcoming Performances
-				- [x] Link to Add Performance 
-				- [x] Drop-down menu for Instruments
+			- [ ] Navbar top
+				- [ ] Link to Dashboard 
+				- [ ] Link to Upcoming Performances
+				- [ ] Link to Add Performance 
+				- [ ] Drop-down menu for Instruments
 				- [ ] Logout
-			- [x] Footer
-				- [x] Link to About Us
-				- [x] Contact info
+			- [ ] Footer
+				- [ ] Link to About Us
+				- [ ] Contact info
 
 		
 
