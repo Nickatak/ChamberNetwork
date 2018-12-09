@@ -40,3 +40,10 @@ def register_patron(req):
 	elif req.method == "GET":
 		return redirect('public:register_patron')
 
+def dashboard(req):
+
+	context = {
+
+	}
+
+	return render(req, 'html/dashboard.html', context)
