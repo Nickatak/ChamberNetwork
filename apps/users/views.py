@@ -7,7 +7,7 @@ from .models import Member, Patron
 def login_handler(req):
     pass
 
-# houstonchambermusic.org/new_member/
+# # houstonchambermusic.org/new_member/
 def register_member(req):
 	if req.method == "POST":
 		errors = Member.objects.new_member_validation(req.POST)
