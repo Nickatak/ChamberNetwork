@@ -222,7 +222,7 @@ Parts list:
 
 	- Views necessary:
 		- [x] User Dashboard page (houstonchambermusic.org/users/dashboard/)
-			- [ ] URL path and view to render
+			- [x] URL path and view to render
 			- [ ] Text that says "Welcome [Musician first name]!"
 			- [ ] Display Musician information (card):
 				- [ ] Full name
@@ -235,15 +235,15 @@ Parts list:
 				- [ ] Edit function
 			- [ ] Upcoming performances (card):
 				- [ ] Title of performance w/date : Each is a link to individual performance page
-			- [ ] Navbar top
+			- [x] Navbar top
 				- [ ] Link to Dashboard (active)
 				- [ ] Link to Upcoming Performances
 				- [ ] Link to Add Performance
 				- [ ] Drop-down menu for Instruments
 				- [ ] Logout
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 		- [ ] Individual member page #I am not sure about this URL: (houstonchambermusic.org/users/[id]/)
 			- [ ] URL path and view to render
