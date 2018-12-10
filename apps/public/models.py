@@ -33,33 +33,35 @@ class MusicianManager(models.Manager):
 
 	# objects = PatronManager()
 
-# Musician Model
-class Musician(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	# Password must be encrypted. Password is initially assigned at random. User can change once they are approved.
-	# street_address = models.CharField(max_length=25)
-	# unit_number = models.CharField(max_length=25)
-	# city = models.CharField(max_length=25)
-	# state = models.CharField(max_length=2)
-	# zip_code = models.CharField(max_length=5)
-	# phone_number = models.CharField(max_length=10)
+# Member Model
+### I'll worry about database restrictions later.
+class Member(models.Model):
+    first_name = models.TextField()
+    last_name = models.TextField()
+    email = models.TextField()
+    street_address = models.CharField(max_length=25)
+    unit_number = models.CharField(max_length=25)
+    city = models.CharField(max_length=25)
+    state = models.CharField(max_length=2)
+    zip_code = models.CharField(max_length=5)
+    phone_number = models.CharField(max_length=10)
 
 	# Primary and secondary instruments: FK set up correctly?
 	# primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
 	# secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
 
 	# rating: only editable by admin. Values available are 1-5 or coach.
-	# rating = models.CharField(max_length=5)
+    rating = models.CharField(max_length=5)
 
-	# bio = models.TextField()
+    bio = models.TextField(null=True)
 
 	# Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
 	# approval = False
 
-	created_at = models.DateTimeField(auto_now_add=True)
-	updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-	objects = MusicianManager()
+    objects = MusicianManager()
 
 
 
