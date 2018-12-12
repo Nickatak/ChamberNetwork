@@ -97,7 +97,20 @@ class MemberManager(models.Manager):
         # For rating, we need to "pop" just the first character of each rating, ie the number, not the description
         rating = data['rating']
         
-        return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number, primary_instrument=primary_instrument, second_instrument=second_instrument, bio=bio, rating=rating)
+        return self.create(
+                            first_name=first_name,
+                            last_name=last_name,
+                            email=email,
+                            street_address=street_address,
+                            unit_number=unit_number,
+                            city=city,
+                            state=state, 
+                            zip_code=zip_code,
+                            phone_number=phone_number,
+                            primary_instrument=primary_instrument,
+                            second_instrument=second_instrument,
+                            bio=bio,
+                            rating=rating)
 
     def member_email_exists(self, email):
         return self.filter(email=email).exists()
@@ -163,7 +176,16 @@ class PatronManager(models.Manager):
         zip_code = data['zip_code']
         phone_number = data['phone_number']
         
-        return self.create(first_name=first_name, last_name=last_name, email=email, street_address=street_address, unit_number=unit_number, city=city, state=state, zip_code=zip_code, phone_number=phone_number)
+        return self.create(
+                            first_name=first_name,
+                            last_name=last_name,
+                            email=email,
+                            street_address=street_address
+                            unit_number=unit_number,
+                            city=city,
+                            state=state,
+                            zip_code=zip_code,
+                            phone_number=phone_number)
 
     def patron_email_exists(self, email):
         return self.filter(email=email).exists()
