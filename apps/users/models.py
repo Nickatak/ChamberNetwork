@@ -180,7 +180,7 @@ class PatronManager(models.Manager):
                             first_name=first_name,
                             last_name=last_name,
                             email=email,
-                            street_address=street_address
+                            street_address=street_address,
                             unit_number=unit_number,
                             city=city,
                             state=state,
