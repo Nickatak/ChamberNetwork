@@ -218,7 +218,7 @@ class Member(models.Model):
     # secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Application Date")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="Reviewed Date")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Last updated")
 
     objects = MemberManager()
 
