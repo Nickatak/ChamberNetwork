@@ -4,7 +4,7 @@ from .models import Member
 
 @admin.register(Member)
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'is_reviewed', 'is_approved',)
+    list_display = ('first_name', 'last_name', 'is_reviewed', 'is_approved', 'created_at', 'updated_at')
 
     actions = ['approve_all', 'disapprove_all']
 
