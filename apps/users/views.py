@@ -15,6 +15,9 @@ def login_handler(req):
     return redirect(
     '''
 
+# houstonchambermusic.org/register_coach/
+def register_coach(req):
+    pass
 # houstonchambermusic.org/register_member/
 def register_member(req):
     if req.method == "POST":
