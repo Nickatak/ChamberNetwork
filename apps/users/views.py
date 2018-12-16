@@ -27,12 +27,9 @@ def register_patron(req):
             Patron.objects.add_patron(req.POST)
             return redirect('public:success')
         else:
-            context = {
-                'errors' : errors
-            }
-            return render(req, 'html/register_patron.html', context=context)
-    else:
-        return redirect('public:new_patron')
+            req.session['errors'] = errors
+
+    return redirect('public:new_patron')
 
 
 def dashboard(req):
