@@ -194,31 +194,31 @@ class PatronManager(models.Manager):
 class Member(models.Model):
     #Will the email be used as auth?
     email = models.CharField(max_length=25)
-    first_name = models.CharField(max_length=25)
-    last_name = models.CharField(max_length=25)
+    first_name = models.CharField(max_length=25, verbose_name="First Name")
+    last_name = models.CharField(max_length=25, verbose_name="Last Name")
     street_address = models.CharField(max_length=25)
     unit_number = models.CharField(max_length=25, null=True)
     city = models.CharField(max_length=25)
     state = models.CharField(max_length=25)
     zip_code = models.CharField(max_length=5)
-    phone_number = models.CharField(max_length=10)
+    phone_number = models.CharField(max_length=10, verbose_name="Phone Number")
 
     # Instruments are not set up correctly, because they need to interact (as FK) with instrument table
     primary_instrument = models.CharField(max_length=25)
     second_instrument = models.CharField(max_length=25)
     bio = models.TextField()
-    rating = models.CharField(max_length=250)
+    rating = models.CharField(max_length=250, verbose_name="Skill Rating")
 
     # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
-    is_approved = models.BooleanField(default=False)
-    is_reviewed = models.BooleanField(default=False)
+    is_approved = models.BooleanField(default=False, verbose_name="Has been approved")
+    is_reviewed = models.BooleanField(default=False, verbose_name="Has been viewed")
 
     # Primary and secondary instruments: FK set up correctly?
     # primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
     # secondary_instrument = models.ForeignKey("Secondary instrument", on_delete=models.CASCADE, related_name="musicians")
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Application Date")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Reviewed Date")
 
     objects = MemberManager()
 
