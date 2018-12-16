@@ -14,7 +14,7 @@ def new_member_display(req):
 
 	context = {
 		'page_name' : 'Register Member',
-        'errors' : req.session.pop('errors', None)
+        'errors' : req.session.pop('errors', None),
 	}
 
 	return render(req, 'html/register_member.html', context)
@@ -23,6 +23,7 @@ def new_coach_display(req):
 
 	context = {
 		'page_name' : 'Register Coach',
+        'errors' : req.session.pop('errors', None),
 	}
 
 	return render(req, 'html/register_coach.html', context)
