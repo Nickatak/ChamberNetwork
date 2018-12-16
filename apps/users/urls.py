@@ -1,6 +1,8 @@
 from django.urls import path
 from .  import views
 
+app_name = 'users'
+
 # All functional views go here.
 urlpatterns = [
     path('login_handler/', views.login_handler, name="login_handler"),
