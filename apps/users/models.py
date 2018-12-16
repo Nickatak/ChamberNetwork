@@ -25,7 +25,7 @@ class MemberManager(models.Manager):
             if check_password(attempted_password, user.password):
     '''
 
-    def new__member_validation(self, postData):
+    def new_member_validation(self, postData):
 
         errors = {}
 
@@ -210,8 +210,8 @@ class Member(models.Model):
     rating = models.CharField(max_length=250)
 
     # Approval : not sure about how to set this up. The idea is that it defaults to False but is changed to True by admin once musician is approved
-    # is_approved = models.BooleanField(default=False)
-    # is_reviewed = models.BooleanField(default=False)
+    is_approved = models.BooleanField(default=False)
+    is_reviewed = models.BooleanField(default=False)
 
     # Primary and secondary instruments: FK set up correctly?
     # primary_instrument = models.ForeignKey("Primary instrument", on_delete=models.CASCADE, related_name="musicians")
