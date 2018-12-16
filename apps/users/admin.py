@@ -4,4 +4,4 @@ from .models import Member
 
 @admin.register(Member)
 class MemberAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('first_name', 'last_name', 'is_reviewed', 'is_approved',)
