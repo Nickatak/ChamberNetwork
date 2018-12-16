@@ -18,6 +18,8 @@ def login_handler(req):
 # houstonchambermusic.org/register_coach/
 def register_coach(req):
     pass
+
+
 # houstonchambermusic.org/register_member/
 def register_member(req):
     if req.method == "POST":
@@ -30,6 +32,7 @@ def register_member(req):
             req.session['errors'] = errors
 
     return redirect('public:new_member')
+
 
 # houstonchambermusic.org/register_patron/
 def register_patron(req):
