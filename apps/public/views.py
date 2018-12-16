@@ -14,6 +14,7 @@ def new_member_display(req):
 
 	context = {
 		'page_name' : 'Register Member',
+        'errors' : req.session.pop('errors', None)
 	}
 
 	return render(req, 'html/register_member.html', context)
