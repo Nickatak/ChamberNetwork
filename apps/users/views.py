@@ -3,7 +3,17 @@ from .models import Member, Patron
 
 
 def login_handler(req):
-    pass
+    '''
+    if req.method == "POST":
+        user, errors = Member.objects.validate_login(req.POST)
+        if not errors:
+            req.session['uid'] = user.pk
+            redirect('users:dashboard')
+        else:
+            req.session['errors'] = errors
+
+    return redirect(
+    '''
 
 # houstonchambermusic.org/register_member/
 def register_member(req):
