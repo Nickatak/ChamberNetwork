@@ -14,12 +14,9 @@ def register_member(req):
             Member.objects.add_member(req.POST)
             return redirect('public:success')
         else:
-            context = {
-                'errors' : errors
-            }
-            return render(req, 'html/register_member.html', context=context)
-    else:
-        return redirect('public:new_member')
+            req.session['errors'] = errors
+
+    return redirect('public:new_member')
 
 # houstonchambermusic.org/register_patron/
 def register_patron(req):
