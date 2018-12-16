@@ -203,7 +203,7 @@ class Member(models.Model):
     zip_code = models.CharField(max_length=5)
     phone_number = models.CharField(max_length=10, verbose_name="Phone Number")
     
-    is_coach = models.BooleanField(default=False, verbose_name="Coach")
+    is_coach = models.BooleanField(default=False, verbose_name="Is a coach")
 
     # Instruments are not set up correctly, because they need to interact (as FK) with instrument table
     primary_instrument = models.CharField(max_length=25)
