@@ -14,6 +14,8 @@ def login_handler(req):
 
     # Alright, to get this method to work, you're going to have to add a hidden next input field to return back to the same page, unless you want it to redirect somewhere else.
     return redirect(req.POST.get('next', 'public:welcome'))
+    
+    # Unless maybe we try this: return redirect(req.META.get('HTTP_REFERER', 'public:welcome'))
 
 
 # houstonchambermusic.org/register_coach/
