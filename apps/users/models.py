@@ -202,7 +202,8 @@ class Member(models.Model):
     state = models.CharField(max_length=25)
     zip_code = models.CharField(max_length=5)
     phone_number = models.CharField(max_length=10, verbose_name="Phone Number")
-    
+    password = models.TextField()
+
     is_coach = models.BooleanField(default=False, verbose_name="Is a coach")
 
     # Instruments are not set up correctly, because they need to interact (as FK) with instrument table
