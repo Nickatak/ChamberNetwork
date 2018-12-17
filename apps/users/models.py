@@ -14,16 +14,26 @@ EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
 # Member Manager Model
 class MemberManager(models.Manager):
-    '''
+
     def validate_login(self, data):
         email = data['email']
         attempted_password = data['password']
+
+        user = None
+        errors = {}
         
         if self.filter(email=email).exists():
             user = self.get(email=email)
             
-            if check_password(attempted_password, user.password):
-    '''
+            if not check_password(attempted_password, user.password):
+                # We can change this later, just let me know what you want it to say.
+                errors['invalid'] = 'Invalid credentials.'
+        else:
+            # We can change this later, just let me know what you want it to say.
+            errors['invalid'] = 'Invalid credentials.'
+        
+        return user, errors
+
 
     def new_member_validation(self, postData):
 
