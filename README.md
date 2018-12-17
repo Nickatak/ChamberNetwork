@@ -222,6 +222,20 @@ Parts list:
 
 	- Views necessary:
 		- [x] User Dashboard page (houstonchambermusic.org/users/dashboard/)
+			- Data needed
+				- From User model:
+					- [ ] First name
+					- [ ] Last name
+					- [ ] Email
+					- [ ] Phone number
+					- [ ] Primary instrument
+					- [ ] Second instrument
+					- [ ] Rating
+					- [ ] Bio
+				- From Performance model:
+					- [ ] Title
+					- [ ] Date
+					- [ ] If under has no performances, message that says "You currently have no upcoming performances"
 			- [x] URL path and view to render
 			- [ ] Text that says "Welcome [Musician first name]!"
 			- [ ] Display Musician information (card):
@@ -229,7 +243,7 @@ Parts list:
 				- [ ] Email
 				- [ ] Phone number
 				- [ ] Primary instrument
-				- [ ] Secondary instrument
+				- [ ] Second instrument
 				- [ ] Rating
 				- [ ] Bio
 				- [ ] Edit function
@@ -418,6 +432,14 @@ Parts list:
 			- [ ] Footer
 				- [ ] Link to About Us
 				- [ ] Contact info
+
+- Functionalities necessary for beta launch (1/14/19):
+	Users (members and coaches) can submit registration form --> this initiates email to Michael, who works with new 
+		users (away from site) in order to approve them --> approved user is assigned a password and given go ahead to sign in --> user can sign in and see dashboard page --> user can edit personal information, including password
+	In addition to dashboard page, individual member/coach page works also (recall that individual member/coach page
+		is very similar to dashboard page - the same basic information is presented, but there are no edit capabilities)
+	Instrument pull down menu works --> when user goes to individual instrument page, can see each user associated
+	 with instrument
 
 		
 
