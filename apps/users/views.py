@@ -3,17 +3,18 @@ from .models import Member, Patron
 
 
 def login_handler(req):
-    '''
+
     if req.method == "POST":
         user, errors = Member.objects.validate_login(req.POST)
         if not errors:
             req.session['uid'] = user.pk
-            redirect('users:dashboard')
+            return redirect('users:dashboard')
         else:
             req.session['errors'] = errors
 
-    return redirect(
-    '''
+    # Alright, to get this method to work, you're going to have to add a hidden next input field to return back to the same page, unless you want it to redirect somewhere else.
+    return redirect(req.POST.get('next', 'public:welcome'))
+
 
 # houstonchambermusic.org/register_coach/
 def register_coach(req):
