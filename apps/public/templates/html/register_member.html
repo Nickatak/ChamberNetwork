@@ -59,7 +59,7 @@
 
                 <!-- Panel for curlicue divider: -->
                 <div class="panel panel-default">
-                    <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
+                    <img class="col-md-6" src='{% static "images/divider1.png" %}' alt="" class="img-responsive">
                 </div>
 
                 <!-- Div for overlays: -->
@@ -134,14 +134,18 @@
                 </div>
 
                 <!-- Panel for curlicue divider: -->
-                <div class="panel panel-default">
-                    <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
-                </div>
+                <!-- <div class="panel panel-default">
+                    <img class="col-md-8" src='{% static "images/divider1.png" %}' alt="" class="img-responsive">
+                </div> -->
                 
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
                     <form role="form" action="/users/register_member/" method="POST">
                         {% csrf_token %}
+
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                        </div>
 
                         <!-- Basic information section: -->
                         <h5>Basic information:</h5>
@@ -170,6 +174,11 @@
                             {% if 'email' in errors %}
                                 {{ errors.email }}
                             {% endif %}
+                        </div>
+
+
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                         </div>
                 
 
@@ -276,6 +285,10 @@
                             {% if 'phone_number' in errors %}
                                 {{ errors.phone_number }}
                             {% endif %}
+                        </div>
+
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                         </div>
 
                         <!-- Section for musical information: -->
