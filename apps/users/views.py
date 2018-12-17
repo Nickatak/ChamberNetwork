@@ -3,7 +3,25 @@ from .models import Member, Patron
 
 
 def login_handler(req):
+
+    if req.method == "POST":
+        user, errors = Member.objects.validate_login(req.POST)
+        if not errors:
+            req.session['uid'] = user.pk
+            return redirect('users:dashboard')
+        else:
+            req.session['errors'] = errors
+
+    # Alright, to get this method to work, you're going to have to add a hidden next input field to return back to the same page, unless you want it to redirect somewhere else.
+    return redirect(req.POST.get('next', 'public:welcome'))
+    
+    # Unless maybe we try this: return redirect(req.META.get('HTTP_REFERER', 'public:welcome'))
+
+
+# houstonchambermusic.org/register_coach/
+def register_coach(req):
     pass
+
 
 # houstonchambermusic.org/register_member/
 def register_member(req):
@@ -17,6 +35,7 @@ def register_member(req):
             req.session['errors'] = errors
 
     return redirect('public:new_member')
+
 
 # houstonchambermusic.org/register_patron/
 def register_patron(req):

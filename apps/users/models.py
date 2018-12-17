@@ -14,16 +14,26 @@ EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
 # Member Manager Model
 class MemberManager(models.Manager):
-    '''
+
     def validate_login(self, data):
         email = data['email']
         attempted_password = data['password']
+
+        user = None
+        errors = {}
         
         if self.filter(email=email).exists():
             user = self.get(email=email)
             
-            if check_password(attempted_password, user.password):
-    '''
+            if not check_password(attempted_password, user.password):
+                # We can change this later, just let me know what you want it to say.
+                errors['invalid'] = 'Invalid credentials.'
+        else:
+            # We can change this later, just let me know what you want it to say.
+            errors['invalid'] = 'Invalid credentials.'
+        
+        return user, errors
+
 
     def new_member_validation(self, postData):
 
@@ -202,6 +212,9 @@ class Member(models.Model):
     state = models.CharField(max_length=25)
     zip_code = models.CharField(max_length=5)
     phone_number = models.CharField(max_length=10, verbose_name="Phone Number")
+    password = models.TextField()
+
+    is_coach = models.BooleanField(default=False, verbose_name="Is a coach")
 
     # Instruments are not set up correctly, because they need to interact (as FK) with instrument table
     primary_instrument = models.CharField(max_length=25)

@@ -64,7 +64,7 @@
 
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
-                    <form role="form" action="/users/register_patron/" method="POST">
+                    <form role="form" action="{% url 'users:patron_registration_handler' %}" method="POST">
                         {% csrf_token %}
 
                         <!-- Basic information section: -->
