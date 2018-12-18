@@ -24,25 +24,44 @@ a.active {
 	color: #808080;
 }
 
+/*Main container*/
+
+.container-fluid {
+	background-color: #fffef7;
+	padding: 0;
+}
+
 /*Form:*/
-#form-container h2 {
+#form-container h3 {
 	color: black;
 }
 
 #form-container {
-	margin-top: 50px;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	background-color: #fffef7;
+	padding: 30px;
+  	max-width: 350px;
+  	width: 100%;
+  	background-color: #fffef7;
+  	margin: 0 auto;
+  	border-radius: 4px;
+  	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  	overflow: hidden;
+  	margin-bottom: 120px;
 }
 
 .panel-heading {
 	text-align: center;
 }
 
-#form-container h5 {
-	margin-top: 20px;
-	/*margin-bottom: 5px;*/
+.panel-default {
+	padding-bottom: 50px;
+}
+
+.login-links {
+	padding-top: 20px;
+}
+
+.login-links a {
+	font-size: 16px;
 }
 
 .btn-reg {

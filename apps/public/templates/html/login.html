@@ -34,7 +34,7 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Link to external login: -->
                 <li class="navbar-item">
-                    <a class="nav-link active" href="{% url 'public:logout' %}">LOGIN</a>
+                    <a class="nav-link active" href="">LOGIN</a>
                 </li>
             </ul>
         </nav>
@@ -43,13 +43,85 @@
 
 
 {% block main_content %}
-    <div class="container-fluid" id="form-container">
+    <div class="container-fluid" id="main-container">
+        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-fluid" src='{% static "images/9.jpg" %}' alt="" class="img-responsive">
+                    <div class="carousel-caption">
+                        <!-- <div class="container-fluid" id="form-container">
+                            <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <form role="form" action="" method="POST">
+                                    <h1>Login form</h1>
+                                    {% csrf_token %}
+                                    <input type="text" name="email" placeholder="Email"></input>
+                                    <input type="password" name="password" placeholder="Password"></input>
+                                    <button type="submit" class="btn btn-dark">Login</button>
+                                </form>
+                            </div>
+                        </div> -->
+
+                        <div class="login-form-container">
+
+                            <form role="form" action="" id="form-container">
+                                <h3>MEMBER LOG IN</h3><br>
+                                <div class="panel panel-default">
+                                    <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <input type="submit" value="LOGIN" class="btn btn-reg btn-info btn-block">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="login-links">
+                                            <a href="#">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        <!-- End login-form-container div: -->
+                        </div>
+
+                    <!-- End div for carousel caption: -->
+                    </div>
+           
+            
+            <!-- End div for carousel inner: -->
+            </div>
+        <!-- End div for carousel: -->
+        </div>
+    <!-- End div for main container: -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="container-fluid" id="form-container">
         <div class="row">
-            <!-- empty div for spacing: -->
+
             <div class="col-md-4"></div>
 
             <div class="col-md-4">
-                <!-- This needs to POST to our users application. -->
+
                 <form method="POST" action="">
                     <h1>Login form</h1>
                     {% csrf_token %}
@@ -59,5 +131,5 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 {% endblock %}
