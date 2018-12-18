@@ -227,6 +227,7 @@ Parts list:
 					- [ ] First name
 					- [ ] Last name
 					- [ ] Email
+					- [ ] Password
 					- [ ] Phone number
 					- [ ] Primary instrument
 					- [ ] Second instrument
@@ -260,6 +261,20 @@ Parts list:
 				- [x] Contact info
 
 		- [ ] Individual member page #I am not sure about this URL: (houstonchambermusic.org/users/[id]/)
+			- Data needed
+				- From User model:
+					- [ ] First name
+					- [ ] Last name
+					- [ ] Email
+					- [ ] Phone number
+					- [ ] Primary instrument
+					- [ ] Second instrument
+					- [ ] Rating
+					- [ ] Bio
+				- From Performance model:
+					- [ ] Title
+					- [ ] Date
+					- [ ] If under has no performances, message that says "You currently have no upcoming performances"
 			- [ ] URL path and view to render
 			- [ ] Display musician information (card)
 				- [ ] First name
@@ -289,7 +304,8 @@ Parts list:
 		- [ ] Logout (not a page, just a view) (houstonchambermusic.org/users/logout/)
 			- [ ] Logout Musician and redirect to login page 
 
-- Performances (app)
+- Performances (app) 
+	# Note: performance app will not be completed (or perhaps even started) by beta launch date
 
 	- Breakdown of responsibilities:
     	- GB:
@@ -419,6 +435,16 @@ Parts list:
 
 	- [ ] Views necessary:
 		- [ ] Individual instrument page (houstonchambermusic.org/instruments/[name]/) 
+		- Data needed:
+			- From Users model:
+				- [ ] First name
+				- [ ] Last name
+				- [ ] Rating
+				- [ ] Primary instrument
+				- [ ] Second instrument
+			- From Instruments model
+				- [ ] Name of instrument
+				- [ ] Connect names above ^ with each instrument
 			- [ ] URL path and view to render
 			- [ ] Text that says "Page for [instrument]"
 			- [ ] List of all musicians in db who play instrument (first name, last name, rating)
@@ -442,7 +468,7 @@ Parts list:
 
 	Instrument pull down menu works --> when user goes to individual instrument page, can see each user associated with instrument, then click on names to see their individual page.
 
-	Some other pages (for example add_performance) will simply say "Coming Soon."
+	Some other pages (for example add_performance.html) will simply say "Coming Soon."
 
 	Michael will need to be shown how to interact with admin page.
 
