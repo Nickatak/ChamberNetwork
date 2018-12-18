@@ -27,7 +27,7 @@ class InstrumentAdmin(admin.ModelAdmin):
         default_urls = super().get_urls()
         
         custom_urls = [
-            path('import-instruments/', wrap(self.import_instruments)),
+            path('import-instruments/', wrap(self.import_instruments), name="import_instruments"),
         ]
         
         #Since django does left-right (in-order) scanning of urls, it's important to put our custom ones first.
