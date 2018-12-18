@@ -6,7 +6,13 @@ from .models import Member
 class MemberAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'is_reviewed', 'is_approved', 'is_coach', 'created_at', 'updated_at')
 
-    actions = ['approve_all', 'disapprove_all', 'coach_all', 'revoke_coach']
+    actions = [
+                'approve_all',
+                'disapprove_all',
+                'coach_all',
+                'revoke_coach',
+                'mark_as_viewed',
+            ]
 
     def approve_all(self, request, selected_members):
         selected_members.update(is_approved=True, is_reviewed=True)
@@ -23,3 +29,7 @@ class MemberAdmin(admin.ModelAdmin):
     def revoke_coach(self, request, selected_members):
         selected_members.update(is_coach=False, is_reviewed=True)
     revoke_coach.short_description = 'Remove coach status for all checked members.'
+
+    def mark_as_viewed(self, request, selected_members):
+        selected_members.update(is_reviewed=True)
+    mark_as_viewed.short_description = 'Review all checked members.'
