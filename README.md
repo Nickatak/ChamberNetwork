@@ -436,9 +436,17 @@ Parts list:
 - Functionalities necessary for beta launch (1/14/19):
 	Users (members and coaches) can submit registration form --> this initiates email to Michael, who works with new users (away from site) in order to approve them --> approved user is assigned a password and given go ahead to sign in --> user can sign in and see dashboard page --> user can edit personal information, including password
 
+	Patrons will be able to sign up for e-newsletter. For now, this will just be sent to Michael, who can interact manually with patron as he sees fit. Later, much of this will need to be automated.
+
 	In addition to dashboard page, individual member/coach page works also (recall that individual member/coach page is very similar to dashboard page - the same basic information is presented, but there are no edit capabilities)
 
-	Instrument pull down menu works --> when user goes to individual instrument page, can see each user associated with instrument
+	Instrument pull down menu works --> when user goes to individual instrument page, can see each user associated with instrument, then click on names to see their individual page.
+
+	Some other pages (for example add_performance) will simply say "Coming Soon."
+
+	Michael will need to be shown how to interact with admin page.
+
+	Michelle will need to have time to deply site.
 
 		
 
