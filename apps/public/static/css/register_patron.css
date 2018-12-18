@@ -24,9 +24,25 @@ a.active {
 	color: #808080;
 }
 
+.panel-default {
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /*Form:*/
-#form-container h2 {
+#inner-form-container h3 {
 	color: black;
+    font-weight: bold;
+}
+
+.panel-body {
+	/*padding-top: 14px;*/
 }
 
 #form-container {
@@ -38,10 +54,6 @@ a.active {
 
 .panel-heading {
 	text-align: center;
-}
-
-.panel-body {
-	padding-top: 40px;
 }
 
 #form-container h5 {
