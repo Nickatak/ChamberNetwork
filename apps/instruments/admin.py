@@ -57,7 +57,7 @@ class InstrumentAdmin(admin.ModelAdmin):
         
         # Rotate through the DB instruments in the hash table:
         for instrument_name in container:
-            # Prune any remove instruments that are in the DB that don't match the maintained list.
+            # Prune and remove instruments that are in the DB that don't match the maintained list.
             if instrument_name not in instruments:
                 Instrument.objects.get(name=instrument_name).delete()
         
