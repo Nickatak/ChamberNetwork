@@ -53,13 +53,13 @@
             <div class="col-md-4" id="inner-form-container">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title">COACH REGISTRATION FORM</h2>
+                        <h3 class="panel-title">COACH REGISTRATION FORM</h3>
                     </div>
                 </div>
 
                 <!-- Panel for curlicue divider: -->
                 <div class="panel panel-default">
-                    <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
+                    <img class="col-md-6" src='{% static "images/divider1.png" %}' alt="" class="img-responsive">
                 </div>
 
                 <!-- Div for overlay: -->
@@ -91,16 +91,15 @@
                 <!-- End div for overlay: -->
                 </div>
 
-                <!-- Panel for curlicue divider: -->
-                <div class="panel panel-default">
-                    <img class="col-md-8" src='{% static "images/divider.jpg" %}' alt="" class="img-responsive">
-                </div>
-
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
                     <!-- I believe member and coach will post to same route: -->
                     <form role="form" action="/users/register_member/" method="POST">
                         {% csrf_token %}
+
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                        </div>
 
                         <!-- Basic information section: -->
                         <h5>Basic information:</h5>
@@ -129,6 +128,10 @@
                             {% if 'email' in errors %}
                                 {{ errors.email }}
                             {% endif %}
+                        </div>
+
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                         </div>
 
                         <!-- Address and phone section: -->
@@ -234,6 +237,10 @@
                             {% if 'phone_number' in errors %}
                                 {{ errors.phone_number }}
                             {% endif %}
+                        </div>
+
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                         </div>
 
                         <!-- Section for musical information: -->

@@ -65,6 +65,11 @@ img {
 	color: black;
 }
 
+#inner-form-container h3 {
+	color: black;
+    font-weight: bold;
+}
+
 #form-container {
 	margin-top: 50px;
 	padding-top: 50px;
