@@ -224,15 +224,15 @@ Parts list:
 		- [x] User Dashboard page (houstonchambermusic.org/users/dashboard/)
 			- Data needed
 				- From User model:
-					- [ ] First name
-					- [ ] Last name
-					- [ ] Email
-					- [ ] Password
-					- [ ] Phone number
-					- [ ] Primary instrument
-					- [ ] Second instrument
-					- [ ] Rating
-					- [ ] Bio
+					- [x] First name
+					- [x] Last name
+					- [x] Email
+					- [ ] Password ???????
+					- [x] Phone number
+					- [x] Primary instrument
+					- [x] Second instrument
+					- [x] Rating
+					- [x] Bio
 				- From Performance model:
 					- [ ] Title
 					- [ ] Date
