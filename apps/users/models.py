@@ -21,16 +21,16 @@ class MemberManager(models.Manager):
 
         user = None
         errors = {}
-        
+        # Commented out validation for now so we can see the dashboard.
         if self.filter(email=email).exists():
             user = self.get(email=email)
             
-            if not check_password(attempted_password, user.password):
+            #if not check_password(attempted_password, user.password):
                 # We can change this later, just let me know what you want it to say.
-                errors['invalid'] = 'Invalid credentials.'
-        else:
-            # We can change this later, just let me know what you want it to say.
-            errors['invalid'] = 'Invalid credentials.'
+                #errors['invalid'] = 'Invalid credentials.'
+        #else:
+            ## We can change this later, just let me know what you want it to say.
+            #errors['invalid'] = 'Invalid credentials.'
         
         return user, errors
 
