@@ -53,8 +53,12 @@ def register_patron(req):
 
 def dashboard(req):
 
-	context = {
+    if 'uid' not in req.session:
+        return redirect('public:welcome')
 
+	context = {
+        'user' : Member.objects.get(id=req.session['uid']),
+        
 	}
 
 	return render(req, 'html/dashboard.html', context)
