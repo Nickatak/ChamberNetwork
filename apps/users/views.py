@@ -56,8 +56,8 @@ def dashboard(req):
     if 'uid' not in req.session:
         return redirect('public:welcome')
 
-	context = {
+    context = {
         'user' : Member.objects.get(id=req.session['uid']),
-	}
+    }
 
-	return render(req, 'html/dashboard.html', context)
+    return render(req, 'html/dashboard.html', context)
