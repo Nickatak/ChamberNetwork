@@ -34,7 +34,7 @@ def new_patron_display(req):
 		'page_name' : 'Register Patron',
 	}
 
-	return render(req, 'html/register_patron.html', context)
+	return render(req, 'html/new_patron.html', context)
 
 def about(req):
 
