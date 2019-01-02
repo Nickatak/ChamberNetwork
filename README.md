@@ -22,7 +22,7 @@ Parts list:
 				- [x] Link to Register as Member
 				- [x] Link to Register as Coach
 				- [x] Link to Receive e-Newsletter
-				- [ ] Link to Login
+				- [x] Link to Login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
@@ -37,12 +37,12 @@ Parts list:
 				- [x] Link to Register as Member
 				- [x] Link to Register as Coach
 				- [ ] Link to Receive e-Newsletter
-				- [ ] Link to login
+				- [x] Link to login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
 
-		- [x] Register Patron Page (houstonchambermusic.org/register_patron)
+		- [x] Register Patron Page (houstonchambermusic.org/new_patron)
 			- [x] URL path and view to render
 			- [x] Form
 				- [x] First name
