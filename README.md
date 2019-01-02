@@ -36,7 +36,7 @@ Parts list:
 				- [x] Link to Welcome 
 				- [x] Link to Register as Member
 				- [x] Link to Register as Coach
-				- [ ] Link to Receive e-Newsletter
+				- [x] Link to Receive e-Newsletter
 				- [x] Link to login
 			- [x] Footer
 				- [x] Link to About Us
