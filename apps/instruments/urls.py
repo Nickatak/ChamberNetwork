@@ -6,4 +6,5 @@ app_name = 'instruments'
 
 url_patterns = [
     path('', views.dummy),
+    path('instruments/(?P\d+)', views.individual_instrument, name="individual_instrument"),
 ]
