@@ -36,6 +36,7 @@ a.active {
 .card {
     width: 45%;
     margin: 15px;
+    border-radius: 10px;
 }
 
 .information-container {
@@ -64,6 +65,8 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .card-title {
