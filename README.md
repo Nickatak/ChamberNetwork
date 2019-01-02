@@ -64,7 +64,7 @@ Parts list:
 				- [x] Link to Register as Member
 				- [x] Link to Register as Coach
 				- [x] Link to Receive e-Newsletter (active)
-				- [ ] Link to login
+				- [x] Link to login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
@@ -83,11 +83,11 @@ Parts list:
 					- [x] City
 					- [x] State
 					- [x] Zip
-				- [ ] Phone number
+				- [x] Phone number
 				- [x] Brief musical bio
 				- [x] Drop-down menu for primary instrument
 				- [x] Drop-down menu for secondary instrument
-				- [ ] Self rating
+				- [x] Self rating
 				- [x] Submit button
 			- [ ] Validations for all fields
 			- [ ] Send email to Michael upon successful submission
@@ -97,7 +97,7 @@ Parts list:
 				- [x] Link to Register as Member (active)
 				- [x] Link to Register as Coach
 				- [x] Link to Receive e-Newsletter
-				- [ ] Link to Login
+				- [x] Link to Login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info  
