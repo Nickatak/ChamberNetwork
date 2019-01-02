@@ -6,4 +6,4 @@ def dummy(req):
     pass
 
 def individual_instrument(req):
-	return render(req, 'instruments:individual_instrument')
+	return render(req, 'html/individual_instrument.html')
