@@ -5,5 +5,6 @@ from django.shortcuts import render
 def dummy(req):
     pass
 
-def individual_instrument(req):
-	return render(req, 'html/individual_instrument.html')
+def individual_instrument(req, instrument_id):
+    print(instrument_id)
+    return render(req, 'html/individual_instrument.html')
