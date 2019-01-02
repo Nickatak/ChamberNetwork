@@ -129,7 +129,7 @@ Parts list:
 				- [x] Link to Register as Member 
 				- [x] Link to Register as Coach (active)
 				- [x] Link to Receive e-Newsletter
-				- [ ] Link to Login
+				- [x] Link to Login
 			- [x] Footer
 				- [x] Link to About Us
 				- [x] Contact info
@@ -149,12 +149,12 @@ Parts list:
 
 		- [x] Login page (houstonchambermusic.org/login/)
 			- [ ] URL path and view to render
-			- [ ] Login form
-				- [ ] Field for email
-				- [ ] Field for password (encrypted)
-				- [ ] Validations
-				- [ ] Submit button
-			- [ ] Render member/coach dashboard page upon successful login
+			- [x] Login form
+				- [x] Field for email
+				- [x] Field for password (encrypted)
+				- [x] Validations
+				- [x] Submit button
+			- [x] Render member/coach dashboard page upon successful login
 			- [x] Navbar top
 				- [x] Link to Welcome 
 				- [x] Link to Register as Member 
