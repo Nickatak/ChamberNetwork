@@ -20,13 +20,13 @@
             <!-- Navbar links -->
             <ul class="navbar-nav">
                 <li class="navbar-item">
-                    <a class="nav-link" href="#">DASHBOARD</a>
+                    <a class="nav-link" href="{% url 'users:dashboard' %}">DASHBOARD</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link active" href="#">UPCOMING PERFORMANCES</a>
+                    <a class="nav-link active" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link" href="#">ADD PERFORMANCE</a>
+                    <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
                 </li>
 
                 <!-- Instruments dropdown: -->
