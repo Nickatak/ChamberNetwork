@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
-from ..instruments import Instrument
+from ..instruments.models import Instrument
 
 def welcome(req):
 
@@ -17,6 +17,7 @@ def new_member_display(req):
 	context = {
 		'page_name' : 'Register Member',
         'errors' : req.session.pop('errors', None),
+        'instruments' : Instrument.objects.all(),
 	}
 
 	return render(req, 'html/register_member.html', context)
@@ -26,6 +27,7 @@ def new_coach_display(req):
 	context = {
 		'page_name' : 'Register Coach',
         'errors' : req.session.pop('errors', None),
+        'instruments' : Instrument.objects.all(),
 	}
 
 	return render(req, 'html/register_coach.html', context)
