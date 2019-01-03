@@ -1,10 +1,12 @@
 from __future__ import unicode_literals
+import re
 
 from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
 # from django.contrib.auth.models import User
 
-import re
+from ..instruments.models import Instrument
+
 
 NAME_REGEX = re.compile(r"^[-a-zA-Z']+$")
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
@@ -217,8 +219,8 @@ class Member(models.Model):
     is_coach = models.BooleanField(default=False, verbose_name="Is a coach")
 
     # Instruments are not set up correctly, because they need to interact (as FK) with instrument table
-    primary_instrument = models.CharField(max_length=25)
-    second_instrument = models.CharField(max_length=25)
+    primary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='primary_users')
+    second_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='secondary_users')
     bio = models.TextField()
     rating = models.CharField(max_length=250, verbose_name="Skill Rating")
 
