@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'apps.public',
     'apps.users',
     'apps.instruments',
+    'apps.performances',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
