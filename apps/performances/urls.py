@@ -8,3 +8,6 @@ urlpatterns = [
 	path('upcoming/', views.upcoming, name="upcoming"),
 	# Note: upcoming will evetually need an re_path
 ]
+
+# urls to add:
+# views.individual

@@ -20,13 +20,13 @@
             <!-- Navbar links -->
             <ul class="navbar-nav">
                 <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'musicians:dashboard' %}">DASHBOARD</a>
+                    <a class="nav-link" href="#">DASHBOARD</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
+                    <a class="nav-link" href="#">UPCOMING PERFORMANCES</a>
                 </li>
                 <li class="navbar-item">
-                    <a class="nav-link active" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
+                    <a class="nav-link active" href="#">ADD PERFORMANCE</a>
                 </li>
 
                 <!-- Instruments dropdown: -->
@@ -43,7 +43,7 @@
             <!-- Navbar right -->
             <ul class="navbar-nav ml-auto">
                 <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
+                    <a class="nav-link" href="#">LOGOUT</a>
                 </li>
             </ul>
         </nav>
@@ -51,9 +51,17 @@
     {% endblock %}
 
     {% block main_body %}
-    <!-- Div for main container: -->
-    <div class="container-fluid" id="main-container">
-        <h2>Add performance</h2>
+	    <div class="container-fluid" id="main-container">
+        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-fluid" src='{% static "images/10.jpg" %}' alt="" class="img-responsive">
+                    <div class="carousel-caption">
+                        <h1>Add Performance feature is coming soon!</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     {% endblock %}
 
