@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('apps.public.urls')),
     path('users/', include('apps.users.urls')),
     path('instruments/', include('apps.instruments.urls')),
+    path('performances/', include('apps.performances.urls')),
 ]
