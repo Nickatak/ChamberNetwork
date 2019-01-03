@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Instrument
+
 # Create your views here.
 
 def dummy(req):
