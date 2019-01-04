@@ -270,7 +270,7 @@
                                         <option selected disabled>Second instrument</option>
                                         <option>None</option>
                                         {% for instrument in instruments %}
-                                            <option>{{ instrument }}</option>
+                                            <option value='{{ instrument.id }}'>{{ instrument }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
