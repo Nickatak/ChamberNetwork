@@ -209,7 +209,7 @@ class Member(models.Model):
     first_name = models.CharField(max_length=25, verbose_name="First Name")
     last_name = models.CharField(max_length=25, verbose_name="Last Name")
     street_address = models.CharField(max_length=25)
-    unit_number = models.CharField(max_length=25, null=True)
+    unit_number = models.CharField(max_length=25, null=True, blank=True)
     city = models.CharField(max_length=25)
     state = models.CharField(max_length=25)
     zip_code = models.CharField(max_length=5)
