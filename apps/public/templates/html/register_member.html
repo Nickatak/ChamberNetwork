@@ -296,16 +296,9 @@
                                 <div class="form-group">
                                     <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
                                         <option selected disabled>Primary instrument</option>
-                                        <option>Instrument1</option>
-                                        <option>Instrument2</option>
-                                        <option>Instrument3</option>
-                                        <option>Instrument4</option>
-                                        <option>Instrument5</option>
-                                        <option>Instrument6</option>
-                                        <option>Instrument7</option>
-                                        <option>Instrument8</option>
-                                        <option>Instrument9</option>
-                                        <option>Instrument10</option>
+                                        {% for instrument in instruments %}
+                                            <option>{{ instrument }}</option>
+                                        {% endfor %}
                                     </select>
                                     {% if 'primary_instrument' in errors %}
                                         {{ errors.primary_instrument }}
@@ -318,16 +311,9 @@
                                     <select class="form-control" name="second_instrument" id="second_instrument" placeholder="Second instrument">
                                         <option selected disabled>Second instrument</option>
                                         <option>None</option>
-                                        <option>Instrument1</option>
-                                        <option>Instrument2</option>
-                                        <option>Instrument3</option>
-                                        <option>Instrument4</option>
-                                        <option>Instrument5</option>
-                                        <option>Instrument6</option>
-                                        <option>Instrument7</option>
-                                        <option>Instrument8</option>
-                                        <option>Instrument9</option>
-                                        <option>Instrument10</option>
+                                        {% for instrument in instruments %}
+                                            <option>{{ instrument }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div>
