@@ -119,8 +119,8 @@ class MemberManager(models.Manager):
                             state=state, 
                             zip_code=zip_code,
                             phone_number=phone_number,
-                            primary_instrument=primary_instrument,
-                            second_instrument=second_instrument,
+                            primary_instrument=Instrument.objects.get(pk=primary_instrument),
+                            second_instrument=Instrument.objects.get(pk=secondary_instrument),
                             bio=bio,
                             rating=rating)
 
