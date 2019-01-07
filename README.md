@@ -397,6 +397,7 @@ Parts list:
 				- [ ] Contact info
 
 		- [x] Upcoming performances page (houstonchambermusic.org/performances/upcoming/)
+			- [x] For Beta: "Coming soon" message
 			- [ ] URL path and view to render
 			- [ ] List of performances, by date
 				- [ ] Title
@@ -406,15 +407,17 @@ Parts list:
 				- [ ] Location
 			- [ ] Site must automatically add and subtract performances (by date)
 			- [ ] Each performance provides link to Individual Performance page
-			- [ ] Navbar top
-				- [ ] Link to Dashboard 
-				- [ ] Link to Upcoming Performances (active)
-				- [ ] Link to Add Performance 
-				- [ ] Drop-down menu for Instruments
+			- [x] Navbar top
+				- [x] Link to Dashboard 
+				- [x] Link to Upcoming Performances (active)
+				- [x] Link to Add Performance 
+				- [x] Drop-down menu for Instruments
+					- [ ] Populated with instrument names
+					- [ ] Each name a link to page
 				- [ ] Logout
-			- [ ] Footer
-				- [ ] Link to About Us
-				- [ ] Contact info
+			- [x] Footer
+				- [x] Link to About Us
+				- [x] Contact info
 
 - Instruments (app) 
 
