@@ -227,7 +227,6 @@ Parts list:
 					- [x] First name
 					- [x] Last name
 					- [x] Email
-					- [ ] Password ???????
 					- [x] Phone number
 					- [x] Primary instrument
 					- [x] Second instrument
@@ -238,23 +237,25 @@ Parts list:
 					- [ ] Date
 					- [ ] If under has no performances, message that says "You currently have no upcoming performances"
 			- [x] URL path and view to render
-			- [ ] Text that says "Welcome [Musician first name]!"
-			- [ ] Display Musician information (card):
-				- [ ] Full name
-				- [ ] Email
-				- [ ] Phone number
-				- [ ] Primary instrument
-				- [ ] Second instrument
-				- [ ] Rating
-				- [ ] Bio
+			- [x] Display Musician information (card):
+				- [x] Full name
+				- [x] Email
+				- [x] Phone number
+				- [x] Primary instrument
+				- [x] Second instrument
+				- [x] Rating
+				- [x] Bio
 				- [ ] Edit function
-			- [ ] Upcoming performances (card):
+			- [x] Upcoming performances (card):
 				- [ ] Title of performance w/date : Each is a link to individual performance page
+				- [x] For Beta: "Add performances feature is coming soon."
 			- [x] Navbar top
-				- [ ] Link to Dashboard (active)
-				- [ ] Link to Upcoming Performances
-				- [ ] Link to Add Performance
-				- [ ] Drop-down menu for Instruments
+				- [x] Link to Dashboard (active)
+				- [x] Link to Upcoming Performances
+				- [x] Link to Add Performance
+				- [x] Drop-down menu for Instruments
+					- [ ] Populated with instrument names
+					- [ ] Each name a link to page
 				- [ ] Logout
 			- [x] Footer
 				- [x] Link to About Us
