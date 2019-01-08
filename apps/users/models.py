@@ -51,13 +51,10 @@ class MemberManager(models.Manager):
         elif not NAME_REGEX.match(postData['last_name']):
             errors['last_name'] = 'Last name contains an invalid character.'
 
-        # Ensure that email field is completed and that email adheres to standard conventions:
-        if len(postData['email']) < 1:
-            errors['email'] = 'You must enter an email address.'
-        elif not EMAIL_REGEX.match(postData['email']):
+        if not EMAIL_REGEX.match(postData['email']):
             errors['email'] = 'Please enter a valid email address.'
         # Call email_exists to ensure they haven't already signed up
-        elif self.member_email_exists(postData['email']) == True:
+        elif self.member_email_exists(postData['email']):
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
         # Ensure that a street address is added:
