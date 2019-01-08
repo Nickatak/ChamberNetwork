@@ -33,6 +33,7 @@ def register_member(req):
             return redirect('public:success')
         else:
             req.session['errors'] = errors
+            req.session['old_data'] = req.POST
 
     return redirect('public:new_member')
 
