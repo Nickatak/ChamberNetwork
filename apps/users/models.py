@@ -78,6 +78,9 @@ class MemberManager(models.Manager):
         if len(post_data['bio']) < 1:
             errors['bio'] = 'Please provide a brief musical bio.'
 
+        if 'rating' not in post_data:
+            errors['rating'] = 'Please select a skill rating.'
+
         return errors
 
     def add_member(self, post_data):
