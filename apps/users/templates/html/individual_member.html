@@ -13,7 +13,7 @@ user = Member object that is currently logged in (with all attributes).
 
     <!-- Load CSS (different for each template): -->
     {% block load_css %}
-        <link rel="stylesheet" type="text/css" href='{% static "css/dashboard.css" %}'>
+        <link rel="stylesheet" type="text/css" href='{% static "css/individual_member.css" %}'>
     {% endblock %}
 </head>
 <body>
@@ -27,7 +27,7 @@ user = Member object that is currently logged in (with all attributes).
             <!-- Navbar links -->
             <ul class="navbar-nav">
                 <li class="navbar-item">
-                    <a class="nav-link active" href="{% url 'users:dashboard' %}">DASHBOARD</a>
+                    <a class="nav-link" href="{% url 'users:dashboard' %}">DASHBOARD</a>
                 </li>
                 <li class="navbar-item">
                     <a class="nav-link" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
