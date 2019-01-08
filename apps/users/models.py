@@ -37,45 +37,45 @@ class MemberManager(models.Manager):
         return user, errors
 
 
-    def new_member_validation(self, postData):
+    def new_member_validation(self, post_data):
 
         errors = {}
 
-        if len(postData['first_name']) < 2:
+        if len(post_data['first_name']) < 2:
             errors['first_name'] = 'First name must contain at least two characters.'
-        elif not NAME_REGEX.match(postData['first_name']):
+        elif not NAME_REGEX.match(post_data['first_name']):
             errors['first_name'] = 'First name contains an invalid character.'
 
-        if len(postData['last_name']) < 2:
+        if len(post_data['last_name']) < 2:
             errors['last_name'] = 'Last name must contain at least two characters.'
-        elif not NAME_REGEX.match(postData['last_name']):
+        elif not NAME_REGEX.match(post_data['last_name']):
             errors['last_name'] = 'Last name contains an invalid character.'
 
-        if not EMAIL_REGEX.match(postData['email']):
+        if not EMAIL_REGEX.match(post_data['email']):
             errors['email'] = 'Please enter a valid email address.'
-        elif self.member_email_exists(postData['email']):
+        elif self.member_email_exists(post_data['email']):
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
-        if len(postData['street_address']) < 1:
+        if len(post_data['street_address']) < 1:
             errors['street_address'] = 'Please enter your street address.'
 
-        if len(postData['city']) < 1:
+        if len(post_data['city']) < 1:
             errors['city'] = 'Please enter a city.'
 
 
-        if len(postData['zip_code']) < 1:
+        if len(post_data['zip_code']) < 1:
             errors['zip_code'] = 'Please enter your zip code.'
 
-        if len(postData['phone_number']) < 10:
+        if len(post_data['phone_number']) < 10:
             errors['phone_number'] = 'Please enter a valid phone number.'
 
-        if 'primary_instrument' not in postData:
+        if 'primary_instrument' not in post_data:
             errors['primary_instrument'] = 'Please select a primary instrument.'
 
-        if 'secondary_instrument' not in postData:
+        if 'secondary_instrument' not in post_data:
             errors['secondary_instrument'] = 'Please select a secondary instrument.'
 
-        if len(postData['bio']) < 1:
+        if len(post_data['bio']) < 1:
             errors['bio'] = 'Please provide a brief musical bio.'
 
         return errors
@@ -116,50 +116,50 @@ class MemberManager(models.Manager):
 
 # Patron manager model:
 class PatronManager(models.Manager):
-    def new_patron_validation(self, postData):
+    def new_patron_validation(self, post_data):
 
         errors = {}
 
 
         # Ensure that first name 1) has content 2) is at least 2 characters long and 3) contains no invalid characters:
-        if len(postData['first_name']) < 1:
+        if len(post_data['first_name']) < 1:
             errors['first_name'] = 'You must enter a first name.'
-        elif len(postData['first_name']) < 2:
+        elif len(post_data['first_name']) < 2:
             errors['first_name'] = 'First name must contain at least two characters.'
-        elif not NAME_REGEX.match(postData['first_name']):
+        elif not NAME_REGEX.match(post_data['first_name']):
             errors['first_name'] = 'First name contains an invalid character.'
 
         # Ensure that last name 1) has content 2) is at least 2 characters long and 3) contains no invalid characters:
-        if len(postData['last_name']) < 1:
+        if len(post_data['last_name']) < 1:
             errors['last_name'] = 'You must enter a last name.' 
-        elif len(postData['last_name']) < 2:
+        elif len(post_data['last_name']) < 2:
             errors['last_name'] = 'Last name must contain at least two characters.'
-        elif not NAME_REGEX.match(postData['last_name']):
+        elif not NAME_REGEX.match(post_data['last_name']):
             errors['last_name'] = 'Last name contains an invalid character.'
 
         # Ensure that email field is completed and that email adheres to standard conventions:
-        if len(postData['email']) < 1:
+        if len(post_data['email']) < 1:
             errors['email'] = 'You must enter an email address.'
-        elif not EMAIL_REGEX.match(postData['email']):
+        elif not EMAIL_REGEX.match(post_data['email']):
             errors['email'] = 'Please enter a valid email address.'
         # Call email_exists to ensure they haven't already signed up
-        elif self.patron_email_exists(postData['email']) == True:
+        elif self.patron_email_exists(post_data['email']) == True:
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
         # Ensure that a street address is added:
-        if len(postData['street_address']) < 1:
+        if len(post_data['street_address']) < 1:
             errors['street_address'] = 'Please enter your street address.'
 
         # Ensure that a city is added:
-        if len(postData['city']) < 1:
+        if len(post_data['city']) < 1:
             errors['city'] = 'Please enter a city.'
 
         # Ensure that a zip code is added:
-        if len(postData['zip_code']) < 1:
+        if len(post_data['zip_code']) < 1:
             errors['zip_code'] = 'Please enter your zip code.'
 
         # Ensure that a phone number is added:
-        if len(postData['phone_number']) < 10:
+        if len(post_data['phone_number']) < 10:
             errors['phone_number'] = 'Please enter a valid phone number.'
 
         return errors
