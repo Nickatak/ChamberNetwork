@@ -63,5 +63,8 @@ def dashboard(req):
 
     return render(req, 'html/dashboard.html', context)
 
-def individual_member(req):
+def individual_member(req, member_id):
+    context = {
+        'member' : Member.objects.get(id=member_id),
+    }
     return render(req, 'html/individual_member.html')
