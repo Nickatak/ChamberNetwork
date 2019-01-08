@@ -74,7 +74,7 @@ class MemberManager(models.Manager):
             errors['phone_number'] = 'Please enter a valid phone number.'
 
         # Ensure that a primary instrument is chosen:
-        if len(postData['primary_instrument']) < 1:
+        if 'primary_instrument' not in postData:
             errors['primary_instrument'] = 'Please select a primary instrument.'
 
         # Ensure that a primary instrument is chosen:
