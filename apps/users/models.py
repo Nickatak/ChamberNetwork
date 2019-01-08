@@ -3,6 +3,7 @@ import re
 
 from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
+from django.contrib.auth.models import User
 # from django.contrib.auth.models import User
 
 from ..instruments.models import Instrument
@@ -116,6 +117,10 @@ class MemberManager(models.Manager):
 
     def member_email_exists(self, email):
         return self.filter(email=email).exists()
+
+    # Very simple auto password generator for now.
+    def generate_new_password(self):
+        return User.objects.make_random_password(length=14, allowed_chars="abcdefghjkmnpqrstuvwxyz01234567889")
 
 # Patron manager model:
 class PatronManager(models.Manager):
