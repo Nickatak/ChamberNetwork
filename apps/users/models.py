@@ -53,31 +53,28 @@ class MemberManager(models.Manager):
 
         if not EMAIL_REGEX.match(postData['email']):
             errors['email'] = 'Please enter a valid email address.'
-        # Call email_exists to ensure they haven't already signed up
         elif self.member_email_exists(postData['email']):
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
-        # Ensure that a street address is added:
         if len(postData['street_address']) < 1:
             errors['street_address'] = 'Please enter your street address.'
 
-        # Ensure that a city is added:
         if len(postData['city']) < 1:
             errors['city'] = 'Please enter a city.'
 
-        # Ensure that a zip code is added:
+
         if len(postData['zip_code']) < 1:
             errors['zip_code'] = 'Please enter your zip code.'
 
-        # Ensure that a phone number is added:
         if len(postData['phone_number']) < 10:
             errors['phone_number'] = 'Please enter a valid phone number.'
 
-        # Ensure that a primary instrument is chosen:
         if 'primary_instrument' not in postData:
             errors['primary_instrument'] = 'Please select a primary instrument.'
 
-        # Ensure that a primary instrument is chosen:
+        if 'secondary_instrument' not in postData:
+            errors['secondary_instrument'] = 'Please select a secondary instrument.'
+
         if len(postData['bio']) < 1:
             errors['bio'] = 'Please provide a brief musical bio.'
 
