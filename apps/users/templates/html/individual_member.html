@@ -64,7 +64,7 @@ user = Member object that is currently logged in (with all attributes).
             <div class="card">
                 <img src="/static/images/14.jpg" style="width:100%">
                 <div class="card-title">
-                    <h4>YOUR INFORMATION</h4>
+                    <h4>{{ member.first_name }}'s Information</h4>
                 </div>
                 <div class="information-container">
                     <div class="panel panel-default">
@@ -73,40 +73,39 @@ user = Member object that is currently logged in (with all attributes).
                     <dl class="row">
                         <dt class="col-sm-4">Name</dt>
                         <dd class="col-sm-8">
-                            <p>{{ user.first_name }} {{ user.last_name }}</p>
+                            <p>{{ member.first_name }} {{ member.last_name }}</p>
                         </dd>
 
                         <dt class="col-sm-4">Email</dt>
                         <dd class="col-sm-8">
-                            <p>{{ user.email }}</p>
+                            <p>{{ member.email }}</p>
                         </dd>
 
                         <dt class="col-sm-4">Phone</dt>
                         <dd class="col-sm-8">
-                            <p>{{ user.phone_number }}</p>
+                            <p>{{ member.phone_number }}</p>
                         </dd>
 
                         <dt class="col-sm-4">Primary instrument</dt>
                         <dd class="col-sm-8">
-                            <p>{{ user.primary_instrument }}</p>
+                            <p>{{ member.primary_instrument }}</p>
                         </dd>
 
                         <dt class="col-sm-4">Second instrument</dt>
                         <dd class="col-sm-8">
-                            <p>{{ user.second_instrument }}</p>
+                            <p>{{ member.second_instrument }}</p>
                         </dd>
 
                         <dt class="col-sm-4">HCMN Rating</dt>
                         <dd class="col-sm-8">
-                            <p>{{ user.rating }}</p>
+                            <p>{{ member.rating }}</p>
                         </dd>
 
                         <dt class="col-sm-4">Bio</dt>
                         <dd class="col-sm-8">
-                            <p>{{ user.bio }}</p>
+                            <p>{{ member.bio }}</p>
                         </dd>
                     </dl>
-                    <a href="#" class="btn btn-reg btn-info btn-block">EDIT INFORMATION</a>
                 <!-- End div for information container: -->
                 </div>
             <!-- End div for card (your information): -->
@@ -117,14 +116,13 @@ user = Member object that is currently logged in (with all attributes).
             <div class="card">
                 <img src="/static/images/9.jpg" style="width:100%">
                 <div class="card-title">
-                    <h4>YOUR UPCOMING PERFORMANCES</h4>
+                    <h4>{{ member.first_name }}'s Upcoming Performances</h4>
                 </div>
                 <div class="information-container">
                     <div class="panel panel-default">
                         <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                     </div>
-                    <h4>Add performance feature is coming soon.</h4>
-                    <a href="#" class="btn btn-reg btn-info btn-block">ADD PERFORMANCE</a>
+                    <h4>Upcoming performances feature is coming soon.</h4>
                 <!-- End div for information-container: -->
                 </div>
             <!-- End div for card (upcoming performances) -->
