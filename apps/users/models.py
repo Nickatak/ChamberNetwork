@@ -224,6 +224,7 @@ class Member(models.Model):
     is_approved = models.BooleanField(default=False, verbose_name="Has been approved")
     is_reviewed = models.BooleanField(default=False, verbose_name="Has been viewed")
     is_coach = models.BooleanField(default=False, verbose_name="Is a coach")
+    has_default_password = models.BooleanField(default=False, verbose_name='Has set custom password')
     
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Application Date")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Last updated")
