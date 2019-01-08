@@ -1,1 +1,143 @@
-asdf
+{% extends 'users_base.html' %}
+
+{#
+user = Member object that is currently logged in (with all attributes).
+#}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+
+    <!-- Load CSS (different for each template): -->
+    {% block load_css %}
+        <link rel="stylesheet" type="text/css" href='{% static "css/dashboard.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <div class="container-fluid" id="navbar-container">
+        <nav class="navbar navbar-expand-sm fixed-top">
+
+            <!-- Logo -->
+            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+
+            <!-- Navbar links -->
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a class="nav-link active" href="{% url 'users:dashboard' %}">DASHBOARD</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
+                </li>
+
+                <!-- Instruments dropdown: -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">INSTRUMENTS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="#" class="dropdown-item">Instrument 1</a>
+                        <a href="#" class="dropdown-item">Instrument 2</a>
+                        <a href="#" class="dropdown-item">Instrument 3</a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Navbar right -->
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a class="nav-link" href="#">LOGOUT</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    {% endblock %}
+
+    {% block main_body %}
+    <!-- Div for main container: -->
+    <div class="container-fluid" id="main-container">
+        <div id="card-container">
+            <div class="card">
+                <img src="/static/images/14.jpg" style="width:100%">
+                <div class="card-title">
+                    <h4>YOUR INFORMATION</h4>
+                </div>
+                <div class="information-container">
+                    <div class="panel panel-default">
+                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                    </div>
+                    <dl class="row">
+                        <dt class="col-sm-4">Name</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.first_name }} {{ user.last_name }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Email</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.email }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Phone</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.phone_number }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Primary instrument</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.primary_instrument }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Second instrument</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.second_instrument }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">HCMN Rating</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.rating }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Bio</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.bio }}</p>
+                        </dd>
+                    </dl>
+                    <a href="#" class="btn btn-reg btn-info btn-block">EDIT INFORMATION</a>
+                <!-- End div for information container: -->
+                </div>
+            <!-- End div for card (your information): -->
+            </div>
+
+
+
+            <div class="card">
+                <img src="/static/images/9.jpg" style="width:100%">
+                <div class="card-title">
+                    <h4>YOUR UPCOMING PERFORMANCES</h4>
+                </div>
+                <div class="information-container">
+                    <div class="panel panel-default">
+                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                    </div>
+                    <h4>Add performance feature is coming soon.</h4>
+                    <a href="#" class="btn btn-reg btn-info btn-block">ADD PERFORMANCE</a>
+                <!-- End div for information-container: -->
+                </div>
+            <!-- End div for card (upcoming performances) -->
+            </div>
+
+        <!-- End div for card-container: -->
+        </div>
+
+
+    <!-- End div for main container: -->
+    </div>
+        
+    {% endblock %}
+
+</body>
+</html>
