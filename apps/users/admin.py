@@ -4,7 +4,7 @@ from .models import Member
 
 @admin.register(Member)
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'is_reviewed', 'is_approved', 'is_coach', 'created_at', 'updated_at')
+    list_display = ('first_name', 'last_name', 'email', 'is_reviewed', 'is_approved', 'is_coach', 'created_at', 'updated_at')
 
     actions = [
                 'approve_all',
@@ -12,6 +12,7 @@ class MemberAdmin(admin.ModelAdmin):
                 'coach_all',
                 'revoke_coach',
                 'mark_as_viewed',
+                'set_default_password',
             ]
 
     def approve_all(self, request, selected_members):
@@ -33,3 +34,10 @@ class MemberAdmin(admin.ModelAdmin):
     def mark_as_viewed(self, request, selected_members):
         selected_members.update(is_reviewed=True)
     mark_as_viewed.short_description = 'Review all checked members.'
+
+    def set_default_password(self, request, selected_members):
+        for member in selected_members:
+            member.password = Member.objects.generate_new_password()
+            member.save()
+    set_default_password.short_description = 'Set new passwords for all selected members.'
+    
