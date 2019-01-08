@@ -64,7 +64,12 @@ def dashboard(req):
     return render(req, 'html/dashboard.html', context)
 
 def individual_member(req, member_id):
+
+    if ('uid' not in req.session) or (not Member.objects.filter(id=member_id).exists()):
+        return redirect('public:welcome')
+
     context = {
         'member' : Member.objects.get(id=member_id),
     }
+
     return render(req, 'html/individual_member.html')
