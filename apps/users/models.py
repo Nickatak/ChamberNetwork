@@ -80,19 +80,19 @@ class MemberManager(models.Manager):
 
         return errors
 
-    def add_member(self, data):
-        first_name = data['first_name']
-        last_name = data['last_name']
-        email = data['email']
-        street_address = data['street_address']
-        unit_number = data['unit_number']
-        city = data['city']
-        state = data['state']
-        zip_code = data['zip_code']
-        phone_number = data['phone_number']
-        primary_instrument = data['primary_instrument']
-        secondary_instrument = data['secondary_instrument']
-        bio = data['bio']
+    def add_member(self, post_data):
+        first_name = post_data['first_name']
+        last_name = post_data['last_name']
+        email = post_data['email']
+        street_address = post_data['street_address']
+        unit_number = post_data['unit_number']
+        city = post_data['city']
+        state = post_data['state']
+        zip_code = post_data['zip_code']
+        phone_number = post_data['phone_number']
+        primary_instrument = post_data['primary_instrument']
+        secondary_instrument = post_data['secondary_instrument']
+        bio = post_data['bio']
         # For rating, we need to "pop" just the first character of each rating, ie the number, not the description
         rating = data['rating']
         
