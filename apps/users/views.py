@@ -72,4 +72,4 @@ def individual_member(req, member_id):
         'member' : Member.objects.get(id=member_id),
     }
 
-    return render(req, 'html/individual_member.html')
+    return render(req, 'html/individual_member.html', context)
