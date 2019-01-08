@@ -135,6 +135,7 @@
                 <!-- End div for overlays: -->   
                 </div>
                 
+                <!-- Form: -->
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
                     <form role="form" action="{% url 'users:member_registration_handler' %}" method="POST">
@@ -278,7 +279,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="phone_number" id="phone_number" class="form-control input-sm" placeholder="Phone">
+                            <input type="tel" name="phone_number" id="phone_number" class="form-control input-sm" placeholder="Phone">
                             {% if 'phone_number' in errors %}
                                 {{ errors.phone_number }}
                             {% endif %}
@@ -294,7 +295,7 @@
                             <!-- TODO: better way to preload instrument names -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
+                                    <select value='{{ instrument.id }}' class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
                                         <option selected disabled>Primary instrument</option>
                                         {% for instrument in instruments %}
                                             <option value='{{ instrument.id }}'>{{ instrument }}</option>

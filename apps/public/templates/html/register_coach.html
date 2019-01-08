@@ -94,10 +94,11 @@
                 <!-- End div for overlay: -->
                 </div>
 
+                <!-- Form: -->
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
                     <!-- I believe member and coach will post to same route: -->
-                    <form role="form" action="/users/register_member/" method="POST">
+                    <form role="form" action="{% url 'users:coach_registration_handler' %} method="POST">
                         {% csrf_token %}
 
                         <div class="panel panel-default">
@@ -236,7 +237,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="phone_number" id="phone_number" class="form-control input-sm" placeholder="Phone">
+                            <input type="tel" name="phone_number" id="phone_number" class="form-control input-sm" placeholder="Phone">
                             {% if 'phone_number' in errors %}
                                 {{ errors.phone_number }}
                             {% endif %}
@@ -255,7 +256,7 @@
                                     <select value='{{ instrument.id }}' class="form-control" id="primary_instrument" placeholder="Primary instrument">
                                         <option selected disabled>Primary instrument</option>
                                         {% for instrument in instruments %}
-                                            <option>{{ instrument }}</option>
+                                            <option value='{{ instrument.id }}'>{{ instrument }}</option>
                                         {% endfor %}
                                     </select>
                                     {% if 'primary_instrument' in errors %}
@@ -279,6 +280,9 @@
 
                         <div class="form-group">
                             <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" placeholder="Brief musical bio"></textarea>
+                            {% if 'bio' in errors %}
+                                {{ errors.bio }}
+                            {% endif %}
                         </div>
                         <!-- TODO: set # of words allowed -->
 
