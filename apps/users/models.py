@@ -94,7 +94,7 @@ class MemberManager(models.Manager):
         secondary_instrument = post_data['secondary_instrument']
         bio = post_data['bio']
         # For rating, we need to "pop" just the first character of each rating, ie the number, not the description
-        rating = data['rating']
+        rating = post_data['rating']
         
         return self.create(
                             first_name=first_name,
