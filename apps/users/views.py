@@ -62,3 +62,6 @@ def dashboard(req):
     }
 
     return render(req, 'html/dashboard.html', context)
+
+def individual_member(req):
+    return render(req, 'html/individual_member.html')
