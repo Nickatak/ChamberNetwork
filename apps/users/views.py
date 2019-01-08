@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Member, Patron
+from ..instruments.models import Instrument
 
 
 def login_handler(req):
