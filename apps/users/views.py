@@ -60,7 +60,7 @@ def dashboard(req):
 
     context = {
         'user' : Member.objects.get(id=req.session['uid']),
-        'instrument' :Instrument.objects.all(),
+        'instruments' :Instrument.objects.all(),
     }
 
     return render(req, 'html/dashboard.html', context)
