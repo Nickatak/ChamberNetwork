@@ -104,7 +104,7 @@ class MemberManager(models.Manager):
         zip_code = data['zip_code']
         phone_number = data['phone_number']
         primary_instrument = data['primary_instrument']
-        second_instrument = data['second_instrument']
+        secondary_instrument = data['secondary_instrument']
         bio = data['bio']
         # For rating, we need to "pop" just the first character of each rating, ie the number, not the description
         rating = data['rating']
