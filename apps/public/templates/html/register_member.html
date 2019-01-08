@@ -182,7 +182,7 @@
 
                         <!-- Address and phone section: -->
                         <!-- TODO: BS/Django probably has special forms for city, state. Maybe even auto-fill based on address. Probably requires an API. -->
-                        <h5>Address and phone:</h5>
+                        <h5>Address:</h5>
 
                         <div class="row">
                             <div class="col-md-8">
@@ -278,11 +278,24 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <input type="tel" name="phone_number" id="phone_number" class="form-control input-sm" placeholder="Phone">
                             {% if 'phone_number' in errors %}
                                 {{ errors.phone_number }}
                             {% endif %}
+                        </div> -->
+
+                        <div class="row" id="phone-row">
+                            <div class="col-md-5">
+                                <h5>Phone number:</h5>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="form-group" align="right">
+                                    (<input type="tel" name="tel1" size="3" pattern="\d{3}" placeholder="xxx" />) 
+                                    <input type="tel" name="tel2" size="3" pattern="\d{3}" placeholder="xxx" /> - 
+                                    <input type="tel" name="tel3" size="4" pattern="\d{4}" placeholder="xxxx" />
+                                </div>
+                            </div>
                         </div>
 
                         <div class="panel panel-default">
