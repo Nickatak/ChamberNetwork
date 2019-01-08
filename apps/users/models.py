@@ -41,11 +41,7 @@ class MemberManager(models.Manager):
 
         errors = {}
 
-
-        # Ensure that first name 1) has content 2) is at least 2 characters long and 3) contains no invalid characters:
-        if len(postData['first_name']) < 1:
-            errors['first_name'] = 'You must enter a first name.'
-        elif len(postData['first_name']) < 2:
+        if len(postData['first_name']) < 2:
             errors['first_name'] = 'First name must contain at least two characters.'
         elif not NAME_REGEX.match(postData['first_name']):
             errors['first_name'] = 'First name contains an invalid character.'
