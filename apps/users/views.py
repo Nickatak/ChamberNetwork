@@ -102,7 +102,7 @@ def edit_member(req, member_id):
         context = {
             'original_user' : Member.objects.get(id=req.session['uid']),
         }
-        return render(req, 'your_template_here')
+        return render(req, 'html/edit_member.html')
 
 def logout_handler(req):
     req.session.pop('uid', None)
