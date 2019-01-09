@@ -12,6 +12,6 @@ urlpatterns = [
     path('register_patron/', views.register_patron, name="patron_registration_handler"),
     path('dashboard/', views.dashboard, name="dashboard"),
 
-    re_path('edit_member/(?P<member_id>\d+)/', views.edit_member, name='edit_member'),
+    re_path('edit/(?P<member_id>\d+)/', views.edit_member, name='edit_member'),
     re_path('(?P<member_id>\d+)/', views.individual_member, name="individual_member"),
 ]
