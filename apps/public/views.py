@@ -61,6 +61,7 @@ def login_display(req):
 
 	context = {
 		'page_name' : 'Login',
+        'old_data' : req.session.pop('old_data', None),
 	}
 
 	return render(req, 'html/login.html', context)
