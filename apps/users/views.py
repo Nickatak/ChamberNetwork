@@ -13,7 +13,7 @@ def login_handler(req):
         else:
             req.session['errors'] = errors
             req.session['old_data'] = {
-                                        'username' : req.POST['username'],
+                                        'email' : req.POST['email'],
                                       }
             
             
