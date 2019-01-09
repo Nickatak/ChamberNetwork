@@ -81,10 +81,10 @@ def edit_member(req, member_id):
     if 'uid' not in req.session:
         return redirect('public:welcome')
     
-    if request.method == 'POST':
+    if req.method == 'POST':
         pass
 
-    if member_id != req.session['uid']:
+    if int(member_id) != req.session['uid']:
         return redirect('users:dashboard')
     else:
         context = {
