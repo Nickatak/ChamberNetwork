@@ -40,7 +40,7 @@ class MemberManager(models.Manager):
         return user, errors
 
 
-    def new_member_validation(self, post_data):
+    def new_member_validation(self, post_data, is_coach=False):
         errors = {}
 
         first_name = post_data['first_name']
@@ -89,8 +89,8 @@ class MemberManager(models.Manager):
 
         if len(bio) < 1:
             errors['bio'] = 'Please provide a brief musical bio.'
-
-        if 'rating' not in post_data:
+        
+        if (not is_coach) and 'rating' not in post_data:
             errors['rating'] = 'Please select a skill rating.'
 
         return errors
@@ -98,7 +98,7 @@ class MemberManager(models.Manager):
     def new_coach_validation(self, post_data):
         return {'yo' : 'hello'}
 
-    def add_member(self, post_data):
+    def add_member(self, post_data, is_coach=False):
         first_name = post_data['first_name']
         last_name = post_data['last_name']
         email = post_data['email']
@@ -111,8 +111,11 @@ class MemberManager(models.Manager):
         primary_instrument = post_data['primary_instrument']
         secondary_instrument = post_data['secondary_instrument']
         bio = post_data['bio']
-        # For rating, we need to "pop" just the first character of each rating, ie the number, not the description
-        rating = post_data['rating']
+        # Make this a choiceField later.
+        if is_coach:
+            rating = 'A'
+        else:
+            rating = post_data['rating']
         
         return self.create(
                             first_name=first_name,
@@ -127,7 +130,8 @@ class MemberManager(models.Manager):
                             primary_instrument=Instrument.objects.get(pk=primary_instrument),
                             second_instrument=Instrument.objects.get(pk=secondary_instrument),
                             bio=bio,
-                            rating=rating)
+                            rating=rating,
+                            is_coach=is_coach)
 
     def member_email_exists(self, email):
         return self.filter(email=email).exists()
