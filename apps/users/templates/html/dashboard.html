@@ -45,7 +45,7 @@ user = Member object that is currently logged in (with all attributes).
                     <a href="#" class="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">INSTRUMENTS</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {% for instrument in instruments %}
-                            <a href="{% url 'instruments:individual_display' instrument.id %}" class="dropdown-item"> {{ instrument }} </a>
+                            <a href="{% url 'instruments:individual_display' instrument.id %}" class="dropdown-item"> {{ instrument.name }} </a>
                         {% endfor %}
                     </div>
                 </li>
