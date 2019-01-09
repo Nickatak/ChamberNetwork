@@ -6,7 +6,7 @@ from .models import Instrument
 def dummy(req):
     pass
 
-def individual_instrument(req, instrument_id):
+def individual_display(req, instrument_id):
     # Add a safeguard for this later.
     context = {
         'instrument' : Instrument.objects.get(id=int(instrument_id)),
