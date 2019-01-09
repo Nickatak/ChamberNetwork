@@ -124,7 +124,7 @@ class MemberManager(models.Manager):
                             zip_code=zip_code,
                             phone_number=phone_number,
                             primary_instrument=Instrument.objects.get(pk=primary_instrument),
-                            second_instrument=Instrument.objects.get(pk=secondary_instrument),
+                            secondary_instrument=Instrument.objects.get(pk=secondary_instrument),
                             bio=bio,
                             rating=rating,
                             is_coach=is_coach)
