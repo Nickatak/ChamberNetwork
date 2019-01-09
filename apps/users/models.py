@@ -4,7 +4,6 @@ import re
 from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth.models import User
-# from django.contrib.auth.models import User
 
 from ..instruments.models import Instrument
 
@@ -13,10 +12,9 @@ NAME_REGEX = re.compile(r"^[-a-zA-Z']+$")
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
 
-
-
 # Member Manager Model
 class MemberManager(models.Manager):
+
 
     def validate_login(self, data):
         email = data['email']
@@ -95,6 +93,7 @@ class MemberManager(models.Manager):
 
         return errors
 
+
     def add_member(self, post_data, is_coach=False):
         first_name = post_data['first_name']
         last_name = post_data['last_name']
@@ -130,12 +129,19 @@ class MemberManager(models.Manager):
                             rating=rating,
                             is_coach=is_coach)
 
+
     def member_email_exists(self, email):
         return self.filter(email=email).exists()
+
 
     # Very simple auto password generator for now.
     def generate_new_password(self):
         return User.objects.make_random_password(length=14, allowed_chars="abcdefghjkmnpqrstuvwxyz01234567889")
+
+
+    def get_all_with_instrument(self, instrument):
+        return self.filter(models.Q(primary_instrument=instrument) | models.Q(secondary_instrument=instrument))
+
 
 # Patron manager model:
 class PatronManager(models.Manager):
@@ -209,6 +215,7 @@ class PatronManager(models.Manager):
 
     def patron_email_exists(self, email):
         return self.filter(email=email).exists()
+
 
 # Member Model
 class Member(models.Model):
