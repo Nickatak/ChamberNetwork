@@ -230,7 +230,7 @@ class Member(models.Model):
 
     # Instrument keys.
     primary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='primary_users')
-    second_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='secondary_users')
+    secondary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='secondary_users')
 
 
     # Admin approval and coach status.
