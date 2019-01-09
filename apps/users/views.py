@@ -14,7 +14,7 @@ def login_handler(req):
             req.session['errors'] = errors
 
     # Alright, to get this method to work, you're going to have to add a hidden next input field to return back to the same page, unless you want it to redirect somewhere else.
-    return redirect(req.POST.get('next', 'public:login'))
+    return redirect('public:login')
     
     # Unless maybe we try this: return redirect(req.META.get('HTTP_REFERER', 'public:welcome'))
 
