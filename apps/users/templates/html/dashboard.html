@@ -110,7 +110,7 @@ user = Member object that is currently logged in (with all attributes).
                             <p>{{ user.bio }}</p>
                         </dd>
                     </dl>
-                    <a href="#" class="btn btn-reg btn-info btn-block">EDIT INFORMATION</a>
+                    <a href="{% url 'users:edit_member' user.id %}" class="btn btn-reg btn-info btn-block">EDIT INFORMATION</a>
                 <!-- End div for information container: -->
                 </div>
             <!-- End div for card (your information): -->
