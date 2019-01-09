@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Instrument
+from ..users.models import Member
+from django.db.models import Q
 
 
 def individual_display(req, instrument_id):
@@ -10,8 +12,10 @@ def individual_display(req, instrument_id):
     if not Instrument.objects.filter(id=instrument_id).exists():
         return redirect('users:dashboard')
 
+    this_instrument = Instrument.objects.get(id=instrument_id)
     context = {
-        'instrument' : Instrument.objects.get(id=instrument_id),
+        'instrument' : this_instrument,
+        'members' : Member.objects.filter(Q(primary_instrument=this_instrument) | Q(secondary_instrument=this_instrument)),
     }
 
     return render(req, 'html/individual_instrument.html')
