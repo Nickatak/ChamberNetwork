@@ -130,27 +130,20 @@ class PatronManager(models.Manager):
 
         errors = {}
 
-
         # Ensure that first name 1) has content 2) is at least 2 characters long and 3) contains no invalid characters:
-        if len(post_data['first_name']) < 1:
-            errors['first_name'] = 'You must enter a first name.'
-        elif len(post_data['first_name']) < 2:
+        if len(post_data['first_name']) < 2:
             errors['first_name'] = 'First name must contain at least two characters.'
         elif not NAME_REGEX.match(post_data['first_name']):
             errors['first_name'] = 'First name contains an invalid character.'
 
         # Ensure that last name 1) has content 2) is at least 2 characters long and 3) contains no invalid characters:
-        if len(post_data['last_name']) < 1:
-            errors['last_name'] = 'You must enter a last name.' 
-        elif len(post_data['last_name']) < 2:
+        if len(post_data['last_name']) < 2:
             errors['last_name'] = 'Last name must contain at least two characters.'
         elif not NAME_REGEX.match(post_data['last_name']):
             errors['last_name'] = 'Last name contains an invalid character.'
 
         # Ensure that email field is completed and that email adheres to standard conventions:
-        if len(post_data['email']) < 1:
-            errors['email'] = 'You must enter an email address.'
-        elif not EMAIL_REGEX.match(post_data['email']):
+        if not EMAIL_REGEX.match(post_data['email']):
             errors['email'] = 'Please enter a valid email address.'
         # Call email_exists to ensure they haven't already signed up
         elif self.patron_email_exists(post_data['email']) == True:
