@@ -41,36 +41,45 @@ class MemberManager(models.Manager):
 
 
     def new_member_validation(self, post_data):
-
         errors = {}
 
-        if len(post_data['first_name']) < 2:
+        first_name = post_data['first_name']
+        last_name = post_data['last_name']
+        email = post_data['email']
+        street_address = post_data['street_address']
+        unit_number = post_data['unit_number']
+        city = post_data['city']
+        state = post_data['state']
+        zip_code = post_data['zip_code']
+        phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
+        bio = post_data['bio']
+
+        if len(first_name) < 2:
             errors['first_name'] = 'First name must contain at least two characters.'
-        elif not NAME_REGEX.match(post_data['first_name']):
+        elif not NAME_REGEX.match(first_name):
             errors['first_name'] = 'First name contains an invalid character.'
 
-        if len(post_data['last_name']) < 2:
+        if len(last_name) < 2:
             errors['last_name'] = 'Last name must contain at least two characters.'
-        elif not NAME_REGEX.match(post_data['last_name']):
+        elif not NAME_REGEX.match(last_name):
             errors['last_name'] = 'Last name contains an invalid character.'
 
-        if not EMAIL_REGEX.match(post_data['email']):
+        if not EMAIL_REGEX.match(email):
             errors['email'] = 'Please enter a valid email address.'
-        elif self.member_email_exists(post_data['email']):
+        elif self.member_email_exists(email):
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
-        if len(post_data['street_address']) < 1:
+        if len(street_address) < 1:
             errors['street_address'] = 'Please enter your street address.'
 
-        if len(post_data['city']) < 1:
+        if len(city) < 1:
             errors['city'] = 'Please enter a city.'
 
+        if len(zip_code) != 5:
+            errors['zip_code'] = 'Please enter a valid US zip code.'
 
-        if len(post_data['zip_code']) < 1:
-            errors['zip_code'] = 'Please enter your zip code.'
-
-        if len(post_data['phone_number']) < 10:
-            errors['phone_number'] = 'Please enter a valid phone number.'
+        if len(phone_number) != 10:
+            errors['phone_number'] = 'Please enter a valid US phone number.'
 
         if 'primary_instrument' not in post_data:
             errors['primary_instrument'] = 'Please select a primary instrument.'
@@ -78,7 +87,7 @@ class MemberManager(models.Manager):
         if 'secondary_instrument' not in post_data:
             errors['secondary_instrument'] = 'Please select a secondary instrument.'
 
-        if len(post_data['bio']) < 1:
+        if len(bio) < 1:
             errors['bio'] = 'Please provide a brief musical bio.'
 
         if 'rating' not in post_data:
@@ -98,7 +107,7 @@ class MemberManager(models.Manager):
         city = post_data['city']
         state = post_data['state']
         zip_code = post_data['zip_code']
-        phone_number = post_data['phone_number']
+        phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
         primary_instrument = post_data['primary_instrument']
         secondary_instrument = post_data['secondary_instrument']
         bio = post_data['bio']
