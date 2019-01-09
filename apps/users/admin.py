@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Member
+from .models import Member, Patron
 # Register your models here.
 
 @admin.register(Member)
@@ -40,4 +40,7 @@ class MemberAdmin(admin.ModelAdmin):
             member.password = Member.objects.generate_new_password()
             member.save()
     set_default_password.short_description = 'Set new passwords for all selected members.'
-    
+
+@admin.register(Patron)
+class PatronAdmin(admin.ModelAdmin):
+    pass
