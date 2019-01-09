@@ -139,43 +139,48 @@ class MemberManager(models.Manager):
 # Patron manager model:
 class PatronManager(models.Manager):
     def new_patron_validation(self, post_data):
+        first_name = post_data['first_name']
+        last_name = post_data['last_name']
+        email = post_data['email']
+        street_address = post_data['street_address']
+        unit_number = post_data['unit_number']
+        city = post_data['city']
+        state = post_data['state']
+        zip_code = post_data['zip_code']
+        phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
+        primary_instrument = post_data['primary_instrument']
+        secondary_instrument = post_data['secondary_instrument']
 
         errors = {}
 
-        # Ensure that first name 1) has content 2) is at least 2 characters long and 3) contains no invalid characters:
-        if len(post_data['first_name']) < 2:
+
+        if len(first_name) < 2:
             errors['first_name'] = 'First name must contain at least two characters.'
-        elif not NAME_REGEX.match(post_data['first_name']):
+        elif not NAME_REGEX.match(first_name):
             errors['first_name'] = 'First name contains an invalid character.'
 
-        # Ensure that last name 1) has content 2) is at least 2 characters long and 3) contains no invalid characters:
-        if len(post_data['last_name']) < 2:
+        if len(last_name) < 2:
             errors['last_name'] = 'Last name must contain at least two characters.'
-        elif not NAME_REGEX.match(post_data['last_name']):
+        elif not NAME_REGEX.match(last_name):
             errors['last_name'] = 'Last name contains an invalid character.'
 
-        # Ensure that email field is completed and that email adheres to standard conventions:
-        if not EMAIL_REGEX.match(post_data['email']):
+        if not EMAIL_REGEX.match(email):
             errors['email'] = 'Please enter a valid email address.'
-        # Call email_exists to ensure they haven't already signed up
-        elif self.patron_email_exists(post_data['email']) == True:
+        elif self.patron_email_exists(email):
             errors['email'] = 'Email already found in database. Either enter a different email or go to sign in page.'
 
-        # Ensure that a street address is added:
-        if len(post_data['street_address']) < 1:
+        if len(street_address) < 1:
             errors['street_address'] = 'Please enter your street address.'
 
-        # Ensure that a city is added:
-        if len(post_data['city']) < 1:
+        if len(city) < 1:
             errors['city'] = 'Please enter a city.'
 
-        # Ensure that a zip code is added:
-        if len(post_data['zip_code']) < 1:
-            errors['zip_code'] = 'Please enter your zip code.'
+        if len(zip_code) != 5:
+            errors['zip_code'] = 'Please enter a valid US zip code.'
 
         # Ensure that a phone number is added:
-        if len(post_data['phone_number']) < 10:
-            errors['phone_number'] = 'Please enter a valid phone number.'
+        if len(phone_number) != 10:
+            errors['phone_number'] = 'Please enter a valid US phone number.'
 
         return errors
 
