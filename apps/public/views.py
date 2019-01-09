@@ -19,7 +19,6 @@ def new_member_display(req):
         'errors' : req.session.pop('errors', None),
         'old_data' : req.session.pop('old_data', None),
         'instruments' : Instrument.objects.all(),
-
 	}
 
 	return render(req, 'html/register_member.html', context)
