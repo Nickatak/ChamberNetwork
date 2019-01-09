@@ -6,5 +6,5 @@ app_name = 'instruments'
 
 urlpatterns = [
     path('', views.dummy),
-    re_path('(?P<instrument_id>\d+)', views.individual_instrument, name="individual_instrument"),
+    re_path('(?P<instrument_id>\d+)', views.individual_display, name="individual_display"),
 ]
