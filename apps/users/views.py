@@ -75,3 +75,20 @@ def individual_member(req, member_id):
     }
 
     return render(req, 'html/individual_member.html', context)
+
+def edit_member(req, member_id):
+
+    if 'uid' not in req.session:
+        return redirect('public:welcome')
+    
+    if request.method == 'POST':
+        pass
+
+    if member_id != req.session['uid']:
+        return redirect('users:dashboard')
+    else:
+        context = {
+            'original_user' : Member.objects.get(id=req.session['uid']),
+        }
+        return render(req, 'your_template_here')
+        
