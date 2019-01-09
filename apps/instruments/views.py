@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Instrument
 from ..users.models import Member
-from django.db.models import Q
+
 
 
 def individual_display(req, instrument_id):
@@ -15,7 +15,7 @@ def individual_display(req, instrument_id):
     this_instrument = Instrument.objects.get(id=instrument_id)
     context = {
         'instrument' : this_instrument,
-        'members' : Member.objects.filter(Q(primary_instrument=this_instrument) | Q(secondary_instrument=this_instrument)),
+        'members' : Member.objects.get_all_with_instrument(this_instrument),
     }
 
     return render(req, 'html/individual_instrument.html')
