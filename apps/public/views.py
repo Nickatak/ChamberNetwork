@@ -17,8 +17,9 @@ def new_member_display(req):
 	context = {
 		'page_name' : 'Register Member',
         'errors' : req.session.pop('errors', None),
-        'instruments' : Instrument.objects.all(),
         'old_data' : req.session.pop('old_data', None),
+        'instruments' : Instrument.objects.all(),
+
 	}
 
 	return render(req, 'html/register_member.html', context)
@@ -28,6 +29,7 @@ def new_coach_display(req):
 	context = {
 		'page_name' : 'Register Coach',
         'errors' : req.session.pop('errors', None),
+        'old_data' : req.session.pop('old_data', None),
         'instruments' : Instrument.objects.all(),
 	}
 
@@ -37,6 +39,7 @@ def new_patron_display(req):
 
 	context = {
 		'page_name' : 'Register Patron',
+        'errors' : req.session.pop('errors', None),
 	}
 
 	return render(req, 'html/new_patron.html', context)
