@@ -95,9 +95,6 @@ class MemberManager(models.Manager):
 
         return errors
 
-    def new_coach_validation(self, post_data):
-        return {'yo' : 'hello'}
-
     def add_member(self, post_data, is_coach=False):
         first_name = post_data['first_name']
         last_name = post_data['last_name']
