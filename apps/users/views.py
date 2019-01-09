@@ -93,4 +93,10 @@ def edit_member(req, member_id):
             'original_user' : Member.objects.get(id=req.session['uid']),
         }
         return render(req, 'your_template_here')
+
+def logout_handler(req):
+    req.session.pop('uid', None)
+
+    return redirect('public:welcome')
+
         
