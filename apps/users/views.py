@@ -23,7 +23,17 @@ def login_handler(req):
 
 # houstonchambermusic.org/register_coach/
 def register_coach(req):
-    pass
+    if req.method == "POST":
+        errors = Member.objects.new_coach_validation(req.POST)
+
+        if not errors:
+            Member.objects.add_coach(req.POST)
+            return redirect('public:success')
+        else:
+            req.session['errors'] = errors
+            req.session['old_data'] = req.POST
+
+    return redirect('public:new_coach')
 
 
 # houstonchambermusic.org/register_member/
