@@ -15,10 +15,8 @@ def login_handler(req):
             req.session['old_data'] = {
                                         'email' : req.POST['email'],
                                       }
-            
-            
-    return redirect('public:login')
 
+    return redirect('public:login')
 
 
 # houstonchambermusic.org/register_coach/
@@ -77,6 +75,7 @@ def dashboard(req):
 
     return render(req, 'html/dashboard.html', context)
 
+
 def individual_member(req, member_id):
 
     if ('uid' not in req.session) or (not Member.objects.filter(id=member_id).exists()):
@@ -88,11 +87,12 @@ def individual_member(req, member_id):
 
     return render(req, 'html/individual_member.html', context)
 
+
 def edit_member(req, member_id):
 
     if 'uid' not in req.session:
         return redirect('public:welcome')
-    
+
     if req.method == 'POST':
         pass
 
@@ -100,9 +100,10 @@ def edit_member(req, member_id):
         return redirect('users:dashboard')
     else:
         context = {
-            'original_user' : Member.objects.get(id=req.session['uid']),
+            'user' : Member.objects.get(id=req.session['uid']),
         }
         return render(req, 'html/edit.html', context)
+
 
 def logout_handler(req):
     req.session.pop('uid', None)
