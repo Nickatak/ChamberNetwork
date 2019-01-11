@@ -24,10 +24,9 @@ a.active {
     color: #808080;
 }
 
-.scrollable-menu {
-    height: auto;
+.dropdown-menu {
     max-height: 500px;
-    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 /*Main:*/
