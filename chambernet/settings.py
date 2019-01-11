@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v5*d56kyw0vj2kt%(sc!4k+8$h^^+t@*_b^#*xt#0tc($r3@+6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [ 'ntakemori.com', 'www.ntakemori.com' ]
 
