@@ -9,9 +9,10 @@ migrations/
 *.pyc
 *.sqlite3
 
-# git related stuff
+# Linux related stuff
 .git-credentials
 .gitconfig
+.bash_history
 
 
 
