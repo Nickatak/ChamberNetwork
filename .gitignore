@@ -1,8 +1,19 @@
-venv/
-
+# All migration folders in all apps
 migrations/
 
+# Mac stuff?
 *.jpeg
 *.pages
+
+# Compiled python files and the DB file.
 *.pyc
 *.sqlite3
+
+
+#Top-level ignores:
+
+# Venv
+/venv/
+
+# Collect-static static dir
+/static/
