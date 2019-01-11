@@ -39,6 +39,7 @@ def new_patron_display(req):
 	context = {
 		'page_name' : 'Register Patron',
         'errors' : req.session.pop('errors', None),
+        'old_data' : req.session.pop('old_data', None),
 	}
 
 	return render(req, 'html/new_patron.html', context)
