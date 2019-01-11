@@ -86,6 +86,10 @@ img {
 	/*margin-bottom: 5px;*/
 }
 
+#phone-row h5 {
+    margin-top: 5px;
+}
+
 .btn-reg {
 	margin-top: 40px;
 }
