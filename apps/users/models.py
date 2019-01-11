@@ -155,8 +155,6 @@ class PatronManager(models.Manager):
         state = post_data['state']
         zip_code = post_data['zip_code']
         phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
-        primary_instrument = post_data['primary_instrument']
-        secondary_instrument = post_data['secondary_instrument']
 
         errors = {}
 
@@ -191,16 +189,16 @@ class PatronManager(models.Manager):
 
         return errors
 
-    def add_patron(self, data):
-        first_name = data['first_name']
-        last_name = data['last_name']
-        email = data['email']
-        street_address = data['street_address']
-        unit_number = data['unit_number']
-        city = data['city']
-        state = data['state']
-        zip_code = data['zip_code']
-        phone_number = data['phone_number']
+    def add_patron(self, post_data):
+        first_name = post_data['first_name']
+        last_name = post_data['last_name']
+        email = post_data['email']
+        street_address = post_data['street_address']
+        unit_number = post_data['unit_number']
+        city = post_data['city']
+        state = post_data['state']
+        zip_code = post_data['zip_code']
+        phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
         
         return self.create(
                             first_name=first_name,
