@@ -9,6 +9,11 @@ migrations/
 *.pyc
 *.sqlite3
 
+# git related stuff
+.git-credentials
+.gitconfig
+
+
 
 #Top-level ignores:
 
