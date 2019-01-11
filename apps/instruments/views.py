@@ -14,6 +14,7 @@ def individual_display(req, instrument_id):
 
     this_instrument = Instrument.objects.get(id=instrument_id)
     context = {
+        'all_instruments' : Instrument.objects.all(),
         'instrument' : this_instrument,
         'members' : Member.objects.get_all_with_instrument(this_instrument),
     }
