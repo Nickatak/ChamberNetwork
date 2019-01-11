@@ -259,7 +259,7 @@
                             <!-- TODO: better way to preload instrument names -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select value='{{ instrument.id }}' class="form-control" id="primary_instrument" placeholder="Primary instrument">
+                                    <select class="form-control" id="primary_instrument" placeholder="Primary instrument">
                                         <option selected disabled>Primary instrument</option>
                                         {% for instrument in instruments %}
                                             <option value='{{ instrument.id }}'>{{ instrument }}</option>
