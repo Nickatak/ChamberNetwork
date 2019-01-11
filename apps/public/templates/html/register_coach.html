@@ -110,7 +110,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First name">
+                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First name" value="{{ old_data.first_name }}">
                                     {% if 'first_name' in errors %}
                                         {{ errors.first_name }}
                                     {% endif %}
@@ -119,7 +119,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last name">
+                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last name" value="{{ old_data.last_name }}">
                                     {% if 'last_name' in errors %}
                                         {{ errors.last_name }}
                                     {% endif %}
@@ -128,7 +128,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email address">
+                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email address" value="{{ old_data.email }}">
                             {% if 'email' in errors %}
                                 {{ errors.email }}
                             {% endif %}
@@ -139,13 +139,12 @@
                         </div>
 
                         <!-- Address and phone section: -->
-                        <!-- TODO: BS/Django probably has special forms for city, state. Maybe even auto-fill based on address. Probably requires an API. -->
                         <h5>Address:</h5>
 
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address">
+                                    <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address" value="{{ old_data.street_address }}">
                                     {% if 'street_address' in errors %}
                                         {{ errors.street_address }}
                                     {% endif %}
@@ -154,13 +153,13 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit">
+                                    <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit" value="{{ old_data.unit_number }}">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City">
+                            <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City" value="{{ old_data.city }}">
                             {% if 'city' in errors %}
                                 {{ errors.city }}
                             {% endif %}
@@ -228,7 +227,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip">
+                                    <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip" value="{{ old_data.zip_code }}">
                                     {% if 'zip_code' in errors %}
                                         {{ errors.zip_code }}
                                     {% endif %}
@@ -242,9 +241,9 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group" align="right">
-                                    (<input type="tel" name="tel1" size="3" pattern="\d{3}" placeholder="xxx" />) 
-                                    <input type="tel" name="tel2" size="3" pattern="\d{3}" placeholder="xxx" /> - 
-                                    <input type="tel" name="tel3" size="4" pattern="\d{4}" placeholder="xxxx" />
+                                    (<input type="tel" name="tel1" size="3" pattern="\d{3}" placeholder="xxx" value="{{ old_data.tel1 }}"/>) 
+                                    <input type="tel" name="tel2" size="3" pattern="\d{3}" placeholder="xxx" value="{{ old_data.tel2 }}"/> - 
+                                    <input type="tel" name="tel3" size="4" pattern="\d{4}" placeholder="xxxx" value="{{ old_data.tel3 }}"/>
                                 </div>
                             </div>
                         </div>
