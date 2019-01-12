@@ -19,4 +19,4 @@ def individual_display(req, instrument_id):
         'members' : Member.objects.get_all_with_instrument(this_instrument),
     }
 
-    return render(req, 'html/individual_instrument.html')
+    return render(req, 'html/individual_instrument.html', context)
