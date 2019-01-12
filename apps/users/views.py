@@ -103,6 +103,7 @@ def edit_member(req, member_id):
     else:
         context = {
             'user' : Member.objects.get(id=req.session['uid']),
+            'instruments' : Instrument.objects.all(),
         }
         return render(req, 'html/edit_member.html', context)
 
