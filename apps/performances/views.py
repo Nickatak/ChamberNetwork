@@ -5,7 +5,12 @@ from ..instruments.models import Instrument
 # Create your views here.
 
 def add(req):
-	return render(req, 'html/add.html')
+
+	context = {
+		'instruments' : Instrument.objects.all()
+	}
+
+	return render(req, 'html/add.html', context)
 
 def upcoming(req):
 
