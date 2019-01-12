@@ -13,4 +13,4 @@ def upcoming(req):
 		'instruments' : Instrument.objects.all(),
 	}
 
-	return render(req, 'html/upcoming.html')
+	return render(req, 'html/upcoming.html', context)
