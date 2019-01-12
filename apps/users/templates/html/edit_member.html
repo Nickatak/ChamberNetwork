@@ -1,0 +1,76 @@
+{% extends 'users_base.html' %}
+
+{#
+    user = Member object that is currently logged in (with all attributes).
+#}
+
+{#
+    instruments = list of all instruments.
+#}
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+
+    <!-- Load CSS (different for each template): -->
+    {% block load_css %}
+        <link rel="stylesheet" type="text/css" href='{% static "css/individual_member.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <div class="container-fluid" id="navbar-container">
+        <nav class="navbar navbar-expand-sm fixed-top">
+
+            <!-- Logo -->
+            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+
+            <!-- Navbar links -->
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'users:dashboard' %}">DASHBOARD</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
+                </li>
+
+                <!-- Instruments dropdown: -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">INSTRUMENTS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {% for instrument in instruments %}
+                            <a href="{% url 'instruments:individual_display' instrument.id %}" class="dropdown-item"> {{ instrument.name }} </a>
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Navbar right -->
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'users:logout_handler' %}">LOGOUT</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    {% endblock %}
+
+    {% block main_body %}
+    <!-- Div for main container: -->
+    <div class="container-fluid" id="main-container">
+        <h2>EDIT MEMBER PAGE</h2>
+    <!-- End div for main container: -->
+    </div>
+        
+    {% endblock %}
+
+</body>
+</html>
