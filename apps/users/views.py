@@ -71,7 +71,7 @@ def dashboard(req):
 
     context = {
         'user' : Member.objects.get(id=req.session['uid']),
-        'instruments' :Instrument.objects.all(),
+        'instruments' : Instrument.objects.all(),
     }
 
     return render(req, 'html/dashboard.html', context)
@@ -84,6 +84,7 @@ def individual_member(req, member_id):
 
     context = {
         'member' : Member.objects.get(id=member_id),
+        'instruments' : Instrument.objects.all(),
     }
 
     return render(req, 'html/individual_member.html', context)
