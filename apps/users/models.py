@@ -104,8 +104,13 @@ class MemberManager(models.Manager):
         state = post_data['state']
         zip_code = post_data['zip_code']
         phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
-        primary_instrument = post_data['primary_instrument']
-        secondary_instrument = post_data['secondary_instrument']
+        primary_instrument = Instrument.objects.get(pk=post_data['primary_instrument'])
+        
+        if 'secondary_instrument'  in post_data: 
+            secondary_instrument = Instrument.objects.get(pk=post_data['secondary_instrument'])
+        else:
+            secondary_instrument = None
+
         bio = post_data['bio']
         # Make this a choiceField later.
         if is_coach:
@@ -123,8 +128,8 @@ class MemberManager(models.Manager):
                             state=state, 
                             zip_code=zip_code,
                             phone_number=phone_number,
-                            primary_instrument=Instrument.objects.get(pk=primary_instrument),
-                            secondary_instrument=Instrument.objects.get(pk=secondary_instrument),
+                            primary_instrument==primary_instrument,
+                            secondary_instrument=secondary_instrument,
                             bio=bio,
                             rating=rating,
                             is_coach=is_coach)
@@ -235,7 +240,7 @@ class Member(models.Model):
 
     # Instrument keys.
     primary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='primary_users')
-    secondary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='secondary_users')
+    secondary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='secondary_users', blank=True)
 
 
     # Admin approval and coach status.
