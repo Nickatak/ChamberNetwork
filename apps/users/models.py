@@ -125,7 +125,7 @@ class MemberManager(models.Manager):
                             state=state, 
                             zip_code=zip_code,
                             phone_number=phone_number,
-                            primary_instrument==primary_instrument,
+                            primary_instrument=primary_instrument,
                             secondary_instrument=secondary_instrument,
                             bio=bio,
                             rating=rating,
