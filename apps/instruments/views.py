@@ -16,7 +16,8 @@ def individual_display(req, instrument_id):
     context = {
         'all_instruments' : Instrument.objects.all(),
         'instrument' : this_instrument,
-        'members' : Member.objects.get_all_with_instrument(this_instrument),
+        'primary_users' : Member.objects.filter(primary_instrument__pk=instrument_id),
+        'secondary_users' : Member.objects.filter(secondary_instrument__pk=instrument_id),
     }
 
     return render(req, 'html/individual_instrument.html', context)
