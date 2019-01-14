@@ -82,9 +82,6 @@ class MemberManager(models.Manager):
         if 'primary_instrument' not in post_data:
             errors['primary_instrument'] = 'Please select a primary instrument.'
 
-        if 'secondary_instrument' not in post_data:
-            errors['secondary_instrument'] = 'Please select a secondary instrument.'
-
         if len(bio) < 1:
             errors['bio'] = 'Please provide a brief musical bio.'
         
