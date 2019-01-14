@@ -82,24 +82,24 @@
             <h3>The following members list {{ instrument.name }} as their primary instrument:</h3>
 
             <ul>
-                <li>
-                    {% for member in primary_users %}
+                {% for member in primary_users %}
+                    <li>
                         <a href="{% url 'users:individual_member' member.id %}">Name: {{ member.first_name }} {{ member.last_name }},
                         Rating: {{ member.rating }}</a>
-
-                    {% endfor %}
-                </li>
+                    </li>
+                {% endfor %}
             </ul>
 
             <h3>The following members list {{ instrument.name }} as their secondary instrument:</h3>
             <ul>
-                <li>
-                    {% for member in secondary_users %}
+
+                {% for member in secondary_users %}
+                    <li>
                         <a href="{% url 'users:individual_member' member.id %}">Name: {{ member.first_name }} {{ member.last_name }},
                         Rating: {{ member.rating }}</a>
+                    </li>
+                {% endfor %}
 
-                    {% endfor %}
-                </li>
             </ul>
         </div>
 
