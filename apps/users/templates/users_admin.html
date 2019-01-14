@@ -1,0 +1,7 @@
+{% extends 'admin/change_list.html' %}
+
+{% block object-tools %}
+    <a href="{% url 'admin:import_test_users' %}">Import Test Users</a>
+    <br />
+    {{ block.super }}
+{% endblock %}
