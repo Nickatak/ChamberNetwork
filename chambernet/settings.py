@@ -25,11 +25,9 @@ SECRET_KEY = 'v5*d56kyw0vj2kt%(sc!4k+8$h^^+t@*_b^#*xt#0tc($r3@+6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-<<<<<<< HEAD
+
 ALLOWED_HOSTS = [ 'ntakemori.com', 'www.ntakemori.com' ]
-=======
-ALLOWED_HOSTS = [ 'ntakemori.com' ]
->>>>>>> settings.py: Add domain name to allowed_hosts.
+
 
 
 # Application definition
