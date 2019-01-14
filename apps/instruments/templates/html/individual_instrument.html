@@ -83,7 +83,7 @@
 
             <ul>
                 <li>
-                    {% for member in members %}
+                    {% for member in primary_users %}
                         <a href="{% url 'users:individual_member' member.id %}">Name: {{ member.first_name }} {{ member.last_name }},
                         Rating: {{ member.rating }}</a>
 
@@ -92,6 +92,15 @@
             </ul>
 
             <h3>The following members list {{ instrument.name }} as their secondary instrument:</h3>
+            <ul>
+                <li>
+                    {% for member in secondary_users %}
+                        <a href="{% url 'users:individual_member' member.id %}">Name: {{ member.first_name }} {{ member.last_name }},
+                        Rating: {{ member.rating }}</a>
+
+                    {% endfor %}
+                </li>
+            </ul>
         </div>
 
         <!-- Footer: -->
