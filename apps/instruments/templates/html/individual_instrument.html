@@ -75,34 +75,111 @@
             </nav>
         </div>
 
-        <!-- Div for main container: -->
+        <!-- Main container: -->
         <div class="container-fluid" id="main-container">
-            <p>Note: this page is not yet fully styled. The necessary information is here, but it is not presented in an attractive manner.</p><br><br>
+            <div id="card-container">
+                <div class="card">
+                    <!-- <img src="/static/images/6.jpg" style="width:100%"> -->
+                    <div class="card-title">
+                        <h4>The following members list {{ instrument.name }} as their primary instrument.</h4>
+                        <h5>(Click on name for more information.)</h5>
+                    </div>
 
-            <h3>The following members list {{ instrument.name }} as their primary instrument:</h3>
+                    <div class="information-container">
+                        <div class="panel panel-default">
+                            <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                        </div>
 
-            <ul>
-                {% for member in primary_users %}
-                    <li>
-                        <a href="{% url 'users:individual_member' member.id %}">Name: {{ member.first_name }} {{ member.last_name }},
-                        Rating: {{ member.rating }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
+                        <div class="card-name-title">
+                            <h5>
+                                {% for member in primary_users %}
+                                    <a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a>
+                                {% endfor %}
+                            </h5>
+                        </div>
+                    
+                        <dl class="row">
+                            <dt class="col-sm-1">Rating</dt>
+                            <dd class="col-sm-2">
+                                <p>
+                                    {% for member in primary_users %}
+                                        <a>{{ member.rating }}</a>
+                                    {% endfor %}
+                                </p>
+                            </dd>
+                       
+                            <dt class="col-sm-2">Primary area</dt>
+                            <dd class="col-sm-2">
+                                <p>
+                                    Downtown
+                                </p>
+                            </dd>
 
-            <h3>The following members list {{ instrument.name }} as their secondary instrument:</h3>
-            <ul>
+                            <dt class="col-sm-2">Secondary areas</dt>
+                            <dd class="col-sm-2">
+                                <p>
+                                    West side, East side, Bellaire, Woodlands
+                                </p>
+                            </dd>
+                            </dd>
+                        </dl>
+                    <!-- End div for information container: -->
+                    </div>
+                <!-- End div for card (primary instrument): -->
+                </div>
 
-                {% for member in secondary_users %}
-                    <li>
-                        <a href="{% url 'users:individual_member' member.id %}">Name: {{ member.first_name }} {{ member.last_name }},
-                        Rating: {{ member.rating }}</a>
-                    </li>
-                {% endfor %}
+            <div class="card">
+                <!-- <img src="/static/images/6.jpg" style="width:100%"> -->
+                <div class="card-title">
+                    <h4>The following members list {{ instrument.name }} as their secondary instrument.</h4>
+                    <h5>(Click on name for more information.)</h5>
+                </div>
+                <div class="information-container">
+                    <div class="panel panel-default">
+                        <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                    </div>
+                    <div class="card-name-title">
+                        <h5>
+                            {% for member in secondary_users %}
+                                <a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a>
+                                {% endfor %}
+                        </h5>
+                    </div>
+                    <dl class="row">
+                        <dt class="col-sm-1">Rating</dt>
+                        <dd class="col-sm-2">
+                            <p>
+                                {% for member in secondary_users %}
+                                    <a>{{ member.rating }}</a>
+                                {% endfor %}
+                            </p>
+                        </dd>
+                        </dd>
 
-            </ul>
+                        <dt class="col-sm-2">Primary area</dt>
+                        <dd class="col-sm-2">
+                            <p>
+                                Downtown
+                            </p>
+                        </dd>
+                        </dd>
+
+                        <dt class="col-sm-2">Secondary areas</dt>
+                        <dd class="col-sm-2">
+                            <p>
+                                West side, East side, Bellaire, Woodlands
+                            </p>
+                        </dd>
+                        </dd>
+                    </dl>
+                <!-- End div for information container: -->
+                </div>
+            <!-- End div for card (your information): -->
+            </div>
+
         </div>
 
+        
         <!-- Footer: -->
         <div class="container-fluid" id="footer-container">
             <footer>
