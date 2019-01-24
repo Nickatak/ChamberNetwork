@@ -303,7 +303,7 @@
                             <!-- TODO: better way to preload instrument names -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
+                                    <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument" value="{{ old_data.primary_instrument }}">
                                         <option selected disabled>Primary instrument</option>
                                         {% for instrument in instruments %}
                                             <option value='{{ instrument.id }}'>{{ instrument }}</option>
@@ -321,7 +321,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="secondary_instrument" id="second_instrument" placeholder="Second instrument">
+                                    <select class="form-control" name="secondary_instrument" id="second_instrument" placeholder="Second instrument" value="{{ old_data.secondary_instrument }}">
                                         <option selected disabled>Second instrument</option>
                                         <option>None</option>
                                         {% for instrument in instruments %}
@@ -333,7 +333,7 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" placeholder="Brief musical bio"></textarea>
+                            <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" placeholder="Brief musical bio" value="{{ old_data.bio }}"></textarea>
                             <div class="error-message">
                                 <p>
                                 {% if 'bio' in errors %}

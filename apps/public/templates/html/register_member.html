@@ -340,10 +340,9 @@
                         <!-- Section for musical information: -->
                         <h5>Musical information:</h5>
                         <div class="row">
-                            <!-- TODO: better way to preload instrument names -->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
+                                    <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument" value="{{ old_data.primary_instrument }}">
                                         <option selected disabled>Primary instrument</option>
                                             {% for instrument in instruments %}
                                                 <option value='{{ instrument.id }}'>{{ instrument }}</option>
@@ -384,7 +383,7 @@
                         </div>
 
                         <div class="form-group">
-                            <select class="form-control" name="rating" id="rating" placeholder="Self rating">
+                            <select class="form-control" name="rating" id="rating" placeholder="Self rating" value="{{ old_data.rating }}">
                                 <option selected disabled>Self rating</option>
                                 <option>A</option>
                                 <option>B</option>
