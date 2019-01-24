@@ -94,6 +94,14 @@ img {
 	margin-top: 40px;
 }
 
+#area-row h5 {
+    margin-top: 5px;
+}
+
+#area-row {
+    margin-bottom: 20px;
+}
+
 /*Explanation container:*/
 #explanation-container {
 	background-color: #fffef7;
