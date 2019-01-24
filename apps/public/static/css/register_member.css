@@ -119,6 +119,14 @@ img {
     margin-top: 5px;
 }
 
+#area-row h5 {
+    margin-top: 5px;
+}
+
+#area-row {
+    margin-bottom: 20px;
+}
+
 
 /*Footer:*/
 footer {
