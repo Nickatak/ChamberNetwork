@@ -86,6 +86,10 @@ img {
 	/*margin-bottom: 5px;*/
 }
 
+.error-message p {
+    color: red;
+}
+
 #phone-row h5 {
     margin-top: 5px;
 }
