@@ -41,9 +41,13 @@ a.active {
 .card {
     width: 45%;
     margin: 15px;
-    border-radius: 7px;
+    border-radius: 4px;
     border: 10px;
     box-shadow: 8px 8px 5px #808080;
+}
+
+.card-title {
+    border-radius: 4px 4px 0px 0px;
 }
 
 .information-container {
