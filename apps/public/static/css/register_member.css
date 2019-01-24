@@ -111,6 +111,10 @@ img {
 	/*margin-bottom: 5px;*/
 }
 
+.error-message p {
+    color: red;
+}
+
 .btn-reg {
 	margin-top: 40px;
 }
