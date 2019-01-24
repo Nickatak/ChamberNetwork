@@ -111,27 +111,39 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First name" value="{{ old_data.first_name }}">
-                                    {% if 'first_name' in errors %}
-                                        {{ errors.first_name }}
-                                    {% endif %}
+                                    <div class="error-message">
+                                        <p> 
+                                        {% if 'first_name' in errors %}
+                                            {{ errors.first_name }}
+                                        {% endif %}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last name" value="{{ old_data.last_name }}">
-                                    {% if 'last_name' in errors %}
-                                        {{ errors.last_name }}
-                                    {% endif %}
+                                    <div class="error-message">
+                                        <p>
+                                        {% if 'last_name' in errors %}
+                                            {{ errors.last_name }}
+                                        {% endif %}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email address" value="{{ old_data.email }}">
-                            {% if 'email' in errors %}
-                                {{ errors.email }}
-                            {% endif %}
+                            <div class="error-message">
+                                <p>
+                                {% if 'email' in errors %}
+                                    {{ errors.email }}
+                                {% endif %}
+                                </p>
+                            </div>
                         </div>
 
                         <div class="panel panel-default">
@@ -140,14 +152,17 @@
 
                         <!-- Address and phone section: -->
                         <h5>Address:</h5>
-
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="Street address" value="{{ old_data.street_address }}">
-                                    {% if 'street_address' in errors %}
-                                        {{ errors.street_address }}
-                                    {% endif %}
+                                    <div class="error-message">
+                                        <p>
+                                        {% if 'street_address' in errors %}
+                                            {{ errors.street_address }}
+                                        {% endif %}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -160,9 +175,13 @@
 
                         <div class="form-group">
                             <input type="text" name="city" id="city" class="form-control input-sm" placeholder="City" value="{{ old_data.city }}">
-                            {% if 'city' in errors %}
-                                {{ errors.city }}
-                            {% endif %}
+                            <div class="error-message">
+                                <p>
+                                {% if 'city' in errors %}
+                                    {{ errors.city }}
+                                {% endif %}
+                                </p>
+                            </div>
                         </div>
 
                         <div class="row">
@@ -228,9 +247,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip" value="{{ old_data.zip_code }}">
-                                    {% if 'zip_code' in errors %}
-                                        {{ errors.zip_code }}
-                                    {% endif %}
+                                    <div class="error-message">
+                                        <p>
+                                        {% if 'zip_code' in errors %}
+                                            {{ errors.zip_code }}
+                                        {% endif %}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -259,6 +282,13 @@
                                     (<input type="tel" name="tel1" size="3" pattern="\d{3}" placeholder="xxx" value="{{ old_data.tel1 }}" maxlength="3"/>) 
                                     <input type="tel" name="tel2" size="3" pattern="\d{3}" placeholder="xxx" value="{{ old_data.tel2 }}" maxlength="3"/> - 
                                     <input type="tel" name="tel3" size="4" pattern="\d{4}" placeholder="xxxx" value="{{ old_data.tel3 }}" maxlength="4"/>
+                                    <div class="error-message">
+                                        <p>
+                                        {% if 'phone_number' in errors %}
+                                            {{ errors.phone_number }}
+                                        {% endif %}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -279,9 +309,13 @@
                                             <option value='{{ instrument.id }}'>{{ instrument }}</option>
                                         {% endfor %}
                                     </select>
-                                    {% if 'primary_instrument' in errors %}
-                                        {{ errors.primary_instrument }}
-                                    {% endif %}
+                                    <div class="error-message">
+                                        <p>
+                                        {% if 'primary_instrument' in errors %}
+                                            {{ errors.primary_instrument }}
+                                        {% endif %}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -300,9 +334,13 @@
 
                         <div class="form-group">
                             <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" placeholder="Brief musical bio"></textarea>
-                            {% if 'bio' in errors %}
-                                {{ errors.bio }}
-                            {% endif %}
+                            <div class="error-message">
+                                <p>
+                                {% if 'bio' in errors %}
+                                    {{ errors.bio }}
+                                {% endif %}
+                                </p>
+                            </div>
                         </div>
                         <!-- TODO: set # of words allowed -->
 
