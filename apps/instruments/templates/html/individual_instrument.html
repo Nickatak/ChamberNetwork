@@ -90,43 +90,46 @@
                             <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                         </div>
 
-                        <div class="card-name-title">
-                            <h5>
-                                {% for member in primary_users %}
-                                    <a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a>
-                                {% endfor %}
-                            </h5>
-                        </div>
-                    
-                        <dl class="row">
-                            <dt class="col-sm-1">Rating</dt>
-                            <dd class="col-sm-2">
-                                <p>
-                                    {% for member in primary_users %}
-                                        <a>{{ member.rating }}</a>
-                                    {% endfor %}
-                                </p>
-                            </dd>
-                       
-                            <dt class="col-sm-2">Primary area</dt>
-                            <dd class="col-sm-2">
-                                <p>
-                                    Downtown
-                                </p>
-                            </dd>
+                        {% for member in primary_users %}
 
-                            <dt class="col-sm-2">Secondary areas</dt>
-                            <dd class="col-sm-2">
-                                <p>
-                                    West side, East side, Bellaire, Woodlands
-                                </p>
-                            </dd>
-                            </dd>
-                        </dl>
+                            <div class="card-name-title">
+                                <h5>
+                                
+                                        <a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a>
+                                
+                                </h5>
+                            </div>
+                    
+                            <dl class="row">
+                                <dt class="col-sm-1">Rating</dt>
+                                <dd class="col-sm-1">
+                                    <p>
+                                        <a>{{ member.rating }}</a>
+                                    </p>
+                                </dd>
+                       
+                                <dt class="col-sm-2">Primary area</dt>
+                                <dd class="col-sm-2">
+                                    <p>
+                                        Downtown
+                                    </p>
+                                </dd>
+
+                                <dt class="col-sm-2">Secondary areas</dt>
+                                <dd class="col-sm-2">
+                                    <p>
+                                        West side, East side, Bellaire, Woodlands
+                                    </p>
+                                
+                                </dd>
+                                </dd>
+
+                            </dl>
+                        {% endfor %}
                     <!-- End div for information container: -->
-                    </div>
+                        </div>
                 <!-- End div for card (primary instrument): -->
-                </div>
+                    </div>
 
             <div class="card">
                 <!-- <img src="/static/images/6.jpg" style="width:100%"> -->

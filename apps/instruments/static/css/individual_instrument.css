@@ -84,12 +84,16 @@ a.active {
 }
 
 .information-container {
-    padding: 15px;
+    padding: 0px;
 }
 
 .information-container h4 {
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.information-container dt {
+	margin-left: 15px;
 }
 
 .panel-default {
