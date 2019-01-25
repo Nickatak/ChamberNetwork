@@ -30,43 +30,53 @@ a.active {
 }
 
 /*Main:*/
-#card-container {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: flex-start;
+
+.panel-default {
+    padding-top: 14px;
+    padding-bottom: 14px;
 }
 
-.card {
-    width: 45%;
-    margin: 15px;
-    border-radius: 7px;
-    border: 10px;
-    box-shadow: 8px 8px 5px #808080;
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.information-container {
-    padding: 15px;
-}
-
-.information-container h4 {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-#main-container {
+#form-container {
     margin-top: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
-    padding-left: 30px;
     background-color: #fffef7;
 }
 
-#main-container p {
+.panel-heading {
+    text-align: center;
+}
+
+#form-container h5 {
+    margin-top: 20px;
+    /*margin-bottom: 5px;*/
+}
+
+.error-message p {
     color: red;
 }
 
+.btn-reg {
+    margin-top: 40px;
+}
+
+#phone-row h5 {
+    margin-top: 5px;
+}
+
+#area-row h5 {
+    margin-top: 5px;
+}
+
+#area-row {
+    margin-bottom: 20px;
+}
 
 /*Footer:*/
 #footer-container {
