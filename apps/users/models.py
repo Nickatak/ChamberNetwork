@@ -232,7 +232,7 @@ class Member(models.Model):
     password = models.TextField()
 
     bio = models.TextField()
-    areas = models.TextField()
+    areas = models.TextField(null=True, blank=True)
     rating = models.CharField(max_length=250, verbose_name="Skill Rating")
 
 
