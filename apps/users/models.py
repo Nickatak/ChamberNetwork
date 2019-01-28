@@ -114,8 +114,9 @@ class MemberManager(models.Manager):
             rating = 'A'
         else:
             rating = post_data['rating']
-        
-        return self.create(
+
+        default_password = self.generate_new_password()
+        self.create(
                             first_name=first_name,
                             last_name=last_name,
                             email=email,
@@ -125,12 +126,14 @@ class MemberManager(models.Manager):
                             state=state, 
                             zip_code=zip_code,
                             phone_number=phone_number,
+                            password=make_password(default_password),
                             primary_instrument=primary_instrument,
                             secondary_instrument=secondary_instrument,
                             bio=bio,
                             rating=rating,
                             is_coach=is_coach)
 
+        return email, default_password
 
     def member_email_exists(self, email):
         return self.filter(email=email).exists()
@@ -138,7 +141,7 @@ class MemberManager(models.Manager):
 
     # Very simple auto password generator for now.
     def generate_new_password(self):
-        return User.objects.make_random_password(length=14, allowed_chars="abcdefghjkmnpqrstuvwxyz01234567889")
+        return User.objects.make_random_password(length=14, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
 
 
     def get_all_with_instrument(self, instrument):
