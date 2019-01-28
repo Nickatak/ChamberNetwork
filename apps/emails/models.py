@@ -1,10 +1,6 @@
 from django.core.mail import send_mail
 from django.db import models
-from django.template import Template, Context
-
-# Create your models here.
-
-
+from django.template import Context, Template
 
 
 class EmailManager(models.Manager):
@@ -16,13 +12,10 @@ class EmailManager(models.Manager):
             'password' : password,
             'is_coach' : is_coach,
         }
-        
+
         rendered_string = email_template.render(Context(raw_context))
 
         print(rendered_string)
-
-        
-        
 
 
 # Ideally, we can store templates for the emails here, but for now, I'm going to leave it blank.
