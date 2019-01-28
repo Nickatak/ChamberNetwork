@@ -5,6 +5,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path
+
 from .models import Member, Patron
 from ..instruments.models import Instrument
 # Register your models here.
