@@ -8,7 +8,7 @@ from django.template import Template, Context
 
 
 class EmailManager(models.Manager):
-    def send_new_registration(self, email, password, is_coach):
+    def send_new_registration(self, email, password, is_coach=False):
         email_template = Template(self.get(name='New User Template').raw_template)
 
         raw_context = {
