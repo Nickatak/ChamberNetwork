@@ -1,4 +1,6 @@
+from django.core.mail import send_mail
 from django.db import models
+from django.template import Template, Context
 
 # Create your models here.
 
@@ -6,10 +8,24 @@ from django.db import models
 
 
 class EmailManager(models.Manager):
-    pass
+    def send_new_registration(self, email, password):
+        email_template = Template(self.get(name='New User Template').raw_template)
 
+        raw_context = {
+            'email' : email,
+            'password' : password,
+        }
+        
+        rendered_string = email_template.render(Context(raw_context))
+
+        print(rendered_string)
+
+        
+        
 
 
 # Ideally, we can store templates for the emails here, but for now, I'm going to leave it blank.
 class Email(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    raw_template = models.TextField()
     objects = EmailManager()
