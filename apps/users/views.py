@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Member, Patron
 from ..instruments.models import Instrument
-
+from ..emails.models import Email
 
 def login_handler(req):
 
@@ -25,7 +25,8 @@ def register_coach(req):
         errors = Member.objects.new_member_validation(req.POST, is_coach=True)
 
         if not errors:
-            Member.objects.add_member(req.POST, is_coach=True)
+            email, password = Member.objects.add_member(req.POST, is_coach=True)
+            Email.objects.send_new_registration(email, password)
             return redirect('public:success')
         else:
             req.session['errors'] = errors
