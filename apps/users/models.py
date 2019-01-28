@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 import re
 
 from django.db import models
-from django.contrib.auth.hashers import make_password, check_password
+from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.models import User
 
 from ..instruments.models import Instrument
@@ -12,7 +12,6 @@ NAME_REGEX = re.compile(r"^[-a-zA-Z']+$")
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
 
-# Member Manager Model
 class MemberManager(models.Manager):
 
 
@@ -34,7 +33,7 @@ class MemberManager(models.Manager):
         #else:
             ## We can change this later, just let me know what you want it to say.
             #errors['invalid'] = 'Invalid credentials.'
-        
+
         return user, errors
 
 
@@ -84,7 +83,7 @@ class MemberManager(models.Manager):
 
         if len(bio) < 1:
             errors['bio'] = 'Please provide a brief musical bio.'
-        
+
         if (not is_coach) and 'rating' not in post_data:
             errors['rating'] = 'Please select a skill rating.'
 
@@ -102,7 +101,7 @@ class MemberManager(models.Manager):
         zip_code = post_data['zip_code']
         phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
         primary_instrument = Instrument.objects.get(pk=post_data['primary_instrument'])
-        
+
         if 'secondary_instrument'  in post_data: 
             secondary_instrument = Instrument.objects.get(pk=post_data['secondary_instrument'])
         else:
@@ -135,11 +134,11 @@ class MemberManager(models.Manager):
 
         return email, default_password
 
+
     def member_email_exists(self, email):
         return self.filter(email=email).exists()
 
 
-    # Very simple auto password generator for now.
     def generate_new_password(self):
         return User.objects.make_random_password(length=14, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
 
@@ -148,7 +147,7 @@ class MemberManager(models.Manager):
         return self.filter(models.Q(primary_instrument=instrument) | models.Q(secondary_instrument=instrument))
 
 
-# Patron manager model:
+
 class PatronManager(models.Manager):
     def new_patron_validation(self, post_data):
         first_name = post_data['first_name']
@@ -194,6 +193,7 @@ class PatronManager(models.Manager):
 
         return errors
 
+
     def add_patron(self, post_data):
         first_name = post_data['first_name']
         last_name = post_data['last_name']
@@ -216,11 +216,11 @@ class PatronManager(models.Manager):
                             zip_code=zip_code,
                             phone_number=phone_number)
 
+
     def patron_email_exists(self, email):
         return self.filter(email=email).exists()
 
 
-# Member Model
 class Member(models.Model):
     # email field is being used as login username for auth.
     email = models.CharField(max_length=25)
@@ -233,13 +233,11 @@ class Member(models.Model):
     zip_code = models.CharField(max_length=5)
     phone_number = models.CharField(max_length=10, verbose_name="Phone Number")
     password = models.TextField()
-
     bio = models.TextField()
     areas = models.TextField(null=True, blank=True)
     rating = models.CharField(max_length=250, verbose_name="Skill Rating")
 
 
-    # Instrument keys.
     primary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='primary_users')
     secondary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='secondary_users', blank=True)
 
@@ -249,13 +247,12 @@ class Member(models.Model):
     is_reviewed = models.BooleanField(default=False, verbose_name="Has been viewed")
     is_coach = models.BooleanField(default=False, verbose_name="Is a coach")
     has_default_password = models.BooleanField(default=False, verbose_name='Has set custom password')
-    
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Application Date")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Last updated")
 
     objects = MemberManager()
 
-# Patron Model. Merely an email list. For now, OK to just store information. But eventually we need to program the site to do something with the emails - either email Patrons automatically or at least send the emails to Michael.
+
 class Patron(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
@@ -267,9 +264,9 @@ class Patron(models.Model):
     state = models.CharField(max_length=2)
     zip_code = models.CharField(max_length=5)
 
+
     # referred_by : does this belong here or in musician table?
     # referred_by = models.ForeignKey("Referred by", on_delete=models.CASCADE, related_name="musician")
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
