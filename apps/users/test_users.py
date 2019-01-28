@@ -1,5 +1,4 @@
 test_users = [
-
     {
         "first_name": "Frank",
         "last_name": "Huang",
