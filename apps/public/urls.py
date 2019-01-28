@@ -1,9 +1,9 @@
 from django.urls import path
+
 from . import views
-# from django.contrib.auth.views import LoginView
+
 
 app_name = 'public'
-
 urlpatterns = [
     #Index page has no post-fix.
 	path('', views.welcome, name="welcome"),
