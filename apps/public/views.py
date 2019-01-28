@@ -4,6 +4,7 @@ from django.shortcuts import render
 
 from ..instruments.models import Instrument
 
+
 def welcome(req):
 
 	context = {
@@ -11,6 +12,7 @@ def welcome(req):
 	}
 
 	return render(req, 'html/welcome.html', context)
+
 
 def new_member_display(req):
 
@@ -23,6 +25,7 @@ def new_member_display(req):
 
 	return render(req, 'html/register_member.html', context)
 
+
 def new_coach_display(req):
 
 	context = {
@@ -34,6 +37,7 @@ def new_coach_display(req):
 
 	return render(req, 'html/register_coach.html', context)
 
+
 def new_patron_display(req):
 
 	context = {
@@ -44,6 +48,7 @@ def new_patron_display(req):
 
 	return render(req, 'html/new_patron.html', context)
 
+
 def about(req):
 
 	context = {
@@ -51,6 +56,7 @@ def about(req):
 	}
 
 	return render(req, 'html/about.html', context)
+
 
 def success(req):
 
@@ -60,6 +66,7 @@ def success(req):
 
 	return render(req, 'html/success.html', context)
 
+
 def login_display(req):
 
 	context = {
@@ -68,4 +75,3 @@ def login_display(req):
 	}
 
 	return render(req, 'html/login.html', context)
-
