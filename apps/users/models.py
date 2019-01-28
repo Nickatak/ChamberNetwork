@@ -252,6 +252,11 @@ class Member(models.Model):
 
     objects = MemberManager()
 
+class ResetTokenManager(models.Manager):
+
+    def build_url(self, token):
+        pass
+
 
 class ResetToken(models.Model):
     value = models.TextField()
