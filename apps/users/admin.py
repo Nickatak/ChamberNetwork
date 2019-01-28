@@ -44,11 +44,10 @@ class MemberAdmin(admin.ModelAdmin):
 
     # Dirty test-users method, will replace later.  Clean it up and put it in a test suite.
     def import_test_users(self, req):
-    
         from .test_users import test_users
-        
-        for test_user in test_users:
 
+
+        for test_user in test_users:
             primary_instruments_available = Instrument.objects.filter(primary_users__isnull=True)
             if not primary_instruments_available:
                 primary_instruments_available = Instrument.objects.all()
