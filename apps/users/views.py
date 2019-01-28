@@ -42,6 +42,7 @@ def register_member(req):
 
         if not errors:
             Member.objects.add_member(req.POST)
+            Email.objects.send_new_registration(email, password)
             return redirect('public:success')
         else:
             req.session['errors'] = errors
