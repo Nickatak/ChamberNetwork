@@ -14,6 +14,7 @@ class EmailManager(models.Manager):
         raw_context = {
             'email' : email,
             'password' : password,
+            'is_coach' : is_coach,
         }
         
         rendered_string = email_template.render(Context(raw_context))
