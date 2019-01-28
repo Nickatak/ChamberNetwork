@@ -253,6 +253,13 @@ class Member(models.Model):
     objects = MemberManager()
 
 
+class ResetToken(models.Model):
+    value = models.TextField()
+    user = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='password_tokens')
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
 class Patron(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
