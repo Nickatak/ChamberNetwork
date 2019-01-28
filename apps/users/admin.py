@@ -1,6 +1,7 @@
 from functools import update_wrapper
 import random
 
+from django.contrib.auth.hashers import make_password
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path
@@ -58,6 +59,7 @@ class MemberAdmin(admin.ModelAdmin):
                 secondary_instruments_available = Instrument.objects.all()
             test_user['secondary_instrument'] = random.choice(secondary_instruments_available)
             
+            test_user['password'] = make_password('password')
 
         for test_user in test_users:
             Member.objects.create(**test_user)
