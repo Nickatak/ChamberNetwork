@@ -1,9 +1,9 @@
 from django.urls import path, re_path
+
 from .  import views
 
-app_name = 'users'
 
-# All functional views go here.
+app_name = 'users'
 urlpatterns = [
     path('login_handler/', views.login_handler, name="login_handler"),
     path('logout_handler/', views.logout_handler, name='logout_handler'),
