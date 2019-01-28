@@ -1,0 +1,294 @@
+
+Frank Huang
+713-111-1111
+123 Dover St
+Houston
+77005
+frank@huang.com
+
+Sheryl Staples 
+832-222-2222
+456 Elephant Dr
+Houston
+77024
+sheryl@staples.com
+
+Michelle Kim 
+713-333-3333
+57 Bobcat Ln
+Houston
+77044
+michelle@kim.com
+
+Quan Ge
+832-333-3333
+9736 Hummingbird Re
+Houston
+77035
+quan@ge.com
+
+Kerry McDermott
+713-555-5555
+735 Buffalo Dr
+Houston
+77045
+kerry@mcdermott.com
+
+Anna Rabinova
+713-666-6666
+672 Egret Dr
+Houston
+77005
+anna@rabinova.com
+
+Fiona Simon 
+832-999-9999
+176 Heron Ln
+Houston
+77026
+fiona@simon.com
+
+Sharon Yamada
+713-666-6666
+12 Tabasco Dr
+Houston
+77001
+sharon@yamada.com
+
+Elizabeth Zeltser
+832-444-4444
+2700 Kingfisher Dr
+Houston
+77005
+elizabeth@zeltser.com
+ 
+Yulia Ziskel 
+713-123-4567
+981 Amigo Dr
+Houston
+77024
+yulia@ziskel.com
+
+Lisa Kim 
+832-345-4557
+999 Tamale Ln
+Houston
+77025
+lisa@kim.com
+
+Marilyn Dubow 
+713-456-8976
+467 Panther St
+Houston
+77007
+marilyn@dubow.com
+
+Andi Zhang
+832-768-9857
+1200 Catfish Ln #2B
+Houston
+77056
+andi@zhang.com
+
+Cynthia Phelps 
+832-567-9876
+4 Privet dr
+Houston
+77045
+cynthia@phelps.com
+
+Rebecca Young 
+713-567-9876
+97 Blunderbuss Ln
+Houston
+77088
+rebecca@young.com
+
+Cong Wu 
+832-678-2345
+333 Shasta Dr
+Houston
+77024
+cong@wu.com
+
+Dorian Rence
+713-567-9876
+713 Harris Rd
+Houston
+77043
+dorian@rence.com
+
+Leah Ferguson
+832-567-8765
+777 Katy Freeway #710
+Houston
+77025
+leah@ferguson.com
+
+Katherine Greene 
+713-765-1234
+845 Longbow Ln
+Houston
+77045
+katherine@greene.com
+
+Vivek Kamath
+832-567-9876
+912 Gravity Rd
+Katy
+77987
+vivek@kamath.com
+
+Peter Kenote
+713-567-8765
+33 Lakeview Dr
+Sugarland
+77099
+peter@kenote.com
+
+Kenneth Mirkin
+832-1239876
+917 Hedgehog Dr
+Houston
+77024
+kenneth@mirkin.com
+
+Judith Nelson
+713-234-5678
+555 Times Ave #3100
+Houston
+77067
+judith@nelson.com
+
+Rémi Pelletier
+832-765-9876
+445 King Dr
+Houston
+77035
+remi@pelletier.com
+
+Robert Rinehart
+713-6781356
+897 Butler Blvd Unit C
+Humble
+77099
+robert@rinehart.com
+
+Carter Brey 
+832-876-3456
+888 Rice Blvd
+Houston
+77055
+carter@brey.com
+
+Eileen Moon-Myers 
+713-876-3456
+8989 Moonview Dr
+Houston
+77035
+eileen@moonmyers.com
+
+Eric Bartlett
+832-654-1234
+9876 Dove Rd #5
+Houston
+77044
+eric@bartlett.com
+
+Elizabeth Dyson
+713-987-3456
+127 Eggplant Ave
+Beaumont
+79124
+elizabeth@dyson.com
+
+Alex Gonzales
+832-786-8876
+27 Clover Ln
+Houston
+77098
+alex@gonzales.com
+
+Sal Capone
+713-987-4567
+555 Crumpet Rd
+Houston
+77034
+sal@capone.com
+
+Maria Kitsopoulos
+832-789-6543
+786 Barber St
+Houston
+77055
+maria@kitsopoulos.com
+
+Nathan Vickery
+832-765-2468
+222 Takemori Rd
+Houston
+77027
+nathan@vickery.com
+
+Ba Nguyen
+713-987-2468
+5757 Desplatt Blvd #3C
+Houston
+77055
+ba@nguyen.com
+
+Timothy Cobb 
+832-765-1357
+92 Longshadows Ln
+Houston
+77035
+timothy@cobb.com
+
+Max Zeugner 
+713-987-2468
+93 Cobblestone Rd
+Houston
+77056
+max@zeugner.com
+
+Blake Hinson 
+832-876-2345
+1234 Harpoon St
+Houston
+77067
+blake@hinson.com
+
+Satoshi Okamoto
+713-876-2468
+6500 Ave B
+Spring
+78072
+satoshi@okomoto.com
+
+Randall Butler 
+832-975-1357
+1212 Grapefruit Ln
+Bellaire
+77045
+randall@butler.com
+
+David J. Grossman
+713-765-2345
+8900 Sugarfoot Rd
+Houston
+77022
+david@grossman.com
+
+Mindy Kaufman
+832-789-2345
+67 Golfview Terr
+Spring
+77999
+mindy@kaufman.com
+
+Sherry Sylar
+713-876-4567
+4622 Kingfisher Dr
+Houston
+77035
+sherry@sylar.com
