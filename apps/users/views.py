@@ -26,7 +26,7 @@ def register_coach(req):
 
         if not errors:
             email, password = Member.objects.add_member(req.POST, is_coach=True)
-            Email.objects.send_new_registration(email, password)
+            Email.objects.send_new_registration(email, password, is_coach=True)
             return redirect('public:success')
         else:
             req.session['errors'] = errors
