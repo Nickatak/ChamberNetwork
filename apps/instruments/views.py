@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
+
 from .models import Instrument
 from ..users.models import Member
-
 
 
 def individual_display(req, instrument_id):
