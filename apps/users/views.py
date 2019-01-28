@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect
-from .models import Member, Patron
-from ..instruments.models import Instrument
+from django.shortcuts import redirect, render
+
 from ..emails.models import Email
+from ..instruments.models import Instrument
+from .models import Member, Patron
+
 
 def login_handler(req):
 
@@ -114,5 +116,3 @@ def logout_handler(req):
     req.session.pop('uid', None)
 
     return redirect('public:welcome')
-
-        
