@@ -87,10 +87,10 @@
                             <p>{{ member.email }}</p>
                         </dd>
 
-                        <dt class="col-sm-4">Phone</dt>
+                        <!-- <dt class="col-sm-4">Phone</dt>
                         <dd class="col-sm-8">
                             <p>({{ member.phone_number|slice:"0:3" }}) {{ member.phone_number|slice:"3:6" }}-{{ member.phone_number|slice:"6:10" }}</p>
-                        </dd>
+                        </dd> -->
 
                         <dt class="col-sm-4">Primary instrument</dt>
                         <dd class="col-sm-8">
@@ -102,9 +102,9 @@
                             <p>{{ member.secondary_instrument }}</p>
                         </dd>
 
-                        <dt class="col-sm-4">Areas of Houston</dt>
+                        <dt class="col-sm-4">Area of Houston</dt>
                         <dd class="col-sm-8">
-                            <p>Inside the Loop, Westside, Eastside, Bellaire, Woodlands</p>
+                            <p>{{ member.area }}</p>
                         </dd>
 
                         <dt class="col-sm-4">HCMN Rating</dt>

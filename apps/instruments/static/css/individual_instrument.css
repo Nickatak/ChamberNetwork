@@ -59,6 +59,7 @@ a.active {
     text-align: center;
     background-color: #3E536A;
     padding: 15px;
+    margin-bottom: 30px;
 }
 
 .card-title h4 {
@@ -70,8 +71,12 @@ a.active {
 }
 
 .card-name-title {
-	background-color: #e3f2fd;
+	background-color: #c4d8e2;
 	text-align: center;
+    padding-top: 6px;
+    padding-bottom: 3px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .card-name-title h5 a {
