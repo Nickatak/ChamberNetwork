@@ -116,7 +116,6 @@
                             {% endfor %}
                         <!-- else -->
                             <p>There are currently no members who list {{ instrument.name }} as their primary instrument.</p>
-
                     <!-- End div for information container: -->
                     </div>
                 <!-- End div for card: -->
@@ -125,16 +124,17 @@
             </div>
 
             <!-- Secondary instrument card: -->
-            <div class="card">
-                <!-- <img src="/static/images/6.jpg" style="width:100%"> -->
-                <div class="card-title">
-                    <h4>The following members list {{ instrument.name }} as their secondary instrument.</h4>
-                    <h5>(Click on name for more information.)</h5>
-                </div>
+            <div id="card-container">
+                <div class="card">
+                    <!-- <img src="/static/images/6.jpg" style="width:100%"> -->
+                    <div class="card-title">
+                        <h4>The following members list {{ instrument.name }} as their secondary instrument.</h4>
+                        <h5>(Click on name for more information.)</h5>
+                    </div>
 
-                <div class="information-container">
-                    <div class="panel panel-default">
-                        <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                    <div class="information-container">
+                        <div class="panel panel-default">
+                            <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                     </div>
 
                     <!-- If statement: if there are members in list: -->
@@ -162,7 +162,6 @@
                         {% endfor %}
                 <!-- Else statement: else there are no members in list: -->
                     <p>There are currently no members who list {{ instrument.name }} as their secondary instrument.</p>
-                    
                 </div>
             <!-- End div for secondary instrument card: -->
             </div>
