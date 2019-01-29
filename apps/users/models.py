@@ -234,7 +234,7 @@ class Member(models.Model):
     phone_number = models.CharField(max_length=10, verbose_name="Phone Number")
     password = models.TextField()
     bio = models.TextField()
-    areas = models.TextField(null=True, blank=True)
+    area = models.TextField(null=True, blank=True)
     rating = models.CharField(max_length=250, verbose_name="Skill Rating")
 
 
