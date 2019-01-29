@@ -137,7 +137,7 @@
                             <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                     </div>
 
-                    <!-- If statement: if there are members in list: -->
+                    {% if members in secondary_users %}
                         {% for member in secondary_users %}
                             <div class="card-name-title">
                                 <h5>
@@ -160,8 +160,10 @@
                                 </dd>
                             </dl>
                         {% endfor %}
-                <!-- Else statement: else there are no members in list: -->
-                    <p>There are currently no members who list {{ instrument.name }} as their secondary instrument.</p>
+                    {% else %}
+                        <p>There are currently no members who list {{ instrument.name }} as their secondary instrument.</p>
+                    {% endif %}
+                   
                 </div>
             <!-- End div for secondary instrument card: -->
             </div>
