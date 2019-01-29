@@ -85,6 +85,9 @@ class MemberManager(models.Manager):
         if len(bio) < 1:
             errors['bio'] = 'Please provide a brief musical bio.'
 
+        if len(area) < 10:
+            errors['area'] = 'Please provide area information.'
+
         if (not is_coach) and 'rating' not in post_data:
             errors['rating'] = 'Please select a skill rating.'
 
