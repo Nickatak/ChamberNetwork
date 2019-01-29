@@ -49,10 +49,10 @@
         <div class="row" id="form-itself">
 
             <!-- empty div for spacing: -->
-            <div class="col-md-4"></div>
+            <div class="col-md-3"></div>
 
             <!-- This div contains the actual form: -->
-            <div class="col-md-4" id="inner-form-container">
+            <div class="col-md-5" id="inner-form-container">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">MEMBER REGISTRATION FORM</h3>
@@ -298,20 +298,18 @@
                             </div>
                         </div>
 
-                        <div class="row" id="area-row">
-                            <div class="col-md-6">
-                                <h5>Area of Houston:</h5>
-                            </div>
-                            <div class="col-md-6">
-                                <select class="form-control" name="area" id="area">
-                                    <option selected disabled>Choose Area</option>
-                                    <option>Area 1</option>
-                                    <option>Area 2</option>
-                                    <option>Area 3</option>
-                                    <option>Area 4</option>
-                                </select>
+                        <div class="form-group">
+                            <h5>Area:</h5>
+                            <textarea type="area" name="area" id="area" class="form-control textarea" rows="3" placeholder="Please tell us briefly in what part of town you live and how far you are willing to travel for rehearsals and performances. i.e., 'I live in the Heights but I'm willing to drive anywhere within the loop.'"" value="{{ old_data.area }}"></textarea>
+                            <div class="error-message">
+                                <p>
+                                {% if 'area' in errors %}
+                                    {{ errors.area }}
+                                {% endif %}
+                                </p>
                             </div>
                         </div>
+                        <br>
 
                         <div class="row" id="phone-row">
                             <div class="col-md-4">
