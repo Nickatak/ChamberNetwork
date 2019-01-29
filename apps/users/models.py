@@ -103,6 +103,7 @@ class MemberManager(models.Manager):
         city = post_data['city']
         state = post_data['state']
         zip_code = post_data['zip_code']
+        area = post_data['area']
         phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
         primary_instrument = Instrument.objects.get(pk=post_data['primary_instrument'])
 
