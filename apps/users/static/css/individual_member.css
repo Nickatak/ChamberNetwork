@@ -52,6 +52,7 @@ a.active {
 
 .information-container {
     padding: 15px;
+    background-color: white;
 }
 
 .information-container h4 {
