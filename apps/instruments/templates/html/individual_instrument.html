@@ -77,6 +77,7 @@
 
         <!-- Main container: -->
         <div class="container-fluid" id="main-container">
+            <!-- Primary instrument card: -->
             <div id="card-container">
                 <div class="card">
                     <!-- <img src="/static/images/6.jpg" style="width:100%"> -->
@@ -90,77 +91,82 @@
                             <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                         </div>
 
-                        {% for member in primary_users %}
-
-                            <div class="card-name-title">
-                                <h5>
-                                
+                        <!-- If statement: if there are members in list -->
+                            {% for member in primary_users %}
+                                <div class="card-name-title">
+                                    <h5>
                                         <a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a>
-                                
-                                </h5>
-                            </div>
+                                    </h5>
+                                </div>
                     
-                            <dl class="row">
-                                <dt class="col-md-3">
-                                <dt class="col-sm-1">Rating</dt>
-                                <dd class="col-sm-1">
-                                    <p>
-                                        <a>{{ member.rating }}</a>
-                                    </p>
-                                </dd>
+                                <dl class="row">
+                                    <dt class="col-md-3">
+                                    <dt class="col-sm-1">Rating</dt>
+                                    <dd class="col-sm-1">
+                                        <p>
+                                            <a>{{ member.rating }}</a>
+                                        </p>
+                                    </dd>
                        
-                                <dt class="col-sm-2">Area of Houston</dt>
-                                <dd class="col-sm-2">
-                                    <p>{{ member.area }}</p>
-                                </dd>
+                                    <dt class="col-sm-2">Area of Houston</dt>
+                                    <dd class="col-sm-2">
+                                        <p>{{ member.area }}</p>
+                                    </dd>
+                                </dl>
+                            {% endfor %}
+                        <!-- else -->
+                            <p>There are currently no members who list {{ instrument.name }} as their primary instrument.</p>
 
-                            </dl>
-                        {% endfor %}
                     <!-- End div for information container: -->
-                        </div>
-                <!-- End div for card (primary instrument): -->
                     </div>
+                <!-- End div for card: -->
+                </div>
+            <!-- End div for card (primary instrument): -->
+            </div>
 
+            <!-- Secondary instrument card: -->
             <div class="card">
                 <!-- <img src="/static/images/6.jpg" style="width:100%"> -->
                 <div class="card-title">
                     <h4>The following members list {{ instrument.name }} as their secondary instrument.</h4>
                     <h5>(Click on name for more information.)</h5>
                 </div>
+
                 <div class="information-container">
                     <div class="panel panel-default">
                         <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                     </div>
-                    <div class="card-name-title">
-                        <h5>
-                            {% for member in secondary_users %}
-                                <a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a>
-                                {% endfor %}
-                        </h5>
-                    </div>
-                    <dl class="row">
-                        <dt class="col-md-3">
-                        <dt class="col-sm-1">Rating</dt>
-                        <dd class="col-sm-2">
-                            <p>
-                                {% for member in secondary_users %}
-                                    <a>{{ member.rating }}</a>
-                                {% endfor %}
-                            </p>
-                        </dd>
-                        </dd>
 
-                        <dt class="col-sm-2">Area of Houston</dt>
-                        <dd class="col-sm-2">
-                            <p>{{ member.area }}</p>
-                        </dd>
-                        </dd>
-                    </dl>
-                <!-- End div for information container: -->
+                    <!-- If statement: if there are members in list: -->
+                        {% for member in secondary_users %}
+                            <div class="card-name-title">
+                                <h5>
+                                    <a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a>
+                                </h5>
+                            </div>
+
+                            <dl class="row">
+                                <dt class="col-md-3">
+                                <dt class="col-sm-1">Rating</dt>
+                                <dd class="col-sm-2">
+                                    <p>
+                                        <a>{{ member.rating }}</a>
+                                    </p>
+                                </dd>
+                      
+                                <dt class="col-sm-2">Area of Houston</dt>
+                                <dd class="col-sm-2">
+                                    <p>{{ member.area }}</p>
+                                </dd>
+                            </dl>
+                        {% endfor %}
+                <!-- Else statement: else there are no members in list: -->
+                    <p>There are currently no members who list {{ instrument.name }} as their secondary instrument.</p>
+                    
                 </div>
-            <!-- End div for card (your information): -->
+            <!-- End div for secondary instrument card: -->
             </div>
-
+        <!-- End div for main container: -->
         </div>
 
         
