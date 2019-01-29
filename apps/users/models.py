@@ -50,6 +50,7 @@ class MemberManager(models.Manager):
         zip_code = post_data['zip_code']
         phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
         bio = post_data['bio']
+        area = post_data['area']
 
         if len(first_name) < 2:
             errors['first_name'] = 'First name must contain at least two characters.'
