@@ -129,6 +129,7 @@ class MemberManager(models.Manager):
                             city=city,
                             state=state, 
                             zip_code=zip_code,
+                            area=area,
                             phone_number=phone_number,
                             password=make_password(default_password),
                             primary_instrument=primary_instrument,
