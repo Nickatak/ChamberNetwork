@@ -300,7 +300,7 @@
 
                         <div class="form-group">
                             <h5>Area:</h5>
-                            <textarea type="area" name="area" id="area" class="form-control textarea" rows="3" placeholder="Please tell us briefly in what part of town you live and how far you are willing to travel for rehearsals and performances. i.e., 'I live in the Heights but I'm willing to drive anywhere within the loop.'">value="{{ old_data.area }}"</textarea>
+                            <textarea type="area" name="area" id="area" class="form-control textarea" rows="3" placeholder="Please tell us briefly in what part of town you live and how far you are willing to travel for rehearsals and performances. i.e., 'I live in the Heights but I'm willing to drive anywhere within the loop.'">{{ old_data.area }}</textarea>
                             <div class="error-message">
                                 <p>
                                 {% if 'area' in errors %}
