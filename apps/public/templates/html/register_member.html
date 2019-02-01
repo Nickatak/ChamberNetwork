@@ -343,7 +343,7 @@
                                         <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
                                         <option selected disabled>Primary instrument</option>
                                         {% for instrument in instruments %}
-                                            <option value='{{ instrument.id }}' {% if instrument.id == old_data.primary_instrument %} {% endif %}>{{ instrument }}</option>
+                                            <option value='{{ instrument.id }}' {% if instrument.id == old_data.primary_instrument %} selected {% endif %}>{{ instrument }}</option>
                                         {% endfor %}
                                     </select>
                                         <div class="error-message">
