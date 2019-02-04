@@ -365,12 +365,19 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="secondary_instrument" id="second_instrument" placeholder="Secondary instrument">
-                                        <option selected disabled>Secondary instrument</option>
-                                        <option>None</option>
-                                        {% for instrument in instruments %}
-                                            <option value='{{ instrument.id }}'>{{ instrument }}</option>
-                                        {% endfor %}
+                                    <select class="form-control" name="secondary_instrument" id="secondary_instrument" placeholder="Secondary instrument">
+                                        {% if not old_data.secondary_instrument %}
+                                            <option selected disabled>Secondary instrument</option>
+                                                <option>None</option>
+                                                {% for instrument in instruments %}
+                                                    <option value='{{ instrument.id }}'>{{ instrument }}</option>
+                                                {% endfor %}
+                                        {% else %}
+                                            <option disabled>Secondary instrument</option>
+                                                {% for instrument in instruments %}
+                                                    <option {% if old_data.secondary_instrument == instrument.id|stringformat:"i" %} selected {% endif %} value='{{ instrument.id }}'>{{ instrument }}</option>
+                                                {% endfor %}
+                                        {% endif %}
                                     </select>
                                 </div>
                             </div>
