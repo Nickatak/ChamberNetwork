@@ -340,27 +340,26 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                        <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
-                                            {% if not old_data.primary_instrument %}
-                                                asdf
-                                                <option selected disabled>Primary instrument</option>
+                                    <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
+                                        {% if not old_data.primary_instrument %}
+                                            <option selected disabled>Primary instrument</option>
                                                 {% for instrument in instruments %}
                                                     <option value='{{ instrument.id }}'>{{ instrument }}</option>
                                                 {% endfor %}
-                                            {% else %}
-                                                <option disabled>Primary instrument</option>
+                                        {% else %}
+                                            <option disabled>Primary instrument</option>
                                                 {% for instrument in instruments %}
                                                     <option {% if old_data.primary_instrument == instrument.id|stringformat:"i" %} selected {% endif %} value='{{ instrument.id }}'>{{ instrument }}</option>
                                                 {% endfor %}
-                                            {% endif %}
-                                        </select>
-                                        <div class="error-message">
-                                            <p>
+                                        {% endif %}
+                                    </select>
+                                    <div class="error-message">
+                                        <p>
                                             {% if 'primary_instrument' in errors %}
                                                 {{ errors.primary_instrument }}
                                             {% endif %}
-                                            </p>
-                                        </div>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
