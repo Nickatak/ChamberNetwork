@@ -395,13 +395,19 @@
                         </div>
 
                         <div class="form-group">
-                            <select class="form-control" name="rating" id="rating" placeholder="Self rating" value="{{ old_data.rating }}">
-                                <option selected disabled>Self rating</option>
-                                <option>A</option>
-                                <option>B</option>
-                                <option>C</option>
-                                <option>D</option>
-                            </select>
+                            <select class="form-control" name="rating" id="rating" placeholder="Rating">
+                                        {% if not old_data.rating %}
+                                            <option selected disabled>Rating</option>
+                                                {% for rating in ratings %}
+                                                    <option value='{{ rating.id }}'>{{ rating }}</option>
+                                                {% endfor %}
+                                        {% else %}
+                                            <option disabled>Rating</option>
+                                                {% for rating in ratings %}
+                                                    <option {% if old_data.rating == rating.id|stringformat:"i" %} selected {% endif %} value='{{ rating.id }}'>{{ rating }}</option>
+                                                {% endfor %}
+                                        {% endif %}
+                                    </select>
                             <div class="error-message">
                                 <p>
                                 {% if 'rating' in errors %}
