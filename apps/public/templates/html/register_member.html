@@ -341,7 +341,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                         <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
-                                            {% if 'primary_instrument' not in old_data %}
+                                            {% if not old_data.primary_instrument %}
+                                                asdf
                                                 <option selected disabled>Primary instrument</option>
                                                 {% for instrument in instruments %}
                                                     <option value='{{ instrument.id }}'>{{ instrument }}</option>
@@ -349,7 +350,7 @@
                                             {% else %}
                                                 <option disabled>Primary instrument</option>
                                                 {% for instrument in instruments %}
-                                                    <option {% if old_data.primary_instrument == instrument.id %} selected {% endif %} value='{{ instrument.id }}'>{{ instrument }}</option>
+                                                    <option {% if old_data.primary_instrument == instrument.id|stringformat:"i" %} selected {% endif %} value='{{ instrument.id }}'>{{ instrument }}</option>
                                                 {% endfor %}
                                             {% endif %}
                                         </select>
