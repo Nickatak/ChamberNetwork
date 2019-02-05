@@ -91,7 +91,7 @@
                             <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                         </div>
 
-                        <!-- If statement: if there are members in list -->
+                        {% if member in primary_users %}
                             {% for member in primary_users %}
                                 <div class="card-name-title">
                                     <h5>
@@ -114,8 +114,9 @@
                                     </dd>
                                 </dl>
                             {% endfor %}
-                        <!-- else -->
+                        {% else $}
                             <p>There are currently no members who list {{ instrument.name }} as their primary instrument.</p>
+                        {% endif %}
                     <!-- End div for information container: -->
                     </div>
                 <!-- End div for card: -->
