@@ -135,6 +135,7 @@
                             </div>
                         </div>
 
+
                         <div class="form-group">
                             <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email address" value="{{ old_data.email }}">
                             <div class="error-message">
@@ -145,6 +146,8 @@
                                 </p>
                             </div>
                         </div>
+
+                        
 
                         <div class="panel panel-default">
                             <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
@@ -362,10 +365,12 @@
 
                         <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
                     </form>
+                <!-- End div for panel-body: -->
                 </div>
-            </div>
-            <div class="col-md-4"></div> 
-        </div>  
+            <!-- End div for inner form container: -->
+            </div> 
+        <!-- End div for form-itself: -->
+        </div> 
+    <!-- End div for form-container: --> 
     </div>
-    
 {% endblock %}
