@@ -61,9 +61,9 @@ img {
 }
 
 /*Form:*/
-#form-container h2 {
+/*#form-container h2 {
 	color: black;
-}
+}*/
 
 #inner-form-container h3 {
 	color: black;
@@ -75,6 +75,14 @@ img {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	background-color: #fffef7;
+}
+
+.panel-default1 h5 {
+	text-align: center;
+}
+
+.panel-default {
+	margin-top: 15px;
 }
 
 .panel-heading {
