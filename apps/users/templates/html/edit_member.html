@@ -86,7 +86,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <p class="panel-title">To edit, simply replace saved information with your new information, then click submit.</p>
+                        <p class="panel-title">To edit a field, simply replace saved information with your new information, then click submit.</p>
                     </div>
                 </div>
 
@@ -104,39 +104,39 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" value="#">
-                                    <div class="error-message">
+                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" value="{{ user.first_name }}">
+                                    <!-- <div class="error-message">
                                         <p> 
                                         {% if 'first_name' in errors %}
                                             {{ errors.first_name }}
                                         {% endif %}
                                         </p>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" value="#">
-                                    <div class="error-message">
+                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" value="{{ user.last_name }}">
+                                    <!-- <div class="error-message">
                                         <p>
                                         {% if 'last_name' in errors %}
                                             {{ errors.last_name }}
                                         {% endif %}
                                         </p>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control input-sm" value="#">
+                            <input type="email" name="email" id="email" class="form-control input-sm" value="{{ user.email }}">
                             <div class="error-message">
-                                <p>
+                                <!-- <p>
                                 {% if 'email' in errors %}
                                     {{ errors.email }}
                                 {% endif %}
-                                </p>
+                                </p> -->
                             </div>
                         </div>
 
@@ -150,33 +150,33 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="street_address" id="street_address" class="form-control input-sm" value="#">
-                                    <div class="error-message">
+                                    <input type="text" name="street_address" id="street_address" class="form-control input-sm" value="{{ user.street_address }}">
+                                    <!-- <div class="error-message">
                                         <p>
                                         {% if 'street_address' in errors %}
                                             {{ errors.street_address }}
                                         {% endif %}
                                         </p>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit" value="#">
+                                    <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit" value="{{ user.unit_number }}">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="city" id="city" class="form-control input-sm" value="#">
-                            <div class="error-message">
+                            <input type="text" name="city" id="city" class="form-control input-sm" value="{{ user.city }}">
+                            <!-- <div class="error-message">
                                 <p>
                                 {% if 'city' in errors %}
                                     {{ errors.city }}
                                 {% endif %}
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="row">
@@ -241,31 +241,28 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip" value="{{ old_data.zip_code }}">
-                                    <div class="error-message">
+                                    <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip" value="{{ user.zip_code }}">
+                                    <!-- <div class="error-message">
                                         <p>
                                         {% if 'zip_code' in errors %}
                                             {{ errors.zip_code }}
                                         {% endif %}
                                         </p>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row" id="area-row">
-                            <div class="col-md-6">
-                                <h5>Area of Houston:</h5>
-                            </div>
-                            <div class="col-md-6">
-                                <select class="form-control" name="area" id="area">
-                                    <option selected disabled>Choose Area</option>
-                                    <option>Area 1</option>
-                                    <option>Area 2</option>
-                                    <option>Area 3</option>
-                                    <option>Area 4</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <h5>Area:</h5>
+                            <textarea type="area" name="area" id="area" class="form-control textarea" rows="3">{{ user.area }}</textarea>
+                            <!-- <div class="error-message">
+                                <p>
+                                {% if 'area' in errors %}
+                                    {{ errors.area }}
+                                {% endif %}
+                                </p>
+                            </div> -->
                         </div>
 
                         <div class="row" id="phone-row">
@@ -274,16 +271,16 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group" align="right">
-                                    (<input type="tel" name="tel1" size="3" pattern="\d{3}" placeholder="xxx" value="{{ old_data.tel1 }}" maxlength="3"/>) 
-                                    <input type="tel" name="tel2" size="3" pattern="\d{3}" placeholder="xxx" value="{{ old_data.tel2 }}" maxlength="3"/> - 
-                                    <input type="tel" name="tel3" size="4" pattern="\d{4}" placeholder="xxxx" value="{{ old_data.tel3 }}" maxlength="4"/>
-                                    <div class="error-message">
+                                    (<input type="tel" name="tel1" size="3" pattern="\d{3}" value="{{ user.tel1 }}" maxlength="3"/>) 
+                                    <input type="tel" name="tel2" size="3" pattern="\d{3}" value="{{ user.tel2 }}" maxlength="3"/> - 
+                                    <input type="tel" name="tel3" size="4" pattern="\d{4}" value="{{ user.tel3 }}" maxlength="4"/>
+                                    <!-- <div class="error-message">
                                         <p>
                                         {% if 'phone_number' in errors %}
                                             {{ errors.phone_number }}
                                         {% endif %}
                                         </p>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -303,13 +300,13 @@
                                                 <option value='{{ instrument.id }}'>{{ instrument }}</option>
                                             {% endfor %}
                                     </select>
-                                        <div class="error-message">
+                                        <!-- <div class="error-message">
                                             <p>
                                             {% if 'primary_instrument' in errors %}
                                                 {{ errors.primary_instrument }}
                                             {% endif %}
                                             </p>
-                                        </div>
+                                        </div> -->
                                 </div>
                             </div>
 
@@ -327,18 +324,16 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" placeholder="Brief musical bio" value="{{ old_data.bio }}"></textarea>
-                            <div class="error-message">
+                            <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" value="{{ user.bio }}"></textarea>
+                            <!-- <div class="error-message">
                                 <p>
                                 {% if 'bio' in errors %}
                                     {{ errors.bio }}
                                 {% endif %}
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
-                   
                     <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
-
                     </form>  
 
                 <!-- End div for panel-body: -->        
