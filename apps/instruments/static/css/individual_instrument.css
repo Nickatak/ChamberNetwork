@@ -88,7 +88,7 @@ a.active {
 }
 
 .information-container {
-    padding: 0px;
+    padding: 12px;
 }
 
 .information-container h4 {
@@ -98,7 +98,7 @@ a.active {
 
 .information-container h5 {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 8px;
 }
 
 .information-container dt {
