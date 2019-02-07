@@ -271,7 +271,7 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group" align="right">
-                                    (<input type="tel" name="tel1" size="3" pattern="\d{3}" value="{{ user.tel1 }}" maxlength="3"/>) 
+                                    (<input type="tel" name="tel1" size="3" pattern="\d{3}" value="{{ user.phone_number|slice:"0:3" }}" maxlength="3"/>) 
                                     <input type="tel" name="tel2" size="3" pattern="\d{3}" value="{{ user.tel2 }}" maxlength="3"/> - 
                                     <input type="tel" name="tel3" size="4" pattern="\d{4}" value="{{ user.tel3 }}" maxlength="4"/>
                                     <!-- <div class="error-message">
@@ -294,8 +294,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument" value="{{ old_data.primary_instrument }}">
-                                        <option selected disabled>Primary instrument</option>
+                                    <select class="form-control" name="primary_instrument" id="primary_instrument" placeholder="Primary instrument">
+                                        <option selected>{{ user.primary_instrument }}</option>
                                             {% for instrument in instruments %}
                                                 <option value='{{ instrument.id }}'>{{ instrument }}</option>
                                             {% endfor %}
@@ -324,7 +324,7 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" value="{{ user.bio }}"></textarea>
+                            <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5">{{ user.bio }}</textarea>
                             <!-- <div class="error-message">
                                 <p>
                                 {% if 'bio' in errors %}
