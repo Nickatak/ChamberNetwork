@@ -91,7 +91,10 @@
                             <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                         </div>
 
-                        {% if member in primary_users %}
+                        {% if not primary_users %}
+                            <h4>There are currently no members who list {{ instrument.name }} as their primary instrument.</h4>
+
+                        {% else %}
                             {% for member in primary_users %}
                                 <div class="card-name-title">
                                     <h5>
@@ -114,9 +117,8 @@
                                     </dd>
                                 </dl>
                             {% endfor %}
-                        {% else $}
-                            <p>There are currently no members who list {{ instrument.name }} as their primary instrument.</p>
                         {% endif %}
+                        
                     <!-- End div for information container: -->
                     </div>
                 <!-- End div for card: -->
@@ -136,9 +138,12 @@
                     <div class="information-container">
                         <div class="panel panel-default">
                             <img class="col-md-4" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
-                    </div>
+                        </div>
 
-                    {% if member in members %}
+                    {% if not secondary_users %}
+                        <p>There are currently no members who list {{ instrument.name }} as their secondary instrument.</p>
+
+                    {% else %}
                         {% for member in secondary_users %}
                             <div class="card-name-title">
                                 <h5>
@@ -161,8 +166,6 @@
                                 </dd>
                             </dl>
                         {% endfor %}
-                    {% else %}
-                        <p>There are currently no members who list {{ instrument.name }} as their secondary instrument.</p>
                     {% endif %}
                    
                 </div>
