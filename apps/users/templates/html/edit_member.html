@@ -92,7 +92,7 @@
 
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
-                    <form role="form" action="#" method="POST">
+                    <form role="form" action="{% url 'users:edit_member' user.id %}" method="POST">
                         {% csrf_token %}
 
                         <div class="panel panel-default">
@@ -272,8 +272,8 @@
                             <div class="col-md-8">
                                 <div class="form-group" align="right">
                                     (<input type="tel" name="tel1" size="3" pattern="\d{3}" value="{{ user.phone_number|slice:"0:3" }}" maxlength="3"/>) 
-                                    <input type="tel" name="tel2" size="3" pattern="\d{3}" value="{{ user.tel2 }}" maxlength="3"/> - 
-                                    <input type="tel" name="tel3" size="4" pattern="\d{4}" value="{{ user.tel3 }}" maxlength="4"/>
+                                    <input type="tel" name="tel2" size="3" pattern="\d{3}" value="{{ user.phone_number|slice:"3:6" }}" maxlength="3"/> - 
+                                    <input type="tel" name="tel3" size="4" pattern="\d{4}" value="{{ user.phone_number|slice:"6:10" }}" maxlength="4"/>
                                     <!-- <div class="error-message">
                                         <p>
                                         {% if 'phone_number' in errors %}
@@ -313,7 +313,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <select class="form-control" name="secondary_instrument" id="second_instrument" placeholder="Second instrument">
-                                        <option selected disabled>Second instrument</option>
+                                        <option selected>{{ user.secondary_instrument }}</option>
                                         <option>None</option>
                                         {% for instrument in instruments %}
                                             <option value='{{ instrument.id }}'>{{ instrument }}</option>
