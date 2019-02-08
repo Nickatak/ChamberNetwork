@@ -74,6 +74,7 @@ def dashboard(req):
         return redirect('public:welcome')
 
     context = {
+        'page_name' : 'Member Dashboard',
         'user' : Member.objects.get(id=req.session['uid']),
         'instruments' : Instrument.objects.all(),
     }
@@ -87,6 +88,7 @@ def individual_member(req, member_id):
         return redirect('public:welcome')
 
     context = {
+        'page_name' : 'Member page',
         'member' : Member.objects.get(id=member_id),
         'instruments' : Instrument.objects.all(),
     }
@@ -106,6 +108,7 @@ def edit_member(req, member_id):
         return redirect('users:dashboard')
     else:
         context = {
+            'page_name' : 'Edit information',
             'user' : Member.objects.get(id=req.session['uid']),
             'instruments' : Instrument.objects.all(),
         }
