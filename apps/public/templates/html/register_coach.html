@@ -50,13 +50,13 @@
         <div class="row" id="form-itself">
 
             <!-- empty div for spacing: -->
-            <div class="col-md-3"></div>
+            <div class="col-md-4"></div>
 
             <!-- This div contains the actual form: -->
-            <div class="col-md-6" id="inner-form-container">
+            <div class="col-md-4" id="inner-form-container">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">COACH REGISTRATION FORM</h3>
+                        <h3 class="panel-title">Coach Registration Form</h3>
                     </div>
                 </div>
 
@@ -263,7 +263,7 @@
 
                         <div class="form-group">
                             <h5>Area:</h5>
-                            <textarea type="area" name="area" id="area" class="form-control textarea" rows="3" placeholder="Please tell us briefly in what part of town you live and how far you are willing to travel for rehearsals and performances. i.e., 'I live in the Heights but I'm willing to drive anywhere within the loop.'"" value="{{ old_data.area }}"></textarea>
+                            <textarea type="area" name="area" id="area" class="form-control textarea" rows="3" placeholder="Please tell us briefly in what part of town you live and how far you are willing to travel for rehearsals and performances. i.e., 'I live in the Heights but I'm willing to drive anywhere within the loop.'">{{ old_data.area }}</textarea>
                             <div class="error-message">
                                 <p>
                                 {% if 'area' in errors %}
@@ -349,7 +349,7 @@
                         </div>
 
                         <div class="form-group">
-                            <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" placeholder="Brief musical bio" value="{{ old_data.bio }}"></textarea>
+                            <textarea type="bio" name="bio" id="bio" class="form-control textarea" rows="5" placeholder="Brief musical bio">{{ old_data.bio }}</textarea>
                             <div class="error-message">
                                 <p>
                                 {% if 'bio' in errors %}
