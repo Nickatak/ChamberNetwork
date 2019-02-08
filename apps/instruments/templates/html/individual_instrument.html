@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Houston Chamber Network : {{ instrument_name }}</title>
+        <title>HCMN : {{ instrument.name }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,7 +92,7 @@
                         </div>
 
                         {% if not primary_users %}
-                            <h4>There are currently no members who list {{ instrument.name }} as their primary instrument.</h4>
+                            <h5>There are currently no members who list {{ instrument.name }} as their primary instrument.</h5>
 
                         {% else %}
                             {% for member in primary_users %}
@@ -141,7 +141,7 @@
                         </div>
 
                     {% if not secondary_users %}
-                        <p>There are currently no members who list {{ instrument.name }} as their secondary instrument.</p>
+                        <h5>There are currently no members who list {{ instrument.name }} as their secondary instrument.</h5>
 
                     {% else %}
                         {% for member in secondary_users %}
