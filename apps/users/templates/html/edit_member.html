@@ -75,7 +75,7 @@
             <div class="col-md-4" id="inner-form-container">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">EDIT INFORMATION FORM</h3>
+                        <h3 class="panel-title">Edit Information Form</h3>
                     </div>
                 </div>
 
@@ -86,7 +86,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <p class="panel-title">To edit a field, simply replace saved information with your new information, then click submit.</p>
+                        <h5 class="panel-title">To edit: replace saved information with your new information, then click submit.</h5>
                     </div>
                 </div>
 
@@ -104,7 +104,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" value="{{ user.first_name }}">
+                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="{{ user.first_name }}">
                                     <!-- <div class="error-message">
                                         <p> 
                                         {% if 'first_name' in errors %}
@@ -117,7 +117,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" value="{{ user.last_name }}">
+                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="{{ user.last_name }}">
                                     <!-- <div class="error-message">
                                         <p>
                                         {% if 'last_name' in errors %}
@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control input-sm" value="{{ user.email }}">
+                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="{{ user.email }}">
                             <div class="error-message">
                                 <!-- <p>
                                 {% if 'email' in errors %}
@@ -150,7 +150,7 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="form-group">
-                                    <input type="text" name="street_address" id="street_address" class="form-control input-sm" value="{{ user.street_address }}">
+                                    <input type="text" name="street_address" id="street_address" class="form-control input-sm" placeholder="{{ user.street_address }}">
                                     <!-- <div class="error-message">
                                         <p>
                                         {% if 'street_address' in errors %}
@@ -163,13 +163,13 @@
 
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit" value="{{ user.unit_number }}">
+                                    <input type="text" name="unit_number" id="unit_number" class="form-control input-sm" placeholder="Unit {{ user.unit_number }}">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="city" id="city" class="form-control input-sm" value="{{ user.city }}">
+                            <input type="text" name="city" id="city" class="form-control input-sm" placeholder="{{ user.city }}">
                             <!-- <div class="error-message">
                                 <p>
                                 {% if 'city' in errors %}
@@ -241,7 +241,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="Zip" value="{{ user.zip_code }}">
+                                    <input type="text" name="zip_code" id="zip_code" class="form-control input-sm" placeholder="{{ user.zip_code }}">
                                     <!-- <div class="error-message">
                                         <p>
                                         {% if 'zip_code' in errors %}
@@ -271,9 +271,9 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group" align="right">
-                                    (<input type="tel" name="tel1" size="3" pattern="\d{3}" value="{{ user.phone_number|slice:"0:3" }}" maxlength="3"/>) 
-                                    <input type="tel" name="tel2" size="3" pattern="\d{3}" value="{{ user.phone_number|slice:"3:6" }}" maxlength="3"/> - 
-                                    <input type="tel" name="tel3" size="4" pattern="\d{4}" value="{{ user.phone_number|slice:"6:10" }}" maxlength="4"/>
+                                    (<input type="tel" name="tel1" size="3" pattern="\d{3}" placeholder="{{ user.phone_number|slice:"0:3" }}" maxlength="3"/>) 
+                                    <input type="tel" name="tel2" size="3" pattern="\d{3}" placeholder="{{ user.phone_number|slice:"3:6" }}" maxlength="3"/> - 
+                                    <input type="tel" name="tel3" size="4" pattern="\d{4}" placeholder="{{ user.phone_number|slice:"6:10" }}" maxlength="4"/>
                                     <!-- <div class="error-message">
                                         <p>
                                         {% if 'phone_number' in errors %}
