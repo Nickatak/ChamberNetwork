@@ -217,7 +217,7 @@ test_users = [
         "zip_code": "77025",
         "phone_number": "8325678765",
         "bio": "Some bio",
-        "rating": "A",
+        "rating": "S",
         "is_coach": True,
     },
     {
@@ -347,7 +347,7 @@ test_users = [
         "zip_code": "77044",
         "phone_number": "8326541234",
         "bio": "Some bio",
-        "rating": "A",
+        "rating": "S",
         "is_coach": True,
     },
     {
