@@ -241,7 +241,15 @@ class Member(models.Model):
     password = models.TextField()
     bio = models.TextField()
     area = models.TextField()
-    rating = models.CharField(max_length=250, verbose_name="Skill Rating")
+
+    RATING_CHOICES = (
+        ("A", "A"),
+        ("B", "B"),
+        ("C", "C"),
+        ("D", "D"),
+        ("S", "Coach"),
+    )
+    rating = models.CharField(max_length=1, choices=RATING_CHOICES)
 
 
     primary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='primary_users')
