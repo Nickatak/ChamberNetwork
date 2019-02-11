@@ -16,7 +16,7 @@ class MemberManager(models.Manager):
 
 
     def validate_login(self, data):
-        email = data['email']
+        email = data['email'].lower()
         attempted_password = data['password']
 
         user = None
@@ -42,7 +42,7 @@ class MemberManager(models.Manager):
 
         first_name = post_data['first_name']
         last_name = post_data['last_name']
-        email = post_data['email']
+        email = post_data['email'].lower()
         street_address = post_data['street_address']
         unit_number = post_data['unit_number']
         city = post_data['city']
@@ -97,7 +97,7 @@ class MemberManager(models.Manager):
     def add_member(self, post_data, is_coach=False):
         first_name = post_data['first_name']
         last_name = post_data['last_name']
-        email = post_data['email']
+        email = post_data['email'].lower()
         street_address = post_data['street_address']
         unit_number = post_data['unit_number']
         city = post_data['city']
@@ -142,7 +142,7 @@ class MemberManager(models.Manager):
 
 
     def member_email_exists(self, email):
-        return self.filter(email=email).exists()
+        return self.filter(email=email.lower()).exists()
 
 
     def generate_new_password(self):
