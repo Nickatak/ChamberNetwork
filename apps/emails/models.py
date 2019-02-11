@@ -5,18 +5,18 @@ from django.template import Context, Template
 
 class EmailManager(models.Manager):
     def send_new_registration(self, email, password, is_coach=False):
-        email_template = Template(self.get(name='New User Template').raw_template)
+        #email_template = Template(self.get(name='New User Template').raw_template)
 
-        raw_context = {
-            'email' : email,
-            'password' : password,
-            'is_coach' : is_coach,
-        }
+        #raw_context = {
+        #    'email' : email,
+        #    'password' : password,
+        #    'is_coach' : is_coach,
+        #}
 
-        rendered_string = email_template.render(Context(raw_context))
+        #rendered_string = email_template.render(Context(raw_context))
 
-        print(rendered_string)
-
+        #print(rendered_string)
+        pass
 
 # Ideally, we can store templates for the emails here, but for now, I'm going to leave it blank.
 class Email(models.Model):
