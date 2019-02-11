@@ -402,9 +402,10 @@
                                 <option>B</option>
                                 <option>C</option>
                                 <option>D</option> 
+                            </select>
                             <div class="error-message">
                                 <p>
-                                {% if 'rating' in errors %}
+                                {% if errors.rating %}
                                     {{ errors.rating }}
                                 {% endif %}
                                 </p>
