@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 from ..instruments.models import Instrument
-
+from ..users.models import Member
 
 def welcome(req):
 
@@ -21,6 +21,7 @@ def new_member_display(req):
         'errors' : req.session.pop('errors', None),
         'old_data' : req.session.pop('old_data', None),
         'instruments' : Instrument.objects.all(),
+        'rating_choices' : Member.RATING_CHOICES,
 	}
 
 	return render(req, 'html/register_member.html', context)
