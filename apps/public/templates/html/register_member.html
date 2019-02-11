@@ -405,7 +405,7 @@
                             </select>
                             <div class="error-message">
                                 <p>
-                                {% if errors.rating %}
+                                {% if 'rating' in errors %}
                                     {{ errors.rating }}
                                 {% endif %}
                                 </p>
