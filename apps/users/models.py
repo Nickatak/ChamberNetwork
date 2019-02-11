@@ -115,7 +115,7 @@ class MemberManager(models.Manager):
         bio = post_data['bio']
         # Make this a choiceField later.
         if is_coach:
-            rating = 'A'
+            rating = 'S'
         else:
             rating = post_data['rating']
 
