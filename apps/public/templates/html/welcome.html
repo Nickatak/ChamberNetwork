@@ -48,11 +48,21 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <img class="img-fluid" src='{% static "images/welcome.jpg" %}'>
-                    <!-- <div class="carousel-caption">
-                        <h1>Connect</h1>
-                        <p class="lead">with musicians in your area.</p>
-                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
-                    </div> -->
+                    <div class="carousel-caption">
+                        <h1><strong>Connect</strong> with musicians in your area.</h1>
+                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p><br><br>
+
+                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive"><br><br><br>
+
+                        <h1><strong>Perform</strong> with new friends.</h1>
+                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p><br><br><br>
+
+                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive"><br><br><br>
+
+                        <h1><strong>Share</strong> your passion with others.</h1>
+                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_coach' %}" role="button">REGISTER AS COACH</a></p>
+                    </div>
+                    
                 </div>
             </div>
         </div>
