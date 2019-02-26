@@ -41,30 +41,50 @@
     </div>
 {% endblock %}
 
-
 {% block main_content %}
-    <div class="container-fluid" id="main-container">
+
+<div class="container-fluid" id="main-container">
         <div id="carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="item active">
-                    <img class="img-fluid" src='{% static "images/welcome.jpg" %}'>
-                    <div class="carousel-caption">
+                    <img class="img-fluid" src='{% static "images/welcome_slice1.jpg" %}'>
+                    <div class="carousel-caption align-middle">
                         <h1><strong>Connect</strong> with musicians in your area.</h1>
-                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p><br><br>
+                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
+                    </div>
 
-                        <img class="col-md-6" src='{% static "images/divider9.png" %}' alt="" class="img-responsive"><br><br><br>
+                    
+                </div>
+            </div>
+        </div>
 
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-fluid" src='{% static "images/welcome_slice2.jpg" %}'>
+                    <div class="carousel-caption align-middle">
                         <h1><strong>Perform</strong> with new friends.</h1>
-                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p><br><br><br>
+                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p>
+                    </div>
 
-                        <img class="col-md-6" src='{% static "images/divider9.png" %}' alt="" class="img-responsive"><br><br><br>
+                    
+                </div>
+            </div>
+        </div>
 
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-fluid" src='{% static "images/welcome_slice3.jpg" %}'>
+                    <div class="carousel-caption align-middle">
                         <h1><strong>Share</strong> your passion with others.</h1>
                         <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_coach' %}" role="button">REGISTER AS COACH</a></p>
                     </div>
+
                     
                 </div>
             </div>
         </div>
     </div>
+
 {% endblock %}

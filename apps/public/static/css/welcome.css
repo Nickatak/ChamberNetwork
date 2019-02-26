@@ -25,19 +25,23 @@ a.active {
 }
 
 /*Main container*/
+
 .container-fluid {
-	background-color: #fffef7;
-	padding: 0;
+    background-color: #fffef7;
+    padding: 0;
 }
 
 h1 {
-	/*color: white;*/
-	color: #e3f2fd;
+    color: white;
+    color: #e3f2fd;
+    opacity: 1;
 }
 
 .carousel-caption {
-	top: 60px;
-	text-align: center;
+    top: 60px;
+    text-align: center;
+    background-color: #2c3b4b;
+    opacity: 0.5;
 }
 
 /*Footer:*/
