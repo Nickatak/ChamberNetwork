@@ -1,3 +1,48 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    padding-top: 50px;
+    height: 100%;
+    width: 100%;
+}
+
+#main-container {
+    height: 80.8%;
+    width: 100%;
+}
+
+#image1 {
+    background-image: url('/static/images/welcome_slice1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33.3%;
+    width: 100%;
+    color: white;
+}
+
+#image2 {
+    background-image: url('/static/images/welcome_slice2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 33.3%;
+
+}
+
+#image3 {
+    background-image: url('/static/images/welcome_slice3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33.3%;
+    width: 100%;
+
+}
+
+
+
 /*Navbar:*/
 .navbar {
 	background-color: #2c3b4b;
