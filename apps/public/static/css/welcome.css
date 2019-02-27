@@ -31,11 +31,35 @@ a.active {
 
 /*Main container*/
 
+/*Carousel option*/
+
+.col-sm-12 {
+	padding-right: 0;
+}
+
+.container-fluid {
+	background-color: #fffef7;
+	padding: 0;
+}
+
+#main-container {
+	background-color: #fffef7;
+	/*padding-top: 130px;
+	padding-left: 90px;
+	padding-right: 90px;
+	padding-bottom: 90px;*/
+	padding: 0;
+}
+
+.btn {
+	margin-top: 20px;
+}
+
 
 
 /*Footer:*/
 #footer-container {
-	padding: 0px;
+	padding: 0;
 }
 
 .footer-row {
