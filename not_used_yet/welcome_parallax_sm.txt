@@ -1,0 +1,113 @@
+HTML:
+
+{% block main_content %}
+
+<div class="container-fluid" id="parallax-container">
+
+        <!-- First Parallax Section -->
+        <div class="jumbotron paral paralsec1">
+            <h3 class="display-3">Connect</h3>
+            <p class="lead">with musicians in your area.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
+        </div>
+
+        <!-- Second Parallax Section -->
+        <div class="jumbotron paral paralsec2">
+            <h3 class="display-3">Perform</h3>
+            <p class="lead">with new friends.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p>
+        </div>
+
+        <!-- Third Parallax Section -->
+        <div class="jumbotron paral paralsec3">
+            <h3 class="display-3">Share</h3>
+            <p class="lead">your passion with others.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_coach' %}" role="button">REGISTER AS COACH</a></p>
+        </div> 
+        
+        <!-- Fourth Parallax Section -->
+        <!-- <div class="jumbotron paral paralsec4">
+            <h1 class="display-3">Support</h1>
+            <p class="lead">local live music.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_patron' %}" role="button">SIGN UP FOR E-NEWSLETTER</a></p>
+        </div> -->
+    </div>
+
+{% endblock %}
+
+CSS:
+
+/*Main container*/
+
+/*Parallax-container:*/
+#parallax-container {
+    padding: 0;
+}
+
+/*For full size:*/
+/*.paral {
+min-height: 800px;
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+border-radius: 0px;
+}*/
+
+.paral {
+    max-height: 400px;
+    min-height: 400px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 0px;
+    text-align: center;
+}
+ 
+/* Paragragh for Parallax Section */ 
+.paral p {
+font-size: 24px;
+color:#f5f5f5;
+text-align: center;
+line-height: 60px;
+font-weight: bold;
+}
+ 
+/* Heading for Parallax Section */ 
+.paral h3 {
+color: rgba(255, 255, 255, 0.8);
+font-size: 60px;
+text-align: center;
+padding-top: 30px;
+line-height: 100px;
+/*font-weight: bold;*/
+}
+
+/*For full size:
+.paral h1 {
+color: rgba(255, 255, 255, 0.8);
+font-size: 60px;
+text-align: center;
+padding-top: 300px;
+line-height: 100px;
+font-weight: bold;
+}*/
+ 
+/* Image for Parallax Section */ 
+.paralsec1 {
+background-image: url("/static/images/welcome1_md.jpg");
+}
+ 
+.paralsec2 {
+background-image: url("/static/images/welcome2_md.jpg");}
+ 
+.paralsec3 {
+background-image: url("/static/images/welcome3_md.jpg");
+}
+
+.paralsec4 {
+background-image: url("/static/images/6.jpg");
+}
+
+/* Remove Bottom Margin from Jumbotron */
+.jumbotron{margin-bottom: 0;}
+
