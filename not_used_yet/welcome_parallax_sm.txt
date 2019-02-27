@@ -44,15 +44,6 @@ CSS:
     padding: 0;
 }
 
-/*For full size:*/
-/*.paral {
-min-height: 800px;
-background-attachment: fixed;
-background-size: cover;
-background-position: 50% 50%;
-border-radius: 0px;
-}*/
-
 .paral {
     max-height: 400px;
     min-height: 400px;
@@ -81,16 +72,6 @@ padding-top: 30px;
 line-height: 100px;
 /*font-weight: bold;*/
 }
-
-/*For full size:
-.paral h1 {
-color: rgba(255, 255, 255, 0.8);
-font-size: 60px;
-text-align: center;
-padding-top: 300px;
-line-height: 100px;
-font-weight: bold;
-}*/
  
 /* Image for Parallax Section */ 
 .paralsec1 {
