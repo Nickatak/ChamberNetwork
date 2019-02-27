@@ -42,26 +42,36 @@
 {% endblock %}
 
 {% block main_content %}
-<div class="container-fluid" id="main-container">
-     <div id="image1">
-        <div id="tcontain">
-            <div id="tester">
-            </div>
-            <div id="tester2">
-                <h1><strong>Connect</strong> with musicians in your area.</h1>
-                <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
-            </div>
+
+<div class="container-fluid" id="parallax-container">
+
+        <!-- First Parallax Section -->
+        <div class="jumbotron paral paralsec1">
+            <h3 class="display-3">Connect</h3>
+            <p class="lead">with musicians in your area.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
         </div>
-    </div>
-    <div id="image2">
-        asdf2
-    </div>
-    <div id="image3">
-        asdf4
-    </div>
-</div>
-   
 
+        <!-- Second Parallax Section -->
+        <div class="jumbotron paral paralsec2">
+            <h3 class="display-3">Perform</h3>
+            <p class="lead">with new friends.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p>
+        </div>
 
+        <!-- Third Parallax Section -->
+        <div class="jumbotron paral paralsec3">
+            <h3 class="display-3">Share</h3>
+            <p class="lead">your passion with others.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_coach' %}" role="button">REGISTER AS COACH</a></p>
+        </div> 
+        
+        <!-- Fourth Parallax Section -->
+        <!-- <div class="jumbotron paral paralsec4">
+            <h1 class="display-3">Support</h1>
+            <p class="lead">local live music.</p>
+            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_patron' %}" role="button">SIGN UP FOR E-NEWSLETTER</a></p>
+        </div> -->
+    </div>
 
 {% endblock %}

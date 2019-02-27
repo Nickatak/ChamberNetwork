@@ -1,43 +1,116 @@
+HTML:
+
 <div class="container-fluid" id="main-container">
-        <div id="carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="img-fluid" src='{% static "images/welcome_slice1.jpg" %}'>
-                    <div class="carousel-caption align-middle">
-                        <h1><strong>Connect</strong> with musicians in your area.</h1>
-                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
-                    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-
-        <div id="carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="img-fluid" src='{% static "images/welcome_slice2.jpg" %}'>
-                    <div class="carousel-caption align-middle">
-                        <h1><strong>Perform</strong> with new friends.</h1>
-                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p>
-                    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-
-        <div id="carousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="img-fluid" src='{% static "images/welcome_slice3.jpg" %}'>
-                    <div class="carousel-caption align-middle">
-                        <h1><strong>Share</strong> your passion with others.</h1>
-                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_coach' %}" role="button">REGISTER AS COACH</a></p>
-                    </div>
-
-                    
-                </div>
+     <div id="image1">
+        <div id="tcontain">
+            <div id="box"></div>
+            <div id="text">
+                <h1>Connect</h1>
+                <h3>with musicians in your area.</h3>
+                <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
             </div>
         </div>
     </div>
+
+    <div id="image2">
+        <div id="tcontain">
+            <div id="box"></div>
+            <div id="text">
+                <h1>Perform</h1>
+                <h3>with new friends.</h3>
+                <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="image3">
+        <div id="tcontain">
+            <div id="box"></div>
+            <div id="text">
+                <h1>Share</h1>
+                <h3>your passion with others.</h3>
+                <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_coach' %}" role="button">REGISTER AS COACH</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+CSS:
+
+body {
+    padding-top: 48px;
+    height: 100%;
+    width: 100%;
+}
+
+#main-container {
+    height: 100%;
+    width: 100%;
+}
+
+#image1 {
+    background-image: url('/static/images/welcome1_md.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33.3%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image2 {
+    background-image: url('/static/images/welcome2_md.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33.3%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#image3 {
+    background-image: url('/static/images/welcome3_md.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33.3%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tcontain {
+    width: 40%;
+    height: 65%;
+}
+
+#box {
+    background-color: gray;
+    /*background-color: #69844D;*/
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+#text {
+    bottom: 10em;
+    position: relative;
+    text-align: center;
+}
+
+.container-fluid {
+    background-color: #fffef7;
+    padding: 0;
+}
+
+h1 {
+    color: white;
+    opacity: 1;
+}
+

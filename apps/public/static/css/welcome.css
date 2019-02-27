@@ -3,63 +3,6 @@ html {
     width: 100%;
 }
 
-body {
-    padding-top: 50px;
-    height: 100%;
-    width: 100%;
-}
-
-#main-container {
-    height: 80.8%;
-    width: 100%;
-}
-
-#image1 {
-    background-image: url('/static/images/welcome_slice1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 33.3%;
-    width: 100%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#image2 {
-    background-image: url('/static/images/welcome_slice2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 33.3%;
-
-}
-
-#image3 {
-    background-image: url('/static/images/welcome_slice3.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 33.3%;
-    width: 100%;
-}
-
-#tcontain {
-    width: 33.3%;
-    height: 75%;
-}
-
-#tester {
-    background-color: green;
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-}
-
-#tester2 {
-    bottom: 10em;
-    position: relative;
-}
-
 /*Navbar:*/
 .navbar {
 	background-color: #2c3b4b;
@@ -88,6 +31,146 @@ a.active {
 
 /*Main container*/
 
+/*Parallax-container:*/
+#parallax-container {
+    padding: 0;
+}
+
+/*For full size:*/
+/*.paral {
+min-height: 800px;
+background-attachment: fixed;
+background-size: cover;
+background-position: 50% 50%;
+border-radius: 0px;
+}*/
+
+.paral {
+    max-height: 400px;
+    min-height: 400px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: 0px;
+    text-align: center;
+}
+ 
+/* Paragragh for Parallax Section */ 
+.paral p {
+font-size: 24px;
+color:#f5f5f5;
+text-align: center;
+line-height: 60px;
+font-weight: bold;
+}
+ 
+/* Heading for Parallax Section */ 
+.paral h3 {
+color: rgba(255, 255, 255, 0.8);
+font-size: 60px;
+text-align: center;
+padding-top: 30px;
+line-height: 100px;
+/*font-weight: bold;*/
+}
+
+/*For full size:
+.paral h1 {
+color: rgba(255, 255, 255, 0.8);
+font-size: 60px;
+text-align: center;
+padding-top: 300px;
+line-height: 100px;
+font-weight: bold;
+}*/
+ 
+/* Image for Parallax Section */ 
+.paralsec1 {
+background-image: url("/static/images/welcome1_md.jpg");
+}
+ 
+.paralsec2 {
+background-image: url("/static/images/welcome2_md.jpg");}
+ 
+.paralsec3 {
+background-image: url("/static/images/welcome3_md.jpg");
+}
+
+.paralsec4 {
+background-image: url("/static/images/6.jpg");
+}
+
+/* Remove Bottom Margin from Jumbotron */
+.jumbotron{margin-bottom: 0;}
+
+
+/*body {
+    padding-top: 48px;
+    height: 100%;
+    width: 100%;
+}
+
+#main-container {
+    height: 100%;
+    width: 100%;
+}
+
+#image1 {
+    background-image: url('/static/images/welcome1_md.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33.3%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image2 {
+    background-image: url('/static/images/welcome2_md.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33.3%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#image3 {
+    background-image: url('/static/images/welcome3_md.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 33.3%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tcontain {
+    width: 40%;
+    height: 65%;
+}
+
+#box {
+    background-color: gray;
+    /*background-color: #69844D;*/
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+#text {
+    bottom: 10em;
+    position: relative;
+    text-align: center;
+}
+
 .container-fluid {
     background-color: #fffef7;
     padding: 0;
@@ -95,16 +178,8 @@ a.active {
 
 h1 {
     color: white;
-    color: #e3f2fd;
     opacity: 1;
-}
-
-.carousel-caption {
-    top: 60px;
-    text-align: center;
-    background-color: #2c3b4b;
-    opacity: 0.5;
-}
+}*/
 
 /*Footer:*/
 #footer-container {
