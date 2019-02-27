@@ -31,63 +31,7 @@ a.active {
 
 /*Main container*/
 
-/*Parallax-container:*/
-#parallax-container {
-    padding: 0;
-}
 
-.paral {
-    max-height: 400px;
-    min-height: 400px;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: 50% 50%;
-    border-radius: 0px;
-    text-align: center;
-}
- 
-/* Paragragh for Parallax Section */ 
-.paral p {
-font-size: 24px;
-color:#f5f5f5;
-text-align: center;
-line-height: 60px;
-font-weight: bold;
-}
- 
-/* Heading for Parallax Section */ 
-.paral h3 {
-color: rgba(255, 255, 255, 0.8);
-font-size: 60px;
-text-align: center;
-padding-top: 30px;
-line-height: 100px;
-/*font-weight: bold;*/
-}
- 
-/* Image for Parallax Section */ 
-.paralsec1 {
-background-image: url("/static/images/welcome1_md.jpg");
-}
- 
-.paralsec2 {
-background-image: url("/static/images/welcome2_md.jpg");}
- 
-.paralsec3 {
-background-image: url("/static/images/welcome3_md.jpg");
-}
-
-.paralsec4 {
-background-image: url("/static/images/6.jpg");
-}
-
-/* Remove Bottom Margin from Jumbotron */
-.jumbotron{margin-bottom: 0;}
-
-.container-fluid {
-    background-color: #fffef7;
-    padding: 0;
-}
 
 /*Footer:*/
 #footer-container {
