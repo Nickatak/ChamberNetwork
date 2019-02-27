@@ -43,12 +43,15 @@
 
 {% block main_content %}
 <div class="container-fluid" id="main-container">
-    <div id="image1">
-
-        <div id="tester" class="col-md-1">
-            wtf
+     <div id="image1">
+        <div id="tcontain">
+            <div id="tester">
+            </div>
+            <div id="tester2">
+                <h1><strong>Connect</strong> with musicians in your area.</h1>
+                <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
+            </div>
         </div>
-
     </div>
     <div id="image2">
         asdf2

@@ -21,6 +21,9 @@ body {
     height: 33.3%;
     width: 100%;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #image2 {
@@ -38,10 +41,24 @@ body {
     background-size: cover;
     height: 33.3%;
     width: 100%;
-
 }
 
+#tcontain {
+    width: 33.3%;
+    height: 75%;
+}
 
+#tester {
+    background-color: green;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+#tester2 {
+    bottom: 10em;
+    position: relative;
+}
 
 /*Navbar:*/
 .navbar {
