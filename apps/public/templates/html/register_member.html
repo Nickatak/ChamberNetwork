@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href='{% static "css/register_member.css" %}'>
 {% endblock %}
 
-
 {% block header %}
     <div class="container-fluid" id="navbar-container">
         <nav class="navbar navbar-expand-sm fixed-top">
@@ -45,6 +44,12 @@
 {% endblock %}
 
 {% block main_content %}
+
+        
+
+
+
+
     <div class="container-fluid" id="form-container">
         <div class="row" id="form-itself">
 
@@ -65,6 +70,7 @@
                 </div>
 
                 <!-- Div for overlays: -->
+            
                 <div class="panel panel-default1">
                     <h5>Before filling out form, please read the following:</h5>
 
@@ -73,32 +79,45 @@
                         <div id="overlay1-text">
                             <div><h5><b>Below, you will be asked to rate your musicianship. Please choose the "grade" that best describes you.</b></h5><br><br></div>
                             <dl class="row">
-                                <dt class="col-sm-3">A: Professional</dt>
+
+                                <dt class="col-sm-3">Novice</dt>
                                 <dd class="col-sm-9">
-                                    <p>I play with a beautiful tone. I can play quickly and cleanly in difficult keys and with key/tempo changes. I am a strong leader. I can sight-read all passages cleanly at concert tempo (except pianists). I have keen awareness of other parts and know exactly how they fit.</p>
-                                    <!-- <p><b>My challenges:</b> I want to develop a cohesive group sound and wider range in tone color. I need to fine-tune my intonation.</p>
-                                    <p><b>My goals:</b> To convey a convincing interpretation, expand my arsenal of tone colors, and refine attention to detail</p> -->
+                                    <p>I can read music and have basic technical skills. I am starting to explore chamber music repertoire. I can sight-read simple pieces slowly. Often I must slow down in faster or more technical passages. Sometimes I get "tangled" in my own part.</p>
                                 </dd>
 
-                                <dt class="col-sm-3">B: Advanced</dt>
+                                <dt class="col-sm-3">Advanced Novice</dt>
                                 <dd class="col-sm-9">
-                                    <p>I play with a pleasant tone. I can get back in when lost. I can sight-read near concert tempo, except in difficult technical passages. I am aware of other parts and try to match them.</p>
-                                    <!-- <p><b>My challenges:</b> The hardest passages sound messy if I take them too fast. My phrasing is sometimes choppy.</p>
-                                    <p><b>My goals:</b> To play with more nuance, match my articulation with the group’s, and improve my tone and phrasing</p> -->
+                                    <p>My skills are better that the skills described for Novice, but not quite up to the level of intermediate.</p>
                                 </dd>
 
-                                <dt class="col-sm-3">C: Intermediate</dt>
+                                <dt class="col-sm-3">Intermediate</dt>
                                 <dd class="col-sm-9">
-                                    <p>I play with a decent tone. I am comfortable at moderate tempi. I am peripherally aware of other parts. I can sight-read at a moderate tempo but slow down the hard sections.</p>
-                                    <!-- <p><b>My challenges:</b> I need to slow down in hard sections. I tend to get absorbed in my own part.</p>
-                                    <p><b>My goals:</b> To listen more to others, improve leading ability, and develop the technique for complex passages.</p> -->
+                                    <p>I play with a decent tone. I am comfortable at moderate tempi. I am peripherally aware of other parts. I can sight-read at a moderate tempo but slow down the hard sections. I tend to get absorbed in my own part.</p>
                                 </dd>
 
-                                <dt class="col-sm-3">D: Novice</dt>
+                                <dt class="col-sm-3">Advanced Intermediate</dt>
                                 <dd class="col-sm-9">
-                                    <p>I can read music and have basic technical skills. I am starting to explore chamber music repertoire. I can sight-read simple pieces slowly.</p>
-                                    <!-- <p><b>My challenges:</b> Often I must slow down in faster or more technical passages. Sometimes I get “tangled” in my own part.</p>
-                                    <p><b>My goals:</b> To play with fewer stops, listen more to the group, and learn to lead.</p> -->
+                                    <p>My skills are better than the skills described for Intermediate, but not quite up to the level of advanced.</p>
+                                </dd>
+
+                                <dt class="col-sm-3">Advanced</dt>
+                                <dd class="col-sm-9">
+                                    <p>I play with a pleasant tone. I can get back in when lost. I can sight-read near concert tempo, except in difficult technical passages. I am aware of other parts and try to match them. The hardest passages sound messy if I try to match them. The hardest passages sound messy if I take them too fast. My phrasing is sometimes choppy.</p>
+                                </dd>
+
+                                <dt class="col-sm-3">Very Advanced</dt>
+                                <dd class="col-sm-9">
+                                    <p>My skills are better than the skills described for Advanced, but not quite up to the level of Expert.</p>
+                                </dd>
+
+                                <dt class="col-sm-3">Expert</dt>
+                                <dd class="col-sm-9">
+                                    <p>I play with a beautiful tone. I can play quickly and cleanly in difficult keys and with key/tempo changes. I am a strong leader. I can sight-read all passages cleanly at concert tempo (except pianists). I have keen awareness of other parts and know exactly how they fit. I want to develop a cohesive group sound and a wider range in tone color. I need to fine-tune my intonation.</p>
+                                </dd>
+
+                                <dt class="col-sm-3">Professional</dt>
+                                <dd class="col-sm-9">
+                                    <p>I am conservatory trained. I play with a finely nuanced tone. I can play most difficult passages with finesse at performance tempo. I use high-level technique. I can sight-read all passages cleanly at concert tempo, with phrasing. I could likely play all others' parts if asked. I am out of the habit of playing for enjoyment. I am self critical.</p>
                                 </dd>
                             </dl>
                         </div>
@@ -113,11 +132,24 @@
                     <div id="overlay2" onclick="off('overlay2')">
                         <div id="overlay2-text">
                             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                            <p>(Click anywere in gray box to dismiss this message.)</p>
                         </div>
                     </div>
 
                     <div style="">
                         <button onclick="on('overlay2')" class="btn btn-reg btn-info btn-block">What happens after I submit this form?</button>
+                    </div>
+
+                    <!-- Privacy policy overlay: -->
+                    <div id="overlay3" onclick="off('overlay3')">
+                        <div id="overlay3-text">
+                            <p>None of your information will be shared with anyone other than other registered members of HCMN. Your address and phone number are not shared, even with other members of HCMN.</p>
+                            <p>(Click anywere in gray box to dismiss this message.)</p>
+                        </div>
+                    </div>
+
+                    <div style="">
+                        <button onclick="on('overlay3')" class="btn btn-reg btn-info btn-block">HCMN Privacy Policy</button>
                     </div>
                     <br>
 
@@ -132,9 +164,11 @@
                         }
 
                     </script>
-                 
+            
                 <!-- End div for overlays: -->   
                 </div>
+
+                
                 
                 <div class="panel-body">
                     <!-- This needs to POST to our users app. -->
@@ -142,7 +176,7 @@
                         {% csrf_token %}
 
                         <div class="panel panel-default">
-                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                            <img class="col-md-6" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                         </div>
 
                         <!-- Basic information section: -->
