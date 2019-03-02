@@ -5,7 +5,10 @@ html {
 
 /*Navbar:*/
 .navbar {
-	background-color: #2c3b4b;
+	/*background-color: #2c3b4b;*/
+    /*background-color: #556b2f;*/
+    /*background-color: #828e84;*/
+    background-color: #667569;
 }
 
 .brand {
@@ -13,7 +16,9 @@ html {
 }
 
 h5.brand {
-	color: #e3f2fd;
+	/*color: #e3f2fd;*/
+    /*color: #92A095;*/
+    color: #dbe9f4;
 	font-family: "Arial";
 }
 
@@ -22,11 +27,11 @@ a.nav-link {
 }
 
 a.active {
-	color: #808080;
+    color: #989898;
 }
 
 .navbar .navbar-nav li a:hover {
-	color: #808080;
+	color: #989898;
 }
 
 /*Main container*/
@@ -123,7 +128,7 @@ h1 {
 }
 
 footer {
-	background-color: #2c3b4b;
+	background-color: #667569;
 	padding-top: 30px;
 	padding-bottom: 4px;
 	padding-left: 30px;
@@ -155,7 +160,7 @@ footer {
 }
 
 .footer-links li a h5:hover {
-    color: #808080;
+    color: #989898;
     /*border-bottom: 3px solid white;*/
 }
 
