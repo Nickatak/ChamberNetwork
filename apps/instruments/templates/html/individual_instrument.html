@@ -89,7 +89,7 @@
                     <h5>There are currently no members who list {{ instrument.name }} as their primary instrument.</h5>
 
                     {% else %}
-                        {% for member in primary_users %}
+                        
                         <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -100,6 +100,7 @@
                                     <th>Location</th>
                                 </tr>
                             </thead>
+                            {% for member in primary_users %}
                             <tbody>
                                 <tr>
                                     <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>

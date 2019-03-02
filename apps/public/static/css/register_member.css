@@ -45,7 +45,7 @@ img {
 #overlay1 {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
-    width: 80%; /* Full width (cover the whole page) */
+    width: 100%; /* Full width (cover the whole page) */
     height: 100%; 
     margin: 0 auto;
     top: 0; 
