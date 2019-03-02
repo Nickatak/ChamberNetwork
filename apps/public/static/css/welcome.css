@@ -83,6 +83,11 @@ body {
     background-size: cover;
 }
 
+#card {
+    height: 100%;
+}
+
+
 #text-box {
 
 }
