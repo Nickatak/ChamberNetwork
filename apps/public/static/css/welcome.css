@@ -9,11 +9,12 @@ html {
     /*background-color: #556b2f;*/
     /*background-color: #828e84;*/
     background-color: #667569;
+    margin-bottom: 48px;
 }
 
 .brand {
 	margin-bottom: 0px;
-}
+} 
 
 h5.brand {
 	/*color: #e3f2fd;*/
@@ -36,10 +37,6 @@ a.active {
 
 /*Main container*/
 
-/*Carousel option*/
-
-/*Main container*/
-
 body {
     padding-top: 48px;
     height: 100%;
@@ -49,78 +46,52 @@ body {
 #main-container {
     height: 100%;
     width: 100%;
+    text-align: center;
+    background-color: #f7f7f7;
+    padding-bottom: 120px;
 }
 
-#image1 {
+#photo-box1 {
+    background-color: red;
+    height: 100%;
     background-image: url('/static/images/welcome1_md.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 33.3%;
-    width: 100%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#image2 {
+#photo-box2 {
+    background-color: red;
+    height: 100%;
     background-image: url('/static/images/welcome2_md.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 33.3%;
-    width: 100%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
-#image3 {
+#photo-box3 {
+    background-color: red;
+    height: 100%;
     background-image: url('/static/images/welcome3_md.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 33.3%;
-    width: 100%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#tcontain {
-    width: 40%;
-    height: 65%;
+#info-box {
+    display: inline-block;
+    width: 90%;
+    height: 33%;
+    background-color: #f8f8ff;
+    margin: 15px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 3px grey;
+    border: 1px black;
 }
 
-#box {
-    background-color: gray;
-    /*background-color: #69844D;*/
-    width: 100%;
-    height: 100%;
-    opacity: 0.4;
-}
-
-#text {
-    bottom: 10em;
-    position: relative;
-    text-align: center;
-}
-
-.container-fluid {
-    background-color: #fffef7;
-    padding: 0;
-}
-
-h1 {
-    color: white;
-    opacity: 1;
-}
 
 
 /*Footer:*/
 #footer-container {
 	padding: 0;
+    /*margin-top: 120px;*/
 }
 
 .footer-row {
