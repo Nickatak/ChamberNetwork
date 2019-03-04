@@ -1,0 +1,71 @@
+{% extends 'public_base.html' %}
+{% load static %}
+
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/resources.css" %}'>
+{% endblock %}
+
+
+{% block header %}
+    <div class="container-fluid" id="navbar-container">
+        <nav class="navbar navbar-expand-sm fixed-top">
+
+            <!-- Logo -->
+            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+
+            <!-- Navbar links -->
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'public:welcome' %}">WELCOME</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
+                </li>
+                <!-- <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+                </li> -->
+            </ul>
+
+            <!-- Navbar right -->
+            <ul class="navbar-nav ml-auto">
+
+                <!-- Inline login form: -->
+                <!-- <form class="form-inline" action="">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Email">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Password">
+                    <button class="btn btn-info" type="submit">LOGIN</button>
+                </form> -->
+
+                <!-- Link to external login: -->
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}
+
+
+{% block main_content %}
+    <div class="container-fluid" id="main-container">
+        <div id="mycarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-fluid" src='{% static "images/about_lg.jpg" %}' alt="" class="img-responsive">
+                    <div class="carousel-caption">
+                        <h3>Resources</h3><br>
+                        <p>Our members might find the following resources helpful:</p>
+                        <ul>
+                        <li>Blah blah blah</li>
+                        <li>Blah blah blah</li>
+                        <li>Blah blah blah</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
