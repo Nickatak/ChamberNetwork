@@ -1,6 +1,6 @@
 /*Navbar:*/
 .navbar {
-	background-color: #2c3b4b;
+	background-color: #667569;
 }
 
 .brand {
@@ -8,36 +8,36 @@
 }
 
 h5.brand {
-	color: #e3f2fd;
+	color: #ace5ee;
 	font-family: "Arial";
 }
 
 a.nav-link {
-	color: white;
+	color: #ffffff;
 }
 
 a.active {
-	color: #808080;
+	color: #989898;
 }
 
 .navbar .navbar-nav li a:hover {
-	color: #808080;
+	color: #989898;
 }
 
 /*Main container*/
 
 .container-fluid {
-	background-color: #fffef7;
+	background-color: #f7f7f7;
 	padding: 0;
 }
 
 h3 {
-	color: white;
+	color: #ffffff;
 	padding-top: 40px;
 }
 
 p {
-	color: white;
+	color: #ffffff;
 }
 
 .carousel-caption {
@@ -57,7 +57,7 @@ p {
 }
 
 footer {
-	background-color: #2c3b4b;
+	background-color: #667569;
 	padding-top: 30px;
 	padding-bottom: 4px;
 	padding-left: 30px;
@@ -68,19 +68,19 @@ footer {
 }
 
 .container2 p {
-	color: white;
+	color: #ffffff;
 }
 
 .container1 h5 {
-	color: white;
+	color: #ffffff;
 }
 
 .container1 h4 {
-	color: white;
+	color: #ffffff;
 }
 
 .container1 p {
-	color: white;
+	color: #ffffff;
 }
 
 .footer-links li a:hover {
@@ -89,6 +89,6 @@ footer {
 }
 
 .footer-links li a h5:hover {
-    color: #808080;
+    color: #989898;
     /*border-bottom: 3px solid white;*/
 }

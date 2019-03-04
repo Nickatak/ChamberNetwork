@@ -1,0 +1,14 @@
+Color palette:
+
+navbar/footer green: #667569
+brand: #ace5ee
+link active/hover: #989898
+
+page background: #f7f7f7
+page foreground (white): #ffffff 
+
+green complimentary: ??
+
+Title font: ??
+
+shadow effect (over picture): #36454f

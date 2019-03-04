@@ -19,12 +19,13 @@ html {
 h5.brand {
 	/*color: #e3f2fd;*/
     /*color: #92A095;*/
-    color: #dbe9f4;
+    /*color: #dbe9f4;*/
+    color: #ace5ee;
 	font-family: "Arial";
 }
 
 a.nav-link {
-	color: white;
+	color: #ffffff;
 }
 
 a.active {
