@@ -68,6 +68,24 @@ def success(req):
 	return render(req, 'html/success.html', context)
 
 
+def sponsors(req):
+
+	context = {
+		'page_name' : 'Sponsors',
+	}
+
+	return render(req, 'html/sponsors.html', context)
+
+
+def resources(req):
+
+	context = {
+		'page_name' : 'Resources',
+	}
+
+	return render(req, 'html/resources.html', context)
+
+
 def login_display(req):
 
 	context = {
