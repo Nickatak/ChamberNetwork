@@ -102,3 +102,11 @@ def pw_reset_display(req):
     }
 
     return render(req, 'html/pw_reset.html', context)
+
+
+def token_sent(req):
+    context = {
+        'page_name' : 'Reset Password',
+    }
+
+    return render(req, 'html/token_sent.html', context)
