@@ -116,7 +116,14 @@ def edit_member(req, member_id):
 
 
 def get_reset_token(req):
-    pass
+    if req.method == 'POST':
+        if Member.objects.filter(email=req.POST['email']).exists():
+            token = Member.objects.generate_new_token(email)
+            Email.objects.send_token(email, token)
+
+        return redirect('public:token_sent')
+
+    return redirect('public:pw_reset_display')
 
 
 def pw_reset_handler(req, reset_token):
