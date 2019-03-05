@@ -8,101 +8,118 @@
 
 
 {% block header %}
-    <div class="container-fluid" id="navbar-container">
-        <nav class="navbar navbar-expand-sm fixed-top">
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
 
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+    <!-- Logo -->
+    <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a>
 
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link active" href="{% url 'public:welcome' %}">WELCOME</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
-                </li>
-                <!-- <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
-                </li> -->
-            </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Link to external login: -->
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
-                </li>
-            </ul>
-        </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <!-- Navbar links -->
+    <ul class="navbar-nav mr-4">
+        <li class="navbar-item">
+            <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
+        </li>
+        <li class="navbar-item">
+            <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
+        </li>
+        <!-- <li class="navbar-item">
+            <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+        </li> -->
+    </ul>
+
+    <!-- Navbar right -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Link to external login: -->
+        <li class="navbar-item">
+            <a class="nav-link active" href="">LOGIN</a>
+        </li>
+    </ul>
     </div>
+</nav>
 {% endblock %}
 
 {% block main_content %}
+<!-- Main content: -->
+<div class="container-fluid" id="main-container">
 
-<div class="container-fuid" id="main-container">
+    <!-- First card: -->
     <div class="container py-3" id="info-box">
-        <div class="card">
-            <div class="row">
-                <div class="col-md-4" id="photo-box1">
-                    <img class="w-100" src='{% static "images/carousel1.jpg" %}'>
+
+        <div class="card mb-3 justify-content-center">
+
+            <div class="row no-gutters">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src='{% static "images/carousel1.jpg" %}' class="card-img">
                 </div>
-                <div class="col-md-8 px-3">
-                    <div class="card-block px-3">
+
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    <div class="card-body">
                         <h1>Connect</h1>
                         <h3>with musicians in your area.</h3>
                         <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
                     </div>
-
                 </div>
-            </div> 
+            <!-- End row no gutters: -->
+            </div>    
+        <!-- End card: -->
         </div>
+    <!-- End info box: -->
     </div>
 
+    <!-- Second card: -->
     <div class="container py-3" id="info-box">
-        <div class="card">
-            <div class="row">
-                <div class="col-md-4" id="photo-box1">
-                    <img class="w-100" src='{% static "images/carousel2.jpg" %}'>
+
+        <div class="card mb-3 justify-content-center">
+
+            <div class="row no-gutters">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src='{% static "images/carousel2.jpg" %}' class="card-img">
                 </div>
-                <div class="col-md-8 px-3">
-                    <div class="card-block px-3">
+
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    <div class="card-body">
                         <h1>Perform</h1>
                         <h3>with new friends.</h3>
                         <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p>
                     </div>
-
                 </div>
-            </div> 
+            <!-- End row no gutters: -->
+            </div>    
+        <!-- End card: -->
         </div>
+    <!-- End info box: -->
     </div>
 
+    <!-- Third card: -->
     <div class="container py-3" id="info-box">
-        <div class="card">
-            <div class="row">
-                <div class="col-md-4" id="photo-box1">
-                    <img class="w-100" src='{% static "images/carousel3.jpg" %}'>
+
+        <div class="card mb-3 justify-content-center">
+
+            <div class="row no-gutters">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src='{% static "images/carousel3.jpg" %}' class="card-img">
                 </div>
-                <div class="col-md-8 px-3">
-                    <div class="card-block px-3">
+
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    <div class="card-body">
                         <h1>Share</h1>
                         <h3>your passion with others.</h3>
                         <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_coach' %}" role="button">REGISTER AS COACH</a></p>
                     </div>
-
                 </div>
-            </div> 
+            <!-- End row no gutters: -->
+            </div>    
+        <!-- End card: -->
         </div>
+    <!-- End info box: -->
     </div>
-
-
-
-
     
-<!-- End main container: -->  
+<!-- End main container: -->
 </div>
 
 

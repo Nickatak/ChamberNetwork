@@ -21,7 +21,7 @@ h5.brand {
     /*color: #92A095;*/
     /*color: #dbe9f4;*/
     color: #ace5ee;
-	font-family: "Arial";
+	font-family: "Roboto";
 }
 
 a.nav-link {
@@ -48,7 +48,8 @@ body {
     height: 100%;
     width: 100%;
     text-align: center;
-    background-color: #f7f7f7;
+    /*background-color: #f7f7f7;*/
+    background-color: red;
     padding-bottom: 15%;
 }
 
@@ -56,11 +57,15 @@ body {
     display: inline-block;
     width: 90%;
     height: 33%;
-    background-color: #97A59A;
+    /*background-color: #97A59A;*/
     border-radius: 2px;
-    box-shadow: 3px 3px 3px grey;
+    /*box-shadow: 3px 3px 3px grey;*/
     border: 1px black;
-    margin: 2%;
+    margin: 3%;
+}
+
+.card {
+    box-shadow: 3px 3px 3px grey;
 }
 
 #photo-box1 {
@@ -97,7 +102,7 @@ body {
 /*Footer:*/
 #footer-container {
 	padding: 0;
-    /*margin-top: 120px;*/
+    margin-top: 5%;
 }
 
 .footer-row {
