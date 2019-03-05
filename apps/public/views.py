@@ -96,7 +96,7 @@ def login_display(req):
 	return render(req, 'html/login.html', context)
 
 
-def pw_reset(req):
+def pw_reset_display(req):
     context = {
         'page_name' : 'Reset Password',
     }
