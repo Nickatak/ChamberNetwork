@@ -121,9 +121,7 @@ def get_reset_token(req):
             token = Member.objects.generate_new_token(email)
             Email.objects.send_token(email, token)
 
-        return redirect('public:token_sent')
-
-    return redirect('public:pw_reset_display')
+    return redirect('public:token_sent')
 
 
 def pw_reset_handler(req, reset_token):
