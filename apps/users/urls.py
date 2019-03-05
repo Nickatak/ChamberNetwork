@@ -14,5 +14,5 @@ urlpatterns = [
 
     re_path('edit/(?P<member_id>\d+)/', views.edit_member, name='edit_member'),
     re_path('(?P<member_id>\d+)/', views.individual_member, name="individual_member"),
-    re_path('reset/)?P<reset_token>[a-zA-Z0-9+/]+={0,2})/', views.password_reset, name='password_reset'),
+    re_path('reset/(?P<reset_token>[A-Z, a-z, 0-9]{32})/', views.password_reset, name='password_reset'),
 ]
