@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block main_content %}
-    <form action="{% url 'users:pw_reset_handler' %}" method="post">
+    <form action="{% url 'users:get_reset_token' %}" method="post">\
+        {% csrf_token %}
         <label for="email">Email: <input type="text" placeholder="Email" name="email"></label>
         <input type="submit" value="Send reset email">
     </form>
