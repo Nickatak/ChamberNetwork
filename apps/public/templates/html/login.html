@@ -8,102 +8,76 @@
 
 
 {% block header %}
-    <div class="container-fluid" id="navbar-container">
-        <nav class="navbar navbar-expand-sm fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
 
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+    <!-- Logo -->
+    <a class="navbar-brand brand" href="#">Houston Chamber Music Network</a>
 
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:welcome' %}">WELCOME</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
-                </li>
-                <!-- <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
-                </li> -->
-            </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Link to external login: -->
-                <li class="navbar-item">
-                    <a class="nav-link active" href="">LOGIN</a>
-                </li>
-            </ul>
-        </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <!-- Navbar links -->
+    <ul class="navbar-nav mr-4">
+        <li class="navbar-item">
+            <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
+        </li>
+        <li class="navbar-item">
+            <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
+        </li>
+        <!-- <li class="navbar-item">
+            <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+        </li> -->
+    </ul>
+
+    <!-- Navbar right -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Link to external login: -->
+        <li class="navbar-item">
+            <a class="nav-link active" href="">LOGIN</a>
+        </li>
+    </ul>
     </div>
+</nav>
 {% endblock %}
 
 
 {% block main_content %}
-    <div class="container-fluid" id="main-container">
-        <div id="mycarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="img-fluid" src='{% static "images/login.jpg" %}' alt="" class="img-responsive">
-                    <div class="carousel-caption">
-                        <!-- <div class="container-fluid" id="form-container">
-                            <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4">
-                                <form role="form" action="" method="POST">
-                                    <h1>Login form</h1>
-                                    {% csrf_token %}
-                                    <input type="text" name="email" placeholder="Email"></input>
-                                    <input type="password" name="password" placeholder="Password"></input>
-                                    <button type="submit" class="btn btn-dark">Login</button>
-                                </form>
+
+                <!-- Old img -->
+                <!-- <img class="img-fluid" src='{% static "images/login.jpg" %}' alt="" class="img-responsive"> -->
+
+    <header class="header">
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-xs-12 col-sm-8 col-md-4">
+                        <form role="form" action="" id="form-container" method="post">
+                            <h3 class="text-center"> MEMBER LOG IN </h3><br>
+                            <div class="panel panel-default">
+                                <img class="col-md-12" src='{% static "images/divider9.png" %}' alt="" class="img-fluid">
                             </div>
-                        </div> -->
-
-                        <div class="login-form-container">
-
-                            <form role="form" action="{% url 'users:login_handler' %}" id="form-container" method="post">
-                                {% csrf_token %}
-                                <h3>MEMBER LOG IN</h3><br>
-                                <div class="panel panel-default">
-                                    <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                            <div class="form-group mt-4">
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                            </div>
+                            <div class="form-group mt-4">
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-reg btn-info btn-block mt-4">LOGIN</button>
+                            <div class="col-md-12">
+                                <div class="login-links text-center mt-4">
+                                    <a href="#">Forgot Password?</a>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="text" name="email" id="email" class="form-control input-sm" placeholder="Email" value="{{ old_data.email }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                            <input type="submit" value="LOGIN" class="btn btn-reg btn-info btn-block">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="login-links">
-                                            <a href="#">Forgot Password?</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            
-                        <!-- End login-form-container div: -->
-                        </div>
-
-                    <!-- End div for carousel caption: -->
+                            </div>
+                        </form>
                     </div>
-           
-            
-            <!-- End div for carousel inner: -->
+                </div>
             </div>
-        <!-- End div for carousel: -->
         </div>
-    <!-- End div for main container: -->
-    </div>
+    </header>
+
+
+
 {% endblock %}
