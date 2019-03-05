@@ -32,7 +32,7 @@ a.active {
     color: #989898;
 }
 
-.navbar .navbar-nav li a:hover {
+.navbar .navbar-dark li a:hover {
 	color: #989898;
 }
 
@@ -48,8 +48,8 @@ body {
     height: 100%;
     width: 100%;
     text-align: center;
-    /*background-color: #f7f7f7;*/
-    background-color: red;
+    background-color: #f7f7f7;
+    /*background-color: red;*/
     padding-bottom: 15%;
 }
 
