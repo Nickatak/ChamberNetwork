@@ -1,0 +1,10 @@
+{% extends 'public_base.html' %}
+{% load static %}
+
+{% block main_content %}
+    <form action="{% url 'users:pw_reset_handler' %}" method="post">
+        <label for="email">Email: <input type="text" placeholder="Email" name="email"></label>
+        <input type="submit" value="Send reset email">
+    </form>
+
+{% endblock %}
