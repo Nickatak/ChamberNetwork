@@ -115,6 +115,11 @@ def edit_member(req, member_id):
         return render(req, 'html/edit_member.html', context)
 
 
+def password_reset(req, reset_token):
+    print('-' * 80)
+    print(reset_token)
+    print('-' * 80)
+
 def logout_handler(req):
     req.session.pop('uid', None)
 
