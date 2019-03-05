@@ -115,6 +115,10 @@ def edit_member(req, member_id):
         return render(req, 'html/edit_member.html', context)
 
 
+def get_reset_token(req):
+    pass
+
+
 def pw_reset_handler(req, reset_token):
     print('-' * 80)
     print(reset_token)
