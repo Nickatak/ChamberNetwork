@@ -16,4 +16,5 @@ urlpatterns = [
 	path('sponsors/', views.sponsors, name="sponsors"),
 	path('resources/', views.resources, name="resources"),
     path('reset/', views.pw_reset_display, name='pw_reset_display'),
+    path('reset-sent/', views.token_sent, name='token_sent'),
 ]
