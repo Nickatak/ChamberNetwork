@@ -10,16 +10,25 @@ body {
     font-family: 'Noto Serif', serif;*/
 }
 
-/*navbar:*/
+html {
+	height: 100%;
+	width: 100%;
+}
+
+/*Navbar:*/
 
 /*Background color:*/
 .navbar {
 	background-color: #667569;
 }
 
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
 /*Brand color and font:*/
 .navbar-custom .navbar-brand {
-	margin-bottom: 1px;
+	margin-bottom: 3px;
 	color: #ace5ee;
 	font-family: 'Noto Serif', serif;
 }
@@ -27,11 +36,9 @@ body {
 /*Link color (not active or hover):*/
 .navbar-custom .navbar-nav .nav-link {
 	color: #ffffff;
-	font-family: 'Oxygen', sans-serif;
 }
 
 /*Link active color:*/
-
 
 /*Link hover color:*/
 
