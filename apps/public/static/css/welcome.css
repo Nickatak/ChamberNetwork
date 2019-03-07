@@ -54,6 +54,7 @@ body {
     padding-top: 3%;
     padding-bottom: 3%;
     text-align: center;
+    overflow-x: hidden;
 }
 
 #info-box {
@@ -79,10 +80,17 @@ body {
 /*Footer:*/
 footer {
     background-color: #667569;
-    padding-top: 30px;
-    padding-bottom: 4px;
-    padding-right: 4%;
     color: white;
+}
+
+.footer-container {
+    background-color: #667569;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#contact {
+    padding-right: 2%;
 }
   
 a {
