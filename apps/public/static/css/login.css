@@ -99,47 +99,31 @@ html {
 
 /*Footer:*/
 footer {
-	background-color: #667569;
-	padding-top: 30px;
-	padding-bottom: 4px;
-	padding-left: 30px;
+    background-color: #667569;
+    color: white;
 }
 
-.footer-row {
-	margin: 0;
+.footer-container {
+    background-color: #667569;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
 }
 
-#footer-container {
-	padding: 0;
+#contact {
+    padding-right: 2%;
+}
+  
+a {
+    color:white;
 }
 
-.container2 {
-	text-align: center;
-}
-
-.container2 p {
-	color: #ffffff;
-}
-
-.container1 h5 {
-	color: #ffffff;
-}
-
-.container1 h4 {
-	color: #ffffff;
-}
-
-.container1 p {
-	color: #ffffff;
-}
-
-.footer-links li a:hover {
+a:hover {
+    /*color: #989898;*/
+    /*color: grey;*/
+    color: #a9a9a9;
     text-decoration: none;
-    /*border-bottom: 6px solid white;*/
 }
 
-.footer-links li a h5:hover {
-    color: #989898;
-    /*border-bottom: 3px solid white;*/
-}
+
 
