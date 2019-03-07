@@ -39,9 +39,15 @@ html {
 }
 
 /*Link active color:*/
-
+.navbar-custom .nav-item.active .nav-link {
+    color: #989898;
+}
 
 /*Link hover color:*/
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+color: #989898;
+}
 
 .main{
     height:100%;

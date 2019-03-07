@@ -41,15 +41,11 @@ body {
     color: #ffffff;
 }
 
-/*Link active color:*/
-/*.navbar-custom .navbar-nav .navbar-item li a:active {
-    color: red;
-}*/
-
 /*Link hover color:*/
-/*.navbar-custom .navbar-nav .navbar-item .nav-link li a:hover {
-    color: red;
-}*/
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+color: #989898;
+}
 
 
 /*Main*/
