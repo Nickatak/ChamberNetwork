@@ -47,7 +47,16 @@ body {
     width:100%;
 }
 
+.container-fluid {
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /*background-color: #f7f7f7;*/
+    background-color: blue;
+    margin: auto;
+}
 
+/*Form styling:*/
 .panel-default {
 	padding-top: 14px;
 	padding-bottom: 14px;
@@ -58,6 +67,52 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+#inner-form-container h3 {
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.panel-default1 h5 {
+    text-align: center;
+}
+
+.panel-default {
+    padding-top: 15px;
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+#form-container h5 {
+    margin-top: 20px;
+    /*margin-bottom: 5px;*/
+}
+
+.error-message p {
+    color: red;
+}
+
+.btn-reg {
+    margin-top: 40px;
+}
+
+#phone-row h5 {
+    margin-top: 5px;
+}
+
+#area-row h5 {
+    margin-top: 5px;
+}
+
+#area-row {
+    margin-bottom: 20px;
+}
+
+/*Overlay:*/
 
 #overlay1 {
     position: fixed; /* Sit on top of the page content */
@@ -135,55 +190,7 @@ img {
 }
 
 /*Form:*/
-#inner-form-container h3 {
-	color: black;
-    font-weight: bold;
-}
 
-.container-fluid {
-    margin-top: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    /*background-color: #f7f7f7;*/
-    background-color: blue;
-}
-
-.panel-default1 h5 {
-    text-align: center;
-}
-
-.panel-default {
-    padding-top: 15px;
-}
-
-.panel-heading {
-	text-align: center;
-}
-
-#form-container h5 {
-	margin-top: 20px;
-	/*margin-bottom: 5px;*/
-}
-
-.error-message p {
-    color: red;
-}
-
-.btn-reg {
-	margin-top: 40px;
-}
-
-#phone-row h5 {
-    margin-top: 5px;
-}
-
-#area-row h5 {
-    margin-top: 5px;
-}
-
-#area-row {
-    margin-bottom: 20px;
-}
 
 
 /*Footer:*/
