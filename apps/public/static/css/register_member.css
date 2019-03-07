@@ -3,38 +3,50 @@ body {
     /*font-family: 'Rubik', sans-serif;*/
     /*font-family: 'Arimo', sans-serif;*/
     /*font-family: 'Fira Sans', sans-serif;*/
-    /*font-family: 'Roboto', sans-serif;*/
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Mukta', sans-serif;*/
     /*font-family: 'Lato', sans-serif;
     font-family: 'Lora', serif;
     font-family: 'Noto Serif', serif;*/
 }
 
 /*navbar:*/
-.brand {
-	margin-bottom: 0px;
-}
 
-h5.brand {
-	color: #ace5ee;
-	font-family: "Arial";
-}
-
+/*Background color:*/
 .navbar {
-	background-color: #667569;
+    background-color: #667569;
 }
 
-a.nav-link {
-	color: #ffffff;
+/*Brand color and font:*/
+.navbar-custom .navbar-brand {
+    margin-bottom: 1px;
+    color: #ace5ee;
+    font-family: 'Noto Serif', serif;
 }
 
-a.active {
-	color: #989898;
+/*Link color (not active or hover):*/
+.navbar-custom .navbar-nav .nav-link {
+    color: #ffffff;
+    font-family: 'Oxygen', sans-serif;
 }
 
-.navbar .navbar-nav li a:hover {
-	color: #989898;
+/*Link active color:*/
+
+
+/*Link hover color:*/
+
+.main{
+    height:100%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
 }
+
+.container {
+    width:100%;
+}
+
 
 .panel-default {
 	padding-top: 14px;
@@ -46,12 +58,6 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
-
-/*Overlay:*/
-/*.overlay-container {
-    width: 80%;
-    height: 80%;
-}*/
 
 #overlay1 {
     position: fixed; /* Sit on top of the page content */
@@ -134,11 +140,12 @@ img {
     font-weight: bold;
 }
 
-#form-container {
-	margin-top: 50px;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	background-color: #f7f7f7;
+.container-fluid {
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /*background-color: #f7f7f7;*/
+    background-color: blue;
 }
 
 .panel-default1 h5 {
