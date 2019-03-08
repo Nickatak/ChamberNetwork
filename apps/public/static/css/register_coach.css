@@ -49,118 +49,106 @@ html {
 color: #989898;
 }
 
-.main{
+.main {
     height:100%;
     width:100%;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    /*background-color: #f7f7f7;*/
+    background-image: url('/static/images/login.jpg');
+    background-attachment: fixed;
+    background-color: red;
+    background-size: cover;
+    background-position: center;
 }
 
-.container {
+#form-container {
+    background-color: blue;
+    padding: 30px;
+    position: absolute;
+    top: 25vh;
+}
+
+h1 {
+    padding-top: 60px;
+}
+
+/*.container {
     width:100%;
     background-color: #f7f7f7;
-}
+}*/
 
-.container-fluid {
+/*.container-fluid {
     margin-top: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: #f7f7f7;
     margin-left: auto;
     margin-right: auto;
-}
+}*/
 
 /*Form styling:*/
-.panel-default {
+/*.panel-default {
     padding-top: 14px;
     padding-bottom: 14px;
-}
+}*/
 
-img {
+/*img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
+}*/
 
-#inner-form-container {
+/*#inner-form-container {
     background-color: #f7f7f7;
     margin-left: auto;
     margin-right: auto;
-}
+}*/
 
-#inner-form-container h3 {
+/*#inner-form-container h3 {
     color: black;
     font-weight: bold;
-}
+}*/
 
-
-
-.panel-default1 h5 {
+/*.panel-default1 h5 {
     text-align: center;
-}
+}*/
 
-.panel-default {
+/*.panel-default {
     padding-top: 15px;
-}
+}*/
 
-.panel-heading {
+/*.panel-heading {
     text-align: center;
-}
+}*/
 
-#form-container h5 {
+/*#form-container h5 {
     margin-top: 20px;
-    /*margin-bottom: 5px;*/
-}
+}*/
 
-.error-message p {
+/*.error-message p {
     color: red;
-}
+}*/
 
-.btn-reg {
+/*.btn-reg {
     margin-top: 40px;
-}
+}*/
 
-#phone-row h5 {
+/*#phone-row h5 {
     margin-top: 5px;
-}
+}*/
 
-#area-row h5 {
+/*#area-row h5 {
     margin-top: 5px;
-}
+}*/
 
-#area-row {
+/*#area-row {
     margin-bottom: 20px;
-}
+}*/
 
 /*Overlay:*/
 
-button {
+/*button {
     margin-bottom: 30px;
-}
+}*/
 
-#overlay {
-    position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; 
-    margin: 0 auto;
-    top: 0; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-}
-
-
-#overlay-text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 12px;
-    color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-}
