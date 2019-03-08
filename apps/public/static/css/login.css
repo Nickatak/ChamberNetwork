@@ -70,17 +70,10 @@ color: #989898;
 #form-container {
 	padding: 30px;
 	background: #fff;
-	/*box-shadow: 0px 0px 10px 0px #000;*/
 	position: absolute;
 	top: 25vh;
-  	/*max-width: 350px;*/
-  	/*width: 100%;*/
-  	/*background-color: #f7f7f7;*/
-  	/*margin: 0 auto;*/
   	border-radius: 2px;
   	box-shadow: 3px 3px 3px #36454f;
-/*  	overflow: hidden;
-  	margin-bottom: 80px;*/
 }
 
 .panel-heading {
@@ -106,34 +99,3 @@ color: #989898;
 .password-link a {
 	color: #17a2b8;
 }
-
-/*Footer:*/
-footer {
-    background-color: #667569;
-    color: white;
-}
-
-.footer-container {
-    background-color: #667569;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 3%;
-}
-
-#contact {
-    padding-right: 2%;
-}
-  
-a {
-    color:white;
-}
-
-a:hover {
-    /*color: #989898;*/
-    /*color: grey;*/
-    color: #a9a9a9;
-    text-decoration: none;
-}
-
-
-

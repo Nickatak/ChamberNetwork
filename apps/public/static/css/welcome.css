@@ -99,8 +99,6 @@ a {
 }
 
 a:hover {
-    /*color: #989898;*/
-    /*color: grey;*/
     color: #a9a9a9;
     text-decoration: none;
 }
