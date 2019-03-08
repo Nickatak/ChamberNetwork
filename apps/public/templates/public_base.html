@@ -1,72 +1,72 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-	<title>HCMN : {{ page_name }}</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<head>
+		<title>HCMN : {{ page_name }}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<!-- Load CSNs (same for all templates): -->
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href='{% static "css/public_base.css" %}'>
+		<!-- Load CSNs (same for all templates): -->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
-	<!-- CSS file for footers: -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 
-	<!-- Popper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<!-- Google fonts: -->
+		<link href="https://fonts.googleapis.com/css?family=Arimo|Fira+Sans|Lato|Lora|Mukta|Noto+Serif|Oxygen|Roboto|Rubik" rel="stylesheet"> 
 
-	<!-- Google fonts: -->
-	 <link href="https://fonts.googleapis.com/css?family=Arimo|Fira+Sans|Lato|Lora|Mukta|Noto+Serif|Oxygen|Roboto|Rubik" rel="stylesheet"> 
+		<!-- Global css: -->
+		<link rel="stylesheet" href='{% static "css/public_base.css" %}'>
 
-	<!-- Load CSS files (from each template): -->
-	{% block load_css %}
-	{% endblock %}
-</head>
+		<!-- Load CSS files (from each template): -->
+		{% block load_css %}
+		{% endblock %}
+	</head>
 
-<body>
-	<!-- Header (from each template): -->
-	{% block header %}
-	{% endblock %}
+	<body>
+		<!-- Header (from each template): -->
+		{% block header %}
+		{% endblock %}
 
-	<!-- Main body (from each template): -->
-	{% block main_content %}
-	{% endblock %}
+		<!-- Main body (from each template): -->
+		{% block main_content %}
+		{% endblock %}
 
-	<!-- Footer (same for all templates): -->
-	<footer class="pt-0">
-  		<div class="container-fluid footer-container text-center text-md-left">
-    		<div class="row">
-      			<div class="col-md-9 mt-md-0 mt-3">
-        			<ul class="footer-links list-unstyled">
-              			<li>
-                			<a href="{% url 'public:about' %}"><h5>ABOUT US</h5></a>
-              			</li>
-              			<li>
-                			<a href="{% url 'public:resources' %}"><h5>RESOURCES</h5></a>
-              			</li>
-              			<li>
-                			<a href="{% url 'public:sponsors' %}"><h5>SPONSORS</h5></a>
-              			</li>
-      			</div>
+		<!-- Footer (same for all templates): -->
+		<footer class="pt-0">
+	  		<div class="container-fluid footer-container text-center text-md-left">
+	    		<div class="row">
+	      			<div class="col-md-9 mt-md-0 mt-3">
+	        			<ul class="footer-links list-unstyled">
+	              			<li>
+	                			<a href="{% url 'public:about' %}"><h5>ABOUT US</h5></a>
+	              			</li>
+	              			<li>
+	                			<a href="{% url 'public:resources' %}"><h5>RESOURCES</h5></a>
+	              			</li>
+	              			<li>
+	                			<a href="{% url 'public:sponsors' %}"><h5>SPONSORS</h5></a>
+	              			</li>
+	      			</div>
 
-      			<hr class="clearfix w-100 d-md-none pb-0">
+	      			<hr class="clearfix w-100 d-md-none pb-0">
 
-      			<div class="col-md-3 mb-md-0 mb-3" id="contact">
-          			<h5><strong>CONTACT EMAIL:</strong></h5>
-              		<p>michael@houstonchambermusic.org</p><br>
-        		</div>
-    		</div>
-  		</div>
-  		<div class="footer-copyright text-center py-2">Web Design ©2019 Ad Astra Web Services</div>
-	</footer>
-</body>
+	      			<div class="col-md-3 mb-md-0 mb-3" id="contact">
+	          			<h5><strong>CONTACT EMAIL:</strong></h5>
+	              		<p>michael@houstonchambermusic.org</p><br>
+	        		</div>
+	    		</div>
+	  		</div>
+	  		<div class="footer-copyright text-center py-2">Web Design ©2019 Ad Astra Web Services</div>
+		</footer>
+	</body>
 
 </html>
