@@ -55,18 +55,17 @@ color: #989898;
     margin: 0;
     padding: 0;
     /*background-color: #f7f7f7;*/
-    background-image: url('/static/images/login.jpg');
-    background-attachment: fixed;
     background-color: red;
-    background-size: cover;
-    background-position: center;
+}
+
+.inner-container {
+    background-color: orange;
 }
 
 #form-container {
+    margin: auto;
     background-color: blue;
-    padding: 30px;
-    position: absolute;
-    top: 25vh;
+    padding-top: 30%;
 }
 
 h1 {

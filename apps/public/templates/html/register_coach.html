@@ -51,11 +51,22 @@
 {% block main_content %}
 <header class="main">
     <div class="container">
-        <div class="container-fluid">
+        <div class="container-fluid inner-container">
             <div class="row justify-content-center">
                 <div class="col-xs-12 col-sm-10 col-md-8">
                     <form role="form" action="{% url 'users:coach_registration_handler' %}" id="form-container" method="post">
-                        <h1>COACH REG PAGE</h1>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Coach Registration Form</h3>
+                            </div>
+                        </div>
+
+                        <!-- Panel for curlicue divider: -->
+                        <div class="panel panel-default">
+                            <img class="col-xs-10 col-sm-10 col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                        </div>
+         
                     
                     </form>
                 <!-- End div for col declaration: -->
