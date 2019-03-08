@@ -7,65 +7,58 @@
 
 
 {% block header %}
-    <div class="container-fluid" id="navbar-container">
-        <nav class="navbar navbar-expand-sm fixed-top">
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
 
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+    <!-- Logo -->
+    <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a>
 
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:welcome' %}">WELCOME</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
-                </li>
-                <!-- <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
-                </li> -->
-            </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <!-- Inline login form: -->
-                <!-- <form class="form-inline" action="">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Email">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Password">
-                    <button class="btn btn-info" type="submit">LOGIN</button>
-                </form> -->
+        <!-- Navbar links -->
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
+            </li>
 
-                <!-- Link to external login: -->
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
-                </li>
-            </ul>
-        </nav>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
+            </li>
+
+            <!-- <li class="navbar-item">
+                <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+            </li> -->
+        </ul>
+
+        <!-- Navbar right -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Link to external login: -->
+            <li class="nav-item">
+                <a class="nav-link" href="">LOGIN</a>
+            </li>
+        </ul>
     </div>
+</nav>
 {% endblock %}
 
 
 {% block main_content %}
-    <div class="container-fluid" id="main-container">
-        <div id="mycarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="img-fluid" src='{% static "images/about_lg.jpg" %}' alt="" class="img-responsive">
-                    <div class="carousel-caption">
-                        <h3>Resources</h3><br>
-                        <p>Our members might find the following resources helpful:</p>
-                        <ul>
-                        <li>Blah blah blah</li>
-                        <li>Blah blah blah</li>
-                        <li>Blah blah blah</li>
-                        </ul>
-                    </div>
+<header class="main">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-10 col-md-10">
+                    <br><br><br>
+                    <h4>Our members might find the following resources helpful.</h4><br><br>
+                    <h5><a class="link" href="https://imslp.org/">• International Music Score Library Project (IMSLP)</h5><br>
+                    <h5><a class="link" href="https://www.musictheory.net/">• musictheory.net</h5><br>
                 </div>
             </div>
         </div>
     </div>
+</header>
+
 {% endblock %}

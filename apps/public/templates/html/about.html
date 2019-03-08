@@ -20,11 +20,11 @@
 
         <!-- Navbar links -->
         <ul class="navbar-nav mr-4">
-            <li class="navbar-item">
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
             </li>
 
-            <li class="navbar-item">
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
             </li>
 
@@ -36,8 +36,8 @@
         <!-- Navbar right -->
         <ul class="navbar-nav ml-auto">
             <!-- Link to external login: -->
-            <li class="navbar-item">
-                <a class="nav-link active" href="">LOGIN</a>
+            <li class="nav-item">
+                <a class="nav-link" href="">LOGIN</a>
             </li>
         </ul>
     </div>
@@ -46,23 +46,23 @@
 
 
 {% block main_content %}
-    <header class="main">
-        <div class="container">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-xs-12 col-sm-10 col-md-10">
-                        <h2>About Houston Chamber Music Network</h2><br>
-                        <h5>Houston Chamber Music Network is an organization designed to help amateur musicians connect with other amateur musicians in order to perform chamber music. Whether you are an oboist looking to find four other musicians to play a wind quintet or you belong to a string quartet that is looking for a flutist to round out a flute quintet, HCMN makes it easy to find musicians in your area with compatible skill levels.</h5><br>
-                        <h5>There are several ways to participate in Houston Chamber Music Network:</h5><br>
-                        <h5>• Look for other players for a one-time gig.</h5>
-                        <h5>• Look for other players with the goal of putting on a house concert.</h5>
-                        <h5>• Look for a substitute player to fill in for your group while one of your members is unavailable.</h5><br>
-                        <h5>If you are striving to improve your playing, we also have professional musicians in our network who are available to act either as coaches or as "ringers." The professionals do charge for their time and you are not required to use a coach.</h5>
+<header class="main">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-10 col-md-10">
+                    <h2>About Houston Chamber Music Network</h2><br>
+                    <h5>Houston Chamber Music Network is an organization designed to help amateur musicians connect with other amateur musicians in order to perform chamber music. Whether you are an oboist looking to find four other musicians to play a wind quintet or you belong to a string quartet that is looking for a flutist to round out a flute quintet, HCMN makes it easy to find musicians in your area with compatible skill levels.</h5><br>
+                    <h5>There are several ways to participate in Houston Chamber Music Network:</h5><br>
+                    <h5>• Look for other players for a one-time gig.</h5>
+                    <h5>• Look for other players with the goal of putting on a house concert.</h5>
+                    <h5>• Look for a substitute player to fill in for your group while one of your members is unavailable.</h5><br>
+                    <h5>If you are striving to improve your playing, we also have professional musicians in our network who are available to act either as coaches or as "ringers." The professionals do charge for their time and you are not required to use a coach.</h5>
 
-                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
 {% endblock %}

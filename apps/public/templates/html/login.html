@@ -21,11 +21,11 @@
 
         <!-- Navbar links -->
         <ul class="navbar-nav mr-4">
-            <li class="navbar-item">
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
             </li>
 
-            <li class="navbar-item">
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
             </li>
 
@@ -37,8 +37,8 @@
         <!-- Navbar right -->
         <ul class="navbar-nav ml-auto">
             <!-- Link to external login: -->
-            <li class="navbar-item">
-                <a class="nav-link active" href="">LOGIN</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
             </li>
         </ul>
     </div>
@@ -47,32 +47,32 @@
 
 
 {% block main_content %}
-    <header class="main">
-        <div class="container">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-xs-12 col-sm-8 col-md-4">
-                        <form role="form" action="" id="form-container" method="post">
-                            <h3 class="text-center"> Member/Coach Login </h3><br>
-                            <div class="panel panel-default">
-                                <img class="col-md-12" src='{% static "images/divider9.png" %}' alt="" class="img-fluid">
+<header class="main">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-10 col-md-4">
+                    <form role="form" action="" id="form-container" method="post">
+                        <h3 class="text-center"> Member/Coach Login </h3><br>
+                        <div class="panel panel-default">
+                            <img class="col-md-12" src='{% static "images/divider9.png" %}' alt="" class="img-fluid">
+                        </div>
+                        <div class="form-group mt-2">
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                        </div>
+                        <div class="form-group mt-4">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-reg btn-info btn-block mt-4">LOGIN</button>
+                        <div class="col-md-12">
+                            <div class="login-links text-center mt-4 password-link">
+                                <a href="#">Forgot Password?</a>
                             </div>
-                            <div class="form-group mt-2">
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
-                            </div>
-                            <div class="form-group mt-4">
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                            </div>
-                            <button type="submit" class="btn btn-reg btn-info btn-block mt-4">LOGIN</button>
-                            <div class="col-md-12">
-                                <div class="login-links text-center mt-4">
-                                    <a href="#">Forgot Password?</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 {% endblock %}

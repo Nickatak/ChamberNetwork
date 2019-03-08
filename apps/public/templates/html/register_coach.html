@@ -11,106 +11,108 @@
 
 
 {% block header %}
-    <div class="container-fluid" id="navbar-container">
-        <nav class="navbar navbar-expand-sm fixed-top">
+<nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
 
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+    <!-- Logo -->
+    <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a>
 
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:welcome' %}">WELCOME</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link active" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
-                </li>
-                <!-- <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
-                </li> -->
-            </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Link to external login: -->
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
-                </li>
-            </ul>
-        </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Navbar links -->
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
+            </li>
+
+            <!-- <li class="navbar-item">
+                <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+            </li> -->
+        </ul>
+
+        <!-- Navbar right -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Link to external login: -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
+            </li>
+        </ul>
     </div>
+</nav>
 {% endblock %}
 
-
 {% block main_content %}
-    <div class="container-fluid" id="form-container">
-        <div class="row" id="form-itself">
-
-            <!-- empty div for spacing: -->
-            <div class="col-md-4"></div>
-
-            <!-- This div contains the actual form: -->
-            <div class="col-md-4" id="inner-form-container">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Coach Registration Form</h3>
-                    </div>
-                </div>
-
-                <!-- Panel for curlicue divider: -->
-                <div class="panel panel-default">
-                    <img class="col-md-6" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
-                </div>
-
-                <!-- Div for overlay: -->
-                <div class="panel panel-default1">
-                    <h5>Before filling out form, please read the following:</h5>
-
-                    <!-- What happens overlay: -->
-                    <div id="overlay" onclick="off()">
-                        <div id="overlay-text">
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-                        </div>
-                    </div>
-
-                    <div style="">
-                        <button onclick="on()" class="btn btn-reg btn-info btn-block">What happens after I submit this form?</button>
-                    </div>
-
-                    <script type="text/javascript">
-
-                        function on() {
-                            document.getElementById("overlay").style.display = "block";
-                        }
-
-                        function off() {
-                            document.getElementById("overlay").style.display = "none";
-                        }
-
-                    </script>
-                <!-- End div for overlay: -->
-                </div>
-
-                <!-- Form: -->
-                <div class="panel-body">
-                    <!-- This needs to POST to our users app. -->
-                    <!-- I believe member and coach will post to same route: -->
-                    <form role="form" action="{% url 'users:coach_registration_handler' %}" method="POST">
+<header class="main">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-10 col-md-8">
+                    <form role="form" action="{% url 'users:coach_registration_handler' %}" id="form-container" method="post">
                         {% csrf_token %}
+                        <!-- empty div for spacing: -->
+                        <div class="col-md-12"></div>
 
-                        <div class="panel panel-default">
-                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
-                        </div>
+                        <!-- This div contains the actual form: -->
+                        <div class="col-md-8" id="inner-form-container">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Coach Registration Form</h3>
+                                </div>
+                            </div>
 
-                        <!-- Basic information section: -->
-                        <h5>Basic information:</h5>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First name" value="{{ old_data.first_name }}">
+                            <!-- Panel for curlicue divider: -->
+                            <div class="panel panel-default">
+                                <img class="col-xs-10 col-sm-10 col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                            </div>
+
+                            <!-- Div for overlay: -->
+                            <div class="panel panel-default1">
+                                <h5>Before filling out form, please read the following:</h5>
+
+                                <!-- What happens overlay: -->
+                                <div id="overlay" onclick="off()">
+                                    <div id="overlay-text">
+                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                                    </div>
+                                </div>
+
+                                <div style="">
+                                    <button onclick="on()" class="btn btn-reg btn-info btn-block">What happens after I submit this form?</button>
+                                </div>
+
+                                <script type="text/javascript">
+
+                                    function on() {
+                                        document.getElementById("overlay").style.display = "block";
+                                    }
+
+                                    function off() {
+                                        document.getElementById("overlay").style.display = "none";
+                                    }
+
+                                </script>
+                            <!-- End div for overlay: -->
+                            </div>
+
+                        <div class="panel-body">
+
+                            <div class="panel panel-default">
+                                <img class="col-xs-10 col-sm-10 col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                            </div>
+
+                            <!-- Basic information section: -->
+                            <h5>Basic information:</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First name" value="{{ old_data.first_name }}">
                                     <div class="error-message">
                                         <p> 
                                         {% if 'first_name' in errors %}
@@ -146,12 +148,6 @@
                                 </p>
                             </div>
                         </div>
-
-                        
-
-                        <!-- <div class="panel panel-default">
-                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
-                        </div> -->
 
                         <!-- Address and phone section: -->
                         <h5>Address:</h5>
@@ -262,7 +258,7 @@
                         </div>
 
                         <div class="form-group">
-                            <h5>Area:</h5>
+                            <h5>Location:</h5>
                             <textarea type="area" name="area" id="area" class="form-control textarea" rows="3" placeholder="Please tell us briefly in what part of town you live and how far you are willing to travel for rehearsals and performances. i.e., 'I live in the Heights but I'm willing to drive anywhere within the loop.'">{{ old_data.area }}</textarea>
                             <div class="error-message">
                                 <p>
@@ -293,10 +289,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="panel panel-default">
-                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
-                        </div> -->
 
                         <!-- Section for musical information: -->
                         <h5>Musical information:</h5>
@@ -358,19 +350,19 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- TODO: set # of words allowed -->
-
-                        <!-- Need attachment capability: -->
-                        <!-- <input type="submit" value="ATTACH CV" class="btn btn-reg btn-info btn-block"> -->
 
                         <input type="submit" value="SUBMIT FORM" class="btn btn-reg btn-info btn-block">
+                    <!-- End form: -->
                     </form>
-                <!-- End div for panel-body: -->
+                <!-- End div for col declaration: -->
                 </div>
-            <!-- End div for inner form container: -->
-            </div> 
-        <!-- End div for form-itself: -->
-        </div> 
-    <!-- End div for form-container: --> 
+            <!-- End row justify content: -->
+            </div>
+        <!-- End container fluid: -->
+        </div>
+    <!-- End container: -->
     </div>
+<!-- End main: -->
+</header>
+    
 {% endblock %}

@@ -12,3 +12,5 @@ green complimentary: ??
 Title font: ??
 
 shadow effect (over picture): #36454f
+
+button and links color: #17a2b8

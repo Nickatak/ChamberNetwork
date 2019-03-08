@@ -103,6 +103,10 @@ color: #989898;
 	margin-top: 40px;
 }
 
+.password-link a {
+	color: #17a2b8;
+}
+
 /*Footer:*/
 footer {
     background-color: #667569;

@@ -1,62 +1,63 @@
 {% extends 'public_base.html' %}
 {% load static %}
 
-
 {% block load_css %}
     <link rel="stylesheet" type="text/css" href='{% static "css/success.css" %}'>
 {% endblock %}
 
 
 {% block header %}
-    <div class="container-fluid" id="navbar-container">
-        <nav class="navbar navbar-expand-sm fixed-top">
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
 
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+    <!-- Logo -->
+    <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a>
 
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:welcome' %}">WELCOME</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
-                </li>
-                <!-- <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
-                </li> -->
-            </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Link to external login: -->
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
-                </li>
-            </ul>
-        </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Navbar links -->
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
+            </li>
+
+            <!-- <li class="navbar-item">
+                <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+            </li> -->
+        </ul>
+
+        <!-- Navbar right -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Link to external login: -->
+            <li class="nav-item">
+                <a class="nav-link" href="">LOGIN</a>
+            </li>
+        </ul>
     </div>
+</nav>
 {% endblock %}
 
 
 {% block main_content %}
-    <div class="container-fluid" id="main-container">
-        <div id="mycarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="img-fluid" src='{% static "images/7.jpg" %}' alt="" class="img-responsive">
-                    <div class="carousel-caption">
-                        <br>
-                        <br>
-                        <!-- <h3>Success!</h3><br> -->
-                        <h5>Your registration form has been submitted successfully. You will receive an email from HCMN with your temporary password shortly.</h5><br>
-                        <h5>Thank you.</h5>
-                    </div>
+<header class="main">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-10 col-md-10">
+                    <br><br><br>
+                    <h5>Your registration form has been submitted successfully. You will receive an email from HCMN with your temporary password shortly.</h5><br>
+                    <h5>Thank you.</h5>
                 </div>
             </div>
         </div>
     </div>
+</header>
+
 {% endblock %}
