@@ -49,6 +49,7 @@ html {
 color: #989898;
 }
 
+/*Main content:*/
 .main {
     height:100%;
     width:100%;
@@ -63,9 +64,10 @@ color: #989898;
 }
 
 #form-container {
-    margin: auto;
+    display: inline-block;
     background-color: blue;
     padding-top: 30%;
+    margin: 0 auto;
 }
 
 h1 {
