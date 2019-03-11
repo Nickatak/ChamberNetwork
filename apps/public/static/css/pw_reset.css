@@ -1,0 +1,101 @@
+body {
+	/*font-family: 'Oxygen', sans-serif;*/
+	/*font-family: 'Rubik', sans-serif;*/
+	/*font-family: 'Arimo', sans-serif;*/
+	/*font-family: 'Fira Sans', sans-serif;*/
+	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Mukta', sans-serif;*/
+    /*font-family: 'Lato', sans-serif;
+    font-family: 'Lora', serif;
+    font-family: 'Noto Serif', serif;*/
+}
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+/*Navbar:*/
+
+/*Background color:*/
+.navbar {
+	background-color: #667569;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+/*Brand color and font:*/
+.navbar-custom .navbar-brand {
+	margin-bottom: 3px;
+	color: #ace5ee;
+	font-family: 'Noto Serif', serif;
+}
+
+/*Link color (not active or hover):*/
+.navbar-custom .navbar-nav .nav-link {
+	color: #ffffff;
+}
+
+/*Link active color:*/
+.navbar-custom .nav-item.active .nav-link {
+	color: #989898;
+}
+
+/*Link hover color:*/
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+color: #989898;
+}
+
+/*Main*/
+.main{
+	height:100vh;
+	width:100%;
+	margin: 0;
+	padding: 0;
+	background-image: url('/static/images/12.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+/*Form:*/
+#form-container h3 {
+	color: black;
+}
+
+#form-container {
+	padding: 30px;
+	background: #fff;
+	position: absolute;
+	top: 25vh;
+  	border-radius: 2px;
+  	box-shadow: 3px 3px 3px #36454f;
+}
+
+.panel-heading {
+	text-align: center;
+}
+
+.panel-default {
+	padding-bottom: 50px;
+}
+
+.login-links {
+	padding-top: 20px;
+}
+
+.login-links a {
+	font-size: 16px;
+}
+
+.btn-reg {
+	margin-top: 40px;
+}
+
+.password-link a {
+	color: #17a2b8;
+}
+
