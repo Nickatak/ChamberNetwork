@@ -49,8 +49,8 @@ html {
 color: #989898;
 }
 
-
-.main{
+/*Main content:*/
+.main {
     height:100%;
     width:100%;
     margin: 0;
@@ -58,80 +58,58 @@ color: #989898;
     background-color: #f7f7f7;
 }
 
-.container {
-    width:100%;
+.outer-container {
     background-color: #f7f7f7;
 }
 
-.container-fluid {
-    margin-top: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+.inner-container {
     background-color: #f7f7f7;
-    margin-left: auto;
-    margin-right: auto;
+    /*background-color: blue;*/
+    padding-top: 16vh;
+    padding-bottom: 12vh;
+    margin: 0 auto;
 }
 
-/*Form styling:*/
-.panel-default {
-	padding-top: 14px;
-	padding-bottom: 14px;
+.form-container {
+    background-color: #f7f7f7;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.form-container h5 {
+    padding-top: 12px;
 }
 
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 18px;
+    margin-bottom: 12px;
 }
 
-#inner-form-container {
-    background-color: #f7f7f7;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#inner-form-container h3 {
-    color: black;
-    font-weight: bold;
-}
-
-
-
-.panel-default1 h5 {
+.panel-title {
     text-align: center;
 }
 
-.panel-default {
-    padding-top: 15px;
+.divider-panel {
+    margin-top: 36px;
+    margin-bottom: 36px;
 }
 
-.panel-heading {
-    text-align: center;
+.form-group {
 }
 
-#form-container h5 {
-    margin-top: 20px;
-    /*margin-bottom: 5px;*/
+.phone-group {
+    margin-top: 10px;
 }
 
-.error-message p {
-    color: red;
+h3 {
+    padding-top: 10px;
 }
 
-.btn-reg {
-    margin-top: 40px;
-}
-
-#phone-row h5 {
-    margin-top: 5px;
-}
-
-#area-row h5 {
-    margin-top: 5px;
-}
-
-#area-row {
-    margin-bottom: 20px;
+.btn {
+    margin-top: 12px;
 }
 
 /*Overlay:*/
