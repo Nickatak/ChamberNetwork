@@ -18,7 +18,7 @@ user = Member object that is currently logged in (with all attributes).
     <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
 
         <!-- Logo -->
-        <a class="navbar-brand brand">Houston Chamber Music Network</a>
+        <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -37,13 +37,22 @@ user = Member object that is currently logged in (with all attributes).
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
                 </li>
+                <!-- Instruments dropdown: -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FIND PLAYERS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {% for instrument in instruments %}
+                            <a href="{% url 'instruments:individual_display' instrument.id %}" class="dropdown-item"> {{ instrument.name }} </a>
+                        {% endfor %}
+                    </div>
+                </li>
             </ul>
 
             <!-- Navbar right -->
             <ul class="navbar-nav ml-auto">
                 <!-- Link to external login: -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
+                    <a class="nav-link" href="{% url 'users:logout_handler' %}">LOGOUT</a>
                 </li>
             </ul>
         </div>
