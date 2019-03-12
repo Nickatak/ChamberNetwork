@@ -1,0 +1,366 @@
+Users base 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HCMN : {{ page_name }}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Load CSNs (same for all templates): -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+	<!-- Load CSS files (from each template): -->
+	{% block load_css %}
+	{% endblock %}
+</head>
+
+<body>
+	<!-- Header (from each template): -->
+	{% block header %}
+	{% endblock %}
+
+	<!-- Main body (from each template): -->
+	{% block main_body %}
+	{% endblock %}
+
+	<!-- Footer (same for all templates): -->
+	<footer class="pt-4">
+  		<div class="container-fluid text-center text-md-left">
+    		<div class="row">
+      			<div class="col-md-6 mt-md-0 mt-3">
+        			<ul class="footer-links list-unstyled">
+              			<li>
+                			<a href="#!"><h5>ABOUT US</h5></a>
+              			</li>
+              			<li>
+                			<a href="#!"><h5>RESOURCES</h5></a>
+              			</li>
+              			<li>
+                			<a href="#!"><h5>SPONSORS</h5></a>
+              			</li>
+      			</div>
+
+      			<hr class="clearfix w-100 d-md-none pb-3">
+
+      			<div class="col-md-3 mb-md-0 mb-3">
+          			<h5><strong>CONTACT EMAIL:</strong></h5>
+              		<p>michael@houstonchambermusic.org</p><br>
+        		</div>
+    		</div>
+  		</div>
+  		<div class="footer-copyright text-center py-3">Web Design ©2019 Ad Astra Web Services</div>
+	</footer>
+</body>
+
+</html>
+
+Dashboard
+{% extends 'users_base.html' %}
+
+{#
+user = Member object that is currently logged in (with all attributes).
+#}
+
+{# 
+    instruments = list of all instruments. 
+#}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+
+    <!-- Load CSS (different for each template): -->
+    {% block load_css %}
+        <link rel="stylesheet" type="text/css" href='{% static "css/dashboard.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block header %}
+    <div class="container-fluid" id="navbar-container">
+        <nav class="navbar navbar-expand-sm fixed-top">
+
+            <!-- Logo -->
+            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+
+            <!-- Navbar links -->
+            <ul class="navbar-nav">
+                <li class="navbar-item">
+                    <a class="nav-link active" href="{% url 'users:dashboard' %}">DASHBOARD</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
+                </li>
+
+                <!-- Instruments dropdown: -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FIND PLAYERS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {% for instrument in instruments %}
+                            <a href="{% url 'instruments:individual_display' instrument.id %}" class="dropdown-item"> {{ instrument.name }} </a>
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Navbar right -->
+            <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'users:logout_handler' %}">LOGOUT</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    {% endblock %}
+
+    {% block main_body %}
+    <!-- Div for main container: -->
+    <div class="container-fluid" id="main-container">
+        <div id="card-container">
+            <div class="card">
+                <!-- <img src="/static/images/14.jpg" style="width:100%"> -->
+                <div class="card-title">
+                    <h4>Your Information</h4>
+                </div>
+                <div class="information-container">
+                    <div class="panel panel-default">
+                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                    </div>
+                    <dl class="row">
+                        <dt class="col-sm-4">Name</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.first_name }} {{ user.last_name }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Email</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.email }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Phone</dt>
+                        <dd class="col-sm-8">
+                            <p>({{ user.phone_number|slice:"0:3" }}) {{ user.phone_number|slice:"3:6" }}-{{ user.phone_number|slice:"6:10" }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Address</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.street_address }}</p>
+                            <p>{{ user.city }}, {{ user.state }}</p>
+                            <p>{{ user.zip_code }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Primary instrument</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.primary_instrument }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Second instrument</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.secondary_instrument }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Area of Houston</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.area }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">HCMN Rating</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.rating }}</p>
+                        </dd>
+
+                        <dt class="col-sm-4">Bio</dt>
+                        <dd class="col-sm-8">
+                            <p>{{ user.bio }}</p>
+                        </dd>
+                    </dl>
+                    <a href="{% url 'users:edit_member' user.id %}" class="btn btn-reg btn-info btn-block">EDIT INFORMATION</a>
+                <!-- End div for information container: -->
+                </div>
+            <!-- End div for card (your information): -->
+            </div>
+
+
+
+            <div class="card">
+                <!-- <img src="/static/images/9.jpg" style="width:100%"> -->
+                <div class="card-title">
+                    <h4>Your Upcoming Performances</h4>
+                </div>
+                <div class="information-container">
+                    <div class="panel panel-default">
+                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                    </div>
+                    <h4>Add performance feature is coming soon.</h4>
+                    <a href="{% url 'performances:add' %}" class="btn btn-reg btn-info btn-block">ADD PERFORMANCE</a>
+                <!-- End div for information-container: -->
+                </div>
+            <!-- End div for card (upcoming performances) -->
+            </div>
+
+        <!-- End div for card-container: -->
+        </div>
+
+
+    <!-- End div for main container: -->
+    </div>
+        
+    {% endblock %}
+
+</body>
+</html>
+
+/*Navbar:*/
+.navbar {
+    background-color: #2c3b4b;
+}
+
+.brand {
+    margin-bottom: 0px;
+}
+
+h5.brand {
+    color: #e3f2fd;
+    font-family: "Arial";
+}
+
+a.nav-link {
+    color: white;
+}
+
+a.active {
+    color: #808080;
+}
+
+.navbar .navbar-nav li a:hover {
+    color: #808080;
+}
+
+.dropdown-menu {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+/*Main:*/
+#card-container {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.card {
+    width: 45%;
+    margin: 15px;
+    border-radius: 4px;
+    border: 10px;
+    box-shadow: 8px 8px 5px #808080;
+}
+
+.card-title {
+    border-radius: 4px 4px 0px 0px;
+}
+
+.information-container {
+    padding: 15px;
+    background-color: white;
+}
+
+.information-container h4 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#main-container {
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    background-color: #fffef7;
+}
+
+.panel-default {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+.card-title {
+    text-align: center;
+    background-color: #3E536A;
+    padding: 15px;
+}
+
+.card-title h4 {
+    color: white;
+}
+
+/*Footer:*/
+#footer-container {
+    padding: 0px;
+}
+
+.footer-row {
+    margin: 0;
+}
+
+footer {
+    background-color: #2c3b4b;
+    padding-top: 30px;
+    padding-bottom: 4px;
+    padding-left: 30px;
+}
+
+.container2 {
+    text-align: center;
+}
+
+.container2 p {
+    color: white;
+}
+
+.container1 h5 {
+    color: white;
+}
+
+.container1 h4 {
+    color: white;
+}
+
+.container1 p {
+    color: white;
+}
+
+.footer-links li a:hover {
+    text-decoration: none;
+    /*border-bottom: 6px solid white;*/
+}
+
+.footer-links li a h5:hover {
+    color: #808080;
+    /*border-bottom: 3px solid white;*/
+}
