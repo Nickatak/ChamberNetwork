@@ -46,72 +46,72 @@
 {% block main_content %}
 <!-- Main content: -->
 <header class="main">
-<div class="container-fluid" id="main-container">
+    <div class="container-fluid" id="main-container">
 
-    <!-- First card: -->
-    <div class="container py-3">
-        <div class="card">
-            <div class="row no-gutters">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <img src='{% static "images/carousel1.jpg" %}' class="card-img">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-8">
-                    <div class="card-block px-2">
-                        <h1>Connect</h1>
-                        <h3>with musicians in your area.</h3>
-                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
+        <!-- First card: -->
+        <div class="container py-3">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img src='{% static "images/carousel1.jpg" %}' class="card-img">
                     </div>
-                </div>
-            <!-- End row no gutters: -->
-            </div>    
-        <!-- End card: -->
+                    <div class="col-xs-12 col-sm-6 col-md-8">
+                        <div class="card-block px-2">
+                            <h1>Connect</h1>
+                            <h3>with musicians in your area.</h3>
+                            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_member' %}" role="button">REGISTER AS MEMBER</a></p>
+                        </div>
+                    </div>
+                <!-- End row no gutters: -->
+                </div>    
+            <!-- End card: -->
+            </div>
+        <!-- End container py-3: -->
         </div>
-    <!-- End container py-3: -->
-    </div>
 
-    <!-- Second card: -->
-    <div class="container py-3">
-        <div class="card">
-            <div class="row no-gutters">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <img src='{% static "images/carousel2.jpg" %}' class="card-img">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-8">
-                    <div class="card-block px-2">
-                        <h1>Perform</h1>
-                        <h3>with new friends.</h3>
-                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p>
+        <!-- Second card: -->
+        <div class="container py-3">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img src='{% static "images/carousel2.jpg" %}' class="card-img">
                     </div>
-                </div>
-            <!-- End row no gutters: -->
-            </div>    
-        <!-- End card: -->
+                    <div class="col-xs-12 col-sm-6 col-md-8">
+                        <div class="card-block px-2">
+                            <h1>Perform</h1>
+                            <h3>with new friends.</h3>
+                            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:about' %}" role="button">ABOUT US</a></p>
+                        </div>
+                    </div>
+                <!-- End row no gutters: -->
+                </div>    
+            <!-- End card: -->
+            </div>
+        <!-- End container py-3: -->
         </div>
-    <!-- End container py-3: -->
-    </div>
 
-    <!-- Third card: -->
-    <div class="container py-3">
-        <div class="card">
-            <div class="row no-gutters">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <img src='{% static "images/carousel3.jpg" %}' class="card-img">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-8">
-                    <div class="card-block px-2">
-                        <h1>Share</h1>
-                        <h3>your passion with others.</h3>
-                        <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_coach' %}" role="button">REGISTER AS COACH</a></p>
+        <!-- Third card: -->
+        <div class="container py-3">
+            <div class="card">
+                <div class="row no-gutters">
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <img src='{% static "images/carousel3.jpg" %}' class="card-img">
                     </div>
-                </div>
-            <!-- End row no gutters: -->
-            </div>    
-        <!-- End card: -->
+                    <div class="col-xs-12 col-sm-6 col-md-8">
+                        <div class="card-block px-2">
+                            <h1>Share</h1>
+                            <h3>your passion with others.</h3>
+                            <p class="lead"><a class="btn btn-info btn-lg btn-md" href="{% url 'public:new_coach' %}" role="button">REGISTER AS COACH</a></p>
+                        </div>
+                    </div>
+                <!-- End row no gutters: -->
+                </div>    
+            <!-- End card: -->
+            </div>
+        <!-- End container py-3: -->
         </div>
-    <!-- End container py-3: -->
+    <!-- End main container: -->
     </div>
-<!-- End main container: -->
-</div>
 </header>
 
 {% endblock %}

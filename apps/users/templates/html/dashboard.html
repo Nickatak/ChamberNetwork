@@ -59,99 +59,97 @@ user = Member object that is currently logged in (with all attributes).
     </nav>
 {% endblock %}
 
-    {% block main_body %}
-    <!-- Div for main container: -->
+{% block main_body %}
+<!-- Div for main container: -->
+<header class="main">
     <div class="container-fluid" id="main-container">
-        <div id="card-container">
-            <div class="card">
-                <!-- <img src="/static/images/14.jpg" style="width:100%"> -->
-                <div class="card-title">
-                    <h4>Your Information</h4>
-                </div>
-                <div class="information-container">
-                    <div class="panel panel-default">
-                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+        <div class="row justify-content-center">
+
+                <div class="card">
+                    <div class="card-title">
+                        <h4>Your Information</h4>
                     </div>
-                    <dl class="row">
-                        <dt class="col-sm-4">Name</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ user.first_name }} {{ user.last_name }}</p>
-                        </dd>
+                    <div class="information-container">
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                        </div>
+                        <dl class="row">
+                            <dt class="col-sm-4">Name</dt>
+                            <dd class="col-sm-8">
+                                <p>{{ user.first_name }} {{ user.last_name }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Email</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ user.email }}</p>
-                        </dd>
+                            <dt class="col-sm-4">Email</dt>
+                            <dd class="col-sm-8">
+                                <p>{{ user.email }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Phone</dt>
-                        <dd class="col-sm-8">
-                            <p>({{ user.phone_number|slice:"0:3" }}) {{ user.phone_number|slice:"3:6" }}-{{ user.phone_number|slice:"6:10" }}</p>
-                        </dd>
+                            <dt class="col-sm-4">Phone</dt>
+                            <dd class="col-sm-8">
+                                <p>({{ user.phone_number|slice:"0:3" }}) {{ user.phone_number|slice:"3:6" }}-{{ user.phone_number|slice:"6:10" }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Address</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ user.street_address }}</p>
-                            <p>{{ user.city }}, {{ user.state }}</p>
-                            <p>{{ user.zip_code }}</p>
-                        </dd>
+                            <dt class="col-sm-4">Address</dt>
+                            <dd class="col-sm-8">
+                                <p>{{ user.street_address }}</p>
+                                <p>{{ user.city }}, {{ user.state }}</p>
+                                <p>{{ user.zip_code }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Primary instrument</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ user.primary_instrument }}</p>
-                        </dd>
+                            <dt class="col-sm-4">Primary instrument</dt>
+                            <dd class="col-sm-8">
+                                <p>{{ user.primary_instrument }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Second instrument</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ user.secondary_instrument }}</p>
-                        </dd>
+                            <dt class="col-sm-4">Second instrument</dt>
+                            <dd class="col-sm-8">
+                                <p>{{ user.secondary_instrument }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Area of Houston</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ user.area }}</p>
-                        </dd>
+                            <dt class="col-sm-4">Area of Houston</dt>
+                            <dd class="col-sm-8">
+                                <p>{{ user.area }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">HCMN Rating</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ user.rating }}</p>
-                        </dd>
+                            <dt class="col-sm-4">HCMN Rating</dt>
+                            <dd class="col-sm-8">
+                                <p>{{ user.rating }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Bio</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ user.bio }}</p>
-                        </dd>
-                    </dl>
-                    <a href="{% url 'users:edit_member' user.id %}" class="btn btn-reg btn-info btn-block">EDIT INFORMATION</a>
-                <!-- End div for information container: -->
-                </div>
-            <!-- End div for card (your information): -->
-            </div>
-
-
-
-            <div class="card">
-                <!-- <img src="/static/images/9.jpg" style="width:100%"> -->
-                <div class="card-title">
-                    <h4>Your Upcoming Performances</h4>
-                </div>
-                <div class="information-container">
-                    <div class="panel panel-default">
-                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                            <dt class="col-sm-4">Bio</dt>
+                            <dd class="col-sm-8">
+                                <p>{{ user.bio }}</p>
+                            </dd>
+                        </dl>
+                        <a href="{% url 'users:edit_member' user.id %}" class="btn btn-reg btn-info btn-block">EDIT INFORMATION</a>
+                    <!-- End div for information container: -->
                     </div>
-                    <h4>Add performance feature is coming soon.</h4>
-                    <a href="{% url 'performances:add' %}" class="btn btn-reg btn-info btn-block">ADD PERFORMANCE</a>
-                <!-- End div for information-container: -->
+                <!-- End your information card: -->
                 </div>
-            <!-- End div for card (upcoming performances) -->
-            </div>
 
-        <!-- End div for card-container: -->
+                <!-- Your performances card: -->
+                <div class="card">
+                    <div class="card-title">
+                        <h4>Your Upcoming Performances</h4>
+                    </div>
+                    <div class="information-container">
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                        </div>
+                        <h4>Add performance feature is coming soon.</h4>
+                        <a href="{% url 'performances:add' %}" class="btn btn-reg btn-info btn-block">ADD PERFORMANCE</a>
+                    <!-- End div for information-container: -->
+                    </div>
+                <!-- End upcoming performances card: -->
+                </div>
+        <!-- End row justify-content-center: -->
         </div>
-
-
-    <!-- End div for main container: -->
+    <!-- End main container: -->
     </div>
-        
-    {% endblock %}
+<!-- End main: -->
+</header>
+    
+{% endblock %}
 
 </body>
 </html>
