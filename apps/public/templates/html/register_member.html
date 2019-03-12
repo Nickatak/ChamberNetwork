@@ -48,8 +48,8 @@
     <div class="container outer-container">
         <div class="container-fluid inner-container col-xs-12 col-sm-10 col-md-6">
             <div class="row justify-content-center form-container">
-                <form role="form" action="{% url 'users:member_registration_handler' %}" id="form-container" method="post">
-                    {% csrf_token %}
+                <form role="form" action="{% url 'users:member_registration_handler' %}" id="form-container" method="POST">
+                {% csrf_token %}
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -350,5 +350,4 @@
     </div>
 <!-- End main: -->
 </header>
-
 {% endblock %}
