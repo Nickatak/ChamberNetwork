@@ -1,4 +1,5 @@
 {% extends 'users_base.html' %}
+{% load static %}
 
 {#
     user = Member object that is currently logged in (with all attributes).
@@ -8,7 +9,9 @@
     instruments = list of all instruments.
 #}
 
-
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/individual_member.css" %}'>
+{% endblock %}
 
 
 

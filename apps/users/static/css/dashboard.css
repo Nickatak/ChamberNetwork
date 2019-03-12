@@ -47,6 +47,11 @@ body {
 color: #989898;
 }
 
+.dropdown-menu {
+    max-height: 75vh;
+    overflow-y: scroll;
+}
+
 /*Main:*/
 .main {
 }

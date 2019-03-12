@@ -1,4 +1,5 @@
 {% extends 'users_base.html' %}
+{% load static %}
 
 {#
     user = Member object that is currently logged in (with all attributes).
@@ -8,145 +9,128 @@
     instruments = list of all instruments.
 #}
 
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/individual_member.css" %}'>
+{% endblock %}
 
+{% block header %}
+<nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
 
+    <!-- Logo -->
+    <a class="navbar-brand brand" href="#">Houston Chamber Music Network</a>
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-<!DOCTYPE html>
-<html>
-<head>
-    {% load static %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <!-- Load CSS (different for each template): -->
-    {% block load_css %}
-        <link rel="stylesheet" type="text/css" href='{% static "css/individual_member.css" %}'>
-    {% endblock %}
-</head>
-<body>
-    {% block header %}
-    <div class="container-fluid" id="navbar-container">
-        <nav class="navbar navbar-expand-sm fixed-top">
+        <!-- Navbar links -->
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:dashboard' %}">DASHBOARD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
+            </li>
+            <!-- Instruments dropdown: -->
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FIND PLAYERS</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for instrument in instruments %}
+                        <a href="{% url 'instruments:individual_display' instrument.id %}" class="dropdown-item"> {{ instrument.name }} </a>
+                    {% endfor %}
+                </div>
+            </li>
+        </ul>
 
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
-
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'users:dashboard' %}">DASHBOARD</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
-                </li>
-
-                <!-- Instruments dropdown: -->
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FIND PLAYERS</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {% for instrument in instruments %}
-                            <a href="{% url 'instruments:individual_display' instrument.id %}" class="dropdown-item"> {{ instrument.name }} </a>
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
-
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'users:logout_handler' %}">LOGOUT</a>
-                </li>
-            </ul>
-        </nav>
+        <!-- Navbar right -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Link to external login: -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:logout_handler' %}">LOGOUT</a>
+            </li>
+        </ul>
     </div>
-    {% endblock %}
+</nav>
+{% endblock %}
 
-    {% block main_body %}
-    <!-- Div for main container: -->
+{% block main_body %}
+ <!-- Div for main container: -->
+<header class="main">
     <div class="container-fluid" id="main-container">
-        <div id="card-container">
-            <div class="card">
-                <!-- <img src="/static/images/6.jpg" style="width:100%"> -->
-                <div class="card-title">
-                    <h4>{{ member.first_name }}'s Information</h4>
-                </div>
-                <div class="information-container">
-                    <div class="panel panel-default">
-                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+        <div class="row justify-content-center">
+
+                <div class="card">
+                    <div class="card-title">
+                        <h4>{{ member.first_name }}'s Information</h4>
                     </div>
-                    <dl class="row">
-                        <dt class="col-sm-4">Name</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ member.first_name }} {{ member.last_name }}</p>
-                        </dd>
+                    <div class="information-container">
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                        </div>
+                        <dl class="row">
+                            <dt class="col-sm-5">Name</dt>
+                            <dd class="col-sm-7">
+                                <p>{{ member.first_name }} {{ member.last_name }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Email</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ member.email }}</p>
-                        </dd>
+                            <dt class="col-sm-5">Email</dt>
+                            <dd class="col-sm-7">
+                                <p>{{ member.email }}</p>
+                            </dd>
 
-                        <!-- <dt class="col-sm-4">Phone</dt>
-                        <dd class="col-sm-8">
-                            <p>({{ member.phone_number|slice:"0:3" }}) {{ member.phone_number|slice:"3:6" }}-{{ member.phone_number|slice:"6:10" }}</p>
-                        </dd> -->
+                            <dt class="col-sm-5">Primary instrument</dt>
+                            <dd class="col-sm-7">
+                                <p>{{ member.primary_instrument }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Primary instrument</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ member.primary_instrument }}</p>
-                        </dd>
+                            <dt class="col-sm-5">Second instrument</dt>
+                            <dd class="col-sm-7">
+                                <p>{{ member.secondary_instrument }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Second instrument</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ member.secondary_instrument }}</p>
-                        </dd>
+                            <dt class="col-sm-5">Location</dt>
+                            <dd class="col-sm-7">
+                                <p>{{ member.area }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">Area of Houston</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ member.area }}</p>
-                        </dd>
+                            <dt class="col-sm-5">HCMN Rating</dt>
+                            <dd class="col-sm-7">
+                                <p>{{ member.rating }}</p>
+                            </dd>
 
-                        <dt class="col-sm-4">HCMN Rating</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ member.rating }}</p>
-                        </dd>
-
-                        <dt class="col-sm-4">Bio</dt>
-                        <dd class="col-sm-8">
-                            <p>{{ member.bio }}</p>
-                        </dd>
-                    </dl>
-                <!-- End div for information container: -->
-                </div>
-            <!-- End div for card (your information): -->
-            </div>
-
-
-
-            <div class="card">
-                <!-- <img src="/static/images/13.jpg" style="width:100%"> -->
-                <div class="card-title">
-                    <h4>{{ member.first_name }}'s Upcoming Performances</h4>
-                </div>
-                <div class="information-container">
-                    <div class="panel panel-default">
-                        <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                            <dt class="col-sm-5">Bio</dt>
+                            <dd class="col-sm-7">
+                                <p>{{ member.bio }}</p>
+                            </dd>
+                        </dl>
+                    <!-- End div for information container: -->
                     </div>
-                    <h4>Upcoming performances feature is coming soon.</h4>
-                <!-- End div for information-container: -->
+                <!-- End member's information card: -->
                 </div>
-            <!-- End div for card (upcoming performances) -->
-            </div>
 
-        <!-- End div for card-container: -->
+                <!-- Your performances card: -->
+                <div class="card">
+                    <div class="card-title">
+                        <h4>{{ member.first_name }}'s Upcoming Performances</h4>
+                    </div>
+                    <div class="information-container">
+                        <div class="panel panel-default">
+                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
+                        </div>
+                        <h4>This feature is coming soon.</h4>
+                    <!-- End div for information-container: -->
+                    </div>
+                <!-- End upcoming performances card: -->
+                </div>
+        <!-- End row justify-content-center: -->
         </div>
-
-
-    <!-- End div for main container: -->
+    <!-- End main container: -->
     </div>
-        
-    {% endblock %}
-
-</body>
-</html>
+<!-- End main: -->
+</header> 
+{% endblock %}
