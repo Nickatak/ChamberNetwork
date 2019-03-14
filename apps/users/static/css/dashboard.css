@@ -40,7 +40,8 @@ body {
 
 /*If no link on brand:*/
 .navbar-custom .brand {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+    margin-right: 9px;
     color: #ace5ee;
     font-family: 'Noto Serif', serif;
 }

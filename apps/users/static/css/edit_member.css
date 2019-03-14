@@ -1,8 +1,3 @@
-html {
-    height: 100%;
-    width: 100%;
-}
-
 body {
     /*font-family: 'Oxygen', sans-serif;*/
     /*font-family: 'Rubik', sans-serif;*/
@@ -13,7 +8,9 @@ body {
     /*font-family: 'Lato', sans-serif;
     font-family: 'Lora', serif;
     font-family: 'Noto Serif', serif;*/
-    padding-top: 48px;
+}
+
+html {
     height: 100%;
     width: 100%;
 }
@@ -30,8 +27,18 @@ body {
 }
 
 /*Brand color and font:*/
-.navbar-custom .navbar-brand {
+
+/*If using brand link:*/
+/*.navbar-custom .navbar-brand {
     margin-bottom: 3px;
+    color: #ace5ee;
+    font-family: 'Noto Serif', serif;
+}*/ 
+
+/*If no link on brand:*/
+.navbar-custom .brand {
+    margin-bottom: 4px;
+    margin-right: 9px;
     color: #ace5ee;
     font-family: 'Noto Serif', serif;
 } 
