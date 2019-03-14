@@ -30,8 +30,18 @@ body {
 }
 
 /*Brand color and font:*/
-.navbar-custom .navbar-brand {
+
+/*If using brand link:*/
+/*.navbar-custom .navbar-brand {
     margin-bottom: 3px;
+    color: #ace5ee;
+    font-family: 'Noto Serif', serif;
+}*/ 
+
+/*If no link on brand:*/
+.navbar-custom .brand {
+    margin-bottom: 4px;
+    margin-right: 9px;
     color: #ace5ee;
     font-family: 'Noto Serif', serif;
 } 
