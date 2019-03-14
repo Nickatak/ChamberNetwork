@@ -30,11 +30,20 @@ body {
 }
 
 /*Brand color and font:*/
-.navbar-custom .navbar-brand {
+
+/*If using brand link:*/
+/*.navbar-custom .navbar-brand {
     margin-bottom: 3px;
     color: #ace5ee;
     font-family: 'Noto Serif', serif;
-} 
+}*/ 
+
+/*If no link on brand:*/
+.navbar-custom .brand {
+    margin-bottom: 3px;
+    color: #ace5ee;
+    font-family: 'Noto Serif', serif;
+}
 
 /*Link color (not active or hover):*/
 .navbar-custom .navbar-nav .nav-link {
@@ -57,7 +66,7 @@ color: #989898;
 }
 
 #main-container {
-    /*background-color: red;*/
+    background-color: red;
     overflow-x: hidden;
     display: inline-flex;
     flex-direction: row;
@@ -66,7 +75,7 @@ color: #989898;
     align-items: flex-start;
     padding-top: 3vh;
     padding-bottom: 3vh;
-    background-color: #f7f7f7;
+    /*background-color: #f7f7f7;*/
 }
 
 .card {

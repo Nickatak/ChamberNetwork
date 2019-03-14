@@ -17,7 +17,12 @@ user = Member object that is currently logged in (with all attributes).
 <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
 
     <!-- Logo -->
-    <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a>
+    <!-- If using brand link: -->
+    <!-- <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a> -->
+
+    <!-- If no link: -->
+    <h5 class="brand">Houston Chamber Music Network  </h5>
+    
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -64,6 +69,7 @@ user = Member object that is currently logged in (with all attributes).
     <div class="container-fluid" id="main-container">
         <div class="row justify-content-center">
 
+                <!-- Information card: -->
                 <div class="card">
                     <div class="card-title">
                         <h4>Your Information</h4>
@@ -126,7 +132,7 @@ user = Member object that is currently logged in (with all attributes).
                 <!-- End your information card: -->
                 </div>
 
-                <!-- Your performances card: -->
+                <!-- Performances card: -->
                 <div class="card">
                     <div class="card-title">
                         <h4>Your Upcoming Performances</h4>
