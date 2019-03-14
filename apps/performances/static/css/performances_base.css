@@ -1,0 +1,27 @@
+/*Footer:*/
+footer {
+    background-color: #667569;
+    color: white;
+}
+
+.footer-container {
+    background-color: #667569;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+}
+
+#contact {
+    padding-right: 2%;
+}
+  
+a {
+    color:white;
+}
+
+a:hover {
+    /*color: #989898;*/
+    /*color: grey;*/
+    color: #a9a9a9;
+    text-decoration: none;
+}

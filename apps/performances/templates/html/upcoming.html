@@ -1,73 +1,77 @@
 {% extends 'performances_base.html' %}
+{% load static %}
 
 {#
     instruments = list of all instruments.
 #}
 
-<head>
-    {% load static %}
-
-    <!-- Load CSS (different for each template): -->
-    {% block load_css %}
-        <link rel="stylesheet" type="text/css" href='{% static "css/upcoming.css" %}'>
-    {% endblock %}
+<!-- Load CSS (different for each template): -->
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/upcoming.css" %}'>
+{% endblock %}
 </head>
 
-<body>
-    {% block header %}
-    <div class="container-fluid" id="navbar-container">
-        <nav class="navbar navbar-expand-sm fixed-top">
 
-            <!-- Logo -->
-            <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+{% block header %}
+<nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
 
-            <!-- Navbar links -->
-            <ul class="navbar-nav">
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'users:dashboard' %}">DASHBOARD</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link active" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
-                </li>
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
-                </li>
+    <!-- Logo -->
+    <!-- If using brand link: -->
+    <!-- <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a> -->
 
-                <!-- Instruments dropdown: -->
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FIND PLAYERS</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {% for instrument in instruments %}
-                            <a href="{% url 'instruments:individual_display' instrument.id %}" class="dropdown-item"> {{ instrument.name }} </a>
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
+    <!-- If no link: -->
+    <h5 class="brand">Houston Chamber Music Network</h5>
+    
 
-            <!-- Navbar right -->
-            <ul class="navbar-nav ml-auto">
-                <li class="navbar-item">
-                    <a class="nav-link" href="{% url 'users:logout_handler' %}">LOGOUT</a>
-                </li>
-            </ul>
-        </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Navbar links -->
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:dashboard' %}">DASHBOARD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
+            </li>
+            <!-- Instruments dropdown: -->
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FIND PLAYERS</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for instrument in instruments %}
+                        <a href="{% url 'instruments:individual_display' instrument.id %}" class="dropdown-item"> {{ instrument.name }} </a>
+                    {% endfor %}
+                </div>
+            </li>
+        </ul>
+
+        <!-- Navbar right -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Link to external login: -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:logout_handler' %}">LOGOUT</a>
+            </li>
+        </ul>
     </div>
-    {% endblock %}
+</nav>
+{% endblock %}
     	
-    {% block main_body %}
-	    <div class="container-fluid" id="main-container">
-        <div id="mycarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img class="img-fluid" src='{% static "images/11.jpg" %}' alt="" class="img-responsive">
-                    <div class="carousel-caption">
-                        <h1>Upcoming Performances feature is coming soon!</h1>
-                    </div>
+{% block main_content %}
+<header class="main">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-10 col-md-10">
+                    <h1>Upcoming Performances feature is coming soon!</h1>
                 </div>
             </div>
         </div>
     </div>
-    {% endblock %}
-
-</body>
-</html>
+</header>
+{% endblock %}
