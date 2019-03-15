@@ -64,77 +64,74 @@
 
 {% block main_content %}
  <!-- Div for main container: -->
-<header class="main">
-    <div class="container-fluid" id="main-container">
-        <div class="row justify-content-center">
+<!-- Div for card deck: -->
+<div class="card-deck py-3 px-5">
+    <!-- Information card: -->
+    <div class="card">
 
-                <div class="card">
-                    <div class="card-title">
-                        <h4>{{ member.first_name }}'s Information</h4>
-                    </div>
-                    <div class="information-container">
-                        <div class="panel panel-default">
-                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
-                        </div>
-                        <dl class="row">
-                            <dt class="col-sm-5">Name</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ member.first_name }} {{ member.last_name }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Email</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ member.email }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Primary instrument</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ member.primary_instrument }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Second instrument</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ member.secondary_instrument }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Location</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ member.area }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">HCMN Rating</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ member.rating }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Bio</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ member.bio }}</p>
-                            </dd>
-                        </dl>
-                    <!-- End div for information container: -->
-                    </div>
-                <!-- End member's information card: -->
-                </div>
-
-                <!-- Your performances card: -->
-                <div class="card">
-                    <div class="card-title">
-                        <h4>{{ member.first_name }}'s Upcoming Performances</h4>
-                    </div>
-                    <div class="information-container">
-                        <div class="panel panel-default">
-                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
-                        </div>
-                        <h4>This feature is coming soon.</h4>
-                    <!-- End div for information-container: -->
-                    </div>
-                <!-- End upcoming performances card: -->
-                </div>
-        <!-- End row justify-content-center: -->
+        <!-- Card-header: -->
+        <div class="card-header bg-transparent">
+            <h4>{{ member.first_name }}'s Information</h4>
         </div>
-    <!-- End main container: -->
+
+        <!-- Card-body: -->
+        <div class="card-body">
+            <div class="card-text py-5">
+                <dl class="row">
+                    <dt class="col-sm-5">Name</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ member.first_name }} {{ member.last_name }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Email</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ member.email }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Primary instrument</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ member.primary_instrument }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Second instrument</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ member.secondary_instrument }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Location</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ member.area }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">HCMN Rating</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ member.rating }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Bio</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ member.bio }}</p>
+                    </dd>
+                </dl>
+            </div>
+        <!-- End card-body: -->
+        </div>
+    <!-- End information card: -->
     </div>
-<!-- End main: -->
-</header> 
+
+    <!-- Performances card: -->
+    <div class="card">
+        <div class="card-header bg-transparent">
+            <h4>{{ member.first_name }}'s performances</h4>
+        </div>
+
+        <div class="card-body">
+            <div class="card-text text-center mt-3 py-5">
+                <h5 class="pb-4">Add performance feature is coming soon.</h5>
+            </div>
+        </div>
+    <!-- End performances card: -->
+    </div>
+<!-- End card-deck: -->
+</div> 
 {% endblock %}
