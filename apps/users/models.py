@@ -229,8 +229,16 @@ class PatronManager(models.Manager):
 
 class ResetTokenManager(models.Manager):
 
-    def generate_new_token(self, token):
-        pass
+    def generate_new_token(self, email):
+        if Member.objects.filter(email=email).exists():
+
+            token_value = User.objects.make_random_password(length=32, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
+            while self.filter(value=token_value).exists():
+                token_value = User.objects.make_random_password(length=32, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
+
+            return self.create(value=token_value, user=Member.objects.get(email=email))
+        else:
+            return None
 
 
 class Member(models.Model):
