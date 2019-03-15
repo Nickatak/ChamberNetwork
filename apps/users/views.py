@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 
 from ..emails.models import Email
 from ..instruments.models import Instrument
-from .models import Member, Patron
+from .models import Member, Patron, ResetToken
 
 
 def login_handler(req):
