@@ -227,6 +227,12 @@ class PatronManager(models.Manager):
         return self.filter(email=email).exists()
 
 
+class ResetTokenManager(models.Manager):
+
+    def build_url(self, token):
+        pass
+
+
 class Member(models.Model):
     # email field is being used as login username for auth.
     email = models.CharField(max_length=25)
@@ -265,11 +271,6 @@ class Member(models.Model):
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Last updated")
 
     objects = MemberManager()
-
-class ResetTokenManager(models.Manager):
-
-    def build_url(self, token):
-        pass
 
 
 class ResetToken(models.Model):
