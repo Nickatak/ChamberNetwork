@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 from django.urls import path
 
 from ..instruments.models import Instrument
-from .models import Member, Patron
+from .models import Member, Patron, ResetToken
 
 
 @admin.register(Member)
@@ -99,6 +99,15 @@ class MemberAdmin(admin.ModelAdmin):
             member.save()
     set_default_password.short_description = 'Set new passwords for all selected members.'
 
+    
+@admin.register(ResetToken)
+class ResetTokenAdmin(admin.ModelAdmin):
+    list_display = ('get_first_name', 'value')
+
+    def get_first_name(self, obj):
+        return obj.user.first_name
+    get_first_name.admin_order_field = 'name'
+    get_first_name.short_description = "User's first name"
 
 @admin.register(Patron)
 class PatronAdmin(admin.ModelAdmin):
