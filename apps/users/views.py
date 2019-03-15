@@ -117,9 +117,9 @@ def edit_member(req, member_id):
 
 def get_reset_token(req):
     if req.method == 'POST':
-        if Member.objects.filter(email=req.POST['email']).exists():
-            token = Member.objects.generate_new_token(email)
-            Email.objects.send_token(email, token)
+        token = ResetToken.objects.generate_new_token(email)
+        if token:
+            Email.objects.send_token(email, token.value)
 
     return redirect('public:token_sent')
 
