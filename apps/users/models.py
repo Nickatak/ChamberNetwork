@@ -286,7 +286,7 @@ class ResetToken(models.Model):
     user = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='password_tokens')
 
     created_at = models.DateTimeField(auto_now_add=True)
-
+    objects = ResetTokenManager()
 
 class Patron(models.Model):
     first_name = models.CharField(max_length=25)
