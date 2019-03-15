@@ -229,7 +229,7 @@ class PatronManager(models.Manager):
 
 class ResetTokenManager(models.Manager):
 
-    def build_url(self, token):
+    def generate_new_token(self, token):
         pass
 
 
