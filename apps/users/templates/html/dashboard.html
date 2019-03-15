@@ -32,8 +32,8 @@ user = Member object that is currently logged in (with all attributes).
 
         <!-- Navbar links -->
         <ul class="navbar-nav mr-4">
-            <li class="nav-item">
-                <a class="nav-link active" href="{% url 'users:dashboard' %}">DASHBOARD</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'users:dashboard' %}">DASHBOARD</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
@@ -64,93 +64,96 @@ user = Member object that is currently logged in (with all attributes).
 {% endblock %}
 
 {% block main_content %}
-<!-- Div for main container: -->
-<header class="main">
-    <div class="container-fluid" id="main-container">
-        <div class="row justify-content-center">
+<!-- Div for card deck: -->
+<div class="card-deck py-3 px-5">
+    <!-- Information card: -->
+    <div class="card">
 
-                <!-- Information card: -->
-                <div class="card">
-                    <div class="card-title">
-                        <h4>Your Information</h4>
-                    </div>
-                    <div class="information-container">
-                        <div class="panel panel-default">
-                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
-                        </div>
-                        <dl class="row">
-                            <dt class="col-sm-5">Name</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ user.first_name }} {{ user.last_name }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Email</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ user.email }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Phone</dt>
-                            <dd class="col-sm-7">
-                                <p>({{ user.phone_number|slice:"0:3" }}) {{ user.phone_number|slice:"3:6" }}-{{ user.phone_number|slice:"6:10" }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Address</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ user.street_address }}</p>
-                                <p>{{ user.city }}, {{ user.state }}</p>
-                                <p>{{ user.zip_code }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Primary instrument</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ user.primary_instrument }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Second instrument</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ user.secondary_instrument }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Location</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ user.area }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">HCMN Rating</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ user.rating }}</p>
-                            </dd>
-
-                            <dt class="col-sm-5">Bio</dt>
-                            <dd class="col-sm-7">
-                                <p>{{ user.bio }}</p>
-                            </dd>
-                        </dl>
-                        <a href="{% url 'users:edit_member' user.id %}" class="btn btn-reg btn-info btn-block">EDIT INFORMATION</a>
-                    <!-- End div for information container: -->
-                    </div>
-                <!-- End your information card: -->
-                </div>
-
-                <!-- Performances card: -->
-                <div class="card">
-                    <div class="card-title">
-                        <h4>Your Upcoming Performances</h4>
-                    </div>
-                    <div class="information-container">
-                        <div class="panel panel-default">
-                            <img class="col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
-                        </div>
-                        <h4>Add performance feature is coming soon.</h4>
-                        <a href="{% url 'performances:add' %}" class="btn btn-reg btn-info btn-block">ADD PERFORMANCE</a>
-                    <!-- End div for information-container: -->
-                    </div>
-                <!-- End upcoming performances card: -->
-                </div>
-        <!-- End row justify-content-center: -->
+        <!-- Card-header: -->
+        <div class="card-header bg-transparent">
+            <h4>Your Information</h4>
         </div>
-    <!-- End main container: -->
+
+        <!-- Card-body: -->
+        <div class="card-body">
+            <div class="card-text py-5">
+                <dl class="row">
+                    <dt class="col-sm-5">Name</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ user.first_name }} {{ user.last_name }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Email</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ user.email }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Phone</dt>
+                    <dd class="col-sm-7">
+                        <p>({{ user.phone_number|slice:"0:3" }}) {{ user.phone_number|slice:"3:6" }}-{{ user.phone_number|slice:"6:10" }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Address</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ user.street_address }}</p>
+                        <p>{{ user.city }}, {{ user.state }}</p>
+                        <p>{{ user.zip_code }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Primary instrument</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ user.primary_instrument }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Second instrument</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ user.secondary_instrument }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Location</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ user.area }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">HCMN Rating</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ user.rating }}</p>
+                    </dd>
+
+                    <dt class="col-sm-5">Bio</dt>
+                    <dd class="col-sm-7">
+                        <p>{{ user.bio }}</p>
+                    </dd>
+                </dl>
+            </div>
+        <!-- End div for card-body: -->
+        </div>
+
+        <!-- Card-footer: -->
+        <div class="card-footer bg-transparent">
+            <a href="{% url 'users:edit_member' user.id %}" class="btn btn-reg btn-info btn-block">EDIT INFORMATION</a>
+        </div>
+    <!-- End div for information card: -->
     </div>
-<!-- End main: -->
-</header>  
+
+    <!-- Performances card: -->
+    <div class="card">
+        <div class="card-header bg-transparent">
+            <h4>Your performances</h4>
+        </div>
+
+        <div class="card-body">
+            <div class="card-text text-center mt-3 py-5">
+                <h5 class="pb-4">Add performance feature is coming soon.</h5>
+            </div>
+        </div>
+
+        <div class="card-footer bg-transparent">
+            <a href="{% url 'performances:add' %}" class="btn btn-reg btn-info btn-block">ADD PERFORMANCE</a>
+        </div>
+    <!-- End performance card: -->
+    </div>
+
+<!-- End card-deck: -->
+</div> 
 {% endblock %}
