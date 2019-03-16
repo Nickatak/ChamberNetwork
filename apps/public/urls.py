@@ -15,6 +15,6 @@ urlpatterns = [
 	path('about/', views.about, name="about"),
 	path('sponsors/', views.sponsors, name="sponsors"),
 	path('resources/', views.resources, name="resources"),
-    path('request-reset/', views.pw_reset_display, name='request_reset'),
+    path('request-reset/', views.request_reset, name='request_reset'),
     path('reset-sent/', views.token_sent, name='reset_sent'),
 ]
