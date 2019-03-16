@@ -15,4 +15,5 @@ urlpatterns = [
     re_path('edit/(?P<member_id>\d+)/', views.edit_member, name='edit_member'),
     re_path('(?P<member_id>\d+)/', views.individual_member, name="individual_member"),
     re_path('get-reset-token/', views.get_reset_token, name='get_reset_token'),
+    #re_path('reset-handler) #recieves a POST request with the token/everything else.
 ]
