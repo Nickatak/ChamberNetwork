@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 
 from . import views
 
@@ -17,4 +17,6 @@ urlpatterns = [
 	path('resources/', views.resources, name="resources"),
     path('request-reset/', views.request_reset, name='request_reset'),
     path('reset-sent/', views.token_sent, name='reset_sent'),
+
+    re_path('reset/(?P<reset_token>[A-Z, a-z, 0-9]{32})/', views.pw_reset_handler, name='pw_reset_handler'),
 ]
