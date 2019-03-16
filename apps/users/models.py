@@ -231,7 +231,10 @@ class ResetTokenManager(models.Manager):
             while self.filter(value=token_value).exists():
                 token_value = User.objects.make_random_password(length=32, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
 
-            return self.create(value=token_value, user=Member.objects.get(email=email))
+            if self.filter(user=Member.objects.get(email=email)).exists():
+                self.get 
+
+            return self.update_or_create(user=Member.objects.get(email=email), defaults= {'value' : token_value})[0]
         else:
             return None
 
