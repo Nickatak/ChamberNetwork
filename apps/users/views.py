@@ -122,7 +122,7 @@ def get_reset_token(req):
             #Email.objects.send_token(req.POST['email'], token.value)
             print("WORKING: {}".format(token.value))
 
-    return redirect('public:token_sent')
+    return redirect('public:reset_sent')
 
 
 def pw_reset_handler(req, reset_token):
