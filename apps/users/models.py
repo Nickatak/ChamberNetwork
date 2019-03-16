@@ -280,7 +280,7 @@ class ResetToken(models.Model):
     value = models.TextField()
     user = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='password_tokens')
 
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now=True)
     objects = ResetTokenManager()
 
 class Patron(models.Model):
