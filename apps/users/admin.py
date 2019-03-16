@@ -102,12 +102,17 @@ class MemberAdmin(admin.ModelAdmin):
     
 @admin.register(ResetToken)
 class ResetTokenAdmin(admin.ModelAdmin):
-    list_display = ('get_first_name', 'value')
+    list_display = ('get_name', 'get_email', 'value', 'created_at')
 
-    def get_first_name(self, obj):
-        return obj.user.first_name
-    get_first_name.admin_order_field = 'name'
-    get_first_name.short_description = "User's first name"
+    def get_email(self, obj):
+        return obj.user.email
+    get_email.admin_order_field = 'email'
+    get_email.short_description = "User's email"
+
+    def get_name(self, obj):
+        return obj.user.first_name + ' ' + obj.user.last_name
+    get_name.admin_order_field = 'name'
+    get_name.short_description = "User's full name"
 
 @admin.register(Patron)
 class PatronAdmin(admin.ModelAdmin):
