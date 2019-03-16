@@ -125,13 +125,6 @@ def get_reset_token(req):
     return redirect('public:reset_sent')
 
 
-def pw_reset_handler(req, reset_token):
-    print('-' * 80)
-    if ResetToken.objects.filter(value=reset_token).exists():
-        print("RESET TOKEN FOUND")
-    print('-' * 80)
-    return redirect('public:welcome')
-
 def logout_handler(req):
     req.session.pop('uid', None)
 
