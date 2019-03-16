@@ -110,3 +110,12 @@ def token_sent(req):
     }
 
     return render(req, 'html/token_sent.html', context)
+
+
+def pw_reset_handler(req, reset_token):
+    print('-' * 80)
+    if ResetToken.objects.filter(value=reset_token).exists():
+        print("RESET TOKEN FOUND")
+    print('-' * 80)
+    return redirect('public:welcome')
+
