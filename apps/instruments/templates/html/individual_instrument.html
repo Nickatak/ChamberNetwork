@@ -1,4 +1,4 @@
-{# 
+<!-- {# 
     instrument = this particular instrument 
 #}
 
@@ -8,16 +8,17 @@
 
 {#
 	all_instruments = list of all instruments (for navbar)
-#}
-
+#} -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <title>HCMN : {{ instrument.name }}</title>
+        <title>HCMN : {{ page_name }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+        <!-- Load CSNs (same for all templates): -->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
@@ -30,30 +31,41 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+        <!-- Google fonts: -->
+        <link href="https://fonts.googleapis.com/css?family=Arimo|Fira+Sans|Lato|Lora|Mukta|Noto+Serif|Oxygen|Roboto|Rubik" rel="stylesheet">
+
         <!-- css file: -->
         {% load static %}
         <link rel="stylesheet" type="text/css" href='{% static "css/individual_instrument.css" %}'>
     </head>
  
     <body>
-        <div class="container-fluid" id="navbar-container">
-            <nav class="navbar navbar-expand-sm fixed-top">
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
 
-                <!-- Logo -->
-                <a class="navbar-brand"><h5 class="brand">Houston Chamber Music Network</h5></a>
+            <!-- Logo -->
+            <!-- If using brand link: -->
+            <!-- <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a> -->
+
+            <!-- If no link: -->
+            <h5 class="brand">Houston Chamber Music Network</h5>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <!-- Navbar links -->
-                <ul class="navbar-nav">
-                    <li class="navbar-item">
+                <ul class="navbar-nav mr-4">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'users:dashboard' %}">DASHBOARD</a>
                     </li>
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'performances:upcoming' %}">UPCOMING PERFORMANCES</a>
                     </li>
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'performances:add' %}">ADD PERFORMANCE</a>
                     </li>
-
                     <!-- Instruments dropdown: -->
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle scrollable-menu" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FIND PLAYERS</a>
@@ -67,126 +79,122 @@
 
                 <!-- Navbar right -->
                 <ul class="navbar-nav ml-auto">
-                    <li class="navbar-item">
+                    <!-- Link to external login: -->
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'users:logout_handler' %}">LOGOUT</a>
                     </li>
                 </ul>
-                
-            </nav>
-        </div>
+            </div>
+        </nav>
 
         <!-- Main content: -->
         <div class="container-fluid" id="main-container">
+
             <!-- Primary instrument table: -->
-            <div id="card-container">
                 <div class="card">
-                    <div class="card-title">
-                        <h4>The following members list {{ instrument.name }} as their primary instrument.</h4>
-                        <h5>(Click on name for more information.)</h5>
+                    <div class="card-header bg-transparent">
+                        <h4>Members who list {{ instrument.name }} as their primary instrument:</h4>
                     </div>
 
-                    {% if not primary_users %}
-                    <h5>There are currently no members who list {{ instrument.name }} as their primary instrument.</h5>
+                    <div class="card-body">
+                        {% if not primary_users %}
+                        <h5>There are currently no members who list {{ instrument.name }} as their primary instrument.</h5>
 
-                    {% else %}
-                        
-                        <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>HCMN Rating</th>
-                                    <th>Email</th>
-                                    <th>Location</th>
-                                </tr>
-                            </thead>
-                            {% for member in primary_users %}
-                            <tbody>
-                                <tr>
-                                    <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>
-                                    <td>{{ member.rating }}</td>
-                                    <td>{{ member.email }}</td>
-                                    <td>{{ member.area }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </div>
-                        {% endfor %}
-                    {% endif %}
+                        {% else %}
+                            
+                            <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>HCMN Rating</th>
+                                        <th>Email</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                {% for member in primary_users %}
+                                <tbody>
+                                    <tr>
+                                        <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>
+                                        <td>{{ member.rating }}</td>
+                                        <td>{{ member.email }}</td>
+                                        <td>{{ member.area }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
 
-            <!-- Secondary instrument card: -->
-            <div id="card-container">
-                <div class="card">
-                    <div class="card-title">
-                        <h4>The following members list {{ instrument.name }} as their secondary instrument.</h4>
-                        <h5>(Click on name for more information.)</h5>
-                    </div>
+            <div class="card">
+                <div class="card-header bg-transparent">
+                    <h4>Members who list {{ instrument.name }} as their secondary instrument:</h4>
+                </div>
 
+                <div class="card-body">
                     {% if not secondary_users %}
                     <h5>There are currently no members who list {{ instrument.name }} as their secondary instrument.</h5>
 
                     {% else %}
                         {% for member in secondary_users %}
                         <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>HCMN Rating</th>
-                                    <th>Email</th>
-                                    <th>Location</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>
-                                    <td>{{ member.email }}</td>
-                                    <td>{{ member.rating }}</td>
-                                    <td>{{ member.area }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>HCMN Rating</th>
+                                        <th>Email</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>
+                                        <td>{{ member.rating }}</td>
+                                        <td>{{ member.email }}</td>
+                                        <td>{{ member.area }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         {% endfor %}
                     {% endif %}
+                <!-- End card-body: -->
                 </div>
+            <!-- End card: -->
             </div>
-
-
-
         <!-- End main container: -->
         </div>
         
-
-        
-
-
-        
         <!-- Footer: -->
-        <div class="container-fluid" id="footer-container">
-            <footer>
-                <div class="container1">
-                    <div class="row footer-row">
-                        <div class="col-md-3">
-                            <ul class="footer-links list-unstyled">
-                                <li>
-                                    <a href="{% url 'public:about' %}"><h5>ABOUT US</h5></a>
-                                </li>
-                            </ul>
-                        </div>
-                    <div class="col-md-6"></div>
-                    <div class="col-md-3">
+        <footer class="pt-0">
+            <div class="container-fluid footer-container text-center text-md-left">
+                <div class="row">
+                    <div class="col-md-9 mt-md-0 mt-3">
+                        <ul class="footer-links list-unstyled">
+                            <li>
+                                <a href="{% url 'public:about' %}"><h5>ABOUT US</h5></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'public:resources' %}"><h5>RESOURCES</h5></a>
+                            </li>
+                            <li>
+                                <a href="{% url 'public:sponsors' %}"><h5>SPONSORS</h5></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <hr class="clearfix w-100 d-md-none pb-0">
+
+                    <div class="col-md-3 mb-md-0 mb-3" id="contact">
                         <h5><strong>CONTACT EMAIL:</strong></h5>
                         <p>michael@houstonchambermusic.org</p><br>
                     </div>
                 </div>
-                <div class="container2">
-                    <p>Web Design © 2019 Ad Astra Web Services</p>
-                </div>
-            </footer>
-        </div>
-
+            </div>
+            <div class="footer-copyright text-center py-2">Web Design ©2019 Ad Astra Web Services</div>
+        </footer>
     </body>
 </html>

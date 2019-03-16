@@ -1,170 +1,116 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    /*font-family: 'Oxygen', sans-serif;*/
+    /*font-family: 'Rubik', sans-serif;*/
+    /*font-family: 'Arimo', sans-serif;*/
+    /*font-family: 'Fira Sans', sans-serif;*/
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Mukta', sans-serif;*/
+    /*font-family: 'Lato', sans-serif;
+    font-family: 'Lora', serif;
+    font-family: 'Noto Serif', serif;*/
+    padding-top: 48px;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 /*Navbar:*/
+
+/*Background color:*/
 .navbar {
-	background-color: #2c3b4b;
+    background-color: #667569;
 }
 
-.brand {
-	margin-bottom: 0px;
+.navbar-collapse {
+    justify-content: flex-end;
 }
 
-h5.brand {
-	color: #e3f2fd;
-	font-family: "Arial";
+/*Brand color and font:*/
+
+/*If using brand link:*/
+/*.navbar-custom .navbar-brand {
+    margin-bottom: 3px;
+    color: #ace5ee;
+    font-family: 'Noto Serif', serif;
+}*/ 
+
+/*If no link on brand:*/
+.navbar-custom .brand {
+    margin-bottom: 4px;
+    margin-right: 9px;
+    color: #ace5ee;
+    font-family: 'Noto Serif', serif;
+} 
+
+/*Link color (not active or hover):*/
+.navbar-custom .navbar-nav .nav-link {
+    color: #ffffff;
 }
 
-a.nav-link {
-	color: white;
-}
-
-a.active {
-	color: #808080;
-}
-
-.navbar .navbar-nav li a:hover {
-	color: #808080;
+/*Link hover color:*/
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+color: #989898;
 }
 
 .dropdown-menu {
-    max-height: 500px;
+    max-height: 75vh;
     overflow-y: scroll;
 }
+
 
 /*Main:*/
 #main-container {
     padding-top: 50px;
-    background-color: #fffef7;
+    background-color: #f7f7f7;
     padding-left: 0px;
     padding-right: 0px;
     justify-content: center;
 }
 
-#card-container {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    width: 80%;
-    margin: 0 auto;
-    float: none;
-}
-
 .card {
-    width: 90%;
+    width: 95%;
     margin: 15px;
-    border-radius: 4px;
-    border: 10px;
-    box-shadow: 8px 8px 5px #808080;
-    margin-top: 30px;
+    border-radius: 2px;
+    border: 1px black;
+    box-shadow: 3px 3px 3px #36454f;
+    margin-top: 3%;
 }
 
-.card-title {
-	border-radius: 4px 4px 0px 0px;
-    text-align: center;
-    background-color: #3E536A;
-    padding: 15px;
-    margin-bottom: 30px;
+.table-responsive a {
+    color: #0000EE;
 }
 
-.card-title h4 {
+
+/*Footer:*/
+footer {
+    background-color: #667569;
     color: white;
 }
 
-.card-title h5 {
-	color: white;
+.footer-container {
+    background-color: #667569;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
 }
 
-.card-name-title {
-	background-color: #c4d8e2;
-	text-align: center;
-    padding-top: 6px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+#contact {
+    padding-right: 2%;
+}
+  
+a {
+    color:white;
 }
 
-.card-name-title h5 a {
-	color: #2c3b4b;
-}
-
-.card-name-title h5 a:hover {
-	color: #808080;
-	text-decoration: none;
-}
-
-.information-container {
-    padding: 12px;
-}
-
-.information-container h4 {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.information-container h5 {
-    text-align: center;
-    padding-bottom: 8px;
-}
-
-.information-container dt {
-	margin-left: 15px;
-}
-
-.panel-default {
-    padding-top: 10px;
-    padding-bottom: 30px;
-}
-
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-}
-
-/*Footer:*/
-#footer-container {
-	padding: 0px;
-}
-
-.footer-row {
-	margin: 0;
-}
-
-footer {
-	background-color: #2c3b4b;
-	padding-top: 30px;
-	padding-bottom: 4px;
-	padding-left: 30px;
-	margin-top: 30px;
-}
-
-.container2 {
-	text-align: center;
-}
-
-.container2 p {
-	color: white;
-}
-
-.container1 h5 {
-	color: white;
-}
-
-.container1 h4 {
-	color: white;
-}
-
-.container1 p {
-	color: white;
-}
-
-.footer-links li a:hover {
+a:hover {
+    /*color: #989898;*/
+    /*color: grey;*/
+    color: #a9a9a9;
     text-decoration: none;
-    /*border-bottom: 6px solid white;*/
-}
-
-.footer-links li a h5:hover {
-    color: #808080;
-    /*border-bottom: 3px solid white;*/
 }
