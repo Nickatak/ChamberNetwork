@@ -17,7 +17,7 @@ urlpatterns = [
 	path('resources/', views.resources, name="resources"),
     path('request-reset/', views.request_reset, name='request_reset'),
     path('reset-sent/', views.token_sent, name='reset_sent'),
-    path('pw_reset/', views.pw_reset, name='pw_reset'),
+    path('new_pw/', views.new_pw, name='new_pw'),
 
     # Below should actually be pw_reset_display.  This'll render the password reset form and then submit it to users:reset-handler
     re_path('reset/(?P<reset_token>[A-Z, a-z, 0-9]{32})/', views.pw_reset_handler, name='pw_reset_handler'),
