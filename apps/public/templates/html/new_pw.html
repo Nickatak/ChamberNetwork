@@ -1,0 +1,74 @@
+{% extends 'public_base.html' %}
+{% load static %}
+
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/new_pw.css" %}'>
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
+
+    <!-- Logo -->
+    <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Navbar links -->
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
+            </li>
+        </ul>
+
+        <!-- Navbar right -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Link to external login: -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block main_content %}
+<header class="main">
+	<div class="container">
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-xs-12 col-sm-10 col-md-4">
+	    			<form role="form" action="{% url 'users:get_reset_token' %}" id="form-container" method="post">
+	        			{% csrf_token %}
+	        			<h3 class="text-center">Set New Password</h3><br>
+	        			<div class="panel panel-default">
+	                           <img class="col-md-12" src='{% static "images/divider9.png" %}' alt="" class="img-fluid">
+	                    </div>
+
+	                	<div class="form-group">
+	    					<input type="password" class="form-control" id="new_password" name="new_password" placeholder="New password" ></input>
+	    				</div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm password" ></input>
+                        </div>
+
+                        <div>
+                            <p>(Your password must be at least eight characters long and contain at least one number.)</p>
+                        </div>
+	        		
+	        			<button type="submit" class="btn btn-reg btn-info btn-block mt-4">Confirm new password</button>
+	    			</form>
+	    		</div>
+	    	</div>
+    	</div>
+    </div>
+</header>
+{% endblock %}
