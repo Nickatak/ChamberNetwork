@@ -119,3 +119,6 @@ def pw_reset_handler(req, reset_token):
     print('-' * 80)
     return redirect('public:welcome')
 
+def pw_reset(req):
+	return render(req, 'html/pw_reset.html')
+
