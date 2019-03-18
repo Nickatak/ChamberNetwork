@@ -122,3 +122,8 @@ def pw_reset_handler(req, reset_token):
 def new_pw(req):
 	return render(req, 'html/new_pw.html')
 
+def new_pw_success(req):
+	return render(req, 'html/new_pw_success.html')
+
+
+
