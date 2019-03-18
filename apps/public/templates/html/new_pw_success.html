@@ -1,0 +1,63 @@
+{% extends 'public_base.html' %}
+{% load static %}
+
+{% block load_css %}
+    <link rel="stylesheet" type="text/css" href='{% static "css/success.css" %}'>
+{% endblock %}
+
+
+{% block header %}
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark navbar-custom">
+
+    <!-- Logo -->
+    <a class="navbar-brand brand" href="{% url 'public:welcome' %}">Houston Chamber Music Network</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Navbar links -->
+        <ul class="navbar-nav mr-4">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:new_member' %}">REGISTER AS MEMBER</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'public:new_coach' %}">REGISTER AS COACH</a>
+            </li>
+
+            <!-- <li class="navbar-item">
+                <a class="nav-link" href="{% url 'public:new_patron' %}">SIGN UP FOR E-NEWSLETTER</a>
+            </li> -->
+        </ul>
+
+        <!-- Navbar right -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Link to external login: -->
+            <li class="nav-item">
+                <a class="nav-link" href="">LOGIN</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+
+{% block main_content %}
+<header class="main">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-sm-10 col-md-10">
+                    <br><br><br>
+                    <h5>You have successfully updated your password. You may proceed to the login page.</h5><br>
+                    <h5>Thank you.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% endblock %}
