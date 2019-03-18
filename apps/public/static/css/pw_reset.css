@@ -99,3 +99,7 @@ color: #989898;
 	color: #17a2b8;
 }
 
+.error-message p {
+	color: red;
+}
+
