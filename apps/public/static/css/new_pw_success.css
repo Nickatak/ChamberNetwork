@@ -67,3 +67,11 @@ color: #989898;
 	color: #ffffff;
 	/*padding-top: 80px;*/
 }
+
+.main a {
+	color: blue;
+}
+
+.main a:hover {
+	color: grey;
+}

@@ -37,7 +37,7 @@
         <ul class="navbar-nav ml-auto">
             <!-- Link to external login: -->
             <li class="nav-item">
-                <a class="nav-link" href="">LOGIN</a>
+                <a class="nav-link" href="{% url 'public:login' %}">LOGIN</a>
             </li>
         </ul>
     </div>
@@ -52,7 +52,7 @@
             <div class="row justify-content-center">
                 <div class="col-xs-12 col-sm-10 col-md-10">
                     <br><br><br>
-                    <h5>You have successfully updated your password. You may proceed to the login page.</h5><br>
+                    <h5>You have successfully updated your password. You may proceed to the <a href="{% url 'public:login' %}">LOGIN</a> page.</h5><br>
                     <h5>Thank you.</h5>
                 </div>
             </div>
