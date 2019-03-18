@@ -98,3 +98,7 @@ color: #989898;
 .password-link a {
 	color: #17a2b8;
 }
+
+.error-message p {
+	color: red;
+}
