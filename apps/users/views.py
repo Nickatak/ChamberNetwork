@@ -126,11 +126,13 @@ def get_reset_token(req):
 
 def reset_token_handler(req):
     if req.method == 'POST':
-        user = ResetToken.objects.get(value=req.POST['token']).user
+        token = ResetToken.objects.get(value=req.POST['token'])
+        user = token.user
 
         errors = Member.objects.validate_password(req.POST['new_password'], req.POST['confirm_password'])
         if not errors:
             Member.objects.set_new_password(user.id, req.POST['new_password'])
+            token.delete()
             return redirect('public:new_pw_success')
         else:
             req.session['errors'] = {
