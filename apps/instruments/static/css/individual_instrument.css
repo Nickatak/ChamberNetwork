@@ -65,21 +65,18 @@ color: #989898;
 
 
 /*Main:*/
+
 #main-container {
-    padding-top: 50px;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     background-color: #f7f7f7;
-    padding-left: 0px;
-    padding-right: 0px;
     justify-content: center;
 }
 
 .card {
-    width: 95%;
-    margin: 15px;
-    border-radius: 2px;
+    margin: 3vw;
     border: 1px black;
     box-shadow: 3px 3px 3px #36454f;
-    margin-top: 3%;
 }
 
 .table-responsive a {

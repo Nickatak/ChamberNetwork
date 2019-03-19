@@ -103,27 +103,27 @@
                         {% else %}
                             
                             <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>HCMN Rating</th>
-                                        <th>Email</th>
-                                        <th>Location</th>
-                                    </tr>
-                                </thead>
-                                {% for member in primary_users %}
-                                <tbody>
-                                    <tr>
-                                        <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>
-                                        <td>{{ member.rating }}</td>
-                                        <td>{{ member.email }}</td>
-                                        <td>{{ member.area }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>HCMN Rating</th>
+                                            <th>Email</th>
+                                            <th>Location</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for member in primary_users %}
+                                        <tr>
+                                            <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>
+                                            <td>{{ member.rating }}</td>
+                                            <td>{{ member.email }}</td>
+                                            <td>{{ member.area }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
                             </div>
-                            {% endfor %}
                         {% endif %}
                     </div>
                 </div>
@@ -138,9 +138,8 @@
                     <h5>There are currently no members who list {{ instrument.name }} as their secondary instrument.</h5>
 
                     {% else %}
-                        {% for member in secondary_users %}
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-borderless">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
@@ -150,16 +149,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {% for member in secondary_users %}
                                     <tr>
                                         <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>
                                         <td>{{ member.rating }}</td>
                                         <td>{{ member.email }}</td>
                                         <td>{{ member.area }}</td>
                                     </tr>
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
-                        {% endfor %}
                     {% endif %}
                 <!-- End card-body: -->
                 </div>
