@@ -113,12 +113,15 @@ def token_sent(req):
 
 
 def pw_reset_display(req, reset_token):
-    print('-' * 80)
+
     if ResetToken.objects.filter(value=reset_token).exists():
-        print("RESET TOKEN FOUND")
-    print('-' * 80)
-    # return render(req, 'html/new_pw_success.html')
-    return redirect('public:welcome')
+        context = {
+            'token' : reset_token,
+        }
+
+        return render(req, 'html/new_pw_success.html', context)
+    else:
+        return redirect('public:welcome')
 
 def new_pw_success(req):
 	return render(req, 'html/new_pw_success.html')
