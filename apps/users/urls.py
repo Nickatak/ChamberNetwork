@@ -11,9 +11,10 @@ urlpatterns = [
     path('register_member/', views.register_member, name="member_registration_handler"),
     path('register_patron/', views.register_patron, name="patron_registration_handler"),
     path('dashboard/', views.dashboard, name="dashboard"),
+    path('get-reset-token/', views.get_reset_token, name='get_reset_token'),
+    path('reset-handler/', views.reset_token_handler, name='reset_token_handler'),
+
 
     re_path('edit/(?P<member_id>\d+)/', views.edit_member, name='edit_member'),
     re_path('(?P<member_id>\d+)/', views.individual_member, name="individual_member"),
-    re_path('get-reset-token/', views.get_reset_token, name='get_reset_token'),
-    #re_path('reset-handler) #recieves a POST request with the token/everything else.
 ]
