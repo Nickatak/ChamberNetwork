@@ -45,7 +45,7 @@
 		<div class="container-fluid">
 			<div class="row justify-content-center">
 				<div class="col-xs-12 col-sm-10 col-md-4">
-	    			<form role="form" action="{% url 'users:get_reset_token' %}" id="form-container" method="post">
+	    			<form role="form" action="{% url 'users:reset_token_handler' %}" id="form-container" method="post">
 	        			{% csrf_token %}
 	        			<h3 class="text-center">Set New Password</h3><br>
 	        			<div class="panel panel-default">
@@ -69,7 +69,7 @@
                                     <!-- If password and confirm password do not match: show error. -->
                                     </p>
                                 </div>
-	        		
+                        <input type="hidden" name="token" value="{{ reset_token }}"> 
 	        			<button type="submit" class="btn btn-reg btn-info btn-block mt-4">Confirm new password</button>
 	    			</form>
 	    		</div>
