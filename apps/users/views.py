@@ -119,7 +119,7 @@ def get_reset_token(req):
     if req.method == 'POST':
         token = ResetToken.objects.generate_new_token(req.POST['email'])
         if token:
-            #Email.objects.send_token(req.POST['email'], token.value)
+            #Email.objects.send_pw_reset_link(req.POST['email'], token.value)
             print("WORKING: {}".format(token.value))
 
     return redirect('public:reset_sent')
