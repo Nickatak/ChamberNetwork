@@ -119,7 +119,7 @@ def pw_reset_display(req, reset_token):
             'token' : reset_token,
         }
 
-        return render(req, 'html/new_pw_success.html', context)
+        return render(req, 'html/new_pw.html', context)
     else:
         return redirect('public:welcome')
 
