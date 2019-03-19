@@ -143,7 +143,7 @@ class MemberManager(models.Manager):
     def generate_new_password(self):
         new_password = User.objects.make_random_password(length=14, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
 
-        while self.validate_password(password):
+        while self.validate_password(new_password, new_password):
             new_password = User.objects.make_random_password(length=14, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
 
         return new_password
@@ -152,13 +152,16 @@ class MemberManager(models.Manager):
     def get_all_with_instrument(self, instrument):
         return self.filter(models.Q(primary_instrument=instrument) | models.Q(secondary_instrument=instrument))
 
-    def validate_password(self, password):
+    def validate_password(self, password, confirm_password):
         errors = []
+
+        if password != confirm_password:
+            errors.append('Your passwords do not match eachother.')
 
         if len(password) < 8:
             errors.append('Your password must contain atleast eight characters.')
 
-        if not all(True for char in password if not char.is_digit()):
+        if not all(True for char in password if not char.isdigit()):
             errors.append('Your password must contain atleast one digit.')
 
         return errors
