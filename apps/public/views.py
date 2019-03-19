@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 from ..instruments.models import Instrument
-from ..users.models import Member
+from ..users.models import Member, ResetToken
 
 def welcome(req):
 
