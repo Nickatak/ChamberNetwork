@@ -126,8 +126,20 @@ def get_reset_token(req):
 
 def reset_token_handler(req):
     if req.method == 'POST':
-        print('OKAY')
+        user = ResetToken.objects.get(value=req.POST['token']).user
+        user_id = user.id
+        user_email = user.email
 
+        if req.POST['new_password'] == req.POST['confirm_password']:
+            print("Passwords okay")
+            return redirect('public:new_pw_success')
+        else:
+            req.session['errors'] = {
+                'new_password' : 'Passwords do not match, try again.',
+            }
+            return redirect('public:pw_reset_display', req.POST['token'])
+
+    return redirect('public:welcome')
 
 
 def logout_handler(req):
