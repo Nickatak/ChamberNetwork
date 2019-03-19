@@ -152,6 +152,7 @@ class MemberManager(models.Manager):
     def get_all_with_instrument(self, instrument):
         return self.filter(models.Q(primary_instrument=instrument) | models.Q(secondary_instrument=instrument))
 
+
     def validate_password(self, password, confirm_password):
         errors = []
 
@@ -165,6 +166,13 @@ class MemberManager(models.Manager):
             errors.append('Your password must contain atleast one digit.')
 
         return errors
+
+
+    def set_new_password(self, user_id, new_password):
+        user = self.get(id=user_id)
+        user.password = make_password(new_password)
+
+        user.save()
 
 
 class PatronManager(models.Manager):
