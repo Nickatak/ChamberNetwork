@@ -225,12 +225,12 @@
                         <textarea type="area" name="area" id="area" class="form-control textarea" rows="3">{{ user.area }}</textarea>
                     </div>
 
-                    <div class="row" id="phone-row">
+                    <div class="row">
                         <div class="col-md-4">
                             <h5>Phone:</h5>
                         </div>
                         <div class="col-md-8">
-                            <div class="form-group" align="right">
+                            <div class="form-group" id="phone-row" align="right">
                                 (<input type="tel" name="tel1" size="3" pattern="\d{3}" placeholder="{{ user.phone_number|slice:"0:3" }}" maxlength="3"/>) 
                                 <input type="tel" name="tel2" size="3" pattern="\d{3}" placeholder="{{ user.phone_number|slice:"3:6" }}" maxlength="3"/> - 
                                 <input type="tel" name="tel3" size="4" pattern="\d{4}" placeholder="{{ user.phone_number|slice:"6:10" }}" maxlength="4"/>

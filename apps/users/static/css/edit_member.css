@@ -108,15 +108,12 @@ img {
     margin-bottom: 36px;
 }
 
-.form-group {
-}
-
-.phone-group {
-    margin-top: 10px;
-}
-
 h3 {
     padding-top: 10px;
+}
+
+#phone-row {
+    margin-top: 12px;
 }
 
 .btn {
