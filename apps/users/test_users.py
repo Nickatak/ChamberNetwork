@@ -9,7 +9,7 @@ test_users = [
         "zip_code": "77005",
         "phone_number": "7131111111",
         "bio": "Some bio",
-        "rating": "C",
+        "rating": 5,
         "is_coach": False,
     },
     {
@@ -22,7 +22,7 @@ test_users = [
         "zip_code": "77024",
         "phone_number": "8322222222",
         "bio": "Some bio",
-        "rating": "A",
+        "rating": 2,
         "is_coach": False,
     },
     {
@@ -35,7 +35,7 @@ test_users = [
         "zip_code": "77044",
         "phone_number": "7133333333",
         "bio": "Some bio",
-        "rating": "D",
+        "rating": 6,
         "is_coach": False,
     },
     {
@@ -48,7 +48,7 @@ test_users = [
         "zip_code": "77035",
         "phone_number": "8323333333",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 7,
         "is_coach": False,
     },
     {
@@ -61,7 +61,7 @@ test_users = [
         "zip_code": "77045",
         "phone_number": "7135555555",
         "bio": "Some bio",
-        "rating": "B",
+        "rating": 3,
         "is_coach": False,
     },
     {
@@ -74,7 +74,7 @@ test_users = [
         "zip_code": "77005",
         "phone_number": "7136666666",
         "bio": "Some bio",
-        "rating": "C",
+        "rating": 4,
         "is_coach": False,
     },
     {
@@ -87,7 +87,7 @@ test_users = [
         "zip_code": "77026",
         "phone_number": "8329999999",
         "bio": "Some bio",
-        "rating": "C",
+        "rating": 4,
         "is_coach": False,
     },
     {
@@ -100,7 +100,7 @@ test_users = [
         "zip_code": "77001",
         "phone_number": "7136666666",
         "bio": "Some bio",
-        "rating": "B",
+        "rating": 2,
         "is_coach": False,
     },
     {
@@ -113,7 +113,7 @@ test_users = [
         "zip_code": "77005",
         "phone_number": "8324444444",
         "bio": "Some bio",
-        "rating": "D",
+        "rating": 6,
         "is_coach": False,
     },
     {
@@ -126,7 +126,7 @@ test_users = [
         "zip_code": "77025",
         "phone_number": "8323454557",
         "bio": "Some bio",
-        "rating": "D",
+        "rating": 6,
         "is_coach": False,
     },
     {
@@ -139,7 +139,7 @@ test_users = [
         "zip_code": "77007",
         "phone_number": "7134568976",
         "bio": "Some bio",
-        "rating": "D",
+        "rating": 6,
         "is_coach": False,
     },
     {
@@ -152,7 +152,7 @@ test_users = [
         "zip_code": "77056",
         "phone_number": "8327689857",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 7,
         "is_coach": False,
     },
     {
@@ -165,7 +165,7 @@ test_users = [
         "zip_code": "77045",
         "phone_number": "8325679876",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 7,
         "is_coach": False,
     },
     {
@@ -178,7 +178,7 @@ test_users = [
         "zip_code": "77088",
         "phone_number": "7135679876",
         "bio": "Some bio",
-        "rating": "C",
+        "rating": 3,
         "is_coach": False,
     },
     {
@@ -191,7 +191,7 @@ test_users = [
         "zip_code": "77024",
         "phone_number": "8326782345",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 7,
         "is_coach": False,
     },
     {
@@ -204,7 +204,7 @@ test_users = [
         "zip_code": "77043",
         "phone_number": "7135679876",
         "bio": "Some bio",
-        "rating": "B",
+        "rating": 4,
         "is_coach": False,
     },
     {
@@ -217,7 +217,7 @@ test_users = [
         "zip_code": "77025",
         "phone_number": "8325678765",
         "bio": "Some bio",
-        "rating": "S",
+        "rating": 0,
         "is_coach": True,
     },
     {
@@ -230,7 +230,7 @@ test_users = [
         "zip_code": "77045",
         "phone_number": "7137651234",
         "bio": "Some bio",
-        "rating": "C",
+        "rating": 1,
         "is_coach": False,
     },
     {
@@ -243,7 +243,7 @@ test_users = [
         "zip_code": "77987",
         "phone_number": "8325679876",
         "bio": "Some bio",
-        "rating": "D",
+        "rating": 1,
         "is_coach": False,
     },
     {
@@ -256,7 +256,7 @@ test_users = [
         "zip_code": "77099",
         "phone_number": "7135678765",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 6,
         "is_coach": False,
     },
     {
@@ -269,7 +269,7 @@ test_users = [
         "zip_code": "77024",
         "phone_number": "8321239876",
         "bio": "Some bio",
-        "rating": "D",
+        "rating": 5,
         "is_coach": False,
     },
     {
@@ -282,7 +282,7 @@ test_users = [
         "zip_code": "77067",
         "phone_number": "7132345678",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 2,
         "is_coach": False,
     },
     {
@@ -295,7 +295,7 @@ test_users = [
         "zip_code": "77035",
         "phone_number": "8327659876",
         "bio": "Some bio",
-        "rating": "C",
+        "rating": 1,
         "is_coach": False,
     },
     {
@@ -308,7 +308,7 @@ test_users = [
         "zip_code": "77099",
         "phone_number": "7136781356",
         "bio": "Some bio",
-        "rating": "C",
+        "rating": 1,
         "is_coach": False,
     },
     {
@@ -321,7 +321,7 @@ test_users = [
         "zip_code": "77055",
         "phone_number": "8328763456",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 3,
         "is_coach": False,
     },
     {
@@ -334,7 +334,7 @@ test_users = [
         "zip_code": "77035",
         "phone_number": "7138763456",
         "bio": "Some bio",
-        "rating": "D",
+        "rating": 4,
         "is_coach": False,
     },
     {
@@ -347,7 +347,7 @@ test_users = [
         "zip_code": "77044",
         "phone_number": "8326541234",
         "bio": "Some bio",
-        "rating": "S",
+        "rating": 0,
         "is_coach": True,
     },
     {
@@ -360,7 +360,7 @@ test_users = [
         "zip_code": "79124",
         "phone_number": "7139873456",
         "bio": "Some bio",
-        "rating": "D",
+        "rating": 4,
         "is_coach": False,
     },
     {
@@ -373,7 +373,7 @@ test_users = [
         "zip_code": "77098",
         "phone_number": "8327868876",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 6,
         "is_coach": False,
     },
     {
@@ -386,7 +386,7 @@ test_users = [
         "zip_code": "77034",
         "phone_number": "7139874567",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 2,
         "is_coach": False,
     },
     {
@@ -399,7 +399,7 @@ test_users = [
         "zip_code": "77055",
         "phone_number": "8327896543",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 2,
         "is_coach": False,
     },
     {
@@ -412,7 +412,7 @@ test_users = [
         "zip_code": "77027",
         "phone_number": "8327652468",
         "bio": "Some bio",
-        "rating": "B",
+        "rating": 3,
         "is_coach": False,
     },
     {
@@ -425,7 +425,7 @@ test_users = [
         "zip_code": "77055",
         "phone_number": "7139872468",
         "bio": "Some bio",
-        "rating": "B",
+        "rating": 3,
         "is_coach": False,
     },
     {
@@ -438,7 +438,7 @@ test_users = [
         "zip_code": "77035",
         "phone_number": "8327651357",
         "bio": "Some bio",
-        "rating": "B",
+        "rating": 3,
         "is_coach": False,
     },
     {
@@ -451,7 +451,7 @@ test_users = [
         "zip_code": "77056",
         "phone_number": "7139872468",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 2,
         "is_coach": False,
     },
     {
@@ -464,7 +464,7 @@ test_users = [
         "zip_code": "77067",
         "phone_number": "8328762345",
         "bio": "Some bio",
-        "rating": "B",
+        "rating": 1,
         "is_coach": False,
     },
     {
@@ -477,7 +477,7 @@ test_users = [
         "zip_code": "78072",
         "phone_number": "7138762468",
         "bio": "Some bio",
-        "rating": "B",
+        "rating": 4,
         "is_coach": False,
     },
     {
@@ -490,7 +490,7 @@ test_users = [
         "zip_code": "77045",
         "phone_number": "8329751357",
         "bio": "Some bio",
-        "rating": "C",
+        "rating": 5,
         "is_coach": False,
     },
     {
@@ -503,7 +503,7 @@ test_users = [
         "zip_code": "77022",
         "phone_number": "7137652345",
         "bio": "Some bio",
-        "rating": "B",
+        "rating": 6,
         "is_coach": False,
     },
     {
@@ -516,7 +516,7 @@ test_users = [
         "zip_code": "77999",
         "phone_number": "8327892345",
         "bio": "Some bio",
-        "rating": "E",
+        "rating": 6,
         "is_coach": False,
     },
     {
@@ -529,7 +529,7 @@ test_users = [
         "zip_code": "77035",
         "phone_number": "7138764567",
         "bio": "Some bio",
-        "rating": "C",
+        "rating": 5,
         "is_coach": False,
     },
 ]
