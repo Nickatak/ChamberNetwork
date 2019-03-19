@@ -18,6 +18,17 @@ class EmailManager(models.Manager):
         #print(rendered_string)
         pass
 
+
+    def send_pw_reset_link(self, email, reset_token):
+        email_template = Template(self.get(name="Pass Reset Token").raw_template)
+        raw_context = {
+            'reset_token' : reset_token,
+        }
+
+        rendered_string = email_template.render(Context(raw_context))
+        pass
+
+
 # Ideally, we can store templates for the emails here, but for now, I'm going to leave it blank.
 class Email(models.Model):
     name = models.CharField(max_length=255, unique=True)
