@@ -116,7 +116,7 @@ def pw_reset_display(req, reset_token):
 
     if ResetToken.objects.filter(value=reset_token).exists():
         context = {
-            'token' : reset_token,
+            'reset_token' : reset_token,
         }
 
         return render(req, 'html/new_pw.html', context)
