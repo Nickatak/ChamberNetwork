@@ -110,7 +110,7 @@ class MemberManager(models.Manager):
         bio = post_data['bio']
         # Make this a choiceField later.
         if is_coach:
-            rating = 'S'
+            rating = self.PROFESSIONAL
         else:
             rating = post_data['rating']
 
@@ -280,14 +280,27 @@ class Member(models.Model):
     bio = models.TextField()
     area = models.TextField()
 
+    PROFESSIONAL = 0
+    EXPERT = 1
+    VERY_ADVANCED = 2
+    ADVANCED = 3
+    ADVANCED_INTERMEDIATE = 4
+    INTERMEDIATE = 5
+    ADVANCED_NOVICE = 6
+    NOVICE = 7
+
+#Professional, Expert, Very Advanced, Advanced, Advanced Intermediate, Intermediate, Advanced Novice, Novice
     RATING_CHOICES = (
-        ("A", "A"),
-        ("B", "B"),
-        ("C", "C"),
-        ("D", "D"),
-        ("S", "Coach"),
+        (PROFESSIONAL, "Professional"),
+        (EXPERT, "Expert"),
+        (VERY_ADVANCED, "Very Advanced"),
+        (ADVANCED, "Advanced"),
+        (ADVANCED_INTERMEDIATE, "Advanced Intermediate"),
+        (INTERMEDIATE, "Intermediate"),
+        (ADVANCED_NOVICE, "Advanced Novice"),
+        (NOVICE, "Novice"),
     )
-    rating = models.CharField(max_length=1, choices=RATING_CHOICES)
+    rating = models.IntegerField(choices=RATING_CHOICES, default=0)
 
 
     primary_instrument = models.ForeignKey(Instrument, on_delete=models.SET_NULL, null=True, related_name='primary_users')
