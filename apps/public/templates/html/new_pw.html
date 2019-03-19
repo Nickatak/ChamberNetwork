@@ -65,9 +65,13 @@
                         </div>
 
                         <div class="error-message">
-                                    <p> 
-                                    <!-- If password and confirm password do not match: show error. -->
-                                    </p>
+                                    <ul>
+                                    {% for message in errors.password %}
+                                        <li>
+                                            <p>{{ message }}</p>
+                                        </li>
+                                    {% endfor %}
+                                    <ul>
                                 </div>
                         <input type="hidden" name="token" value="{{ reset_token }}"> 
 	        			<button type="submit" class="btn btn-reg btn-info btn-block mt-4">Confirm new password</button>
