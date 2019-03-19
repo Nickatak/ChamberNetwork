@@ -161,7 +161,7 @@ class MemberManager(models.Manager):
         if len(password) < 8:
             errors.append('Your password must contain atleast eight characters.')
 
-        if not all(True for char in password if not char.isdigit()):
+        if all(True if not char.isdigit() else False for char in password):
             errors.append('Your password must contain atleast one digit.')
 
         return errors
