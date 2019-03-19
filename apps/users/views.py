@@ -130,12 +130,13 @@ def reset_token_handler(req):
         user_id = user.id
         user_email = user.email
 
-        if req.POST['new_password'] == req.POST['confirm_password']:
+        errors = Member.objects.validate_password(req.POST['new_password'], req.POST['confirm_password'])
+        if not errors:
             print("Passwords okay")
             return redirect('public:new_pw_success')
         else:
             req.session['errors'] = {
-                'new_password' : 'Passwords do not match, try again.',
+                'password' : errors,
             }
             return redirect('public:pw_reset_display', req.POST['token'])
 
