@@ -124,6 +124,11 @@ def get_reset_token(req):
 
     return redirect('public:reset_sent')
 
+def reset_token_handler(req):
+    if req.method == 'POST':
+        print('OKAY')
+
+
 
 def logout_handler(req):
     req.session.pop('uid', None)
