@@ -25,9 +25,9 @@ class MemberManager(models.Manager):
         if self.filter(email=email).exists():
             user = self.get(email=email)
             if not check_password(attempted_password, user.password):
-                errors['invalid'] = 'Invalid credentials.'
+                errors['password'] = 'Username/Password combination not found, please try again or use the "Forgot Password" button below.'
         else:
-            errors['invalid'] = 'Invalid Credentials.'
+            errors['password'] = 'Username/Password combination not found, please try again or use the "Forgot Password" button below.'
 
         return user, errors
 
