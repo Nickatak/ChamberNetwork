@@ -21,7 +21,7 @@ def new_member_display(req):
         'errors' : req.session.pop('errors', None),
         'old_data' : req.session.pop('old_data', None),
         'instruments' : Instrument.objects.all(),
-        'rating_choices' : Member.RATING_CHOICES,
+        'rating_choices' : Member.RATING_CHOICES[1:],
 	}
 
 	return render(req, 'html/register_member.html', context)
