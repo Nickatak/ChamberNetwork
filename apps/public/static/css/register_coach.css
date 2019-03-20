@@ -112,6 +112,10 @@ h3 {
     margin-top: 12px;
 }
 
+.error-message p {
+    color: red;
+}
+
 /*Overlay:*/
 #overlay {
     position: fixed; /* Sit on top of the page content */

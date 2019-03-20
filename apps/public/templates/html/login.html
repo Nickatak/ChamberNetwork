@@ -60,6 +60,13 @@
                         <div class="form-group mt-4">
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                         </div>
+                        <div class="error-message">
+                            <p>
+                            {% if 'password' in error %}
+                                {{ errors.password }}
+                            {% endif %}
+                            </p>
+                        </div>
                             <button type="submit" class="btn btn-reg btn-info btn-block mt-4">LOGIN</button>
                         <div class="col-md-12">
                             <div class="login-links text-center mt-4 password-link">
