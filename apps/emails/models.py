@@ -2,6 +2,9 @@ from django.core.mail import send_mail
 from django.db import models
 from django.template.loader import render_to_string
 from django.urls import reverse
+from django.contrib.auth.models import User
+
+SERVER_EMAIL = 'admin@ntakemori.com'
 
 class EmailManager(models.Manager):
     def send_new_registration(self, email, password, is_coach=False):
@@ -15,7 +18,13 @@ class EmailManager(models.Manager):
         print('-' * 80)
         print(rendered_string)
         print('-' * 80)
-        pass
+        admin_emails = [user.email for user in User.objects.filter(is_superuser=True)]
+        
+        subj = 'HCMN: New User Registered.'
+        message = rendered_string
+        
+        send_mail(subj, message, SERVER_EMAIL, admin_emails)
+        
 
 
     def send_pw_reset_link(self, email, reset_token, domain_name):
@@ -27,7 +36,7 @@ class EmailManager(models.Manager):
         print('-' * 80)
         print(rendered_string)
         print('-' * 80)
-        pass
+        admin_emails = [user.email for user in User.objects.filter(is_superuser=True)]
 
 
 # Ideally, we can store templates for the emails here, but for now, I'm going to leave it blank.
