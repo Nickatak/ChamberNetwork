@@ -63,6 +63,15 @@ color: #989898;
     overflow-y: scroll;
 }
 
+/*Main*/
+#main-container {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: #f7f7f7;
+    justify-content: center;
+    height: 100vh;
+}
+
 
 /*Card-deck:*/
 .card-deck{
