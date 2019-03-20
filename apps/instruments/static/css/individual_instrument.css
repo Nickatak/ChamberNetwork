@@ -71,6 +71,7 @@ color: #989898;
     padding-bottom: 2vh;
     background-color: #f7f7f7;
     justify-content: center;
+    height: 100vh;
 }
 
 .card {
@@ -78,6 +79,17 @@ color: #989898;
     border: 1px black;
     box-shadow: 3px 3px 3px #36454f;
 }
+
+table {
+    display: table;
+    height: 100px;
+    width: 100%;
+    table-layout: fixed;
+ }
+
+td {
+    width: 25% ;
+  }
 
 .table-responsive a {
     color: #0000EE;
