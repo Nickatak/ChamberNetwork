@@ -116,7 +116,7 @@
                                         {% for member in primary_users %}
                                         <tr>
                                             <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>
-                                            <td>{{ member.rating }}</td>
+                                            <td>{{ member.get_rating_display }}</td>
                                             <td>{{ member.email }}</td>
                                             <td>{{ member.area }}</td>
                                         </tr>
@@ -152,7 +152,7 @@
                                     {% for member in secondary_users %}
                                     <tr>
                                         <td><a href="{% url 'users:individual_member' member.id %}">{{ member.first_name }} {{ member.last_name }}</a></td>
-                                        <td>{{ member.rating }}</td>
+                                        <td>{{ member.get_rating_display }}</td>
                                         <td>{{ member.email }}</td>
                                         <td>{{ member.area }}</td>
                                     </tr>
