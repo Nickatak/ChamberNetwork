@@ -1,31 +1,32 @@
 from django.core.mail import send_mail
 from django.db import models
-from django.template import Context, Template
-
+from django.template.loader import render_to_string
+from django.urls import reverse
 
 class EmailManager(models.Manager):
     def send_new_registration(self, email, password, is_coach=False):
-        #email_template = Template(self.get(name='New User Template').raw_template)
+        context = {
+            'email' : email,
+            'password' : password,
+            'is_coach' : is_coach,
+        }
 
-        #raw_context = {
-        #    'email' : email,
-        #    'password' : password,
-        #    'is_coach' : is_coach,
-        #}
-
-        #rendered_string = email_template.render(Context(raw_context))
-
-        #print(rendered_string)
+        rendered_string = render_to_string("email_templates/New_User_Template.html", context)
+        print('-' * 80)
+        print(rendered_string)
+        print('-' * 80)
         pass
 
 
-    def send_pw_reset_link(self, email, reset_token):
-        email_template = Template(self.get(name="Pass Reset Token").raw_template)
-        raw_context = {
-            'reset_token' : reset_token,
+    def send_pw_reset_link(self, email, reset_token, domain_name):
+        context = {
+            'reset_url' : domain_name + reverse('public:pw_reset_display', args=[reset_token]),
         }
 
-        rendered_string = email_template.render(Context(raw_context))
+        rendered_string = render_to_string("email_templates/Pass_Reset_Template.html", context)
+        print('-' * 80)
+        print(rendered_string)
+        print('-' * 80)
         pass
 
 
