@@ -15,9 +15,6 @@ class EmailManager(models.Manager):
         }
 
         rendered_string = render_to_string("email_templates/New_User_Template.html", context)
-        print('-' * 80)
-        print(rendered_string)
-        print('-' * 80)
         admin_emails = [user.email for user in User.objects.filter(is_superuser=True)]
         
         subj = 'HCMN: New User Registered.'
@@ -33,10 +30,11 @@ class EmailManager(models.Manager):
         }
 
         rendered_string = render_to_string("email_templates/Pass_Reset_Template.html", context)
-        print('-' * 80)
-        print(rendered_string)
-        print('-' * 80)
-        admin_emails = [user.email for user in User.objects.filter(is_superuser=True)]
+
+        subj = 'HCMN: Reset Password.'
+        message = rendered_string
+        
+        send_mail(subj, message, SERVER_EMAIL, [email])
 
 
 # Ideally, we can store templates for the emails here, but for now, I'm going to leave it blank.
