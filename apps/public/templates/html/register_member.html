@@ -62,9 +62,80 @@
                         <img class="col-xs-10 col-sm-10 col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                     </div>
 
-                    <!-- Overlay: -->
-                    <div class="panel panel-default">
-                        <h5>Before filling out form, please read the following:</h5>
+                    <!-- Modal Overlay: -->
+                    <div class="panel panel-default overlay-section">
+                        <h5 class="">Before filling out form, please read the following:</h5>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-reg btn-info btn-block" data-toggle="modal" data-target="#regmember1">
+                                HCMN Privacy Policy
+                        </button>
+
+                        <button type="button" class="btn btn-reg btn-info btn-block" data-toggle="modal" data-target="#regmember2">
+                                What's My Rating?
+                        </button>
+                        
+                        <!-- First Modal -->
+                        <div class="modal fade" id="regmember1" tabindex="-1" role="dialog" aria-labelledby="regmember1LongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="regmember1LongTitle">HCMN Privacy Policy</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    None of your personal information will be shared with anyone other than other registered members of HCMN. Your address and phone number are not shared, even with other members of HCMN. 
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-reg btn-info" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Second Modal -->
+                        <div class="modal fade" id="regmember2" tabindex="-1" role="dialog" aria-labelledby="regmember2LongTitle" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="regmember2LongTitle">HCMN Playing Levels</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                        <br>
+                                        <h6><strong>Below, you will be asked to provide a self-rating. Please choose the playing level that best describes your current abilities.</strong></h6>
+                                        <br>
+                                        <h6><strong>Novice</strong></h6>
+                                        <p>I can read music and have basic technical skills. I am starting to explore chamber music repertoire. I can sight-read simple pieces slowly. Often I must slow down in faster or more technical passages. Sometimes I get “tangled” in my own part.</p>
+                                        <br>
+                                        <h6><strong>Advanced Novice</strong></h6>
+                                        <p>My skills are better than the skills described for Novice, but not quite up to the level of Intermediate.</p>
+                                        <br>
+                                        <h6><strong>Intermediate</strong></h6>
+                                        <p>I play with a decent tone. I am comfortable at moderate tempi. I am peripherally aware of other parts. I can sight-read at a moderate tempo but slow down the hard sections. I need to slow down in hard sections. I tend to get absorbed in my own part.</p>
+                                        <br>
+                                        <h6><strong>Advanced Intermediate</strong></h6>
+                                        <p>My skills are better than the skills described for Intermediate, but not quite up to the level of Advanced.</p>
+                                        <br>
+                                        <h6><strong>Advanced</strong></h6>
+                                        <p>I play with a pleasant tone. I can get back in when lost. I can sight-read near concert tempo, except in difficult technical passages. I am aware of other parts and try to match them. The hardest passages sound messy if I take them too fast. My phrasing is sometimes choppy.</p>
+                                        <br>
+                                        <h6><strong>Very Advanced</strong></h6>
+                                        <p>My skills are better than the skills described for Advanced, but not quite up to the level of Expert.</p>
+                                        <br>
+                                        <h6><strong>Expert</strong></h6>
+                                        <p>I play with a beautiful tone. I can play quickly and cleanly in difficult keys and with key/tempo changes. I am a strong leader. I can sight-read all passages cleanly at concert tempo (except pianists). I have keen awareness of other parts and know exactly how they fit. I want to develop a cohesive group sound and wider range in tone color. I need to fine-tune my intonation.</p>
+                                        <br>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-reg btn-info" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                     <!-- End overlay: -->
                     </div>
 
