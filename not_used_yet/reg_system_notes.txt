@@ -1,0 +1,41 @@
+1. New user signs up
+
+User creates a new member object by filling out form at either register_member.html or register_coach.html
+
+These pages are served and various data is populated (through context dictionary) via new_member_display and new_coach_display in public/views.py
+
+Both forms submit data to users/views.py. This file does not do a lot of work. It essentially just checks for errors (by calling on a function contained in users/models.py) in the registration forms. If there are errors it reloads the page with error messages. If not errors, it called on functions that are contained in users/models.py. (users/views.py also handles logins.)
+
+users/models.py does an immense amount of work. It creates the database member model (at the back end, member and coach are part of the same model), with all of the attributes. New users are validated through users/models.py and the member objects are created by this file. The file also creates a default/random password for each new member object. The file also generates a token for each new member (I DON'T REALLY UNDERSTAND THIS PART!). The file also handles log ins for established members as well as changes of password for established members. 
+
+At this point, here is where a new member object stands.
+*Data has been submitted via the forms
+*users/views.py has checked for errors (by calling on new_member_validation in users/models.py) and, if not errors, has called on a couple of other functions (also both in users/models.py): add_member (which adds the member object to the db) and send_new_registration (which sends Michael an email, letting him know that there is a new member, all of this member's attributes, and that member's default, temporary password) (IS THIS CORRECT??).
+*The new member model now exists in the db, awaiting Michael to take necessary action.
+
+2. Approval process
+
+Michael has received an email, basically saying, "hey, you've got a new member: here are his/her credentials and here is his/her temp password." He considers this new member, then goes into the admin panel to check on "HAS BEEN VIEWED" and "HAS BEEN APPROVED".
+
+Assuming he approves the member, he changes "Has been viewed" and "Has been approved" from "false" to "true". By this action, a series of events is set off... A boilerplate email is sent to the newly approved member (IS THIS DONE AUTOMATICALLY OR DOES MICHAEL DO IT MANUALLY?), saying something like, "Congrats! You have been approved to join Houston Chamber Music Network. Here is your temporary password. Please click on the link below, which will take you to a page where you will set your permanent password. From there you can log into and use the site." (IS THIS BASICALLY CORRECT?)
+
+I NEED HELP UNDERSTANDING THIS. I WILL NEVER BE ABLE TO EXPLAIN IT TO MICHAEL, AND GIVE HIM OPTIONS, IF I DO NOT UNDERSTAND THIS MYSELF.
+
+3. Password reset system
+
+This is fairly straightforward, but important to understand given the changes Michael has proposed to the approval process.
+
+If an established user tries to login and fails, they will get an error message: 'Username/Password combination not found, please try again or use the "Forgot Password" button below.' (This is found in users/models.py/validate_login.) 
+
+They click on "Forgot password" button, which takes them to the url 'request-reset/' (public/urls.py). 
+
+They enter their email and click on "Send reset email" (assuming their email was found in the db). The reset email is sent automatically and they are directed to 'reset-sent' (public/urls.py). 
+
+They recieve the email with a token allowing them to access (??? WHAT PAGE/ROUTE?? I BELIEVE THIS IS THE SAME ROUTE THAT A NEW MEMBER TAKES BUT I AM NOT SURE). BASICALLY, I DON'T KNOW WHERE THE RESET PASSWORD PAGE IS, BUT ONCE THEY SUCCESSFULLY FILL IT OUT, THE GET 'new_pw_success' (public/urls.py) which invites them to login with their new password.
+
+
+
+
+
+
+
