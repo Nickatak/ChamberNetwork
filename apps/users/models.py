@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from ..instruments.models import Instrument
 
 
-NAME_REGEX = re.compile(r"^[-a-zA-Z']+$")
+NAME_REGEX = re.compile(r"^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$")
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
 
