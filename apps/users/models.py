@@ -102,7 +102,7 @@ class MemberManager(models.Manager):
         phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
         primary_instrument = Instrument.objects.get(pk=post_data['primary_instrument'])
 
-        if 'secondary_instrument'  in post_data: 
+        if ('secondary_instrument' in post_data) and (post_data['secondary_instrument']):
             secondary_instrument = Instrument.objects.get(pk=post_data['secondary_instrument'])
         else:
             secondary_instrument = None
