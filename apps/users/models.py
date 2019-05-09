@@ -5,6 +5,7 @@ from django.db import models
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.models import User
 
+
 from ..instruments.models import Instrument
 
 
@@ -266,6 +267,17 @@ class ResetTokenManager(models.Manager):
 
 
 class Member(models.Model):
+
+
+    def save(self):
+        if self.id:
+            old_obj = Member.objects.get(pk=self.id)
+            if old_obj.is_approved == False and self.is_approved == True:
+                print("PRE_SAVE WORKING, USER APPROVED")
+        else:
+            print("PRE_SAVE WORKING, NEW USER CREATED")
+
+
     # email field is being used as login username for auth.
     email = models.CharField(max_length=25)
     first_name = models.CharField(max_length=25, verbose_name="First Name")
