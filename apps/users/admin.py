@@ -61,6 +61,8 @@ class MemberAdmin(admin.ModelAdmin):
             test_user['secondary_instrument'] = random.choice(secondary_instruments_available)
 
             test_user['password'] = make_password('password')
+            test_user['is_approved'] = True
+            test_user['is_reviewed'] = True
 
         for test_user in test_users:
             Member.objects.create(**test_user)
@@ -69,7 +71,11 @@ class MemberAdmin(admin.ModelAdmin):
 
 
     def approve_all(self, request, selected_members):
-        selected_members.update(is_approved=True, is_reviewed=True)
+        # I need this to work with the save method on the Member model, so I have to use a for loop.
+        for member in selected_members:
+            member.is_approved = True
+            member.is_reviewed = True
+            member.save()
     approve_all.short_description = 'Approve and review all checked members.'
 
 

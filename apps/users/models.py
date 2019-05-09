@@ -5,10 +5,11 @@ from django.db import models
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.models import User
 
+from ..emails.models import Email
 from ..instruments.models import Instrument
 
 
-NAME_REGEX = re.compile(r"^[-a-zA-Z']+$")
+NAME_REGEX = re.compile(r"^[a-zA-Z]+(?:[-\s.]+[a-zA-Z]+)*$")
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
 
@@ -81,7 +82,7 @@ class MemberManager(models.Manager):
             errors['bio'] = 'Please provide a brief musical bio.'
 
         if len(area) < 10:
-            errors['area'] = 'Please provide area information.'
+            errors['area'] = 'Please provide area information (Minimum of 10 characters).'
 
         if (not is_coach) and 'rating' not in post_data:
             errors['rating'] = 'Please select a skill rating.'
@@ -102,7 +103,7 @@ class MemberManager(models.Manager):
         phone_number = post_data['tel1'] + post_data['tel2'] + post_data['tel3']
         primary_instrument = Instrument.objects.get(pk=post_data['primary_instrument'])
 
-        if 'secondary_instrument'  in post_data: 
+        if ('secondary_instrument' in post_data) and (post_data['secondary_instrument']):
             secondary_instrument = Instrument.objects.get(pk=post_data['secondary_instrument'])
         else:
             secondary_instrument = None
@@ -252,20 +253,32 @@ class ResetTokenManager(models.Manager):
 
     def generate_new_token(self, email):
         if Member.objects.filter(email=email).exists():
+            member = Member.objects.get(email=email)
+        else:
+            member = None
 
+        if member:
             token_value = User.objects.make_random_password(length=32, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
             while self.filter(value=token_value).exists():
                 token_value = User.objects.make_random_password(length=32, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
 
-            if self.filter(user=Member.objects.get(email=email)).exists():
-                self.get 
-
-            return self.update_or_create(user=Member.objects.get(email=email), defaults= {'value' : token_value})[0]
+            return self.update_or_create(user=member, defaults= {'value' : token_value})[0]
         else:
             return None
 
 
 class Member(models.Model):
+
+    def save(self, *args, **kwargs):
+        if self.id:
+            old_obj = Member.objects.get(pk=self.id)
+            if old_obj.is_approved == False and self.is_approved == True:
+                token = ResetToken.objects.generate_new_token(self.email)
+                Email.objects.send_approval_link(self.email, token.value)
+
+        super(Member, self).save(*args, **kwargs)
+
+
     # email field is being used as login username for auth.
     email = models.CharField(max_length=25)
     first_name = models.CharField(max_length=25, verbose_name="First Name")

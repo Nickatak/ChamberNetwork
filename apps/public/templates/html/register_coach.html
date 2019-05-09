@@ -62,33 +62,33 @@
                                 <img class="col-xs-10 col-sm-10 col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                             </div>
 
-                            <!-- Overlay: -->
-                            <div class="panel panel-default">
+                            <!-- Modal Overlay: -->
+                            <div class="panel panel-default overlay-section">
                                 <h5>Before filling out form, please read the following:</h5>
 
-                                <!-- What happens overlay: -->
-                                <!-- <div id="overlay" onclick="off()">
-                                    <div id="overlay-text">
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-reg btn-info btn-block" data-toggle="modal" data-target="#regcoach">
+                                    HCMN Privacy Policy
+                                </button>
+
+                                <!-- First Modal -->
+                                <div class="modal fade" id="regcoach" tabindex="-1" role="dialog" aria-labelledby="regmember1LongTitle" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="regmember1LongTitle">HCMN Privacy Policy</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            None of your personal information will be shared with anyone other than other registered members of HCMN. Your address and phone number are not shared, even with other members of HCMN. 
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-reg btn-info" data-dismiss="modal">Close</button>
+                                        </div>
                                     </div>
-                                </div> -->
-
-                                <!-- <div class="overlay-button">
-                                    <button onclick="on()" class="btn btn-reg btn-info btn-block">What happens after I submit this form?</button>
-                                </div> -->
-
-                                <!-- <script type="text/javascript">
-
-                                    function on() {
-                                        document.getElementById("overlay").style.display = "block";
-                                    }
-
-                                    function off() {
-                                        document.getElementById("overlay").style.display = "none";
-                                    }
-
-                                </script> -->
-
+                                </div>
                             <!-- End overlay: -->
                             </div>
 
