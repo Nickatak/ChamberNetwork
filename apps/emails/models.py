@@ -4,6 +4,8 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+from django.conf import settings
+
 SERVER_EMAIL = 'admin@ntakemori.com'
 
 class EmailManager(models.Manager):
@@ -16,17 +18,17 @@ class EmailManager(models.Manager):
 
         rendered_string = render_to_string("email_templates/New_User_Template.html", context)
         admin_emails = [user.email for user in User.objects.filter(is_superuser=True)]
-        
+
         subj = 'HCMN: New User Registered.'
         message = rendered_string
         
-        send_mail(subj, message, SERVER_EMAIL, admin_emails)
+        #send_mail(subj, message, SERVER_EMAIL, admin_emails)
         
 
 
-    def send_pw_reset_link(self, email, reset_token, domain_name):
+    def send_pw_reset_link(self, email, reset_token):
         context = {
-            'reset_url' : domain_name + reverse('public:pw_reset_display', args=[reset_token]),
+            'reset_url' : settings.HOSTNAME + reverse('public:pw_reset_display', args=[reset_token]),
         }
 
         rendered_string = render_to_string("email_templates/Pass_Reset_Template.html", context)
@@ -34,7 +36,8 @@ class EmailManager(models.Manager):
         subj = 'HCMN: Reset Password.'
         message = rendered_string
         
-        send_mail(subj, message, SERVER_EMAIL, [email])
+        #send_mail(subj, message, SERVER_EMAIL, [email])
+        print(message)
 
 
 # Ideally, we can store templates for the emails here, but for now, I'm going to leave it blank.
