@@ -269,12 +269,12 @@ class ResetTokenManager(models.Manager):
 
 class Member(models.Model):
 
-
     def save(self, *args, **kwargs):
         if self.id:
             old_obj = Member.objects.get(pk=self.id)
             if old_obj.is_approved == False and self.is_approved == True:
-                print("PRE_SAVE WORKING, USER APPROVED")
+                token = Token.objects.generate_new_token(self.email)
+                Email.objects.send_approval_link(self. email, token.value)
 
         super(Member, self).save(*args, **kwargs)
 
