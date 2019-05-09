@@ -5,7 +5,7 @@ from django.db import models
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.models import User
 
-
+from ..emails.models import Email
 from ..instruments.models import Instrument
 
 
@@ -257,7 +257,7 @@ class ResetTokenManager(models.Manager):
         else:
             member = None
 
-        if member and member.is_approved:
+        if member:
             token_value = User.objects.make_random_password(length=32, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
             while self.filter(value=token_value).exists():
                 token_value = User.objects.make_random_password(length=32, allowed_chars="abcdefghjkmnpqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567889")
@@ -273,8 +273,8 @@ class Member(models.Model):
         if self.id:
             old_obj = Member.objects.get(pk=self.id)
             if old_obj.is_approved == False and self.is_approved == True:
-                token = Token.objects.generate_new_token(self.email)
-                Email.objects.send_approval_link(self. email, token.value)
+                token = ResetToken.objects.generate_new_token(self.email)
+                Email.objects.send_approval_link(self.email, token.value)
 
         super(Member, self).save(*args, **kwargs)
 
