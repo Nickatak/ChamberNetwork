@@ -269,13 +269,13 @@ class ResetTokenManager(models.Manager):
 class Member(models.Model):
 
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if self.id:
             old_obj = Member.objects.get(pk=self.id)
             if old_obj.is_approved == False and self.is_approved == True:
                 print("PRE_SAVE WORKING, USER APPROVED")
-        else:
-            print("PRE_SAVE WORKING, NEW USER CREATED")
+
+        super(Member, self).save(*args, **kwargs)
 
 
     # email field is being used as login username for auth.
