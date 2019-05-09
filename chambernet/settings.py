@@ -25,6 +25,7 @@ SECRET_KEY = 'v5*d56kyw0vj2kt%(sc!4k+8$h^^+t@*_b^#*xt#0tc($r3@+6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+HOSTNAME = 'localhost:8000'
 ALLOWED_HOSTS = []
 
 
@@ -133,6 +134,5 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Testing-chambernet <testing@ntakemori.com>'
-
 
 
