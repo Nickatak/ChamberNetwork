@@ -69,7 +69,11 @@ class MemberAdmin(admin.ModelAdmin):
 
 
     def approve_all(self, request, selected_members):
-        selected_members.update(is_approved=True, is_reviewed=True)
+        # I need this to work with the save method on the Member model, so I have to use a for loop.
+        for member in selected_members:
+            member.is_approved = True
+            member.is_reviewed = True
+            member.save()
     approve_all.short_description = 'Approve and review all checked members.'
 
 
