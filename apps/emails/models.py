@@ -24,7 +24,17 @@ class EmailManager(models.Manager):
         
         #send_mail(subj, message, SERVER_EMAIL, admin_emails)
         
+    def send_approval_link(self, email, reset_token):
+        context = {
+            'reset_url' : settings.HOSTNAME + reverse('public:pw_reset_display', args=[reset_token]),
+        }
 
+        rendered_string = rendered_to_strings("email_templates/New_Approval_Template.html")
+
+        subj = 'HCMN: Your account has been approved.'
+        message = rendered_string
+
+        #send_mail(subj, message, SERVER_EMAIL, [email])
 
     def send_pw_reset_link(self, email, reset_token):
         context = {
