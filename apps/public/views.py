@@ -116,7 +116,7 @@ def token_sent(req):
 
 def pw_reset_display(req, reset_token):
 
-    if ResetToken.objects.filter(value=reset_token).exists():
+    if ResetToken.objects.filter(value=reset_token).exists() and ResetToken.objects.get(value=reset_token).user.is_approved:
         context = {
             'reset_token' : reset_token,
             'errors' : req.session.pop('errors', None),
