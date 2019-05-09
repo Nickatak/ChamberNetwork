@@ -61,6 +61,8 @@ class MemberAdmin(admin.ModelAdmin):
             test_user['secondary_instrument'] = random.choice(secondary_instruments_available)
 
             test_user['password'] = make_password('password')
+            test_user['is_approved'] = True
+            test_user['is_reviewed'] = True
 
         for test_user in test_users:
             Member.objects.create(**test_user)
