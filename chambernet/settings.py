@@ -128,10 +128,10 @@ STATIC_URL = '/static/'
 
 # SMTP settings for Emails (Postfix)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 25
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'intoxicatedchess123@gmail.com'
+EMAIL_HOST_PASSWORD = 'Wowsers123'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Testing-chambernet <testing@ntakemori.com>'
 
