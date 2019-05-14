@@ -107,6 +107,7 @@ def edit_member(req, member_id):
         print('-' * 50)
         if not errors:
             Member.objects.member_update(update)
+            return redirect('users:dashboard')
 
     if int(member_id) != req.session['uid']:
         return redirect('users:dashboard')
