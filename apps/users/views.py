@@ -14,6 +14,7 @@ def login_handler(req):
             return redirect('users:dashboard')
         else:
             req.session['errors'] = errors
+            print(errors)
             req.session['old_data'] = {
                                         'email' : req.POST['email'],
                                       }
@@ -103,8 +104,6 @@ def edit_member(req, member_id):
 
     if req.method == 'POST':
         errors, update = Member.objects.validate_edit(req.session['uid'], req.POST)
-        print(errors)
-        print('-' * 50)
         if not errors:
             Member.objects.member_update(update)
             return redirect('users:dashboard')
