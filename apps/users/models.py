@@ -52,16 +52,6 @@ class MemberManager(models.Manager):
             data.pop('new_password')
             data.pop('confirm_password')
 
-        # Custom email check, I hate to do this, but it needs to be done here.
-        if data['email'] and data['email'] != orig['email']:
-            email_modded = True
-            if not EMAIL_REGEX.match(data['email']):
-                return {'email' : 'Please enter a valid email address.'}, orig
-            elif self.member_email_exists(data['email']):
-                return {'email' : 'Email already found in database. Either enter a different email or go to sign in page.'}, orig
-        else:
-            email_modded = False
-
         for key in data:
             # Explicit check against empty string.
             if data[key] != '' and orig[key] != data[key]:
@@ -74,14 +64,10 @@ class MemberManager(models.Manager):
             orig['tel2'] = phone_number[3:6]
             orig['tel3'] = phone_number[6:10]
             errors = self.new_member_validation(orig)
-            if not email_modded:
-                expected_error = {'email' : 'Email already found in database. Either enter a different email or go to sign in page.'}
-                if errors != expected_error:
-                    errors.pop('email')
-                    return errors, orig
-            else:
-                if errors:
-                    return errors, orig
+            expected_error = {'email' : 'Email already found in database. Either enter a different email or go to sign in page.'}
+            if errors != expected_error:
+                errors.pop('email')
+                return errors, orig
 
         return None, orig
 
