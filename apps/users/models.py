@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
 import re
 
-from django.db import models
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib.auth.models import User
+from django.db import models
+from django.forms.models import model_to_dict
 
 from ..emails.models import Email
 from ..instruments.models import Instrument
@@ -14,6 +15,75 @@ EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$")
 
 
 class MemberManager(models.Manager):
+
+
+    def member_update(self, update_dict):
+        print(update_dict)
+        update_dict['phone_number'] = update_dict.pop('tel1') + update_dict.pop('tel2') + update_dict.pop('tel3')
+        user_id = update_dict.pop('id')
+        self.filter(pk=user_id).update(**update_dict)
+
+    def validate_edit(self, user_id, data):
+        # The idea here is to use dicts to compare the changes, and then use our member validation to validate the fields.
+
+        orig = model_to_dict(self.get(id=user_id))
+        modded = False
+
+        # Hard copy
+        data = data.copy()
+        # Remove CSRF token.
+        data.pop('csrfmiddlewaretoken')
+
+        # Normalize foreign keys (primary_instrument and secondary_instrument)
+        data['primary_instrument'] = int(data['primary_instrument'])
+        if not data['secondary_instrument']:
+            data['secondary_instrument'] = None
+
+        # Do a password validation if they've entered a PW to change.  If not, just pop both PW-keys.
+        if data['new_password'] or data['confirm_password']:
+            errors = self.validate_password(data['new_password'], data['confirm_password'])
+            if errors:
+                return errors, orig
+            else:
+                pw = data.pop('new_password')
+                data.pop('confirm_password')
+                data['password'] = make_password(pw)
+        else:
+            data.pop('new_password')
+            data.pop('confirm_password')
+
+        # Custom email check, I hate to do this, but it needs to be done here.
+        if data['email'] and data['email'] != orig['email']:
+            email_modded = True
+            if not EMAIL_REGEX.match(data['email']):
+                return {'email' : 'Please enter a valid email address.'}, orig
+            elif self.member_email_exists(data['email']):
+                return {'email' : 'Email already found in database. Either enter a different email or go to sign in page.'}, orig
+        else:
+            email_modded = False
+
+        for key in data:
+            # Explicit check against empty string.
+            if data[key] != '' and orig[key] != data[key]:
+                orig[key] = data[key]
+                modded = True
+
+        if modded:
+            phone_number = orig.pop('phone_number')
+            orig['tel1'] = phone_number[0:3]
+            orig['tel2'] = phone_number[3:6]
+            orig['tel3'] = phone_number[6:10]
+            errors = self.new_member_validation(orig)
+            if not email_modded:
+                expected_error = {'email' : 'Email already found in database. Either enter a different email or go to sign in page.'}
+                if errors != expected_error:
+                    errors.pop('email')
+                    return errors, orig
+            else:
+                if errors:
+                    return errors, orig
+
+        return None, orig
 
 
     def validate_login(self, data):
