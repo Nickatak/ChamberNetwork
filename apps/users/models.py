@@ -18,10 +18,16 @@ class MemberManager(models.Manager):
 
 
     def member_update(self, update_dict):
-        print(update_dict)
         update_dict['phone_number'] = update_dict.pop('tel1') + update_dict.pop('tel2') + update_dict.pop('tel3')
         user_id = update_dict.pop('id')
-        self.filter(pk=user_id).update(**update_dict)
+        pw = update_dict.pop('password')
+        
+        self.filter(pk=user_id).update(**update_dict) 
+        
+        user = self.get(pk=user_id)
+        user.password = make_password(pw)
+        user.save()
+
 
     def validate_edit(self, user_id, data):
         # The idea here is to use dicts to compare the changes, and then use our member validation to validate the fields.
@@ -31,6 +37,7 @@ class MemberManager(models.Manager):
 
         # Hard copy
         data = data.copy()
+
         # Remove CSRF token.
         data.pop('csrfmiddlewaretoken')
 
@@ -42,12 +49,14 @@ class MemberManager(models.Manager):
         # Do a password validation if they've entered a PW to change.  If not, just pop both PW-keys.
         if data['new_password'] or data['confirm_password']:
             errors = self.validate_password(data['new_password'], data['confirm_password'])
+            print(data['new_password'])
             if errors:
                 return errors, orig
             else:
-                pw = data.pop('new_password')
+                pw = data['new_password']
+                data.pop('new_password')
                 data.pop('confirm_password')
-                data['password'] = make_password(pw)
+                data['password'] = pw
         else:
             data.pop('new_password')
             data.pop('confirm_password')
@@ -69,6 +78,8 @@ class MemberManager(models.Manager):
                 errors.pop('email')
                 return errors, orig
 
+
+
         return None, orig
 
 
@@ -82,6 +93,7 @@ class MemberManager(models.Manager):
         if self.filter(email=email).exists():
             user = self.get(email=email)
             if not check_password(attempted_password, user.password):
+                print('Working')
                 errors['password'] = 'Username/Password combination not found, please try again or use the "Forgot Password" button below.'
         else:
             errors['password'] = 'Username/Password combination not found, please try again or use the "Forgot Password" button below.'
