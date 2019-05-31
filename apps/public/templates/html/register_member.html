@@ -144,11 +144,11 @@
                         <img class="col-xs-10 col-sm-10 col-md-8" src='{% static "images/divider9.png" %}' alt="" class="img-responsive">
                     </div>
 
-                    <p>
-                        {% if errors %}
-                            "Please correct errors below."
-                        {% endif %}
-                    </p>
+                    
+                    {% if errors %}
+                        <p>Please correct errors below.<p>
+                    {% endif %}
+                    
 
                     <!-- Basic information section: -->
                     <h5>Basic information:</h5>
