@@ -400,9 +400,7 @@
                         <select class="form-control" name="rating" id="rating" placeholder="Rating">
                             <option {% if not old_data.rating %} selected {% endif %} disabled>Rating</option>
                             {% for rating in rating_choices %}
-                                {% if rating.0 != 'S' %}
-                                <option {% if old_data.rating == rating.0 %} selected {% endif %}value="{{ rating.0 }}">{{ rating.1 }}</option>
-                                {% endif %}
+                                <option {% if old_data.rating == rating.0|stringformat:"i" %} selected {% endif %}value="{{ rating.0 }}">{{ rating.1 }}</option>
                             {% endfor %}
                         </select>
                         <div class="error-message">
