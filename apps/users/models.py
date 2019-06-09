@@ -41,6 +41,16 @@ class MemberManager(models.Manager):
         # Remove CSRF token.
         data.pop('csrfmiddlewaretoken')
 
+        # Unfortunately, this is really the only way to do this.
+        data['phone_number'] = data.pop('tel1') + data.pop('tel2') + data.pop('tel3')
+        if not data['phone_number'][0]:
+            data['phone_number'][0] = orig['phone_number'][0:3]
+        if not data['phone_number'][1]:
+            data['phone_number'][1] = orig['phone_number'][3:6]
+        if not data['phone_number'][2]:
+            data['phone_number'][2] = orig['phone_number'][6:10]
+        data['phone_number'] = ''.join(data['phone_number'])
+
         # Normalize foreign keys (primary_instrument and secondary_instrument)
         data['primary_instrument'] = int(data['primary_instrument'])
         if not data['secondary_instrument']:
@@ -64,7 +74,9 @@ class MemberManager(models.Manager):
         for key in data:
             # Explicit check against empty string.
             if data[key] != '' and orig[key] != data[key]:
+                print('WORKING, DIFF FOUND', key)
                 orig[key] = data[key]
+                print(orig[key])
                 modded = True
 
         if modded:
