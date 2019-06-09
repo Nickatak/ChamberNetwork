@@ -320,6 +320,8 @@ class PatronManager(models.Manager):
 class ResetTokenManager(models.Manager):
 
     def generate_new_token(self, email):
+        email = email.lower()
+
         if Member.objects.filter(email=email).exists():
             member = Member.objects.get(email=email)
         else:
