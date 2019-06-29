@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 from django.conf import settings
 
-SERVER_EMAIL = 'admin@ntakemori.com'
+SERVER_EMAIL = 'noreply@houstonchambermusic.org'
 
 class EmailManager(models.Manager):
     def send_new_registration(self, email, password, is_coach=False):
