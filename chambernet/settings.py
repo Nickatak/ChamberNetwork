@@ -130,9 +130,9 @@ STATIC_URL = '/static/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'intoxicatedchess123@gmail.com'
-EMAIL_HOST_PASSWORD = 'Wowsers123'
+EMAIL_HOST_USER = 'hcmnorg@gmail.com'
+EMAIL_HOST_PASSWORD = 'musicWind27!'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Testing-chambernet <testing@ntakemori.com>'
+DEFAULT_FROM_EMAIL = 'No-Reply <noreply@houstonchambermusic.org>'
 
 
