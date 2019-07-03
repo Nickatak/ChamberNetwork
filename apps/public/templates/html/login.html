@@ -62,13 +62,9 @@
                         </div>
                         <div class="error-message">
                             <p>
-                            {% if 'password' in errors %}
-                                {{ errors.password }}
-                            {% endif %}
-                            </p>
-                            <p>
-                                
-
+                                {% if 'password' in errors %}
+                                    {{ errors.password }}
+                                {% endif %}
                             </p>
                         </div>
                             <button type="submit" class="btn btn-reg btn-info btn-block mt-4">LOGIN</button>
